@@ -1,0 +1,78 @@
+.links {
+  border: 0.5rem solid $clr-white;
+  padding: 1em;
+  font-size: 9.6rem;
+  overflow: hidden;
+
+  @include mq(sm) {
+    font-size: 6.4rem;
+  }
+
+  @include mq(xs) {
+    font-size: 4.8rem;
+  }
+
+  &__content {
+    margin: 0;
+    display: flex;
+    gap: 1.2ch;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    color: rgba($clr-white, 0.1);
+    width: fit-content;
+    transition: all 0.2s #{$tf};
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 0.5rem;
+      background-color: currentColor;
+      bottom: -0.2em;
+      left: 0;
+      border-radius: 100vh;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      background-color: currentColor;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      transition: all 0.1s #{$tf};
+      opacity: 0;
+      filter: blur(100px);
+      width: 40%;
+      height: 50%;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $clr-white;
+      outline: none;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      color: $clr-white;
+
+      &::before {
+        opacity: 0.65;
+      }
+    }
+  }
+}

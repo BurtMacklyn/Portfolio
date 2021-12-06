@@ -1,0 +1,138 @@
+.header {
+  min-height: calc(100vh + #{$about-wave-height});
+  position: relative;
+
+  &__contents {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: calc((100% - #{$about-wave-height}) / 2);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__glow {
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
+    background: radial-gradient(ellipse at center, rgba(0, 153, 255, 0.25) 10%, transparent 70%);
+    width: 100vw;
+    filter: none;
+    z-index: -1;
+    pointer-events: none;
+
+    animation: grow 2s $tf both;
+
+    @include mq(lg) {
+      background: #0099ff;
+      filter: blur(35rem);
+      width: 44rem;
+      max-width: 100vw;
+      animation: grow2 2s $tf both;
+    }
+
+    @include mq(md) {
+      width: 48rem;
+    }
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    user-select: none;
+  }
+
+  &__sub-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    z-index: 1;
+  }
+
+  &__string {
+    color: $clr-blue;
+    width: fit-content;
+
+    animation: header-string-1 0.5s $tf both;
+
+    &--2 {
+      align-self: flex-end;
+
+      animation: header-string-2 0.5s $tf both;
+    }
+  }
+
+  &__name {
+    font-size: $title;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+
+    animation: name 0.5s $tf both;
+
+    br {
+      display: none;
+    }
+
+    @include mq(sm) {
+      line-height: 0.9;
+      font-size: 10rem;
+      margin-bottom: 0.15em;
+
+      br {
+        display: unset;
+      }
+    }
+  }
+
+  &__tag {
+    @include mq(sm) {
+      display: none;
+    }
+
+    &--open {
+      transform: translate(-50%, -100%);
+      animation: header-tag-1 0.5s $tf both;
+    }
+
+    &--close {
+      transform: translate(-50%, 100%);
+      animation: header-tag-2 0.5s $tf both;
+    }
+  }
+
+  &__socials {
+    position: absolute;
+    left: 0;
+    bottom: $about-wave-height;
+
+    @include mq(xs) {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--outline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 3.6rem;
+      height: 12.4rem;
+      border-right: 2px solid $clr-grey;
+      border-bottom: 2px solid $clr-grey;
+
+      animation: socials-line $animation-social-outline both;
+
+      @include mq(md) {
+        display: none;
+      }
+    }
+  }
+}
+
+.name-break {
+  display: none;
+}

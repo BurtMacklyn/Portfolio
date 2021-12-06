@@ -1,0 +1,72 @@
+.socials {
+  margin-bottom: 13.6rem;
+  padding: 1.8rem;
+  overflow: hidden;
+
+  @include mq(md) {
+    overflow: unset;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    align-items: center;
+
+    @include mq(md) {
+      flex-direction: unset;
+    }
+  }
+
+  @include mq(md) {
+    height: 4.8rem;
+    margin-bottom: 2.4rem;
+    margin-left: 3.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include mq(xs) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__icon {
+    & > * {
+      width: 3.2rem;
+      height: 3.2rem;
+      transition: calc(#{$transition-duration} / 2) $transition-timing-function;
+      color: inherit !important;
+      stroke: currentColor !important;
+      fill: currentColor !important;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: $clr-white;
+    background-color: transparent;
+    border: none;
+
+    @for $i from 1 through 6 {
+      &--#{$i} {
+        animation: move-up-#{$i} calc(#{$animation-social-icons * #{$i}}) ease-in-out both;
+        animation-delay: calc((#{$animation-social-outline} + #{$animation-delay} + #{$animation-social-icons / 3} * #{$i}) + #{0.3 / $i}s);
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      outline: none;
+      color: $clr-blue;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $clr-white;
+      outline-offset: 8px;
+      border-radius: 100vh;
+    }
+  }
+}
