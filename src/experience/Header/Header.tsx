@@ -1,7 +1,7 @@
 import Tag from '../../components/Tag';
 import { header } from '../../content/experience';
 
-export default function Header() {
+export default function Header(): JSX.Element {
   return (
     <header className="header">
       <Tag name="header" className="header__tag header__tag--1" />

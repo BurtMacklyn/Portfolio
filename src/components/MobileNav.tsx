@@ -1,7 +1,7 @@
 import * as icons from 'react-ionicons';
 import Link from 'next/link';
 
-export default function MobileNav() {
+export default function MobileNav(): JSX.Element {
   return (
     <>
       <input type="checkbox" name="mobile-nav" id="mobile-nav" />

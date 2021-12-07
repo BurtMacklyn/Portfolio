@@ -3,7 +3,7 @@ import Rocket from './Rocket';
 
 import { experience } from '../../content/index';
 
-export default function Main() {
+export default function Main(): JSX.Element {
   return (
     <section className="experience">
       <div aria-hidden="true" className="experience__glow experience__glow--1"></div>

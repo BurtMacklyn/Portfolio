@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export default function Motion({ children }) {
+export default function Motion({ children }: React.HTMLAttributes<Element>): JSX.Element {
   return (
     <motion.div
       variants={{

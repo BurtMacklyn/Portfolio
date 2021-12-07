@@ -1,6 +1,6 @@
 import Tag from '../../components/Tag';
 
-export default function Card(props: { title: string; content: string }) {
+export default function Card(props: { title: string; content: string }): JSX.Element {
   return (
     <div className="card__wrapper">
       <div className="card">

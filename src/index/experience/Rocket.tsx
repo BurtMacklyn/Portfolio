@@ -1,4 +1,4 @@
-export default function Svg() {
+export default function Svg(): JSX.Element {
   return (
     <svg className="experience__rocket" width="208" height="207" viewBox="0 0 208 207" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path

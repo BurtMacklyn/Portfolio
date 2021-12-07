@@ -1,6 +1,6 @@
 import { FormEvent } from 'react';
 
-export default function send(e: FormEvent<HTMLFormElement>) {
+export default function send(e: FormEvent<HTMLFormElement>): void {
   e.preventDefault();
 
   const form = {

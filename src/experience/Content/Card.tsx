@@ -8,7 +8,7 @@ import Vercel from './Icons/Vercel';
 import Next from './Icons/Next';
 import Link from 'next/link';
 
-export default function Card({ title, decription, link }) {
+export default function Card({ title, decription, link }: { title: string; decription: string; link: string | null }): JSX.Element {
   const Links = () =>
     link ? (
       <Link href={link}>

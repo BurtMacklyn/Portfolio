@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { header } from '../../content/index';
 
-export default function Socials() {
+export default function Socials(): JSX.Element {
   return (
     <div role="complementary" className="header__socials">
       <div className="header__socials--outline"></div>

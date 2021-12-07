@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Main() {
+export default function Main(): JSX.Element {
   return (
     <div className="links">
       <div className="links__content">

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { footer } from '../content/global';
 
-export default function Footer() {
+export default function Footer(): JSX.Element {
   return (
     <footer className="footer">
       <div className="footer__section footer__section--1">

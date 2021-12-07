@@ -2,7 +2,7 @@ import Tag from '../../components/Tag';
 
 import { header } from '../../content/index';
 
-export default function Contents() {
+export default function Contents(): JSX.Element {
   return (
     <div className="header__contents">
       <Tag name="header" className="header__tag header__tag--open" />

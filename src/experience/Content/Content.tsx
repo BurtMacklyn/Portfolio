@@ -3,7 +3,7 @@ import Card from './Card';
 
 import { experience as content } from '../../content/experience';
 
-export default function experience() {
+export default function ExperienceCards(): JSX.Element {
   return (
     <>
       <div aria-hidden="true" className="experience-section__wave--wrapper">

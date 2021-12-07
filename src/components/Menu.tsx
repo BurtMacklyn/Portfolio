@@ -1,14 +1,14 @@
 import * as icons from 'react-ionicons';
 import Link from 'next/link';
 
-const scrollTop = () => {
+const scrollTop = function (): void {
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
   });
 };
 
-export default function Menu({ active = '' }) {
+export default function Menu({ active = '' }: { active: string }): JSX.Element {
   return (
     <div role="navigation" className="menu">
       <ul className="menu__btns">

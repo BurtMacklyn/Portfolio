@@ -35,7 +35,8 @@
     "noUnusedParameters": true,
     "exactOptionalPropertyTypes": true,
     "noImplicitReturns": true,
-    "noImplicitOverride": true
+    "noImplicitOverride": true,
+    "strictBindCallApply": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

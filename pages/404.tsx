@@ -3,7 +3,7 @@ import Motion from '../src/components/Motion';
 
 export const config = { unstable_runtimeJS: false };
 
-export default function Main() {
+export default function Main(): JSX.Element {
   return (
     <Motion>
       <Error />

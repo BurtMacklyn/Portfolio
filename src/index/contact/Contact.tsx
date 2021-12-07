@@ -5,7 +5,7 @@ import validateEmail from './validateEmail';
 
 import { contact } from '../../content/index';
 
-export default function Main() {
+export default function Main(): JSX.Element {
   return (
     <section className="contact">
       <div className="contact__content">

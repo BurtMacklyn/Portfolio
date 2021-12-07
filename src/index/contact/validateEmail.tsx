@@ -1,6 +1,6 @@
 import { FormEvent } from 'react';
 
-export default function validateEmail(e: FormEvent<HTMLInputElement>) {
+export default function validateEmail(e: FormEvent<HTMLInputElement>): void {
   const input = e.target as HTMLInputElement;
   const value = input.value;
   const valid = /^[^@]+@[^@]+\.[^@]+$/.test(value);

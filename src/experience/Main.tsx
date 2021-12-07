@@ -6,7 +6,7 @@ import MobileNav from '../components/MobileNav';
 import Header from './Header/Header';
 import Content from './Content/Content';
 
-export default function Main() {
+export default function Main(): JSX.Element {
   return (
     <main className="experience">
       <MobileNav />

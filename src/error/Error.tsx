@@ -1,7 +1,7 @@
 import { error } from '../content/global';
 import Router from 'next/router';
 
-function Main() {
+export default function Main(): JSX.Element {
   return (
     <main className="error">
       <span onClick={() => Router.back()} className="back">
@@ -19,5 +19,3 @@ function Main() {
     </main>
   );
 }
-
-export default Main;

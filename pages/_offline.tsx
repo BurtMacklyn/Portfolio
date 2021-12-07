@@ -1,4 +1,4 @@
-export default function Offline() {
+export default function Offline(): JSX.Element {
   return (
     <header
       style={{

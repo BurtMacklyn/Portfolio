@@ -6,19 +6,19 @@ export const header = {
 export const experience = {
   react: {
     description: 'This website is made with React. Specificly Nextjs to increase pageload speed and SEO.',
-    link: undefined
+    link: null
   },
 
   next: {
     description:
       'This website is made with Nextjs. It uses static site generation to generate a static version of the website, to provide the quickest possible experience.',
-    link: undefined
+    link: null
   },
 
   javascript: {
     description:
       'Javascript was the first language I learned to code in. I started with ES5 and ES6, and then I started learning ES7 and ES8. I also learned about TypeScript, and I started using it to write more complex code.',
-    link: undefined
+    link: null
   },
 
   node: {
@@ -29,30 +29,30 @@ export const experience = {
 
   heroku: {
     description: "I use Heroku to deploy most of my apps, as it's essential for app development.",
-    link: undefined
+    link: null
   },
 
   sass: {
     description:
       'After learning Node Js and Javascript, Css and HTML, I started learning Sass. I got attatched to the simplicity of it, and never start a project without it.',
-    link: undefined
+    link: null
   },
 
   figma: {
     description:
       'I use Figma to design my apps before building them. It allows me to lay out and create a design, that i can use as a reference to build the app.',
-    link: undefined
+    link: null
   },
 
   css: {
     description:
       'After Javascript came Css, I learned how to make and design websites. From pixels to percentages, I learned how to build responsive websites.',
-    link: undefined
+    link: null
   },
 
   html: {
     description: 'I started learning HTML at around the same time as Css, and I learned how to make and design websites.',
-    link: undefined
+    link: null
   },
 
   express: {
@@ -68,21 +68,21 @@ export const experience = {
 
   typescript: {
     description: 'After learning Javascript, I started learning Typescript, I have grown to love the language over time, and never build a project without it.',
-    link: undefined
+    link: null
   },
 
   java: {
     description: 'With Java, I learned how to use JafaFX and build a desktop application.',
-    link: undefined
+    link: null
   },
 
   netlify: {
     description: 'I love Netlify because it allows me to deploy simple apps to the cloud.',
-    link: undefined
+    link: null
   },
 
   vercel: {
     description: 'Vercel is used to host this website!',
-    link: undefined
+    link: null
   }
 };

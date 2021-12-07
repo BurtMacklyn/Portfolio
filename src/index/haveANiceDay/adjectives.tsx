@@ -1,4 +1,4 @@
-const adjectives = [
+const adjectives: string[] = [
   'radical',
   'happy',
   'nice',

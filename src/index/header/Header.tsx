@@ -2,7 +2,7 @@ import Socials from './Socials';
 import Nav from '../../components/Nav';
 import HeaderContents from './Contents';
 
-function Header() {
+export default function Header(): JSX.Element {
   return (
     <header className="header">
       <Nav />
@@ -11,5 +11,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

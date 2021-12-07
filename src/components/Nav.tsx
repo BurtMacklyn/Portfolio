@@ -1,7 +1,7 @@
 import Tag from './Tag';
 import Link from 'next/link';
 
-function Nav() {
+export default function Nav(): JSX.Element {
   return (
     <div className="nav__container">
       <nav className="nav">
@@ -25,5 +25,3 @@ function Nav() {
     </div>
   );
 }
-
-export default Nav;

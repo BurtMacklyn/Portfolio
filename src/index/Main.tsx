@@ -10,7 +10,7 @@
 // import Footer from '../components/Footer';
 // import Menu from '../components/Menu';
 
-function Main() {
+function Main(): JSX.Element {
   return (
     // <main className="index">
     //   <MobileNav />
@@ -22,7 +22,7 @@ function Main() {
     //   <Contact />
     //   <Footer />
     // </main>
-    <p>hi</p>
+    <p>dev</p>
   );
 }
 
