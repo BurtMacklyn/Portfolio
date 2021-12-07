@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Experience from '../src/experience/Main';
-import Motion from '../src/components/Motion';
+import Experience from '@experience/Main';
+import Motion from '@components/Motion';
 
 export const config = { unstable_runtimeJS: false };
 

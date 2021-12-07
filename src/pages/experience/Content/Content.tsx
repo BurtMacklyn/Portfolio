@@ -3,7 +3,7 @@ import React from 'react';
 import Wave from './Wave';
 import Card from './Card';
 
-import { experience as content } from '../../content/experience';
+import { experience as content } from '@content/experience';
 
 export default function ExperienceCards(): JSX.Element {
   return (

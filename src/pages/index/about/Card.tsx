@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Tag from '../../components/Tag';
+import Tag from '@components/Tag';
 
 export default function Card(props: { title: string; content: string }): JSX.Element {
   return (

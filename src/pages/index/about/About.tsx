@@ -3,7 +3,7 @@ import React from 'react';
 import Card from './Card';
 import Wave from './LowerWave';
 
-import { about } from '../../content/index';
+import { about } from '@content/index';
 
 export default function About(): JSX.Element {
   return (

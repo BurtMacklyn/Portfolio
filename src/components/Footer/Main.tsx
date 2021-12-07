@@ -1,7 +1,7 @@
 import React from 'react';
+import { footer } from '@content/global';
 
-import Link from 'next/link';
-import { footer } from '../content/global';
+import FooterLink from './FooterLink';
 
 export default function Footer(): JSX.Element {
   return (
@@ -9,18 +9,10 @@ export default function Footer(): JSX.Element {
       <div className="footer__section footer__section--1">
         <p className="footer__name">{footer.name}</p>
         <ul className="footer__links">
-          <li className="footer__link footer__link--overview">
-            <Link href="/">Overview</Link>
-          </li>
-          <li className="footer__link footer__link--experience">
-            <Link href="/experience">Experience</Link>
-          </li>
-          <li className="footer__link footer__link--projects">
-            <Link href="/projects">Projects</Link>
-          </li>
-          <li className="footer__link footer__link--about">
-            <Link href="/about">About</Link>
-          </li>
+          <FooterLink name="Overview" href="/" />
+          <FooterLink name="Experience" href="/" />
+          <FooterLink name="Projects" href="/" />
+          <FooterLink name="About" href="/" />
         </ul>
       </div>
       <div className="footer__section footer__section--2">

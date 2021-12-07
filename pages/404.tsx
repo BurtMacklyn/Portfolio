@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Error from '../src/error/Error';
-import Motion from '../src/components/Motion';
+import Error from '@pages/404/Error';
+import Motion from '@components/Motion';
 
 export const config = { unstable_runtimeJS: false };
 

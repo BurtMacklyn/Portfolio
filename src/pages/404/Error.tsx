@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { error } from '../content/global';
+import { error } from '@content/global';
 import Router from 'next/router';
 
 export default function Main(): JSX.Element {

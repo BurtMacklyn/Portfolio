@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Index from '../src/index/Main';
-import Motion from '../src/components/Motion';
+import Index from '@index/Main';
+import Motion from '@components/Motion';
 
 export const config = { unstable_runtimeJS: false };
 

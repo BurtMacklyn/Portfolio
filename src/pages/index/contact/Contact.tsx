@@ -5,7 +5,7 @@ import send from './send';
 import getDate from './getDate';
 import validateEmail from './validateEmail';
 
-import { contact } from '../../content/index';
+import { contact } from '@content/index';
 
 export default function Main(): JSX.Element {
   return (

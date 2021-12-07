@@ -3,7 +3,7 @@ import React from 'react';
 import * as icons from 'react-ionicons';
 import Link from 'next/link';
 
-import { header } from '../../content/index';
+import { header } from '@content/index';
 
 export default function Socials(): JSX.Element {
   return (

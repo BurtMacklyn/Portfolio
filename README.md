@@ -5,4 +5,3 @@
 ## TODO:
 
 - Write the README.md file
-- service workers

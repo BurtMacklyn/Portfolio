@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Nav from '../components/Nav';
-import Menu from '../components/Menu';
-import Footer from '../components/Footer';
-import MobileNav from '../components/MobileNav';
+import Nav from '@components/Nav/Main';
+import Menu from '@components/Menu';
+import Footer from '@components/Footer/Main';
+import MobileNav from '@components/MobileNav';
 
 import Header from './Header/Header';
 import Content from './Content/Content';

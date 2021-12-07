@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Tag from '../../components/Tag';
-import { header } from '../../content/experience';
+import Tag from '@components/Tag';
+import { header } from '@content/experience';
 
 export default function Header(): JSX.Element {
   return (

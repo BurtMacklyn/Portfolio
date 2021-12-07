@@ -1,9 +1,9 @@
 import React from 'react';
 
-import HaveANiceDay from '../haveANiceDay/HaveANiceDay';
+import HaveANiceDay from '@index/haveANiceDay/HaveANiceDay';
 import Rocket from './Rocket';
 
-import { experience } from '../../content/index';
+import { experience } from '@content/index';
 
 export default function Main(): JSX.Element {
   return (

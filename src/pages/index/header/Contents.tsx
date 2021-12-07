@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Tag from '../../components/Tag';
+import Tag from '@components/Tag';
 
-import { header } from '../../content/index';
+import { header } from '@content/index';
 
 export default function Contents(): JSX.Element {
   return (

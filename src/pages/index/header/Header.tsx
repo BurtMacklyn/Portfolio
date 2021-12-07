@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Socials from './Socials';
-import Nav from '../../components/Nav';
+import Nav from '@components/Nav/Main';
 import HeaderContents from './Contents';
 
 export default function Header(): JSX.Element {

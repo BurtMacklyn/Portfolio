@@ -1,7 +1,7 @@
 import React from 'react';
 
-import About from '../src/about/Main';
-import Motion from '../src/components/Motion';
+import About from '@about/Main';
+import Motion from '@components/Motion';
 
 export const config = { unstable_runtimeJS: false };
 

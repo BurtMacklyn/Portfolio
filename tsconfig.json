@@ -4,7 +4,7 @@
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "alwaysStrict": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "checkJs": true,
     "declaration": true,
     "declarationDir": "./types",
@@ -42,7 +42,18 @@
     "target": "es6",
     "types": ["react"],
     "useUnknownInCatchVariables": true,
-    "watch": true
+    "watch": true,
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@content/*": ["./src/content/*"],
+      "@src/*": ["./src/*"],
+      "@index/*": ["./src/pages/index/*"],
+      "@projects/*": ["./src/pages/projects/*"],
+      "@experience/*": ["./src/pages/experience/*"],
+      "@about/*": ["./src/pages/about/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@style": [".style/css/style.css"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
