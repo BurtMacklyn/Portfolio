@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Head from 'next/head';
-
 import Header from './header/Header';
 import About from './about/About';
 import Experience from './experience/Experience';
@@ -15,9 +13,6 @@ import Menu from '@components/Menu';
 export default function Main(): JSX.Element {
   return (
     <main className="index">
-      <Head>
-        <title>INDEX PAGE 2</title>
-      </Head>
       <MobileNav />
       <Header />
       <Menu active="index" />
