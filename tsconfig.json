@@ -52,7 +52,7 @@
       "@experience/*": ["./src/pages/experience/*"],
       "@about/*": ["./src/pages/about/*"],
       "@pages/*": ["./src/pages/*"],
-      "@style": [".style/css/style.css"]
+      "@style": ["./style/css/style.css"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
