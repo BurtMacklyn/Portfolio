@@ -13,6 +13,7 @@ export default function Document(): JSX.Element {
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="./icons/apple-icon-180.png" />
         <link rel="apple-touch-icon" href="icons/apple-icon-180.png" />
+        <title>DOCUMENT</title>
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
 

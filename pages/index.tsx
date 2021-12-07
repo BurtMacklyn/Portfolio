@@ -11,7 +11,7 @@ export default function Main(): JSX.Element {
   return (
     <>
       <Head>
-        <title>TEST</title>
+        <title>INDEX PAGE 1</title>
       </Head>
       <Motion>
         <Index />

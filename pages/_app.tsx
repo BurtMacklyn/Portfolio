@@ -12,11 +12,6 @@ export default function App({ Component, pageProps, router }: AppProps): JSX.Ele
   const url: string = `https://cooperrunyan.vercel.app${router.route}`;
   return (
     <>
-      <Head>
-        <title>Cooper Runyan | Portfolio</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content="A marketing and about site for web designer and developer, Cooper Runyan" />
-      </Head>
       <DefaultSeo
         openGraph={{
           type: 'website',
@@ -28,7 +23,12 @@ export default function App({ Component, pageProps, router }: AppProps): JSX.Ele
         }}
         canonical={url}
       />
-
+      <Head>
+        {/* <title>Cooper Runyan | Portfolio</title> */}
+        <title>APP</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="A marketing and about site for web designer and developer, Cooper Runyan" />
+      </Head>
       <AnimatePresence exitBeforeEnter={true} initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
         <Component {...pageProps} canonical={url} key={url} />
       </AnimatePresence>
