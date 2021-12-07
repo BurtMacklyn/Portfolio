@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Projects from '../src/projects/Main';
 import Motion from '../src/components/Motion';
 

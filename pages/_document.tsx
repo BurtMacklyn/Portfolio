@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Html, Head, Main, NextScript } from 'next/document';
 import SeoLinks from 'src/components/SeoLinks';
 

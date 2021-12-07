@@ -1,4 +1,6 @@
-export default function React() {
+import React from 'react';
+
+export default function ReactIcon() {
   return (
     <svg className="experience-section__card--icon" width="169" height="151" viewBox="0 0 169 151" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path

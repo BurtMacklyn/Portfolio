@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Next() {
   return (
     <svg className="experience-section__card--icon" width="207" height="125" viewBox="0 0 207 125" fill="none" xmlns="http://www.w3.org/2000/svg">

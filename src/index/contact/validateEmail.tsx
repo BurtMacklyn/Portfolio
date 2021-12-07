@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+import type { FormEvent } from 'react';
 
 export default function validateEmail(e: FormEvent<HTMLInputElement>): void {
   const input = e.target as HTMLInputElement;

@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function SeoLinks({}): JSX.Element {
   return (
     <>

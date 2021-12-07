@@ -1,3 +1,5 @@
+import React from 'react';
+
 import send from './send';
 
 import getDate from './getDate';

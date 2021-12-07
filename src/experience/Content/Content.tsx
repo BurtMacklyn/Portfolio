@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Wave from './Wave';
 import Card from './Card';
 

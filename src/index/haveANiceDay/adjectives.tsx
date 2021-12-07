@@ -24,5 +24,5 @@ const adjectives: string[] = [
 ];
 
 export default function random(): string {
-  return adjectives[Math.floor(Math.random() * adjectives.length) + 1];
+  return (adjectives[Math.floor(Math.random() * adjectives.length) + 1] as string);
 }

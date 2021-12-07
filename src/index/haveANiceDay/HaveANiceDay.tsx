@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Main(): JSX.Element {
   return (
     <section className="have-a-nice-day">

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Index from '../src/index/Main';
 import Motion from '../src/components/Motion';
 

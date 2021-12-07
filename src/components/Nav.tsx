@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Tag from './Tag';
 import Link from 'next/link';
 

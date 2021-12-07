@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Error from '../src/error/Error';
 import Motion from '../src/components/Motion';
 

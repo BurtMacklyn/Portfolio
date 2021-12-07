@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Tag from '../../components/Tag';
 
 import { header } from '../../content/index';

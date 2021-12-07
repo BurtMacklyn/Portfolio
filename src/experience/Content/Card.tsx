@@ -1,4 +1,6 @@
-import React from './Icons/React';
+import React from 'react';
+
+import ReactIcon from './Icons/React';
 import Javascript from './Icons/Javascript';
 import Heroku from './Icons/Heroku';
 import Sass from './Icons/Sass';
@@ -26,7 +28,7 @@ export default function Card({ title, decription, link }: { title: string; decri
         <div className="experience-section__card__side experience-section__card__side--1">
           <h3 className="experience-section__card--title">{title}</h3>
           {title === 'React' ? (
-            <React />
+            <ReactIcon />
           ) : title === 'Javascript' ? (
             <Javascript />
           ) : title === 'Heroku' ? (

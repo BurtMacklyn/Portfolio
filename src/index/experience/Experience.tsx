@@ -1,3 +1,5 @@
+import React from 'react';
+
 import HaveANiceDay from '../haveANiceDay/HaveANiceDay';
 import Rocket from './Rocket';
 

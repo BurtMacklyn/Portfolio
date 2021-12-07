@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const error = {
   message: 'This page does not exist.. yet!',
   backBtn: <>&larr; Back</>,

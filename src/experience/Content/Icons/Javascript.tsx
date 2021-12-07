@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Javascript() {
   return (
     <svg className="experience-section__card--icon" width="112" height="112" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">

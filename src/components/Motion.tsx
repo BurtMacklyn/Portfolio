@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { motion } from 'framer-motion';
 
 export default function Motion({ children }: React.HTMLAttributes<Element>): JSX.Element {

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { error } from '../content/global';
 import Router from 'next/router';
 
