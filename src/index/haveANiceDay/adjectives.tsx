@@ -23,8 +23,6 @@ const adjectives: string[] = [
   'kind'
 ];
 
-const random = function (): string {
+export default function random(): string {
   return adjectives[Math.floor(Math.random() * adjectives.length) + 1];
-};
-
-export default random;
+}
