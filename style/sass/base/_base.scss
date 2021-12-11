@@ -39,6 +39,11 @@ body {
   background-color: $clr-black !important;
 }
 
+#__next,
+#__next > div {
+  overflow-x: hidden;
+}
+
 code,
 .code {
   color: $clr-grey;

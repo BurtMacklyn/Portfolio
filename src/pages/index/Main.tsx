@@ -8,14 +8,14 @@ import Links from './links/Links';
 
 import MobileNav from '@components/MobileNav';
 import Footer from '@components/Footer/Main';
-import Menu from '@components/Menu';
+import Menu from '@components/Menu/Main';
 
 export default function Main(): JSX.Element {
   return (
     <main className="index">
       <MobileNav />
       <Header />
-      <Menu active="index" />
+      <Menu active="overview" />
       <About />
       <Experience />
       <Links />

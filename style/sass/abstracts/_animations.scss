@@ -1,361 +1,193 @@
-@keyframes fadeIn {
-  from {
-    background: unset;
-    box-shadow: unset;
-    backdrop-filter: unset;
-    opacity: 0;
-  }
+// @keyframes fadeIn {
+//   from {
+//     background: unset;
+//     box-shadow: unset;
+//     backdrop-filter: unset;
+//     opacity: 0;
+//   }
 
-  to {
-    background: rgba(0, 0, 0, 0.18);
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(24px);
-    opacity: 1;
-  }
-}
+//   to {
+//     background: rgba(0, 0, 0, 0.18);
+//     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+//     backdrop-filter: blur(24px);
+//     opacity: 1;
+//   }
+// }
 
-@keyframes fadeInContent {
-  from {
-    opacity: 0;
-  }
+// @keyframes fadeInContent {
+//   from {
+//     opacity: 0;
+//   }
 
-  to {
-    opacity: 1;
-  }
-}
+//   to {
+//     opacity: 1;
+//   }
+// }
 
-@keyframes fadeOut {
-  to {
-    background: unset;
-    box-shadow: unset;
-    backdrop-filter: unset;
-    opacity: 0;
-  }
+// @keyframes fadeOut {
+//   to {
+//     background: unset;
+//     box-shadow: unset;
+//     backdrop-filter: unset;
+//     opacity: 0;
+//   }
 
-  from {
-    background: rgba(0, 0, 0, 0.18);
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(24px);
-    opacity: 1;
-  }
-}
+//   from {
+//     background: rgba(0, 0, 0, 0.18);
+//     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+//     backdrop-filter: blur(24px);
+//     opacity: 1;
+//   }
+// }
 
-@keyframes fadeOutContent {
-  to {
-    opacity: 0;
-  }
+// @keyframes fadeOutContent {
+//   to {
+//     opacity: 0;
+//   }
 
-  from {
-    opacity: 1;
-  }
-}
+//   from {
+//     opacity: 1;
+//   }
+// }
 
-@keyframes down-up {
-  0% {
-    transform: translateY(9.2rem);
-  }
+// @keyframes down-up {
+//   0% {
+//     transform: ;
+//   }
 
-  100% {
-    transform: translateY(0);
-  }
-}
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
 
-@keyframes nav-links {
-  from {
-    opacity: 0;
-  }
+// @keyframes nav-links {
+//   from {
+//     opacity: 0;
+//   }
 
-  to {
-    opacity: 1;
-  }
-}
+//   to {
+//     opacity: 1;
+//   }
+// }
 
-@keyframes nav-tag-1 {
-  from {
-    transform: translate(100%, -100%);
-    opacity: 0;
-  }
+// @keyframes socials-line-2 {
+//   from {
+//     opacity: 0;
+//     width: 0;
+//   }
 
-  to {
-    transform: translate(-100%, -100%);
-    opacity: 1;
-  }
-}
+//   to {
+//     opacity: 1;
+//     width: 2.4rem;
+//   }
+// }
 
-@keyframes nav-tag-2 {
-  from {
-    transform: translate(-100%, 100%);
-    opacity: 0;
-  }
+// @for $i from 1 through 6 {
+//   @keyframes move-right-#{$i} {
+//     0% {
+//       transform: translateX(calc((39.6rem - #{$i} * 5.6rem) * -1));
+//       opacity: 0;
+//     }
 
-  to {
-    transform: translate(100%, 100%);
-    opacity: 1;
-  }
-}
+//     50% {
+//       opacity: 0;
+//     }
 
-@keyframes socials-line {
-  from {
-    width: 0;
-    height: 0;
-  }
+//     75% {
+//       opacity: 1;
+//     }
 
-  22% {
-    width: 3.6rem;
-    height: 0;
-  }
+//     100% {
+//       transform: translateX(0);
+//       opacity: 1;
+//     }
+//   }
+// }
 
-  to {
-    height: 12.4rem;
-  }
-}
+// @keyframes from-right {
+//   from {
+//     transform: translateX(250%);
+//     opacity: 0;
+//   }
 
-@keyframes socials-line-2 {
-  from {
-    opacity: 0;
-    width: 0;
-  }
+//   to {
+//     transform: translateX(0);
+//     opacity: 1;
+//   }
+// }
 
-  to {
-    opacity: 1;
-    width: 2.4rem;
-  }
-}
+// @keyframes down-to-up {
+//   from {
+//     transform: translateY(12rem);
+//     opacity: 0;
+//   }
 
-@keyframes grow {
-  from {
-    width: 0;
-    opacity: 0;
-  }
+//   to {
+//     transform: translateY(0);
+//     opacity: 1;
+//   }
+// }
 
-  to {
-    width: 100vw;
-    opacity: 1;
-  }
-}
+// .fade-in {
+//   animation: fadeIn 0.2s #{$tf} both;
+// }
 
-@keyframes grow2 {
-  from {
-    width: 0;
-    opacity: 0;
-  }
+// .fade-out {
+//   animation: fadeOut 0.2s #{$tf} both;
+// }
 
-  to {
-    width: 44rem;
-    opacity: 1;
-  }
-}
+// .fade-in-content {
+//   animation: fadeInContent 0.2s #{$tf} both;
+// }
 
-@keyframes experience-grow {
-  from {
-    width: 0;
-    opacity: 0;
-  }
+// .fade-out-content {
+//   animation: fadeOutContent 0.2s #{$tf} both;
+// }
 
-  to {
-    width: 120vw;
-    opacity: 1;
-  }
-}
+// @keyframes back-btn {
+//   from {
+//     transform: translateY(-200%);
+//     opacity: 0;
+//   }
 
-@keyframes experience-grow2 {
-  from {
-    width: 0;
-    opacity: 0;
-  }
+//   to {
+//     transform: translateY(0);
+//     opacity: 1;
+//   }
+// }
 
-  to {
-    width: 44rem;
-    opacity: 1;
-  }
-}
+// @keyframes message-move {
+//   from {
+//     transform: translateX(-100%);
+//     opacity: 0;
+//   }
 
-@keyframes header-tag-1 {
-  from {
-    transform: translate(50%, -100%);
-    opacity: 0;
-  }
+//   to {
+//     transform: translateX(0);
+//     opacity: 1;
+//   }
+// }
 
-  to {
-    transform: translate(-50%, -100%);
-    opacity: 1;
-  }
-}
+// @keyframes error-move {
+//   from {
+//     transform: translateX(100%);
+//     opacity: 0;
+//   }
 
-@keyframes header-tag-2 {
-  from {
-    transform: translate(50%, 100%);
-    opacity: 0;
-  }
+//   to {
+//     transform: translateX(0);
+//     opacity: 1;
+//   }
+// }
 
-  to {
-    transform: translate(-50%, 100%);
-    opacity: 1;
-  }
-}
+// @keyframes split-move {
+//   from {
+//     height: 0;
+//     opacity: 0;
+//   }
 
-@keyframes header-string-1 {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-@keyframes header-string-2 {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-@keyframes name {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@for $i from 1 through 6 {
-  @keyframes move-up-#{$i} {
-    0% {
-      transform: translateY(calc(39.6rem - #{$i} * 5.6rem));
-      opacity: 0;
-    }
-
-    50% {
-      opacity: 0;
-    }
-
-    75% {
-      opacity: 1;
-    }
-
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-}
-
-@for $i from 1 through 6 {
-  @keyframes move-right-#{$i} {
-    0% {
-      transform: translateX(calc((39.6rem - #{$i} * 5.6rem) * -1));
-      opacity: 0;
-    }
-
-    50% {
-      opacity: 0;
-    }
-
-    75% {
-      opacity: 1;
-    }
-
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-}
-
-@keyframes from-right {
-  from {
-    transform: translateX(250%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes down-to-up {
-  from {
-    transform: translateY(12rem);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.fade-in {
-  animation: fadeIn 0.2s #{$tf} both;
-}
-
-.fade-out {
-  animation: fadeOut 0.2s #{$tf} both;
-}
-
-.fade-in-content {
-  animation: fadeInContent 0.2s #{$tf} both;
-}
-
-.fade-out-content {
-  animation: fadeOutContent 0.2s #{$tf} both;
-}
-
-@keyframes back-btn {
-  from {
-    transform: translateY(-200%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes message-move {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes error-move {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes split-move {
-  from {
-    height: 0;
-    opacity: 0;
-  }
-
-  to {
-    height: 1.75em;
-    opacity: 1;
-  }
-}
+//   to {
+//     height: 1.75em;
+//     opacity: 1;
+//   }
+// }

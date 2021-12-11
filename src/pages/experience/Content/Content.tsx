@@ -4,10 +4,22 @@ import Wave from './Wave';
 import Card from './Card';
 
 import { experience as content } from '@content/experience';
+import { motion } from 'framer-motion';
+
+import animation from 'animation';
 
 export default function ExperienceCards(): JSX.Element {
   return (
-    <>
+    <motion.div
+      variants={{
+        from: { opacity: 0, y: 100 },
+        to: { opacity: 1, y: 0 }
+      }}
+      initial="from"
+      exit="from"
+      animate="to"
+      transition={{ type: animation.function, duration: animation.duration / 1.5 }}
+    >
       <div aria-hidden="true" className="experience-section__wave--wrapper">
         <Wave className="experience-section__wave experience-section__wave--hidden" />
         <Wave className="experience-section__wave experience-section__wave--visible" />
@@ -29,6 +41,6 @@ export default function ExperienceCards(): JSX.Element {
         <Card title={'Netlify'} decription={content.netlify.description} link={content.netlify.link} />
         <Card title={'Vercel'} decription={content.vercel.description} link={content.vercel.link} />
       </div>
-    </>
+    </motion.div>
   );
 }

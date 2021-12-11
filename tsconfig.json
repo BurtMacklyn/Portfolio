@@ -16,7 +16,7 @@
     "isolatedModules": true,
     "importHelpers": true,
     "importsNotUsedAsValues": "error",
-    "jsx": "react",
+    "jsx": "preserve",
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -53,7 +53,8 @@
       "@about/*": ["./src/pages/about/*"],
       "@pages/*": ["./src/pages/*"],
       "@style": ["./style/css/style.css"]
-    }
+    },
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

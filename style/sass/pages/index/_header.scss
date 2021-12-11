@@ -16,21 +16,22 @@
   &__glow {
     border-radius: 100%;
     aspect-ratio: 1 / 1;
-    background: radial-gradient(ellipse at center, rgba(0, 153, 255, 0.25) 10%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(0, 153, 255, 0.2) 0%, transparent 70%);
     width: 100vw;
+    min-width: 100vw;
+    min-height: 150vh;
     filter: none;
     z-index: -1;
     pointer-events: none;
+    overflow: hidden;
 
-    animation: grow 2s $tf both;
-
-    @include mq(lg) {
-      background: #0099ff;
-      filter: blur(35rem);
-      width: 44rem;
-      max-width: 100vw;
-      animation: grow2 2s $tf both;
-    }
+    // @include mq(lg) {
+    //   background: #0099ff;
+    //   filter: blur(35rem);
+    //   width: 44rem;
+    //   max-width: 100vw;
+    //   // animation: grow2 2s $tf both;
+    // }
 
     @include mq(md) {
       width: 48rem;
@@ -99,6 +100,10 @@
     &--close {
       transform: translate(-50%, 100%);
       animation: header-tag-2 0.5s $tf both;
+    }
+
+    &--wrapper {
+      width: fit-content;
     }
   }
 

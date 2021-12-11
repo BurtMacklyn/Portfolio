@@ -73,14 +73,17 @@
   }
 }
 
-.top {
+.menu__btn--5 {
   @include mq(md) {
     display: flex !important;
   }
 }
 
-.not-top,
-.top {
+.menu__btn--1,
+.menu__btn--2,
+.menu__btn--3,
+.menu__btn--4,
+.menu__btn--5 {
   @include mq(md) {
     display: none;
   }

@@ -6,8 +6,6 @@ import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import { AnimatePresence } from 'framer-motion';
 
-export const config = { unstable_runtimeJS: false };
-
 export default function App({ Component, pageProps, router }: AppProps): JSX.Element {
   const url: string = `https://cooperrunyan.vercel.app${router.route}`;
   return (
@@ -15,6 +13,7 @@ export default function App({ Component, pageProps, router }: AppProps): JSX.Ele
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="A marketing and about site for web designer and developer, Cooper Runyan" />
+        <title>Cooper Runyan | Portfolio</title>
       </Head>
       <DefaultSeo
         openGraph={{
@@ -28,7 +27,7 @@ export default function App({ Component, pageProps, router }: AppProps): JSX.Ele
         canonical={url}
       />
 
-      <AnimatePresence exitBeforeEnter={true} initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
+      <AnimatePresence exitBeforeEnter={true} initial={true} onExitComplete={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         <Component {...pageProps} canonical={url} key={url} />
       </AnimatePresence>
     </>

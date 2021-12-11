@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Nav from '@components/Nav/Main';
-import Menu from '@components/Menu';
+import Menu from '@components/Menu/Main';
 import Footer from '@components/Footer/Main';
 import MobileNav from '@components/MobileNav';
 
