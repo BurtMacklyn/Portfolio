@@ -5,7 +5,9 @@ export default function FooterLink({ name, href }: { name: string; href?: string
   name = name.toLowerCase();
   return (
     <li className={`footer__link footer__link--${name}`}>
-      <Link href={href ?? `/${name}`}>{name.charAt(0).toUpperCase() + name.slice(1)}</Link>
+      <Link passHref scroll={false} href={href ?? `/${name}`}>
+        {name.charAt(0).toUpperCase() + name.slice(1)}
+      </Link>
     </li>
   );
 }

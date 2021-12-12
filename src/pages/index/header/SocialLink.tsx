@@ -40,8 +40,8 @@ export default function SocialLink({ i }: { i: number }): JSX.Element {
         duration: animation.duration / 3
       }}
     >
-      <Link href={href}>
-        <a target="_blank" rel="noreferrer" title={title} className={`socials__icon socials__icon--${i}`} href={href}>
+      <Link href={href} passHref scroll={false}>
+        <a target="_blank" rel="noreferrer" title={title} className={`socials__icon socials__icon--${i}`}>
           {i === 1 && <icons.LogoGithub color={'inherit'} height={'3.2rem'} width={'3.2rem'} />}
           {i === 2 && <icons.LogoCodepen color={'inherit'} height={'3.2rem'} width={'3.2rem'} />}
           {i === 3 && <icons.LogoStackoverflow color={'inherit'} height={'3.2rem'} width={'3.2rem'} />}

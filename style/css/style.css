@@ -460,7 +460,6 @@ section {
     .error .code__wrapper {
       width: fit-content;
       height: fit-content;
-      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center; }
@@ -472,7 +471,6 @@ section {
     .error .message__wrapper {
       width: fit-content;
       height: fit-content;
-      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center; }
@@ -619,7 +617,8 @@ section {
     cursor: pointer;
     color: #abb2bf;
     background-color: transparent;
-    border: none; }
+    border: none;
+    transition: all 0.1s ease-in-out; }
     .index .socials__icon > * {
       width: 3.2rem;
       height: 3.2rem;
@@ -696,7 +695,7 @@ section {
     display: grid !important;
     align-items: stretch !important;
     justify-content: center;
-    gap: 4.8rem;
+    gap: 3.2rem;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
     margin: 0 auto;

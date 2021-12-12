@@ -49,6 +49,7 @@
     color: $clr-white;
     background-color: transparent;
     border: none;
+    transition: all 0.1s ease-in-out;
 
     @for $i from 1 through 6 {
       &--#{$i} {

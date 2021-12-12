@@ -26,8 +26,8 @@ export default function Main(): JSX.Element {
         <div className="code__wrapper">
           <motion.span
             variants={{
-              from: { opacity: 0, transform: 'translateX(100%)' },
-              to: { opacity: 1, transform: 'translateX(0%)' }
+              from: { opacity: 0, transform: 'translateX(-10rem)' },
+              to: { opacity: 1, transform: 'translateX(0rem)' }
             }}
             initial="from"
             exit="from"
@@ -52,8 +52,8 @@ export default function Main(): JSX.Element {
         <div className="message__wrapper">
           <motion.span
             variants={{
-              from: { opacity: 0, transform: 'translateX(-100%)' },
-              to: { opacity: 1, transform: 'translateX(0%)' }
+              from: { opacity: 0, transform: 'translateX(10rem)' },
+              to: { opacity: 1, transform: 'translateX(0rem)' }
             }}
             initial="from"
             exit="from"

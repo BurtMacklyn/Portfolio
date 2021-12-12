@@ -15,27 +15,27 @@ export default function MobileNav(): JSX.Element {
         </div>
       </label>
       <div role="navigation" className="mobile-nav__content">
-        <Link href="/">
-          <a href="/" className="mobile-nav__row">
+        <Link href="/" passHref scroll={false}>
+          <a className="mobile-nav__row">
             <icons.HomeOutline />
             <div>Overview</div>
             &nbsp;
           </a>
         </Link>
-        <Link href="/experience">
-          <a href="/experience" className="mobile-nav__row">
+        <Link href="/experience" passHref scroll={false}>
+          <a className="mobile-nav__row">
             <icons.TerminalOutline />
             <div>Experience</div>&nbsp;
           </a>
         </Link>
-        <Link href="/projects">
-          <a href="/projects" className="mobile-nav__row">
+        <Link href="/projects" passHref scroll={false}>
+          <a className="mobile-nav__row">
             <icons.RocketOutline />
             <div>Projects</div>&nbsp;
           </a>
         </Link>
-        <Link href="/about">
-          <a href="/about" className="mobile-nav__row">
+        <Link href="/about" passHref scroll={false}>
+          <a className="mobile-nav__row">
             <icons.PersonOutline />
             <div>About</div>&nbsp;
           </a>

@@ -13,8 +13,8 @@ import Link from 'next/link';
 export default function Card({ title, decription, link }: { title: string; decription: string; link: string | null }): JSX.Element {
   const Links = () =>
     link ? (
-      <Link href={link}>
-        <a target="_blank" className="experience__link" href={link}>
+      <Link href={link} passHref scroll={false}>
+        <a target="_blank" className="experience__link">
           {link}
         </a>
       </Link>

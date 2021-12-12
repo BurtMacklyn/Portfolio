@@ -6,19 +6,23 @@ import Rocket from './Rocket';
 import { experience } from '@content/index';
 import { motion } from 'framer-motion';
 
+import Section from './Section';
+
+import Glow from './Glow';
+
 export default function Main(): JSX.Element {
   return (
     <motion.div>
       <section className="experience">
-        <div aria-hidden="true" className="experience__glow experience__glow--1"></div>
-        <div className="experience__content--wrapper">
-          <div className="experience__content">
+        <Glow i={1} />
+        <Section className="experience__content--wrapper">
+          <Section outline="0px" className="experience__content">
             <h2 className="experience__heading">{experience.heading}</h2>
             <p className="experience__text">{experience.content}</p>
-          </div>
+          </Section>
           <Rocket />
-          <div aria-hidden="true" className="experience__glow experience__glow--2"></div>
-        </div>
+          <Glow i={2} />
+        </Section>
         <HaveANiceDay />
       </section>
     </motion.div>

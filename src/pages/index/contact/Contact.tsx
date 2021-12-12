@@ -5,11 +5,24 @@ import send from './send';
 import getDate from './getDate';
 import validateEmail from './validateEmail';
 
+import { motion } from 'framer-motion';
+import animation from 'animation';
+
 import { contact } from '@content/index';
 
 export default function Main(): JSX.Element {
   return (
-    <section className="contact">
+    <motion.section
+      variants={{
+        from: { opacity: 0 },
+        to: { opacity: 1 }
+      }}
+      initial="from"
+      exit="from"
+      animate="to"
+      transition={{ type: animation.function, duration: animation.duration }}
+      className="contact"
+    >
       <div className="contact__content">
         <div className="contact__box contact__box--1">
           <h2 className="contact__title">{contact.box1.title}</h2>
@@ -41,6 +54,6 @@ export default function Main(): JSX.Element {
           </div>
         </form>
       </div>
-    </section>
+    </motion.section>
   );
 }

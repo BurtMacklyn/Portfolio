@@ -9,7 +9,7 @@ export default function HeaderTag({ close }: { close?: boolean }): JSX.Element {
       className="header__tag--wrapper"
       variants={{
         from: { transform: `translateX(0%) translateY(${close ? '' : '-'}50%)`, opacity: 0 },
-        to: { transform: `translateX(-100%) translateY(${close ? '' : '-'}50%)`, opacity: 1 }
+        to: { transform: `translateX(-50%) translateY(${close ? '' : '-'}50%)`, opacity: 1 }
       }}
       initial="from"
       exit="from"
