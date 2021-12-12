@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 import animation from 'animation';
 import random from './sentence';
 
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Main(): JSX.Element {
   const [sentence, setSentence] = useState('Have a nice day!');
