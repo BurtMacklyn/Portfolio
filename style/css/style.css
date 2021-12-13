@@ -79,6 +79,9 @@ svg * {
 section {
   position: relative; }
 
+body {
+  overscroll-behavior-y: none; }
+
 .footer {
   background-color: #1b1d21; }
   .footer__name {

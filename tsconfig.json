@@ -44,14 +44,6 @@
     "useUnknownInCatchVariables": true,
     "watch": true,
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@content/*": ["./src/content/*"],
-      "@src/*": ["./src/*"],
-      "@index/*": ["./src/pages/index/*"],
-      "@projects/*": ["./src/pages/projects/*"],
-      "@experience/*": ["./src/pages/experience/*"],
-      "@about/*": ["./src/pages/about/*"],
-      "@pages/*": ["./src/pages/*"],
       "@style": ["./style/css/style.css"]
     },
     "incremental": true

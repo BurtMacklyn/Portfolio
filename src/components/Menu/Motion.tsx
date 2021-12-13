@@ -1,7 +1,7 @@
 import React, { ReactNode, ReactPortal } from 'react';
 
 import { motion } from 'framer-motion';
-import animation from 'animation';
+import animation from 'src/config/animation';
 
 export default function Motion({ children, i }: { children: ReactNode | ReactPortal; i: number }): JSX.Element {
   return (

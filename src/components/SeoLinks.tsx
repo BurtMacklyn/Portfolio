@@ -29,11 +29,11 @@ const sizes = [
   '1136-640'
 ];
 
-export default function SeoLinks({}): JSX.Element {
+export default function SeoLinks(): JSX.Element {
   return (
     <>
       {sizes.map(size => (
-        <link rel="apple-touch-startup-image" href={`icons/apple-splash-${size}.jpg`} />
+        <link key={sizes.indexOf(size)} rel="apple-touch-startup-image" href={`icons/apple-splash-${size}.jpg`} />
       ))}
     </>
   );
