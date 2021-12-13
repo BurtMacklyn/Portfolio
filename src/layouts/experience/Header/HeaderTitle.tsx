@@ -1,9 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import NavLink from './NavLink';
 import animation from 'src/config/animation';
+import { motion } from 'framer-motion';
+import { header } from 'src/content/experience';
 
-export default function NavLinks(): JSX.Element {
+export default function HeaderTitle(): JSX.Element {
   return (
     <motion.div
       variants={{
@@ -15,12 +15,7 @@ export default function NavLinks(): JSX.Element {
       animate="to"
       transition={{ type: animation.function, duration: animation.duration / 2 }}
     >
-      <ul className="nav__links">
-        <NavLink name="Overview" href="/" />
-        <NavLink name="Experience" />
-        <NavLink name="Projects" />
-        <NavLink name="About" />
-      </ul>
+      <h1 className="header__title">{header.title}</h1>
     </motion.div>
   );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { motion } from 'framer-motion';
-import animation from 'animation';
-import Tag from '@components/Tag';
+import animation from 'src/config/animation';
+import Tag from 'src/components/Tag/Layout';
 
-export default function Main({ i }: { i: 1 | 2 }): JSX.Element {
+export default function NavTag({ i }: { i: 1 | 2 }): JSX.Element {
   return (
     <motion.div
       className={`nav__tag nav__tag--${i === 1 ? 'open' : 'close'}`}

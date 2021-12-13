@@ -1,17 +1,31 @@
-import React from 'react';
-
-import Experience from '@experience/Main';
-import Motion from '@components/Motion';
+import Motion from 'src/components/Motion/Layout';
 
 import Head from 'next/head';
 
-export default function Main(): JSX.Element {
+import React from 'react';
+
+import Nav from 'src/components/Nav/Layout';
+import Menu from 'src/components/Menu/Layout';
+import Footer from 'src/components/Footer/Layout';
+import MobileNav from 'src/components/MobileNav/Layout';
+
+import Header from 'src/layouts/experience/Header/Layout';
+import Content from 'src/layouts/experience/CardsSection/Layout';
+
+export default function Layout(): JSX.Element {
   return (
     <Motion>
       <Head>
         <title>Cooper Runyan | Experience</title>
       </Head>
-      <Experience />
+      <main className="experience">
+        <MobileNav />
+        <Nav />
+        <Menu active="experience" />
+        <Header />
+        <Content />
+        <Footer />
+      </main>
     </Motion>
   );
 }
