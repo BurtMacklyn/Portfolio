@@ -5,12 +5,12 @@ import { header } from 'src/content/index';
 import { motion } from 'framer-motion';
 import animation from 'src/config/animation';
 
-export default function String({ number }: { number: 1 | 2 }): JSX.Element {
+export default function String({ i }: { i: 1 | 2 }): JSX.Element {
   return (
     <motion.div
-      className={`header__string header__string--${number}`}
+      className={`header__string header__string--${i}`}
       variants={{
-        from: { transform: `translateX(${number === 1 ? '' : '-'}100%)`, opacity: 0 },
+        from: { transform: `translateX(${i === 1 ? '' : '-'}100%)`, opacity: 0 },
         to: { transform: 'translateX(0%)', opacity: 1 }
       }}
       initial="from"
@@ -18,7 +18,7 @@ export default function String({ number }: { number: 1 | 2 }): JSX.Element {
       animate="to"
       transition={{ type: animation.function, duration: animation.duration / 2 }}
     >
-      <code className={`header__string header__string--${number}`}>{header[`tag${number}`]}</code>
+      <code className={`header__string header__string--${i}`}>{header[`tag${i}`]}</code>
     </motion.div>
   );
 }

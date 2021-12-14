@@ -21,7 +21,7 @@ export default function Layout(): JSX.Element {
       </Head>
       <>
         <MobileNav />
-        <Menu active="index" />
+        <Menu active="overview" />
         <main className="index">
           <Header />
           <About />

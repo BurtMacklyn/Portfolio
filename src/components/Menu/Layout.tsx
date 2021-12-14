@@ -17,15 +17,13 @@ export default function Menu({ active }: { active: string }): JSX.Element {
       <ul className="menu__btns">
         {names.map(name => (
           <Motion i={names.indexOf(name)} key={names.indexOf(name)}>
-            <MenuLink active={active} name={name} i={names.indexOf(name)} />
+            <MenuLink active={active} name={name} />
           </Motion>
         ))}
         <Motion i={5} key={5}>
-          <li className="menu__btn--5">
-            <button title="Back to top" className="menu__btn menu__btn--top" onClick={scrollTop}>
-              <icons.ChevronUpOutline color={'inherit'} title={'Back to top'} />
-            </button>
-          </li>
+          <button title="Back to top" className="menu__btn menu__btn--top" onClick={scrollTop}>
+            <icons.ChevronUpOutline color={'inherit'} title={'Back to top'} />
+          </button>
         </Motion>
       </ul>
     </div>

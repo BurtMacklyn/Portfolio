@@ -27,7 +27,7 @@ export default function App({ Component, pageProps, router }: AppProps): JSX.Ele
         canonical={url}
       />
 
-      <AnimatePresence exitBeforeEnter initial onExitComplete={() => window.scrollTo(0, 0)}>
+      <AnimatePresence exitBeforeEnter initial onExitComplete={() => window.scrollTo({ top: 0, behavior: 'auto' })}>
         <Component {...pageProps} canonical={url} key={url} />
       </AnimatePresence>
     </>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import animation from 'src/config/animation';
-import Link from 'next/link';
+import Link from 'src/components/Link';
 
 export default function Layout(): JSX.Element {
   return (
@@ -17,13 +17,13 @@ export default function Layout(): JSX.Element {
       className="links"
     >
       <div className="links__content">
-        <Link href="/experience" passHref scroll={false}>
+        <Link href="/experience">
           <a className="links__link">Experience</a>
         </Link>
-        <Link href="/projects" passHref scroll={false}>
+        <Link href="/projects">
           <a className="links__link">Projects</a>
         </Link>
-        <Link href="/about" passHref scroll={false}>
+        <Link href="/about">
           <a className="links__link">About</a>
         </Link>
       </div>

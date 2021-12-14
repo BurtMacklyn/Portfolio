@@ -25,14 +25,6 @@
     pointer-events: none;
     overflow: hidden;
 
-    // @include mq(lg) {
-    //   background: #0099ff;
-    //   filter: blur(35rem);
-    //   width: 44rem;
-    //   max-width: 100vw;
-    //   // animation: grow2 2s $tf both;
-    // }
-
     @include mq(md) {
       width: 48rem;
     }

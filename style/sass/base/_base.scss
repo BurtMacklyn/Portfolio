@@ -9,7 +9,6 @@
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
 
   @include mq(md) {
     font-size: 52.5%;
@@ -82,8 +81,6 @@ ion-icon,
 svg {
   pointer-events: none;
   color: inherit;
-  // fill: $clr-white;
-  // stroke: $clr-white;
   user-select: none;
 }
 
