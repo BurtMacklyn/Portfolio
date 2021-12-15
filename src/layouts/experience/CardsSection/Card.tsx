@@ -8,12 +8,12 @@ import Express from './Icons/Express';
 import NodeJs from './Icons/NodeJs';
 import Vercel from './Icons/Vercel';
 import Next from './Icons/Next';
-import Link from 'next/link';
+import Link from 'src/components/Link';
 
 export default function Card({ title, decription, link }: { title: string; decription: string; link: string | null }): JSX.Element {
   const Links = () =>
     link ? (
-      <Link href={link} passHref scroll={false}>
+      <Link href={link}>
         <a target="_blank" className="experience__link">
           {link}
         </a>

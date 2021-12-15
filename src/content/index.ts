@@ -1,7 +1,7 @@
 export const header = {
   tag1: "'Hello world, I am'",
-  firstname: 'Cooper',
-  lastname: 'Runyan',
+  firstname: 'First',
+  lastname: 'Last',
   tag2: "'A web designer and developer'",
 
   links: {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as icons from 'react-ionicons';
-import Link from 'next/link';
+import Link from 'src/components/Link';
 
 export default function MobileNav(): JSX.Element {
   return (
@@ -15,26 +15,26 @@ export default function MobileNav(): JSX.Element {
         </div>
       </label>
       <div role="navigation" className="mobile-nav__content">
-        <Link href="/" passHref scroll={false}>
+        <Link href="/">
           <a className="mobile-nav__row">
             <icons.HomeOutline />
             <div>Overview</div>
             &nbsp;
           </a>
         </Link>
-        <Link href="/experience" passHref scroll={false}>
+        <Link href="/experience">
           <a className="mobile-nav__row">
             <icons.TerminalOutline />
             <div>Experience</div>&nbsp;
           </a>
         </Link>
-        <Link href="/projects" passHref scroll={false}>
+        <Link href="/projects">
           <a className="mobile-nav__row">
             <icons.RocketOutline />
             <div>Projects</div>&nbsp;
           </a>
         </Link>
-        <Link href="/about" passHref scroll={false}>
+        <Link href="/about">
           <a className="mobile-nav__row">
             <icons.PersonOutline />
             <div>About</div>&nbsp;

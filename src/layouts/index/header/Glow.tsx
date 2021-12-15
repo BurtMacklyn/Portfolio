@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import breakpoints from 'src/config/breakpoints';
 import animation from 'src/config/animation';
 
-import { useMediaQuery } from '@react-hook/media-query';
+import useMediaQuery from 'src/hooks/useMediaQuery';
 
 export default function Glow(): JSX.Element {
   const lg = useMediaQuery(breakpoints.lg);

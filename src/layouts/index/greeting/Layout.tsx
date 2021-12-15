@@ -3,17 +3,32 @@ import { motion } from 'framer-motion';
 import animation from 'src/config/animation';
 import random from './sentence';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Layout(): JSX.Element {
   const [sentence, setSentence] = useState('Have a nice day!');
+  const isMounted = useRef(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setSentence(random());
-    }, 10000);
+    setSentence(random());
+  }, []);
+
+  useEffect(() => {
+    isMounted.current = true;
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    // prettier-ignore
+    (async () => { return new Promise<void>(resolve => setTimeout(() => { resolve() }, 10000)); })().then(() => {
+      // Generates a promise that resloves after 10 seconds
+      isMounted.current && setSentence(random());
+    })
+    ;
     return () => {};
-  });
+  }, []);
 
   return (
     <section className="have-a-nice-day">

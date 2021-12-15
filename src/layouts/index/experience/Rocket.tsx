@@ -2,8 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import animation from 'src/config/animation';
 
-//#ABB2BF
-
 export default function Svg(): JSX.Element {
   return (
     <motion.svg

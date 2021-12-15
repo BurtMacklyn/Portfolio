@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import Link from 'src/components/Link';
 
 export default function FooterLink({ name, href }: { name: string; href?: string }): JSX.Element {
   return (

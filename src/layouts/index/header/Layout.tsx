@@ -1,32 +1,23 @@
 import React from 'react';
 
-import Socials from './Socials';
-import Nav from 'src/components/Nav/Layout';
+import Header from './Header';
 
 import Tag from './Tag';
 import Glow from './Glow';
 import String from './String';
 import Name from './Name';
 
-export default function Header(): JSX.Element {
+export default function Layout(): JSX.Element {
   return (
-    <header className="header">
-      <Nav />
-
-      <div className="header__contents">
-        <Tag />
-
-        <div className="header__sub-contents">
-          <String number={1} />
-          <Name />
-          <Glow />
-          <String number={2} />
-        </div>
-
-        <Tag close />
+    <Header>
+      <Tag />
+      <div className="header__sub-contents">
+        <String i={1} />
+        <Name />
+        <Glow />
+        <String i={2} />
       </div>
-
-      <Socials />
-    </header>
+      <Tag close />
+    </Header>
   );
 }

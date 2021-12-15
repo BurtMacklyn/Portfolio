@@ -1,5 +1,5 @@
 import * as icons from 'react-ionicons';
-import Link from 'next/link';
+import Link from 'src/components/Link';
 
 import animation from 'src/config/animation';
 
@@ -36,11 +36,11 @@ export default function SocialLink({ i }: { i: number }): JSX.Element {
         animationDelay: `${(animation.duration / 2 / 3) * i + 0.3 / i + animation.socialOutlineDuration}s`
       }}
       transition={{
-        type: animation.function,
+        type: 'ease',
         duration: animation.duration / 3
       }}
     >
-      <Link href={href} passHref scroll={false}>
+      <Link href={href}>
         <a target="_blank" rel="noreferrer" title={title} className={`socials__icon socials__icon--${i}`}>
           {i === 1 && <icons.LogoGithub color={'inherit'} height={'3.2rem'} width={'3.2rem'} />}
           {i === 2 && <icons.LogoCodepen color={'inherit'} height={'3.2rem'} width={'3.2rem'} />}
