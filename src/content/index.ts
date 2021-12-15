@@ -5,11 +5,11 @@ export const header = {
   tag2: "'A web designer and developer'",
 
   links: {
-    github: 'https://www.github.com/BurtMacklyn?tab=repositories',
-    codepen: 'https://codepen.io/burtmacklyn',
+    github: 'https://www.github.com/cooperrunyan?tab=repositories',
+    codepen: 'https://codepen.io/cooperrunyan',
     stackoverflow: 'https://stackoverflow.com/story/cooperrunyan',
     email: 'mailto:cooperrunyan@gmail.com',
-    npm: 'https://www.npmjs.com/~burtmacklyn',
+    npm: 'https://www.npmjs.com/~cooperrunyan',
     linkedin: 'https://www.linkedin.com/in/cooper-runyan-52a343225/'
   }
 };
