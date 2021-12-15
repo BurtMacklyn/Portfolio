@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { error } from 'src/content/global';
 import Router from 'next/router';
 import { motion } from 'framer-motion';
 import animation from 'src/config/animation';
@@ -23,7 +22,7 @@ export default function Layout(): JSX.Element {
           onClick={() => Router.back()}
           className="back"
         >
-          {error.backBtn}
+          &larr; Back
         </motion.div>
         <header className="header">
           <div className="code__wrapper">
@@ -38,7 +37,7 @@ export default function Layout(): JSX.Element {
               transition={{ type: 'linear', duration: animation.duration / 2 }}
               className="code"
             >
-              {error.code}
+              404
             </motion.span>
           </div>
           <motion.span
@@ -64,7 +63,7 @@ export default function Layout(): JSX.Element {
               transition={{ type: 'linear', duration: animation.duration / 2 }}
               className="message"
             >
-              {error.message}
+              This page does not exist.. yet!
             </motion.span>
           </div>
         </header>
