@@ -18,8 +18,7 @@ export default function NavLinks(): JSX.Element {
       <ul className="nav__links">
         <NavLink name="Overview" href="/" />
         <NavLink name="Experience" />
-        <NavLink name="Projects" />
-        <NavLink name="About" />
+        <NavLink name="Resume" />
       </ul>
     </motion.div>
   );

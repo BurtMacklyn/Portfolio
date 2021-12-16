@@ -11,7 +11,7 @@ const scrollTop = function (): void {
 };
 
 export default function Menu({ active }: { active: string }): JSX.Element {
-  const names = ['Overview', 'Experience', 'Projects', 'About'];
+  const names = ['Overview', 'Experience', 'Resume'];
   return (
     <div role="navigation" className="menu">
       <ul className="menu__btns">
