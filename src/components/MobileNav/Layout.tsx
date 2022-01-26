@@ -28,16 +28,10 @@ export default function MobileNav(): JSX.Element {
             <div>Experience</div>&nbsp;
           </a>
         </Link>
-        <Link href="/projects">
+        <Link href="/resume">
           <a className="mobile-nav__row">
             <icons.RocketOutline />
-            <div>Projects</div>&nbsp;
-          </a>
-        </Link>
-        <Link href="/about">
-          <a className="mobile-nav__row">
-            <icons.PersonOutline />
-            <div>About</div>&nbsp;
+            <div>Resume</div>&nbsp;
           </a>
         </Link>
       </div>

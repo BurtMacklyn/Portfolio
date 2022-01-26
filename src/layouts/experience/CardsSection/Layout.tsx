@@ -3,7 +3,6 @@ import React from 'react';
 import Wave from './Wave';
 import Card from './Card';
 
-import { experience as content } from 'src/content/experience';
 import { motion } from 'framer-motion';
 
 import animation from 'src/config/animation';
@@ -25,21 +24,21 @@ export default function Layout(): JSX.Element {
         <Wave className="experience-section__wave experience-section__wave--visible" />
       </div>
       <div className="experience-section">
-        <Card title={'React'} decription={content.react.description} link={content.react.link} />
-        <Card title={'Next'} decription={content.next.description} link={content.next.link} />
-        <Card title={'Javascript'} decription={content.javascript.description} link={content.javascript.link} />
-        <Card title={'NodeJs'} decription={content.node.description} link={content.node.link} />
-        <Card title={'Heroku'} decription={content.heroku.description} link={content.heroku.link} />
-        <Card title={'Sass'} decription={content.sass.description} link={content.sass.link} />
-        <Card title={'Figma'} decription={content.figma.description} link={content.figma.link} />
-        <Card title={'Css'} decription={content.css.description} link={content.css.link} />
-        <Card title={'Html'} decription={content.html.description} link={content.html.link} />
-        <Card title={'Express'} decription={content.express.description} link={content.express.link} />
-        <Card title={'MongoDB'} decription={content.mongo.description} link={content.mongo.link} />
-        <Card title={'Typescript'} decription={content.typescript.description} link={content.typescript.link} />
-        <Card title={'Java'} decription={content.java.description} link={content.java.link} />
-        <Card title={'Netlify'} decription={content.netlify.description} link={content.netlify.link} />
-        <Card title={'Vercel'} decription={content.vercel.description} link={content.vercel.link} />
+        <Card title={'React'} />
+        <Card title={'Next'} />
+        <Card title={'Javascript'} />
+        <Card title={'NodeJs'} />
+        <Card title={'Heroku'} />
+        <Card title={'Sass'} />
+        <Card title={'Figma'} />
+        <Card title={'Css'} />
+        <Card title={'Html'} />
+        <Card title={'Express'} />
+        <Card title={'MongoDB'} />
+        <Card title={'Typescript'} />
+        <Card title={'Java'} />
+        <Card title={'Netlify'} />
+        <Card title={'Vercel'} />
       </div>
     </motion.div>
   );

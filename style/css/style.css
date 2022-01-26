@@ -1107,11 +1107,6 @@ body {
         font-size: 3.6rem;
         line-height: 125%;
         letter-spacing: -0.045em; }
-      .experience .experience-section__card__side--2 {
-        transform: rotateY(180deg);
-        justify-content: flex-start;
-        gap: 1.2rem;
-        padding: 4.8rem; }
     .experience .experience-section__card--icon {
       align-self: flex-end;
       max-height: 12rem; }
@@ -1126,14 +1121,8 @@ body {
       letter-spacing: -0.045em; }
     .experience .experience-section__card--wrapper {
       display: flex;
-      align-items: stretch;
-      justify-content: stretch; }
-      .experience .experience-section__card--wrapper:hover .experience-section__card__side {
-        outline-offset: -1.6rem; }
-        .experience .experience-section__card--wrapper:hover .experience-section__card__side--1 {
-          transform: rotateY(180deg); }
-        .experience .experience-section__card--wrapper:hover .experience-section__card__side--2 {
-          transform: rotateY(0deg); }
+      justify-content: stretch;
+      align-items: stretch; }
 
 .experience .experience__link {
   color: #61afe3;
