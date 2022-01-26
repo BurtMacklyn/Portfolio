@@ -1,0 +1,84 @@
+section.codepen {
+  margin-top: 12rem;
+
+  .bg-text {
+    color: $clr-white;
+    opacity: 0.1;
+    font-size: 14.4rem;
+    font-weight: 400;
+    letter-spacing: -0.075em;
+    line-height: 1.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .section {
+    padding: 9.6rem;
+    padding-top: 12rem;
+    background: linear-gradient(to top, $clr-deep-blue, transparent);
+    display: flex;
+    gap: 2.4rem;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+
+    @include mq(md) {
+      padding-inline: 3.2rem;
+    }
+
+    & > * {
+      flex: 1 1 36rem;
+    }
+  }
+
+  .waves {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1440 / 154;
+    color: $clr-deep-blue;
+    stroke: currentColor;
+    fill: currentColor;
+
+    & .visible-wave {
+      // This one is shown with position: absolute to use z-index
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    & .invisible-wave {
+      // This one maintains size
+      position: relative;
+      opacity: 0;
+    }
+  }
+
+  .card {
+    cursor: pointer;
+
+    &:hover {
+      .tooltip {
+        opacity: 0.5;
+      }
+    }
+
+    .tooltip {
+      position: absolute;
+      top: -1.6rem;
+      border: 2px solid rgba($clr-white, 0.75);
+      opacity: 0;
+      transition: all 0.2s $tf;
+      backdrop-filter: blur(24px);
+      box-sizing: content-box;
+      padding: 0.8rem 1rem;
+      border-radius: 100vh;
+      width: max-content;
+      box-shadow: 0.6rem 0.6rem 1rem rgba(black, 0.2);
+      transform: translate(-0%, -100%);
+      left: 0%;
+      pointer-events: none;
+    }
+  }
+}

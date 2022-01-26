@@ -1,0 +1,19 @@
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100vmax;
+  z-index: -1;
+
+  @include mq(lg) {
+    background: radial-gradient(rgba(0, 153, 255, 0.15), transparent 65%);
+    width: 125vmax;
+  }
+
+  width: 100vmax;
+
+  aspect-ratio: 1;
+
+  background: radial-gradient(rgba(0, 153, 255, 0.25), transparent 65%);
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '@style';
+import '../source/style/main.scss';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
@@ -11,8 +11,8 @@ export default function App({ Component, pageProps, router }: AppProps): JSX.Ele
   return (
     <>
       <Head>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content="A marketing and about site for web designer and developer, Cooper Runyan" />
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta name='description' content='A marketing and about site for web designer and developer, Cooper Runyan' />
         <title>Cooper Runyan | Portfolio</title>
       </Head>
       <DefaultSeo
@@ -22,7 +22,7 @@ export default function App({ Component, pageProps, router }: AppProps): JSX.Ele
           description: 'The personal website for Cooper Runyan, developer.',
           url,
           site_name: 'Cooper Runyan | Portfolio',
-          images: []
+          images: [],
         }}
         canonical={url}
       />

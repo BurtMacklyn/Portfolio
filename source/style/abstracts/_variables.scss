@@ -1,0 +1,45 @@
+$font-family: 'Outfit', sans-serif;
+$font-family--code: 'Consolas', 'Anonymous Pro', monospace;
+$font-size: 1.6rem;
+
+$clr-black: #121317;
+$clr-white: #e4ebf7;
+$clr-grey: #6a6f79;
+
+$clr-text-dark: $clr-black;
+$clr-text-light: $clr-white;
+
+$clr-deep-blue: #103056;
+$clr-blue: #3badf9;
+$clr-red: #e94860;
+
+$clr-footer: #202329;
+$clr-footer: rgba(0, 0, 0, 0.15);
+$clr-footer--highlight: #abb2bf1a;
+
+$animation-delay: 0.3s;
+$animation-social-outline: 1s;
+$animation-social-icons: 0.2s;
+$animation-menu-btns: 0.3s;
+
+$breakpoints: (
+  xs: calc(400em / 16),
+  sm: calc(600em / 16),
+  md: calc(900em / 16),
+  lg: calc(1400em / 16),
+  xl: calc(1800em / 16),
+);
+
+$blur-bg: rgba(0, 0, 0, 0.18);
+$blur-backdrop-filter: blur(8px);
+
+$transition-duration: 0.2s;
+$transition-timing-function: ease;
+
+$td: $transition-duration;
+$tf: $transition-timing-function;
+
+$border-radius: 0.8rem;
+
+$title__font-size: clamp(6.4rem, 7vw, 9.6rem);
+$title__font-size--small: clamp(4.4rem, 12vw, 6.4rem);

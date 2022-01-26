@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  animation-delay: $animation-delay;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include mq(md) {
+    font-size: 52.5%;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  user-select: none;
+}
+
+::selection {
+  background: rgba($clr-white, 0.1);
+  color: $clr-white;
+}
+
+body {
+  font-family: $font-family;
+  color: $clr-text-light;
+  box-sizing: border-box;
+  font-size: $font-size;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $clr-black !important;
+}
+
+code,
+.code {
+  color: $clr-grey;
+  font-family: $font-family--code;
+  text-decoration: none;
+  list-style: none;
+}
+
+.tag {
+  color: $clr-grey;
+  user-select: none;
+  width: fit-content;
+}
+
+::-webkit-scrollbar {
+  width: 1.6rem;
+
+  &-track {
+    background-color: $clr-black;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  &-thumb {
+    background-color: $clr-grey;
+
+    &:hover {
+      background-color: $clr-blue;
+    }
+
+    border-radius: 100vw;
+    border: 0.4rem solid $clr-black;
+  }
+}
+
+ion-icon,
+svg {
+  pointer-events: none;
+  color: inherit;
+  user-select: none;
+}
+
+svg,
+svg * {
+  user-select: none;
+}
+
+section {
+  position: relative;
+}
+
+body {
+  height: 1000vh;
+}
