@@ -28,7 +28,6 @@
     transition: all 0.2s #{$tf};
 
     li {
-      // background-color: black;
       border: 2px solid rgba($clr-white, 0.5);
       border-radius: 100vh;
       position: relative;
@@ -121,17 +120,17 @@
 
 @keyframes pulse {
   from {
-    outline: 2px solid transparent;
+    outline: 0.2rem solid transparent;
     color: $clr-white;
   }
 
   50% {
-    outline: 2px solid $clr-blue;
+    outline: 0.2rem solid $clr-blue;
     color: $clr-blue;
   }
 
   to {
-    outline: 2px solid transparent;
+    outline: 0.2rem solid transparent;
     color: $clr-white;
   }
 }

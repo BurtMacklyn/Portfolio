@@ -1,10 +1,10 @@
 import type React from 'react';
 import NextLink from 'next/link';
 
-export function Link({ children, href, newTab, style }: { children: React.ReactNode; href: string; newTab?: boolean; style?: React.CSSProperties }) {
+export function Link({ children, href, newTab, style, className }: { href: string; newTab?: boolean } & React.HTMLAttributes<HTMLAnchorElement>) {
   return (
     <NextLink passHref scroll={false} href={href}>
-      <a target={newTab ? '_blank' : ''} style={style}>
+      <a target={newTab ? '_blank' : ''} style={style} className={className}>
         {children}
       </a>
     </NextLink>

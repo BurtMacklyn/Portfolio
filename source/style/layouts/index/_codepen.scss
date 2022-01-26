@@ -55,30 +55,35 @@ section.codepen {
     }
   }
 
-  .card {
-    cursor: pointer;
+  .contents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
 
-    &:hover {
-      .tooltip {
-        opacity: 0.5;
-      }
+    & > * {
+      flex: 1 0 36rem;
+      min-width: 30%;
     }
 
-    .tooltip {
-      position: absolute;
-      top: -1.6rem;
-      border: 2px solid rgba($clr-white, 0.75);
-      opacity: 0;
-      transition: all 0.2s $tf;
-      backdrop-filter: blur(24px);
-      box-sizing: content-box;
-      padding: 0.8rem 1rem;
-      border-radius: 100vh;
-      width: max-content;
-      box-shadow: 0.6rem 0.6rem 1rem rgba(black, 0.2);
-      transform: translate(-0%, -100%);
-      left: 0%;
-      pointer-events: none;
+    .card {
+      background: $blur-bg;
+      backdrop-filter: $blur-backdrop-filter;
+      border-radius: $border-radius;
+      box-shadow: 0 1rem 2.4rem 0 rgba(black, 0.07);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      overflow: hidden;
+      padding: 1.6rem;
+
+      &__img {
+        object-fit: cover;
+        aspect-ratio: 1;
+        width: 7.5rem;
+        border-radius: $border-radius;
+      }
     }
   }
 }

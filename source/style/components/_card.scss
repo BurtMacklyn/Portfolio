@@ -1,3 +1,16 @@
+a:focus-visible .card * {
+  animation-play-state: unset !important;
+}
+
+a:focus-visible .card {
+  transform: scale(1.03) translateY(-2%);
+  box-shadow: 0 1.4rem 2.4rem 0 rgba(black, 0.12);
+}
+
+a.no-outline:focus-visible {
+  outline: 0;
+}
+
 .card {
   // max-width: 36rem;
   background: $blur-bg;
@@ -15,11 +28,13 @@
     animation-play-state: paused !important;
   }
 
-  &:hover * {
+  &:hover *,
+  &:focus-visible * {
     animation-play-state: unset !important;
   }
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     transform: scale(1.03) translateY(-2%);
     box-shadow: 0 1.4rem 2.4rem 0 rgba(black, 0.12);
   }
