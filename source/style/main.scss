@@ -8,5 +8,7 @@
 @import 'components/nav';
 @import 'components/directions';
 
+@import 'layouts/error';
+
 // prettier-ignore
 .App.overview { @import 'pages/index'; }

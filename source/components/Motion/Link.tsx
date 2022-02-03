@@ -1,10 +1,11 @@
-import { motion, Variant } from 'framer-motion';
+import { motion, MotionStyle, Variant } from 'framer-motion';
 import { animation } from 'source/config';
 
 import { Link as StaticLink } from 'source/components';
 
 import type { MotionSettings } from './types';
 import { defaultOptions } from './options';
+import type { HTMLAttributes } from 'react';
 
 export function Link({
   className,
@@ -13,15 +14,11 @@ export function Link({
   newTab,
   href,
   style,
-  astyle,
-}: {
-  className?: string;
-  children: React.ReactNode;
+}: HTMLAttributes<HTMLAnchorElement> & {
   options?: { from: Variant; to: Variant; settings?: MotionSettings };
   newTab?: boolean;
   href: string;
-  style?: any;
-  astyle?: any;
+  style: MotionStyle;
 }): JSX.Element {
   return (
     <motion.span
@@ -37,7 +34,7 @@ export function Link({
         duration: animation.duration / (options?.settings?.nth || 1),
         delay: animation.globalDelay + (options?.settings?.delay || 0),
       }}>
-      <StaticLink style={astyle} newTab={!!newTab} href={href}>
+      <StaticLink style={style} newTab={!!newTab} href={href}>
         {children}
       </StaticLink>
     </motion.span>

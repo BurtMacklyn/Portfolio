@@ -3,17 +3,14 @@ import { animation } from 'source/config';
 
 import type { MotionSettings } from './types';
 import { defaultOptions } from './options';
-import type { MouseEventHandler } from 'react';
+import type { HTMLAttributes, MouseEventHandler } from 'react';
 
 export function Button({
   className,
   children,
   options = defaultOptions,
   onClick,
-}: {
-  onClick: MouseEventHandler<HTMLButtonElement>;
-  className?: string;
-  children: React.ReactNode;
+}: HTMLAttributes<HTMLButtonElement> & {
   options?: { from: Variant; to: Variant; settings?: MotionSettings };
 }): JSX.Element {
   return (

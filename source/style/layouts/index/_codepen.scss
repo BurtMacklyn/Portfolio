@@ -61,15 +61,16 @@ section.codepen {
     gap: 1.6rem;
 
     & > * {
-      flex: 1 0 36rem;
-      min-width: 30%;
+      flex: 1 0 32rem;
+      min-width: 20%;
     }
 
     .card {
       background: $blur-bg;
       backdrop-filter: $blur-backdrop-filter;
       border-radius: $border-radius;
-      box-shadow: 0 1rem 2.4rem 0 rgba(black, 0.07);
+      box-shadow: 0 1rem 2.4rem 0 rgba(black, 0.14);
+      transition: all 0.2s ease-in-out;
 
       display: flex;
       justify-content: space-between;
@@ -77,6 +78,11 @@ section.codepen {
 
       overflow: hidden;
       padding: 1.6rem;
+
+      &:hover {
+        transform: translateY(-5%);
+        box-shadow: 0 1rem 3.2rem 0 rgba(black, 0.24);
+      }
 
       &__img {
         object-fit: cover;

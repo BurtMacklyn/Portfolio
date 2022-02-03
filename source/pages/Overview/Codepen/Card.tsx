@@ -1,12 +1,12 @@
-import { Tag } from 'source/components';
+import { Link } from 'source/components';
 
-export function Card({ children }) {
+export function Card({ children, image, alt, url }: { image: StaticImageData; alt?: string; url: string } & React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className='card'>
-      <div className='tooltip'>Open in Codepen</div>
-      <Tag>div</Tag>
-      <div className='card__content'>{children}</div>
-      <Tag close>div</Tag>
-    </div>
+    <Link href={`https://codepen.io/cooperrunyan/full/${url}`} newTab>
+      <div className='card'>
+        <p className='card__heading'>{children}</p>
+        <img className='card__img' alt={alt ? alt : ''} src={image.src} />
+      </div>
+    </Link>
   );
 }

@@ -23,7 +23,7 @@ const tagOptions = {
     transform: `translate(-50%)`,
   },
   settings: {
-    nth: 2,
+    nth: 1,
   },
 };
 
@@ -36,7 +36,7 @@ const String = ({ children, close }: { children: React.ReactNode; close?: boolea
       transform: 'translate(0%)',
     },
     settings: {
-      nth: 1.5,
+      nth: 1,
     },
   };
 
@@ -48,7 +48,7 @@ const String = ({ children, close }: { children: React.ReactNode; close?: boolea
       transform: 'translate(0%)',
     },
     settings: {
-      nth: 1.5,
+      nth: 1,
     },
   };
   return (

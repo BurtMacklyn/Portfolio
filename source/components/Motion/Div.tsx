@@ -3,14 +3,14 @@ import { animation } from 'source/config';
 
 import type { MotionSettings } from './types';
 import { defaultOptions } from './options';
+import type { HTMLAttributes } from 'react';
 
 export function Div({
   className,
   children,
+  onClick,
   options = defaultOptions,
-}: {
-  className?: string;
-  children?: React.ReactNode;
+}: HTMLAttributes<HTMLDivElement> & {
   options?: { from: Variant; to: Variant; settings?: MotionSettings };
 }): JSX.Element {
   return (
@@ -20,6 +20,7 @@ export function Div({
       initial='from'
       exit='from'
       animate='to'
+      onClick={onClick}
       onAnimationComplete={options?.settings?.finish}
       transition={{
         type: options?.settings?.ease || animation.function,

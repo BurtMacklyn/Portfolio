@@ -3,15 +3,14 @@ import { animation } from 'source/config';
 
 import type { MotionSettings } from './types';
 import { defaultOptions } from './options';
+import type { HTMLAttributes } from 'react';
 
 export function Tag({
   className,
   children,
   options = defaultOptions,
   close,
-}: {
-  className?: string;
-  children: React.ReactNode;
+}: HTMLAttributes<HTMLSpanElement> & {
   options?: { from: Variant; to: Variant; settings?: MotionSettings };
   close?: boolean;
 }): JSX.Element {

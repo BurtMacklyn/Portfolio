@@ -1,6 +1,10 @@
-import { Link } from 'source/components';
 import Wave from './wave.svg';
 import LoadingPreview from 'public/loading-preview.png';
+import SlideTextPreview from 'public/slide-text-preview.png';
+import StickyScrollPreview from 'public/sticky-scroll-preview.png';
+import AnimatedSignaturePreview from 'public/animated-signature-preview.png';
+import TypewriterPreview from 'public/typewriter-preview.png';
+import { Card } from './Card';
 
 export function Codepen() {
   return (
@@ -8,8 +12,20 @@ export function Codepen() {
       <div className='section'>
         <h2 className='bg-text'>Codepens</h2>
         <div className='contents'>
-          <Card image={LoadingPreview} href='https://codepen.io/cooperrunyan/pen/MWOggVJ'>
+          <Card image={LoadingPreview} url='MWOggVJ'>
             Loading Animation
+          </Card>
+          <Card image={SlideTextPreview} url='abVbRQw'>
+            Sliding Text
+          </Card>
+          <Card image={StickyScrollPreview} url='RwjRVzW'>
+            Sticky Scrolling
+          </Card>
+          <Card image={TypewriterPreview} url='qBVNjaB'>
+            Typewriter Animated Text
+          </Card>
+          <Card image={AnimatedSignaturePreview} url='wvPWqdN'>
+            Animated Signature
           </Card>
         </div>
       </div>
@@ -18,16 +34,5 @@ export function Codepen() {
         <Wave className='invisible-wave' />
       </div>
     </section>
-  );
-}
-
-function Card({ children, image, alt, href }: { image: StaticImageData; alt?: string; href: string } & React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <Link href={href} newTab>
-      <div className='card'>
-        <p className='card__heading'>{children}</p>
-        <img className='card__img' alt={alt ? alt : ''} src={image.src} />
-      </div>
-    </Link>
   );
 }
