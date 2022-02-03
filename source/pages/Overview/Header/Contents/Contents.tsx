@@ -6,7 +6,7 @@ export function Contents() {
     <div className='contents'>
       <Motion.Tag options={tagOptions}>header</Motion.Tag>
       <String>'Hello world, I am'</String>
-      <h1 className='title'>Cooper Runyan</h1>
+      <h1 className='title'>Science Exchange</h1>
       <String close>'A web designer and developer'</String>
       <Motion.Tag options={tagOptions} close>
         header

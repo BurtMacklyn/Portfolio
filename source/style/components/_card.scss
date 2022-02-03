@@ -1,7 +1,3 @@
-a:focus-visible .card * {
-  animation-play-state: unset !important;
-}
-
 a:focus-visible .card {
   transform: scale(1.03) translateY(-2%);
   box-shadow: 0 1.4rem 2.4rem 0 rgba(black, 0.12);
@@ -23,15 +19,6 @@ a.no-outline:focus-visible {
   transition: all 0.2s $tf;
   box-shadow: 0 1rem 2.4rem 0 rgba(black, 0.07);
   height: 100%;
-
-  * {
-    animation-play-state: paused !important;
-  }
-
-  &:hover *,
-  &:focus-visible * {
-    animation-play-state: unset !important;
-  }
 
   &:hover,
   &:focus-visible {
