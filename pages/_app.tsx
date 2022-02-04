@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import '../source/style/main.scss';
 import Head from 'next/head';
@@ -7,6 +7,9 @@ import { DefaultSeo } from 'next-seo';
 import { AnimatePresence } from 'framer-motion';
 
 export default function App({ Component, pageProps, router }: AppProps): JSX.Element {
+  useEffect(() => {
+    document.body.style.overflow = 'unset';
+  }, []);
   const url: string = `https://cooperrunyan.vercel.app${router.route}`;
   return (
     <>

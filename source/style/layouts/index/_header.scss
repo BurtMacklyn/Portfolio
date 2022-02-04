@@ -2,7 +2,7 @@ header {
   @import '../../components/glow';
   @import './socials';
 
-  min-height: 100vh;
+  height: 100vh;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -27,6 +27,10 @@ header {
       margin: 1.2rem 0;
       transform: translateX(-50%);
 
+      @include mq(md) {
+        display: none;
+      }
+
       &.close {
         margin: 0.6rem 0;
       }
@@ -39,8 +43,31 @@ header {
       margin-bottom: 1.2rem;
       transform: translateX(-3px);
 
+      @include mq(xs) {
+        font-size: 9.6rem;
+        line-height: 0.9;
+
+        .break {
+          display: unset;
+        }
+      }
+
       // prettier-ignore
       br { display: none; }
     }
   }
+  .signature {
+    position: absolute;
+    top: 3.2rem;
+    left: 6.4rem;
+    opacity: 0.5;
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+}
+
+.break {
+  display: none;
 }

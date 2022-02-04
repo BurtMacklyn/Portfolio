@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Motion, Title, Directions } from 'source/components';
+import { Motion, Title, Directions, Footer } from 'source/components';
 
 import { Header } from './Header';
 import { Codepen } from './Codepen';
@@ -24,6 +24,7 @@ export default function Overview() {
           <Footer />
         </main>
       </> */}
+      <Footer />
     </Motion.Div>
   );
 }

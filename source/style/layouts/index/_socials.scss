@@ -8,6 +8,20 @@
   justify-content: center;
   flex-direction: column;
 
+  @include mq(sm) {
+    bottom: 25px;
+  }
+
+  @include mq(xs) {
+    display: none;
+  }
+
+  .line {
+    @include mq(sm) {
+      display: none;
+    }
+  }
+
   svg {
     stroke: rgba($clr-white, 0.8);
 
@@ -22,6 +36,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 2.4rem;
+    width: 75px;
 
     svg,
     svg * {

@@ -11,6 +11,11 @@ section.codepen {
     position: absolute;
     top: 0;
     left: 0;
+
+    @include mq(sm) {
+      top: 3.2rem;
+      font-size: 9.6rem;
+    }
   }
 
   .section {
@@ -27,38 +32,25 @@ section.codepen {
       padding-inline: 3.2rem;
     }
 
+    @include mq(xs) {
+      padding-inline: 1.2rem;
+    }
+
     & > * {
       flex: 1 1 36rem;
     }
   }
 
   .waves {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1440 / 154;
-    color: $clr-deep-blue;
-    stroke: currentColor;
-    fill: currentColor;
-
-    & .visible-wave {
-      // This one is shown with position: absolute to use z-index
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
-
-    & .invisible-wave {
-      // This one maintains size
-      position: relative;
-      opacity: 0;
-    }
+    @include waves;
+    transform: translateY(-1px);
   }
 
   .contents {
     display: flex;
     flex-wrap: wrap;
     gap: 1.6rem;
+    max-width: calc(1800em / 16);
 
     & > * {
       flex: 1 0 32rem;

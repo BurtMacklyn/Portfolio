@@ -104,4 +104,15 @@
     justify-content: center;
     gap: 3.2rem;
   }
+
+  .signature {
+    position: absolute;
+    bottom: 3.2rem;
+    right: 6.4rem;
+    opacity: 0.5;
+
+    @include mq(md) {
+      display: none;
+    }
+  }
 }

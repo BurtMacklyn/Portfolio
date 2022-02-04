@@ -1,12 +1,12 @@
 import type React from 'react';
-import { Tag as StaticTag, Motion } from 'source/components';
+import { Motion } from 'source/components';
 
 export function Contents() {
   return (
     <div className='contents'>
       <Motion.Tag options={tagOptions}>header</Motion.Tag>
       <String>'Hello world, I am'</String>
-      <h1 className='title'>Science Exchange</h1>
+      <h1 className='title'>Cooper <br className="break" /> Runyan</h1>
       <String close>'A web designer and developer'</String>
       <Motion.Tag options={tagOptions} close>
         header

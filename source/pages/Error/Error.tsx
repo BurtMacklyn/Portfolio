@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 
 import Router from 'next/router';
-import { Motion, Glow } from '../../components';
+import { Motion, Glow, Signature } from 'source/components';
 import SVG from 'public/svg/chevron.svg';
+import { pallette } from 'source/config';
 
 export function Error(): JSX.Element {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
   }, []);
+
   return (
     <main className='error'>
       <Glow />
@@ -23,6 +25,7 @@ export function Error(): JSX.Element {
           <span className='message'>This page does not exist.. yet!</span>
         </Motion.Div>
       </header>
+      <Signature color={pallette.grey} />
     </main>
   );
 }

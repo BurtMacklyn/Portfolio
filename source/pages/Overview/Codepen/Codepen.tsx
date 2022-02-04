@@ -1,4 +1,4 @@
-import Wave from './wave.svg';
+import Wave from 'public/svg/wave.svg';
 import Loading from 'public/codepen/loading.png';
 import SlideText from 'public/codepen/slide-text.png';
 import StickyScroll from 'public/codepen/sticky-scroll.png';
@@ -6,6 +6,7 @@ import AnimatedSignature from 'public/codepen/animated-signature.png';
 import Typewriter from 'public/codepen/typewriter.png';
 import FlexCards from 'public/codepen/flex-cards.png';
 import FlickerText from 'public/codepen/flicker-text.png';
+import GradientHeading from 'public/codepen/gradient-heading.png';
 import { Card } from './Card';
 
 export function Codepen() {
@@ -34,6 +35,9 @@ export function Codepen() {
           </Card>
           <Card image={FlickerText} url='jOardBM'>
             Flickering Text
+          </Card>
+          <Card image={GradientHeading} url='GROjJoe'>
+            Gradient Text
           </Card>
         </div>
       </div>

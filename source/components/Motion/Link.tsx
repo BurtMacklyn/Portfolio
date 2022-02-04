@@ -18,7 +18,7 @@ export function Link({
   options?: { from: Variant; to: Variant; settings?: MotionSettings };
   newTab?: boolean;
   href: string;
-  style: MotionStyle;
+  style?: MotionStyle;
 }): JSX.Element {
   return (
     <motion.span
@@ -28,7 +28,7 @@ export function Link({
       exit='from'
       animate='to'
       onAnimationComplete={options?.settings?.finish}
-      style={style}
+      style={style as any}
       transition={{
         type: options?.settings?.ease || animation.function,
         duration: animation.duration / (options?.settings?.nth || 1),
