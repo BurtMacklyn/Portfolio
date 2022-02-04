@@ -1,22 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
-.error {
+.main {
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
   background-color: $clr-black;
+  background-color: $clr-deep-blue;
   overflow: hidden;
   max-height: 100vh;
   overflow: hidden;
-
-  @import '../components/glow';
-  .glow {
-    display: inline-block;
-    z-index: 0;
-  }
 
   .back {
     position: absolute;
@@ -109,7 +104,7 @@
     position: absolute;
     bottom: 3.2rem;
     right: 6.4rem;
-    opacity: 0.5;
+    // opacity: 0.5;
 
     @include mq(md) {
       display: none;

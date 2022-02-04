@@ -5,10 +5,6 @@ import Error from 'pages/404';
 import Head from 'next/head';
 
 export default function Layout(): JSX.Element {
-  // useEffect(() => {
-  //   document.body.style.overflow = 'unset';
-  // }, []);
-
   return (
     <Motion>
       <Head>

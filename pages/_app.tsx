@@ -7,9 +7,6 @@ import { DefaultSeo } from 'next-seo';
 import { AnimatePresence } from 'framer-motion';
 
 export default function App({ Component, pageProps, router }: AppProps): JSX.Element {
-  useEffect(() => {
-    document.body.style.overflow = 'unset';
-  }, []);
   const url: string = `https://cooperrunyan.vercel.app${router.route}`;
   return (
     <>
@@ -30,7 +27,12 @@ export default function App({ Component, pageProps, router }: AppProps): JSX.Ele
         canonical={url}
       />
 
-      <AnimatePresence exitBeforeEnter initial onExitComplete={() => window.scrollTo({ top: 0, behavior: 'auto' })}>
+      <AnimatePresence
+        exitBeforeEnter
+        initial
+        onExitComplete={() => {
+          window.scrollTo(0, 0);
+        }}>
         <Component {...pageProps} canonical={url} key={url} />
       </AnimatePresence>
     </>

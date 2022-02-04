@@ -2,9 +2,6 @@ import { Link, Motion } from 'source/components';
 import type { PageHref } from 'source/types';
 import Chevron from 'public/svg/chevron.svg';
 import * as scroll from './scroll';
-import { useEffect } from 'react';
-
-import { useRouter } from 'next/router';
 
 type I = 0 | 1 | 2 | 3;
 
@@ -22,29 +19,6 @@ const Tooltip = ({ children }: { children: string }) => (
   </div>
 );
 export function Directions({ next, last }: { next: PageHref; last: PageHref }) {
-  const router = useRouter();
-
-  useEffect(() => {
-    document.addEventListener('keypress', e => {
-      if (e.key === 'h') {
-        router.push(last);
-        pulse(0);
-      }
-      if (e.key === 'j') {
-        scroll.down();
-        pulse(1);
-      }
-      if (e.key === 'k') {
-        scroll.up();
-        pulse(2);
-      }
-      if (e.key === 'l') {
-        router.push(next);
-        pulse(3);
-      }
-    });
-  }, []);
-
   return (
     <List>
       <Item i={0}>

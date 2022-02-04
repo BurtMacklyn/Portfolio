@@ -6,27 +6,29 @@ import SVG from 'public/svg/chevron.svg';
 import { pallette } from 'source/config';
 
 export function Error(): JSX.Element {
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-  }, []);
-
   return (
-    <main className='error'>
-      <Glow />
-      <Motion.Div options={backOptions} onClick={() => Router.back()} className='back'>
-        <SVG style={{ transform: 'rotate(-90deg)' }} /> Back
+    <div className='App error'>
+      <Motion.Div
+        className='main'
+        options={{
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        }}>
+        <Motion.Div options={backOptions} onClick={() => Router.back()} className='back'>
+          <SVG style={{ transform: 'rotate(-90deg)' }} /> Back
+        </Motion.Div>
+        <header className='header'>
+          <Motion.Div options={errorOptions} className='code__wrapper'>
+            <span className='code'>404</span>
+          </Motion.Div>
+          <Motion.Span options={lineOptions} className='split'></Motion.Span>
+          <Motion.Div options={messageOptions} className='message__wrapper'>
+            <span className='message'>This page does not exist.. yet!</span>
+          </Motion.Div>
+        </header>
+        <Signature color={pallette.grey} />
       </Motion.Div>
-      <header className='header'>
-        <Motion.Div options={errorOptions} className='code__wrapper'>
-          <span className='code'>404</span>
-        </Motion.Div>
-        <Motion.Span options={lineOptions} className='split'></Motion.Span>
-        <Motion.Div options={messageOptions} className='message__wrapper'>
-          <span className='message'>This page does not exist.. yet!</span>
-        </Motion.Div>
-      </header>
-      <Signature color={pallette.grey} />
-    </main>
+    </div>
   );
 }
 

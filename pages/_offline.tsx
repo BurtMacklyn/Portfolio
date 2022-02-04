@@ -17,9 +17,9 @@ export default function Offline(): JSX.Element {
         minHeight: '100vh',
         display: 'grid',
         alignItems: 'center',
-        justifyContent: 'center'
-      }}
-    >
+        justifyContent: 'center',
+        overflow: 'hidden',
+      }}>
       You're Offline!
     </header>
   );

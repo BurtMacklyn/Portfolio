@@ -4,10 +4,6 @@ import React, { useEffect } from 'react';
 import Error from 'pages/404';
 
 export default function Layout(): JSX.Element {
-  // useEffect(() => {
-  //   document.body.style.overflow = 'unset';
-  // }, []);
-
   return (
     <Motion>
       <Head>

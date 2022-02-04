@@ -9,7 +9,7 @@
 @import 'components/directions';
 @import 'components/footer';
 
-@import 'layouts/error';
-
 // prettier-ignore
 .App.overview { @import 'pages/index'; }
+// prettier-ignore
+.App.error { @import 'layouts/error'; }
