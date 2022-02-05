@@ -1,5 +1,6 @@
-export default {
+export const animation = {
   duration: 1.5,
-  function: 'cubic-bezier(0.56, 0, 0.45, 1.32)',
+  function: 'ease-in-out',
   socialOutlineDuration: 0.75,
+  globalDelay: 0.1,
 };

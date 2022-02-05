@@ -1,9 +1,0 @@
-export * as Motion from './Motion';
-export { Title } from './Title';
-export { Link } from './Link';
-export { Tag } from './Tag';
-export { Glow } from './Glow';
-export { Nav } from './Nav';
-export { Directions } from './Directions';
-export { Signature } from './Signature';
-export { Footer } from './Footer';

@@ -1,0 +1,76 @@
+header {
+  @import '../../components/glow';
+  @import './socials';
+
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  & > .contents {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    code.string {
+      color: $clr-blue;
+      display: block;
+      width: 100%;
+      margin: 1.2rem 0;
+
+      &.close {
+        align-self: flex-end;
+        text-align: right;
+      }
+    }
+
+    code.tag {
+      margin: 1.2rem 0;
+      transform: translateX(-50%);
+
+      @include mq(md) {
+        display: none;
+      }
+
+      &.close {
+        margin: 0.6rem 0;
+      }
+    }
+
+    h1 {
+      font-size: $title__font-size;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      margin-bottom: 1.2rem;
+      transform: translateX(-3px);
+
+      @include mq(xs) {
+        font-size: 9.6rem;
+        line-height: 0.9;
+
+        .break {
+          display: unset;
+        }
+      }
+
+      // prettier-ignore
+      br { display: none; }
+    }
+  }
+  .signature {
+    position: absolute;
+    top: 3.2rem;
+    left: 6.4rem;
+    opacity: 0.5;
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+}
+
+.break {
+  display: none;
+}

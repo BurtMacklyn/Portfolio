@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import '../source/style/main.scss';
+import 'style/main.scss';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import { AnimatePresence } from 'framer-motion';
 
-export default function App({ Component, pageProps, router }: AppProps): JSX.Element {
-  const url: string = `https://cooperrunyan.vercel.app${router.route}`;
+export default function App({ Component, pageProps, router: route }: AppProps): JSX.Element {
+  const url: string = `https://cooperrunyan.vercel.app${route.route}`;
+
   return (
     <>
       <Head>
