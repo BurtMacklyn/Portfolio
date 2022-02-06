@@ -15,7 +15,7 @@ export function Signature({ color }: { color?: string }) {
               strokeDasharray: 750,
             },
             settings: {
-              nth: 1,
+              nth: 1 / 2,
             },
           }}
           style={{ stroke: color }}
