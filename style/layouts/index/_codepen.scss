@@ -41,11 +41,6 @@ section.codepen {
     }
   }
 
-  .waves {
-    @include waves;
-    transform: translateY(-1px);
-  }
-
   .contents {
     display: flex;
     flex-wrap: wrap;

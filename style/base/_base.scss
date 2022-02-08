@@ -52,26 +52,6 @@ code,
   width: fit-content;
 }
 
-::-webkit-scrollbar {
-  width: 1.6rem;
-
-  &-track {
-    background-color: $clr-black;
-    background-color: rgba(0, 0, 0, 0);
-  }
-
-  &-thumb {
-    background-color: $clr-grey;
-
-    &:hover {
-      background-color: $clr-blue;
-    }
-
-    border-radius: 100vw;
-    border: 0.4rem solid $clr-black;
-  }
-}
-
 ion-icon,
 svg {
   pointer-events: none;

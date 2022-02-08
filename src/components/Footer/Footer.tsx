@@ -1,6 +1,5 @@
-import Wave from 'public/svg/wave.svg';
 import { useEffect, useState } from 'react';
-import { Signature, Link } from 'src/components';
+import { Signature, Link, Wave } from 'src/components';
 import { pallette } from 'src/config';
 
 export function Footer() {
@@ -17,10 +16,7 @@ export function Footer() {
 
   return (
     <div className='footer-container'>
-      <div className='waves' aria-hidden='true'>
-        <Wave className='visible-wave' />
-        <Wave className='invisible-wave' />
-      </div>
+      <Wave up />
       <footer>
         <div className='half'>
           <h3>Cooper Runyan</h3>
@@ -40,7 +36,7 @@ export function Footer() {
           </ul>
           <p className='legal'>Copyright © 2022 Cooper Runyan</p>
         </div>
-        <div className='half'>{isVisible && <Signature color={pallette.white} />}</div>
+        <div className='half'>{isVisible && <Signature className='signature' color={pallette.white} />}</div>
       </footer>
     </div>
   );

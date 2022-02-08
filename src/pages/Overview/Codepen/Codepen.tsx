@@ -1,4 +1,3 @@
-import Wave from 'public/svg/wave.svg';
 import Loading from 'public/codepen/loading.png';
 import SlideText from 'public/codepen/slide-text.png';
 import StickyScroll from 'public/codepen/sticky-scroll.png';
@@ -13,6 +12,7 @@ import DrinkRecipe from 'public/codepen/drink-recipe.png';
 import AgeGuesser from 'public/codepen/age-guesser.png';
 
 import { Card } from './Card';
+import { Wave } from 'src/components';
 
 export function Codepen() {
   return (
@@ -58,10 +58,7 @@ export function Codepen() {
           </Card>
         </div>
       </div>
-      <div className='waves' aria-hidden='true'>
-        <Wave className='visible-wave' />
-        <Wave className='invisible-wave' />
-      </div>
+      <Wave />
     </section>
   );
 }
