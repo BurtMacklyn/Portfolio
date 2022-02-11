@@ -1,0 +1,70 @@
+.technologies {
+  padding: $margin;
+
+  h3 {
+    padding-bottom: 2.4rem;
+    border-bottom: 0.2rem solid $clr-grey;
+  }
+
+  .content {
+    margin-top: 9.6rem;
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+
+    & * > {
+      flex: 1 1 100%;
+    }
+  }
+
+  .section-content {
+    position: relative;
+  }
+
+  .glow {
+    position: absolute;
+    width: 34rem;
+    aspect-ratio: 1;
+    left: 0%;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%);
+    background: $clr-purple;
+    filter: blur(50rem);
+    transition: all 0.4s $tf;
+
+    &.blue {
+      left: unset;
+      top: unset;
+      transform: unset;
+      right: 0;
+      bottom: 0;
+      background: $clr-blue;
+    }
+
+    &.num-3 {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      background: $clr-blue;
+    }
+  }
+
+  .technocard {
+    height: 42rem;
+    padding: 6.4rem;
+    outline: 0.5rem solid $clr-white;
+    outline-offset: -3.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(black, 0.25);
+    min-width: 38rem;
+    flex: 1 1 30%;
+
+    &:last-child {
+      align-self: flex-end;
+    }
+  }
+}

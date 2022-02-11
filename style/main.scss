@@ -13,6 +13,14 @@
 // prettier-ignore
 .App.overview { @import 'pages/index'; }
 // prettier-ignore
+// prettier-ignore
+.App.contact { @import 'pages/contact'; }
+// prettier-ignore
 .App.error { @import 'layouts/error'; }
 
 @import 'components/typography';
+
+.section-content {
+  max-width: 160rem;
+  margin: 0 auto;
+}

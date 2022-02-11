@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Signature, Link, Wave } from 'src/components';
 import { pallette } from 'src/config';
 
-export function Footer() {
+export function Footer({ noWave }: { noWave?: boolean }) {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
@@ -15,23 +15,30 @@ export function Footer() {
   }, []);
 
   return (
-    <div className='footer-container'>
-      <Wave up />
-      <footer>
+    <div
+      className='footer-container'
+      style={{
+        marginTop: noWave ? 0 : '',
+      }}>
+      {!noWave && <Wave up />}
+      <footer
+        style={{
+          borderTop: noWave ? `1px solid ${pallette.white}40` : '',
+        }}>
         <div className='half'>
-          <h3>Cooper Runyan</h3>
+          <h3 className='white'>Cooper Runyan</h3>
           <ul>
             <li>
               <Link href='/'>Overview</Link>
             </li>
             <li>
-              <Link href='/experience'>Experience</Link>
+              <Link href='/#experience'>Experience</Link>
             </li>
             <li>
-              <Link href='/resume'>Resume</Link>
+              <Link href='/#technologies'>Technologies</Link>
             </li>
             <li>
-              <Link href='/'>Get in touch</Link>
+              <Link href='/contact'>Get in touch</Link>
             </li>
           </ul>
           <p className='legal'>Copyright © 2022 Cooper Runyan</p>

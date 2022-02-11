@@ -19,7 +19,7 @@ export function Codepen() {
     <section className='codepen'>
       <div className='section'>
         <h2 className='bg-text'>Codepens</h2>
-        <div className='contents'>
+        <div className='contents section-content'>
           <Card image={Loading} url='MWOggVJ'>
             Loading Animation
           </Card>

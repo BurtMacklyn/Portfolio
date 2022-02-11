@@ -1,12 +1,10 @@
-import { Link, Motion } from 'src/components';
+import { Link, Tag } from 'src/components';
 import type React from 'react';
-
-import { navTagCloseSettings, navTagOpenSettings } from './tagSettings';
 
 export function Nav() {
   return (
     <nav>
-      <Motion.Tag options={navTagOpenSettings}>nav</Motion.Tag>
+      <Tag>nav</Tag>
       <ul>
         <li>
           <Link href='/'>Overview</Link>
@@ -21,9 +19,7 @@ export function Nav() {
           <Link href='/contact'>Contact</Link>
         </li>
       </ul>
-      <Motion.Tag close options={navTagCloseSettings}>
-        nav
-      </Motion.Tag>
+      <Tag close>nav</Tag>
     </nav>
   );
 }

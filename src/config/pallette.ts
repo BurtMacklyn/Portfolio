@@ -5,4 +5,5 @@ export const pallette = {
   deepBlue: '#103056',
   blue: '#3badf9',
   red: '#e94860',
+  purple: '#d766ff',
 };

@@ -16,7 +16,12 @@
     align-items: stretch;
     justify-content: space-between;
 
-    color: rgba($clr-white, 0.5);
+    h3,
+    p,
+    svg,
+    li {
+      opacity: 0.5;
+    }
 
     @include mq(md) {
       flex-direction: column;

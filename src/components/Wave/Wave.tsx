@@ -6,7 +6,9 @@ export function Wave({ up }: { up?: boolean }) {
     <div
       style={{
         position: 'relative',
-        width: '100vw',
+        width: '100%',
+        bottom: up ? '-1px' : 'unset',
+        top: !up ? '-1px' : 'unset',
         aspectRatio: '1440 / 200',
         color: pallette.deepBlue,
         stroke: 'currentColor',

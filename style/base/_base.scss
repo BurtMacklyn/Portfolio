@@ -31,9 +31,10 @@ body {
   color: $clr-text-light;
   box-sizing: border-box;
   font-size: $font-size;
-  overflow-x: hidden;
   min-height: 100vh;
+  max-width: 100vw;
   display: flex;
+  overflow-x: hidden;
   flex-direction: column;
   background-color: $clr-black !important;
 }
@@ -66,8 +67,4 @@ svg * {
 
 section {
   position: relative;
-}
-
-.App {
-  overflow-x: hidden;
 }

@@ -5,6 +5,7 @@
   transform: translate(-50%, -50%);
   border-radius: 100vmax;
   z-index: -1;
+  pointer-events: none;
 
   @include mq(lg) {
     background: radial-gradient(rgba(0, 153, 255, 0.15), transparent 65%);
