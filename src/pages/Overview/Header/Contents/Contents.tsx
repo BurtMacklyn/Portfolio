@@ -6,9 +6,9 @@ export function Contents() {
     <div className='contents'>
       <Tag>header</Tag>
       <String>'Hello world, I am'</String>
-      <h1 className='title'>
+      <h2 className='title white'>
         Cooper <br className='break' /> Runyan
-      </h1>
+      </h2>
       <String close>'A web designer and developer'</String>
       <Tag close>header</Tag>
     </div>

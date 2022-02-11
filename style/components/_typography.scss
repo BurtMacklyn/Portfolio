@@ -1,0 +1,55 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $clr-black;
+  line-height: 1.25;
+  letter-spacing: -0.05em;
+
+  &.grey {
+    color: $clr-grey;
+  }
+
+  &.white {
+    color: $clr-white;
+  }
+}
+
+// prettier-ignore
+h1, h2, h3 { font-weight: 400; }
+// prettier-ignore
+h4, h5, h6 { font-weight: 300; }
+
+p {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2;
+  color: $clr-white;
+
+  // prettier-ignore
+  &.grey { color: $clr-grey; }
+  // prettier-ignore
+  &.black { color: $clr-black; }
+}
+
+h1 {
+  font-size: 14.4rem;
+  opacity: 0.1;
+}
+
+// prettier-ignore
+h2 { font-size: 9.6rem; }
+
+// prettier-ignore
+h3 { font-size: 6.4rem; }
+
+// prettier-ignore
+h4 { font-size: 4.8rem; }
+
+// prettier-ignore
+h5 { font-size: 3.6rem; }
+
+// prettier-ignore
+h6 { font-size: 2.4rem; }

@@ -4,6 +4,7 @@ import { App, Title, Footer } from 'src/components';
 
 import { Header } from './Header';
 import { Codepen } from './Codepen';
+import { Stacks } from './Stacks';
 
 export function Overview() {
   return (
@@ -11,6 +12,7 @@ export function Overview() {
       <Title>Overview</Title>
       <Header />
       <Codepen />
+      <Stacks />
       <Footer />
     </App>
   );

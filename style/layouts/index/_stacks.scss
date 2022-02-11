@@ -1,0 +1,235 @@
+@import url('http://fonts.cdnfonts.com/css/graphie');
+@font-face {
+  font-family: 'Graphie';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Graphie'), url('https://fonts.cdnfonts.com/s/20170/GraphieRegular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Graphie';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Graphie'), url('https://fonts.cdnfonts.com/s/20170/GraphieThin.woff') format('woff');
+}
+@font-face {
+  font-family: 'Graphie';
+  font-style: normal;
+  font-weight: 250;
+  src: local('Graphie'), url('https://fonts.cdnfonts.com/s/20170/GraphieExtraLight.woff') format('woff');
+}
+@font-face {
+  font-family: 'Graphie';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Graphie'), url('https://fonts.cdnfonts.com/s/20170/GraphieLight.woff') format('woff');
+}
+@font-face {
+  font-family: 'Graphie';
+  font-style: normal;
+  font-weight: 350;
+  src: local('Graphie'), url('https://fonts.cdnfonts.com/s/20170/GraphieBook.woff') format('woff');
+}
+@font-face {
+  font-family: 'Graphie';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Graphie'), url('https://fonts.cdnfonts.com/s/20170/GraphieSemiBold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Graphie';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Graphie'), url('https://fonts.cdnfonts.com/s/20170/GraphieBold.woff') format('woff');
+}
+
+* {
+  font-family: 'Graphie', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.sticky-scroll {
+  display: grid;
+  grid-template-columns: 45% 55%;
+}
+.sticky-scroll__img {
+  position: absolute;
+  top: 50%;
+  transform: translate(-10%, -50%) scale(1.2);
+  right: 0;
+  height: 1000px;
+
+  max-height: 1000px;
+}
+.sticky-scroll__img--parent {
+  margin: 100px 0;
+  height: 1000px;
+  position: relative;
+}
+
+.sticky-scroll__contents {
+  position: sticky;
+  top: 125px;
+  height: calc(100vh - 125px);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  justify-content: center;
+}
+.sticky-scroll__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.sticky-scroll__item {
+  display: flex;
+  padding: 10px 30px;
+  border-left: 1px solid #aeaeae;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+  font-size: 22px;
+  height: 1.5em;
+  box-sizing: content-box;
+}
+.sticky-scroll__item h3 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.2;
+  color: #aeaeae;
+}
+.sticky-scroll__item p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 600px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  height: fit-content;
+}
+.sticky-scroll__item > div {
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  margin-top: 0;
+  height: 0;
+}
+.sticky-scroll__item.active {
+  border-left: 1px solid #5b94f2;
+  height: unset;
+}
+.sticky-scroll__item.active h3 {
+  color: black;
+}
+.sticky-scroll__item.active p {
+  opacity: 1;
+}
+.sticky-scroll__item.active > div {
+  margin-top: 16px;
+  height: unset;
+}
+.sticky-scroll__header {
+  max-width: 590px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.sticky-scroll__header h2 {
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 1.1;
+}
+.sticky-scroll__header p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  max-width: 540px;
+}
+
+@media (max-width: 1000px) {
+  .sticky-scroll--desktop {
+    display: none !important;
+  }
+
+  .sticky-scroll--mobile {
+    display: grid !important;
+  }
+}
+
+.sticky-scroll--mobile {
+  display: none;
+  grid-template-columns: 1fr;
+}
+
+.sticky-scroll--mobile .header h4 {
+  font-weight: normal;
+  font-size: 34px;
+  line-height: 1.26;
+}
+
+.sticky-scroll--mobile .header {
+  margin: 70px 0;
+}
+
+.sticky-scroll--mobile .header p {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 2;
+  max-width: 65ch;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.sticky-scroll--mobile .header a {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 2.62px;
+  text-transform: uppercase;
+  padding-bottom: 10.5px;
+  border-bottom: 1px solid #954be8;
+
+  color: #000000;
+}
+
+.sticky-scroll--mobile .content h5 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+.sticky-scroll--mobile .content p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 2;
+  max-width: 65ch;
+  margin-top: 32px;
+}
+
+.sticky-scroll--mobile .lines {
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.sticky-scroll--mobile .slider img {
+  transform: translateX(-20%);
+}
+
+.sticky-scroll--mobile .lines li {
+  display: flex;
+  width: 40px;
+  height: 1px;
+  background: #aeaeae;
+}
+
+.sticky-scroll--mobile .lines .active {
+  display: flex;
+  width: 95px;
+  background: #5b94f2;
+}

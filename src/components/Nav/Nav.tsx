@@ -12,10 +12,13 @@ export function Nav() {
           <Link href='/'>Overview</Link>
         </li>
         <li>
-          <Link href='/experience'>Experience</Link>
+          <Link href='/#experience'>Experience</Link>
         </li>
         <li>
-          <Link href='/resume'>Resume</Link>
+          <Link href='/#technologies'>Technologies</Link>
+        </li>
+        <li>
+          <Link href='/contact'>Contact</Link>
         </li>
       </ul>
       <Motion.Tag close options={navTagCloseSettings}>
