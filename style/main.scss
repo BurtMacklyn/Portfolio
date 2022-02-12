@@ -9,6 +9,7 @@
 @import 'components/directions';
 
 @import 'layouts/footer';
+@import 'layouts/readme';
 
 // prettier-ignore
 .App.overview { @import 'pages/index'; }
@@ -19,8 +20,3 @@
 .App.error { @import 'layouts/error'; }
 
 @import 'components/typography';
-
-.section-content {
-  max-width: 160rem;
-  margin: 0 auto;
-}

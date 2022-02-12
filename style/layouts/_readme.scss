@@ -1,0 +1,98 @@
+.readme {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 6.4rem;
+  max-width: 100rem;
+  margin: 0 auto;
+
+  p {
+    line-height: 1.6;
+    font-weight: 400;
+    font-size: 1.68rem;
+    color: rgb(171, 178, 191);
+  }
+
+  * {
+    all: unset;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+    color: #abb2bf;
+    opacity: 1;
+  }
+
+  h1 {
+    font-size: 3.36rem;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 2.52rem;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 1.97rem;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: 1.68rem;
+    font-weight: 600;
+  }
+
+  h6 {
+    font-size: 1.13rem;
+    font-weight: 600;
+    color: rgba(#6a737d, 0.5);
+  }
+
+  code {
+    font-family: 'SF Mono', Monaco, Menlo, Consolas, 'Ubuntu Mono', 'Liberation Mono', 'DejaVu Sans Mono', 'Courier New', monospace;
+    line-height: 1.6;
+  }
+
+  .code {
+    color: white;
+    background: rgb(58, 63, 75);
+    border-radius: 0.3rem;
+    padding: 0.34rem 0.67rem;
+  }
+
+  .codeblock {
+    padding: 1.9rem;
+    background-color: rgba(74, 86, 103, 0.25);
+    border-radius: 0.3rem;
+
+    code {
+      display: block;
+    }
+  }
+
+  span.line {
+    background-color: #e1e2e8;
+    margin: 2.9rem 0;
+    height: 0.3rem;
+    width: 100%;
+    opacity: 0.5;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    margin-bottom: 2.4rem;
+
+    li {
+      list-style: disc;
+      margin-left: 2.9rem;
+      position: relative;
+
+      &::before {
+        content: '-';
+        position: absolute;
+        right: calc(100% + 1rem);
+        color: white;
+      }
+    }
+  }
+}

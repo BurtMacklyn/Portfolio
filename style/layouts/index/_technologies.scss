@@ -62,8 +62,9 @@
     background-color: rgba(black, 0.25);
     min-width: 38rem;
     flex: 1 1 30%;
+    backdrop-filter: blur(14rem);
 
-    &:last-child {
+    svg {
       align-self: flex-end;
     }
   }

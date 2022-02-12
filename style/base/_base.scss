@@ -68,3 +68,12 @@ svg * {
 section {
   position: relative;
 }
+
+.section-content {
+  max-width: 160rem;
+  margin: 0 auto;
+}
+
+.glow {
+  z-index: -1;
+}

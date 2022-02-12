@@ -9,8 +9,7 @@ export function Frameworks() {
         <li>Lightning Web Components</li>
         <li>Express</li>
         <li>Oak</li>
-        <li>Framer</li>
-        <li>Motion</li>
+        <li>Framer-Motion</li>
         <li>Webpack</li>
       </ul>
     </div>
