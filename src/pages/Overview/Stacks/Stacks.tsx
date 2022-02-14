@@ -6,12 +6,17 @@ export function Stacks() {
   const [visible, setVisible] = useState<'front' | 'back'>('front');
 
   useEffect(() => {
-    const el = document.querySelector('.deno')! as HTMLDivElement;
-    const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
-      if (!entries[0]) return;
-      if (entries[0]?.isIntersecting || entries[0].boundingClientRect.y * -1 > entries[0].boundingClientRect.height) setVisible('back');
-      else setVisible('front');
-    });
+    const el = document.querySelector('.target')! as HTMLDivElement;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry) return;
+        if (entry?.isIntersecting || entry.boundingClientRect.y * -1 > entry.boundingClientRect.height) setVisible('back');
+        else setVisible('front');
+      },
+      {
+        root: null,
+      },
+    );
     observer.observe(el);
 
     return () => observer.unobserve(el);
@@ -19,6 +24,7 @@ export function Stacks() {
 
   return (
     <section className='stacks'>
+      <div className='target'></div>
       <div className='section-content'>
         <div className='img-wrapper'>
           <div className='img'>

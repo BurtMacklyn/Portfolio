@@ -4,6 +4,14 @@ $gap: 0.8rem;
 section {
   padding: 12.8rem;
   background-color: $clr-deep-blue;
+
+  @include mq(lg) {
+    padding-inline: 6.4rem;
+  }
+
+  @media (max-width: calc(1050em / 16)) {
+    padding-inline: 3.2rem;
+  }
 }
 
 header {
@@ -12,6 +20,14 @@ header {
   display: flex;
   flex-direction: column;
 
+  @include mq(md) {
+    padding-inline: 6.4rem;
+  }
+
+  @include mq(sm) {
+    padding-inline: 3.2rem;
+  }
+
   .string {
     color: $clr-blue;
   }
@@ -19,21 +35,47 @@ header {
   .tag {
     margin: 2rem 0;
     transform: translate(-50%);
+
+    @include mq(md) {
+      display: none;
+    }
   }
 }
 
+// .glow {
+//   background: $clr-blue;
+//   filter: blur(100rem);
+//   border-radius: 100vw;
+//   position: absolute;
+//   top: 0;
+//   width: 80rem;
+//   aspect-ratio: 1;
+//   left: 0;
+//   z-index: -1;
+//   opacity: 0.3;
+//   transform: translate(-50%, -50%);
+// }
+
 .glow {
-  background: $clr-blue;
-  filter: blur(100rem);
-  border-radius: 100vw;
   position: absolute;
-  top: 0;
-  width: 80rem;
-  aspect-ratio: 1;
-  left: 0;
-  z-index: -1;
-  opacity: 0.3;
+  top: 0%;
+  left: 0%;
   transform: translate(-50%, -50%);
+  border-radius: 100vmax;
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+
+  @include mq(lg) {
+    background: radial-gradient(rgba(0, 153, 255, 0.15), transparent 75%);
+    width: 125vmax;
+  }
+
+  width: 100vmax;
+
+  aspect-ratio: 1;
+
+  background: radial-gradient(rgba(0, 153, 255, 0.25), transparent 75%);
 }
 
 .section-content {
@@ -41,8 +83,50 @@ header {
   gap: $gap;
   align-items: stretch;
 
+  @media (max-width: calc(1050em / 16)) {
+    flex-direction: column-reverse;
+  }
+
   & > * {
     flex: 1 1 100%;
+  }
+
+  @include mq(lg) {
+    .info {
+      flex: unset;
+
+      h5 {
+        font-size: 3.2rem;
+      }
+    }
+  }
+
+  @include mq(md) {
+    .info {
+      padding: 3.6rem 2.4rem;
+
+      h5 {
+        font-size: 3.2rem !important;
+      }
+    }
+  }
+
+  @include mq(sm) {
+    .info {
+      h5 {
+        font-size: 2.4rem !important;
+      }
+    }
+  }
+
+  @media (max-width: calc(1050em / 16)) {
+    .info {
+      flex: 1 1 100%;
+
+      h5 {
+        font-size: 4.8rem;
+      }
+    }
   }
 }
 
@@ -74,6 +158,20 @@ header {
   display: flex;
   width: 100%;
   gap: $gap;
+
+  @include mq(sm) {
+    flex-direction: column;
+
+    .date {
+      justify-content: unset;
+    }
+
+    .send {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
 }
 
 form {

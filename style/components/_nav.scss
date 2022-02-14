@@ -18,6 +18,12 @@ nav {
     width: 100%;
   }
 
+  @include mq(xs) {
+    .rm {
+      display: none;
+    }
+  }
+
   code.tag {
     width: fit-content;
 
@@ -47,7 +53,7 @@ nav {
     li,
     a {
       color: inherit;
-      transition: all 0.3s $tf;
+      transition: all 0.1s $tf;
       outline: 2px solid transparent;
       border-radius: 100vh;
       outline-offset: 1rem;

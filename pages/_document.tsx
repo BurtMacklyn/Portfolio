@@ -6,7 +6,9 @@ export default function Document(): JSX.Element {
     <Html lang='en'>
       <Head>
         <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
-        <link rel='manifest' href='/manifest.json' />
+        <link rel='manifest' href='./manifest.json' />
+        <base href='/' />
+
         <link rel='apple-touch-icon' href='./icons/apple-icon-180.png' />
         <link rel='apple-touch-icon' href='icons/apple-icon-180.png' />
         <meta name='apple-mobile-web-app-capable' content='yes' />

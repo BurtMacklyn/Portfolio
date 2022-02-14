@@ -16,6 +16,10 @@
     align-items: stretch;
     justify-content: space-between;
 
+    @include mq(md) {
+      padding: 2.4rem 3.6rem;
+    }
+
     h3,
     p,
     svg,

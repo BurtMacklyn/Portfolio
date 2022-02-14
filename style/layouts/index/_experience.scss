@@ -1,6 +1,10 @@
 .experience {
   padding: $margin;
 
+  @include mq(md) {
+    padding: $margin 3.2rem;
+  }
+
   h3 {
     padding-bottom: 2.4rem;
     border-bottom: 0.2rem solid $clr-grey;

@@ -1,6 +1,10 @@
 .technologies {
   padding: $margin;
 
+  @include mq(md) {
+    padding: $margin 3.2rem;
+  }
+
   h3 {
     padding-bottom: 2.4rem;
     border-bottom: 0.2rem solid $clr-grey;
@@ -11,6 +15,10 @@
     display: flex;
     gap: 4rem;
     flex-wrap: wrap;
+
+    @include mq(xs) {
+      gap: 1.2rem;
+    }
 
     & * > {
       flex: 1 1 100%;
@@ -64,8 +72,27 @@
     flex: 1 1 30%;
     backdrop-filter: blur(14rem);
 
+    @include mq(xs) {
+      height: unset;
+    }
+
+    @include mq(sm) {
+      min-width: 30rem;
+    }
+
     svg {
       align-self: flex-end;
+      max-width: 100%;
+
+      @include mq(xs) {
+        display: none;
+      }
+    }
+
+    h4 {
+      @include mq(sm) {
+        font-size: 3.6rem;
+      }
     }
   }
 }

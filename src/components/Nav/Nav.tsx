@@ -9,10 +9,10 @@ export function Nav() {
         <li>
           <Link href='/'>Overview</Link>
         </li>
-        <li>
+        <li className='rm'>
           <Link href='/#experience'>Experience</Link>
         </li>
-        <li>
+        <li className='rm'>
           <Link href='/#technologies'>Technologies</Link>
         </li>
         <li>

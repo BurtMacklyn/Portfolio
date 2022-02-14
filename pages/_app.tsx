@@ -12,7 +12,7 @@ export default function App({ Component, pageProps, router: route }: AppProps): 
   return (
     <>
       <Head>
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1' />
         <meta name='description' content='A marketing and about site for web designer and developer, Cooper Runyan' />
         <title>Cooper Runyan | Portfolio</title>
       </Head>

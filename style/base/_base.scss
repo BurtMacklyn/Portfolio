@@ -77,3 +77,34 @@ section {
 .glow {
   z-index: -1;
 }
+
+.App {
+  width: 100vw;
+}
+
+@supports not (-moz-osx-font-smoothing: auto) {
+  @include scrollbar;
+}
+
+@media screen and (-moz-windows-theme) {
+  @include scrollbar;
+}
+
+/* Detect Internet Explorer 9 or Greater */
+@media screen and (min-width: 0\0) and (min-resolution: 72dpi) {
+  @include scrollbar;
+}
+
+/* Detect any version of Firefox */
+_:-moz-tree-row(hover),
+html {
+  @include scrollbar;
+}
+
+@media screen and (-moz-windows-theme) {
+  @include scrollbar;
+}
+
+@media screen and (-moz-os-version) {
+  @include scrollbar;
+}

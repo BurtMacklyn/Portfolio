@@ -18,3 +18,4 @@ export { default as angular } from 'public/technologies/angular.svg';
 export { default as lwc } from 'public/technologies/lwc.svg';
 export { default as oak } from 'public/technologies/oak.svg';
 export { default as stackoverflow } from 'public/technologies/stackoverflow.svg';
+export { default as docker } from 'public/technologies/docker.svg';

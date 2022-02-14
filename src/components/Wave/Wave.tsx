@@ -6,14 +6,14 @@ export function Wave({ up }: { up?: boolean }) {
     <div
       style={{
         position: 'relative',
-        width: '100%',
-        bottom: up ? '-1px' : 'unset',
-        top: !up ? '-1px' : 'unset',
+        width: '100vw',
+        bottom: up ? '-2px' : 'unset',
+        top: !up ? '-2px' : 'unset',
         aspectRatio: '1440 / 200',
         color: pallette.deepBlue,
         stroke: 'currentColor',
         fill: 'currentColor',
-        transform: `${up ? 'rotate(180deg)' : ''} translate(1px)`,
+        transform: `${up ? 'rotate(180deg)' : ''} translateY(1px)`,
       }}
       aria-hidden='true'>
       <Svg

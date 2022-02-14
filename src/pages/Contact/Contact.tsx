@@ -1,5 +1,5 @@
 import type { FormEvent } from 'react';
-import { App, Footer, Nav, Tag, Wave } from 'src/components';
+import { App, Footer, Glow, Nav, Tag, Wave } from 'src/components';
 
 export function Contact() {
   return (
