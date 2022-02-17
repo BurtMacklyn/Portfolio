@@ -61,21 +61,21 @@ header {
   top: 0%;
   left: 0%;
   transform: translate(-50%, -50%);
-  border-radius: 100vmax;
+  border-radius: 150vmax;
   opacity: 0.5;
   z-index: -1;
   pointer-events: none;
 
   @include mq(lg) {
-    background: radial-gradient(rgba(0, 153, 255, 0.15), transparent 75%);
-    width: 125vmax;
+    background: radial-gradient(rgba(0, 153, 255, 0.15), transparent 65%);
+    width: 150vmax;
   }
 
-  width: 100vmax;
+  width: 125vmax;
 
   aspect-ratio: 1;
 
-  background: radial-gradient(rgba(0, 153, 255, 0.25), transparent 75%);
+  background: radial-gradient(rgba(0, 153, 255, 0.25), transparent 65%);
 }
 
 .section-content {

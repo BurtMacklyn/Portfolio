@@ -47,3 +47,5 @@ node_modules
 **/public/worker-*.js.map
 
 out
+
+.env
