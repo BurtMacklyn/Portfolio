@@ -8,7 +8,7 @@
   pointer-events: none;
 
   @include mq(lg) {
-    background: radial-gradient(rgba(0, 153, 255, 0.15), transparent 65%);
+    background: radial-gradient(rgba(0, 153, 255, 0.1), transparent 65%);
     width: 125vmax;
   }
 
@@ -16,5 +16,5 @@
 
   aspect-ratio: 1;
 
-  background: radial-gradient(rgba(0, 153, 255, 0.25), transparent 65%);
+  background: radial-gradient(rgba(0, 153, 255, 0.175), transparent 65%);
 }

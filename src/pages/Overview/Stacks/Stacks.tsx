@@ -76,7 +76,7 @@ export function Stacks() {
                 Typescript compiler is needed.
               </p>
             </div>
-            <span className={`glow ${visible === 'back' ? 'backend-glow' : ''}`}></span>
+            {/* <span className={`glow ${visible === 'back' ? 'backend-glow' : ''}`}></span> */}
           </div>
         </div>
       </div>
