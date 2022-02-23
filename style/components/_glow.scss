@@ -9,7 +9,13 @@
 
   @include mq(lg) {
     background: radial-gradient(rgba(0, 153, 255, 0.1), transparent 65%);
-    width: 125vmax;
+    width: 100vw;
+  }
+
+  @include mq(sm) {
+    background: radial-gradient(rgba(0, 153, 255, 0.5), transparent 65%);
+    width: 100vw;
+    filter: blur(240px);
   }
 
   width: 100vmax;
