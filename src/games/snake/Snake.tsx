@@ -6,6 +6,7 @@ import * as constants from './constants';
 import * as fx from './effects';
 
 import { useWindowSize } from 'src/hooks';
+import { Head } from 'next/document';
 
 export default function (): JSX.Element {
   const app = useRef<HTMLDivElement>(null);
@@ -29,10 +30,15 @@ export default function (): JSX.Element {
   useEffect(fx.score(snake, setScore), [snake.length]);
 
   return (
-    <Game ref={app} score={score}>
-      <Snake>{snake}</Snake>
-      <Gameover isAlive={alive} snake={snake} />
-      <>{apple && snake.length >= constants.INITIAL_SNAKE.length && <MakeApple ref={appleRef}>{apple}</MakeApple>}</>
-    </Game>
+    <>
+      <Head>
+        <title>Snake</title>
+      </Head>
+      <Game ref={app} score={score}>
+        <Snake>{snake}</Snake>
+        <Gameover isAlive={alive} snake={snake} />
+        <>{apple && snake.length >= constants.INITIAL_SNAKE.length && <MakeApple ref={appleRef}>{apple}</MakeApple>}</>
+      </Game>
+    </>
   );
 }
