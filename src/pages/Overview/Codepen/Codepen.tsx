@@ -1,15 +1,15 @@
-import Loading from 'public/codepen/loading.png';
-import SlideText from 'public/codepen/slide-text.png';
-import StickyScroll from 'public/codepen/sticky-scroll.png';
-import AnimatedSignature from 'public/codepen/animated-signature.png';
-import Typewriter from 'public/codepen/typewriter.png';
-import FlexCards from 'public/codepen/flex-cards.png';
-import FlickerText from 'public/codepen/flicker-text.png';
-import GradientHeading from 'public/codepen/gradient-heading.png';
-import RothIRA from 'public/codepen/roth-ira.png';
-import KanyeQuotes from 'public/codepen/kanye-quotes.png';
-import DrinkRecipe from 'public/codepen/drink-recipe.png';
-import AgeGuesser from 'public/codepen/age-guesser.png';
+import Loading from 'public/codepen/loading.jpg';
+import SlideText from 'public/codepen/slide-text.jpg';
+import StickyScroll from 'public/codepen/sticky-scroll.jpg';
+import AnimatedSignature from 'public/codepen/animated-signature.jpg';
+import Typewriter from 'public/codepen/typewriter.jpg';
+import FlexCards from 'public/codepen/flex-cards.jpg';
+import FlickerText from 'public/codepen/flicker-text.jpg';
+import GradientHeading from 'public/codepen/gradient-heading.jpg';
+import RothIRA from 'public/codepen/roth-ira.jpg';
+import KanyeQuotes from 'public/codepen/kanye-quotes.jpg';
+import DrinkRecipe from 'public/codepen/drink-recipe.jpg';
+import AgeGuesser from 'public/codepen/age-guesser.jpg';
 
 import { Card } from './Card';
 import { Wave } from 'src/components';
