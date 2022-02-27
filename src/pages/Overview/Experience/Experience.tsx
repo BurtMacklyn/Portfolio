@@ -8,7 +8,7 @@ export function Experience() {
       <div className='section-content'>
         <h3 className='white'>Experience</h3>
         <div className='content'>
-          <span className='glow'></span>
+          {/* <span className='glow'></span> */}
           <Autobiography />
           <Languages />
           <Frameworks />

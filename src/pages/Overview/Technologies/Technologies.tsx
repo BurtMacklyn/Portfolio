@@ -4,7 +4,7 @@ export function Technologies() {
   return (
     <section className='technologies' id='technologies'>
       <div className='section-content'>
-        <Glows />
+        {/* <Glows /> */}
         <h3 className='white'>Technologies</h3>
         <div className='content'>
           <Card>Css</Card>

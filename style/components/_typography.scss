@@ -40,6 +40,12 @@ h1 {
 // prettier-ignore
 h2 { font-size: 9.6rem; }
 
+@include mq(xs) {
+  h2 {
+    font-size: 8.4rem;
+  }
+}
+
 // prettier-ignore
 h3 { font-size: 6.4rem; }
 
