@@ -1,6 +1,7 @@
 const withPWA = require('next-pwa');
 const runtimeCaching = require('next-pwa/cache');
 
+/** @type {import('next').NextConfig} */
 module.exports = withPWA({
   reactStrictMode: true,
   pwa: {
@@ -19,5 +20,15 @@ module.exports = withPWA({
     });
 
     return config;
+  },
+
+  async redirects() {
+    return [
+      {
+        source: '/lists',
+        destination: '/lists/0',
+        permanent: false,
+      },
+    ];
   },
 });

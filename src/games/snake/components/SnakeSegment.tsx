@@ -5,6 +5,7 @@ export function SnakeSegment({ children: segment }: { children: Segment }) {
   return (
     <div
       className={style['snakeSegment']}
+      id={'id-' + segment.id}
       style={{
         gridColumn: `${segment.x} / ${segment.x + 1}`,
         gridRow: `${segment.y} / ${segment.y + 1}`,
