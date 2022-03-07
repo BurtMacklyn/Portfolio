@@ -1,0 +1,16 @@
+.terminal {
+  // box-sizing: content-box;
+  width: fit-content;
+
+  padding: 3.2rem;
+  border-radius: 0.4rem;
+  background-color: black;
+  resize: horizontal;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
