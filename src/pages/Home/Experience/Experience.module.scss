@@ -1,0 +1,27 @@
+@import '../../../style/variables.scss';
+
+.Experience {
+  display: flex;
+  gap: 8rem;
+  flex-wrap: wrap;
+  max-width: 120rem;
+  margin: 12rem auto;
+  // width: 100%;
+  width: fit-content;
+  justify-content: center;
+
+  & > * {
+    flex: 0 0 24rem;
+  }
+}
+
+.card {
+  width: 24rem;
+  height: 24rem;
+  border-radius: 100%;
+  background-color: $white;
+  box-shadow: 0 1rem 3.6rem rgba($black, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
