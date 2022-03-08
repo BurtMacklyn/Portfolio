@@ -1,0 +1,12 @@
+{
+  "theme_color": "#fff",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "id": "/",
+  "name": "Cooper Runyan Portfolio",
+  "short_name": "Cooper Runyan",
+  "description": "A portfolio website/app about Cooper Runyan",
+  "icons": []
+}
