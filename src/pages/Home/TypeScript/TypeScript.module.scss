@@ -1,0 +1,32 @@
+@import '../../../style/variables.scss';
+
+.TypeScript {
+  max-width: 80rem;
+  margin: 12rem $margin;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.Scroll {
+  display: inline-flex;
+  flex-direction: column;
+  list-style: none;
+  height: 1.2em;
+  overflow: hidden;
+  gap: 0.4em;
+
+  li {
+    transition: all 0.3s ease-out;
+  }
+}
+
+@for $i from 1 through 8 {
+  .focus#{$i} {
+    @for $j from 1 through 8 {
+      .c#{$j} {
+        transform: translateY(calc((-100% - 0.4em) * (#{$i} - 1)));
+      }
+    }
+  }
+}
