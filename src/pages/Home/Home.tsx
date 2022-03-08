@@ -2,6 +2,7 @@ import { Portfolio, Nav } from '~/components';
 import { Header } from './Header';
 import { Quote } from './Quote';
 import { TypeScript } from './TypeScript';
+import { FreeTime } from './FreeTime';
 
 export function Home() {
   return (
@@ -10,6 +11,7 @@ export function Home() {
       <Header />
       <Quote />
       <TypeScript />
+      <FreeTime />
     </Portfolio>
   );
 }

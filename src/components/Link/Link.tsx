@@ -1,5 +1,9 @@
-import type { ReactChild } from 'react';
+import type { HTMLAttributes, ReactChild } from 'react';
 
-export function Link({ children, href }: { children: ReactChild; href: string }) {
-  return <a href={href}>{children}</a>;
+export function Link({ children, href, ...props }: { children: ReactChild; href: string } & HTMLAttributes<HTMLAnchorElement>) {
+  return (
+    <a {...props} href={href}>
+      {children}
+    </a>
+  );
 }
