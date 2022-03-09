@@ -1,5 +1,6 @@
 @import '../../style/variables.scss';
 
+// psuedo body element for only portfolio pages
 .Portfolio {
   font-family: $font-family;
   color: $black;
@@ -8,9 +9,13 @@
   min-height: 100vh;
   max-width: 100vw;
   display: flex;
-  overflow-x: hidden;
   flex-direction: column;
   background-color: $white;
+
+  ::selection {
+    color: $primary;
+    background-color: $grey;
+  }
 
   p {
     font-weight: 600;

@@ -3,7 +3,7 @@ import { pallette } from '~/config';
 export function Vite() {
   return (
     <svg width="87" height="87" viewBox="0 0 87 87" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_30_258)">
+      <g clipPath="url(#clip0_30_258)">
         <path
           d="M86.3677 12.8408L45.6619 85.6299C44.8214 87.1327 42.6622 87.1415 41.8092 85.646L0.296233 12.8478C-0.633115 11.2181 0.760484 9.24401 2.60729 9.5741L43.3567 16.8578C43.6166 16.9043 43.8827 16.9038 44.1427 16.8565L84.0399 9.58455C85.8805 9.24907 87.2807 11.2078 86.3677 12.8408Z"
           fill={pallette.primary}

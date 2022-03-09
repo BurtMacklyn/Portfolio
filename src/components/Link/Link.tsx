@@ -1,9 +1,14 @@
 import type { HTMLAttributes, ReactChild } from 'react';
+import Link from 'next/link';
 
-export function Link({ children, href, ...props }: { children: ReactChild; href: string } & HTMLAttributes<HTMLAnchorElement>) {
+function _Link({ children, href, ...props }: { children: ReactChild | ReactChild[]; href: string } & HTMLAttributes<HTMLAnchorElement>) {
   return (
-    <a {...props} href={href}>
-      {children}
-    </a>
+    <Link {...props} href={href} passHref scroll={false}>
+      <a {...props} style={{ textDecoration: 'none', color: 'inherit', ...props.style }}>
+        {children}
+      </a>
+    </Link>
   );
 }
+
+export { _Link as Link };

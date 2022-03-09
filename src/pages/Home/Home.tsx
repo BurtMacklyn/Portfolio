@@ -1,10 +1,5 @@
 import { Portfolio, Nav } from '~/components';
-import { Header } from './Header';
-import { Quote } from './Quote';
-import { TypeScript } from './TypeScript';
-import { FreeTime } from './FreeTime';
-import { Experience } from './Experience';
-import { Make } from './Make';
+import { Experience, FreeTime, Header, Make, Quote, Socials, TypeScript } from './sections';
 
 export function Home() {
   return (
@@ -16,6 +11,7 @@ export function Home() {
       <FreeTime />
       <Experience />
       <Make />
+      <Socials />
     </Portfolio>
   );
 }

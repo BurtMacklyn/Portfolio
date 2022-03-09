@@ -5,8 +5,8 @@ export function Experience() {
   return (
     <div className={style.wrapper}>
       <div className={style.Experience}>
-        {Object.values({ ...icons }).map((Icon) => (
-          <Card>
+        {Object.entries({ ...icons }).map(([key, Icon]) => (
+          <Card key={key}>
             <Icon />
           </Card>
         ))}
