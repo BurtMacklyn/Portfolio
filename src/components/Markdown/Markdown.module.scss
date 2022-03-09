@@ -1,0 +1,113 @@
+@import '../../style/variables.scss';
+
+.article {
+  max-width: 96rem;
+  margin: 9.6rem auto;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  a {
+    text-decoration: none;
+    color: $primary;
+    font-weight: 600;
+  }
+
+  p {
+    line-height: 1.75;
+    font-weight: 400;
+  }
+
+  h1 {
+    font-size: 4.8rem;
+    margin-top: 0.8rem;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+    margin-top: 0.8rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    margin-top: 0.8rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+    margin-top: 0.8rem;
+  }
+
+  blockquote {
+    margin-block: 0.8rem;
+    padding-left: 3.2rem;
+    // color: rgba($black, 0.5);
+    position: relative;
+
+    ::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0.5rem;
+      height: 100%;
+      opacity: 0.5;
+      background-color: $primary;
+      border-radius: 100vw;
+    }
+  }
+
+  pre {
+    border-radius: 2.4rem;
+    padding: 3.2rem;
+    background-color: $grey;
+    overflow: scroll;
+
+    code {
+      padding: 0;
+    }
+  }
+
+  ul,
+  ol {
+    list-style-position: inside;
+    padding-left: 1.6rem;
+  }
+
+  li {
+    padding-block: 0.3rem;
+
+    p {
+      display: inline;
+    }
+  }
+
+  hr {
+    margin-block: 0.6rem;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  table,
+  th,
+  td {
+    border: 0.1rem solid $black;
+    border-collapse: collapse;
+    padding: 1rem;
+    border-radius: 2.4rem;
+  }
+
+  th {
+    border-bottom: 0.2rem solid $black;
+  }
+
+  code {
+    background-color: $grey;
+    border-radius: 1.2rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

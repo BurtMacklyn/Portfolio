@@ -1,20 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { Signature, Link } from '~/components';
+import { useObserver } from '~/hooks';
 import { LogoCircle } from './LogoCircle';
 import style from './Nav.module.scss';
 
 export function Nav() {
-  const [active, setActive] = useState(false);
   const dummy = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) setActive(true);
-      else setActive(false);
-    }, {});
-
-    observer.observe(dummy.current!);
-  }, []);
+  const active = useObserver(dummy);
 
   return (
     <>
@@ -28,19 +20,19 @@ export function Nav() {
             </Link>
             <ul>
               <li>
-                <Link href="#">Projects</Link>
+                <Link href="/projects">Projects</Link>
               </li>
               <li>
-                <Link href="#">Experience</Link>
+                <Link href="/experience">Experience</Link>
               </li>
               <li>
-                <Link href="#">Blog</Link>
+                <Link href="/blog">Blog</Link>
               </li>
               <li>
-                <Link href="#">Site Map</Link>
+                <Link href="/site-map">Site Map</Link>
               </li>
               <li>
-                <Link href="#">Contact</Link>
+                <Link href="/contact">Contact</Link>
               </li>
             </ul>
           </div>
