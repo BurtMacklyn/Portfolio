@@ -4,6 +4,7 @@ import { Quote } from './Quote';
 import { TypeScript } from './TypeScript';
 import { FreeTime } from './FreeTime';
 import { Experience } from './Experience';
+import { Make } from './Make';
 
 export function Home() {
   return (
@@ -14,6 +15,7 @@ export function Home() {
       <TypeScript />
       <FreeTime />
       <Experience />
+      <Make />
     </Portfolio>
   );
 }
