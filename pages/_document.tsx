@@ -5,7 +5,7 @@ export default function Document(): JSX.Element {
   return (
     <Html lang="en">
       <Head>
-        <link rel="shortcut icon" type="image/x-icon" href="/pwa/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <base href="/" />
 
         <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png" />
