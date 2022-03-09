@@ -1,8 +1,9 @@
+import type { SVGAttributes } from 'react';
 import { pallette } from '~/config';
 
-export function Dots() {
+export function Dots(props: SVGAttributes<SVGElement>) {
   return (
-    <svg width="732" height="575" viewBox="0 0 732 575" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="732" height="575" viewBox="0 0 732 575" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <g
         style={{
           mixBlendMode: 'multiply',

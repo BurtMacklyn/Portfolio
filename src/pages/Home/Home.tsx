@@ -1,4 +1,4 @@
-import { Portfolio, Nav } from '~/components';
+import { Portfolio, Nav, Footer } from '~/components';
 import { Experience, FreeTime, Header, Make, Quote, Socials, TypeScript } from './sections';
 
 export function Home() {
@@ -12,6 +12,7 @@ export function Home() {
       <Experience />
       <Make />
       <Socials />
+      <Footer />
     </Portfolio>
   );
 }
