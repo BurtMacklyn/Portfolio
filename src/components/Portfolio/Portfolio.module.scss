@@ -12,10 +12,10 @@
   flex-direction: column;
   background-color: $white;
 
-  ::selection {
-    color: $primary;
-    background-color: $grey;
-  }
+  // ::selection {
+  //   color: $primary;
+  //   background-color: $grey;
+  // }
 
   p {
     font-weight: 600;
