@@ -1,5 +1,5 @@
 import style from './Blog.module.scss';
-import { Link, Portfolio, Nav, Center } from '~/components';
+import { Link, Portfolio, Nav, Center, Footer } from '~/components';
 
 function sort(from: string[], data: any) {
   const s: string[] = [];
@@ -28,6 +28,7 @@ export function Blog({ pages, data }: { pages: string[]; data: any }) {
           </div>
         </div>
       </Center>
+      <Footer />
     </Portfolio>
   );
 }

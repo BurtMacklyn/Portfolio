@@ -1,4 +1,4 @@
-import { Portfolio, Markdown, Back, Nav } from '~/components';
+import { Portfolio, Markdown, Back, Nav, Footer } from '~/components';
 import style from './Page.module.scss';
 
 export function Page({ content }: { content: string }) {
@@ -11,6 +11,7 @@ export function Page({ content }: { content: string }) {
         </div>
         <Markdown>{content}</Markdown>
       </div>
+      <Footer />
     </Portfolio>
   );
 }
