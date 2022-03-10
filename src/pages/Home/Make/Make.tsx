@@ -11,7 +11,9 @@ export function Make() {
           ambitious. I have created the popular minigame, Snake, countless times; I created it in pure HTML/Javascript, React/Nextjs, and also a CLI version
           (Available on npm). If you have Node installed on your computer, run “npx @cooperrunyan/snake” to try it out!
         </p>
-        <Link href="#">View my NPM profile</Link>
+        <Link newTab href="https://www.npmjs.com/~cooperrunyan">
+          View my NPM profile
+        </Link>
         <div className={style.circle}></div>
       </div>
     </Center>

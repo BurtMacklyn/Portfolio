@@ -7,14 +7,14 @@ export function Socials(): JSX.Element {
     <Center>
       <div className={style.Socials}>
         <div className={style.content}>
-          <Card href="#">{{ name: 'LinkedIn', Logo: Linkedin }}</Card>
-          <Card href="#">{{ name: 'Twitter', Logo: Twitter }}</Card>
-          <Card href="#">{{ name: 'Github', Logo: Github }}</Card>
-          <Card href="#">{{ name: 'Email', Logo: Email }}</Card>
-          <Card href="#">{{ name: 'Npm', Logo: Npm }}</Card>
-          <Card href="#">{{ name: 'Codepen', Logo: Codepen }}</Card>
-          <Card href="#">{{ name: 'Stackoverflow', Logo: Stackoverflow }}</Card>
-          <Card href="#">{{ name: 'Contact', Logo: Contact }}</Card>
+          <Card href="https://www.linkedin.com/in/cooper-runyan-52a343225/">{{ name: 'LinkedIn', Logo: Linkedin }}</Card>
+          <Card href="https://twitter.com/CooperRunyan1">{{ name: 'Twitter', Logo: Twitter }}</Card>
+          <Card href="https://www.github.com/cooperrunyan?tab=repositories">{{ name: 'Github', Logo: Github }}</Card>
+          <Card href="mailto:cooperrunyan@gmail.com">{{ name: 'Email', Logo: Email }}</Card>
+          <Card href="https://www.npmjs.com/~cooperrunyan">{{ name: 'Npm', Logo: Npm }}</Card>
+          <Card href="https://codepen.io/cooperrunyan">{{ name: 'Codepen', Logo: Codepen }}</Card>
+          <Card href="https://stackoverflow.com/story/cooperrunyan">{{ name: 'Stackoverflow', Logo: Stackoverflow }}</Card>
+          <Card href="/contact">{{ name: 'Contact', Logo: Contact }}</Card>
         </div>
       </div>
     </Center>
@@ -22,7 +22,7 @@ export function Socials(): JSX.Element {
 }
 
 const Card = ({ children, href }) => (
-  <Link href={href} className={style.Link}>
+  <Link href={href} className={style.Link} newTab>
     <p>{children.name}</p>
     <children.Logo></children.Logo>
   </Link>
