@@ -1,6 +1,41 @@
 @import '../../style/variables.scss';
 
 .section {
-  width: calc(100% - 25.6rem);
-  margin: $margin;
+  width: fit-content;
+  margin: 0 auto;
+  padding: $margin;
+
+  h2 {
+    margin-bottom: 3.2rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.2rem;
+}
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 2.4rem;
+  background-color: $grey;
+  overflow: hidden;
+  box-shadow: 0 1.2rem 2.4rem rgba($black, 0.09);
+  flex: 1 0 25%;
+  min-width: 36rem;
+  max-width: 50%;
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    border-radius: 2.4rem;
+    aspect-ratio: 453 / 240;
+  }
+
+  p {
+    padding: 2.4rem;
+  }
 }
