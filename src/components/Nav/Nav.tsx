@@ -10,10 +10,10 @@ export function Nav() {
 
   return (
     <>
-      <div className={style.dummy} ref={dummy} style={{ width: 0, height: 0 }}></div>
+      <div className={style.dummy} ref={dummy} style={{ width: 0, height: 0 }} />
       <div className={style.container}>
         <LogoCircle className={style.circle} />
-        <div className={style.Nav + ' ' + (active ? style.active : '')}>
+        <div className={`${style.Nav} ${active ? style.active : ''}`}>
           <div className={style.content}>
             <Link href="/">
               <Signature color="white" className={style.Signature} />

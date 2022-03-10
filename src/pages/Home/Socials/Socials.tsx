@@ -2,7 +2,7 @@ import { Center, Link } from '~/components';
 import { Codepen, Contact, Email, Github, Linkedin, Npm, Stackoverflow, Twitter } from './icons';
 import style from './Socials.module.scss';
 
-export function Socials(): JSX.Element {
+export function Socials() {
   return (
     <Center>
       <div className={style.Socials}>
@@ -24,6 +24,6 @@ export function Socials(): JSX.Element {
 const Card = ({ children, href }) => (
   <Link href={href} className={style.Link} newTab>
     <p>{children.name}</p>
-    <children.Logo></children.Logo>
+    <children.Logo />
   </Link>
 );

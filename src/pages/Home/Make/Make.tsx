@@ -14,7 +14,7 @@ export function Make() {
         <Link newTab href="https://www.npmjs.com/~cooperrunyan">
           View my NPM profile
         </Link>
-        <div className={style.circle}></div>
+        <div className={style.circle} />
       </div>
     </Center>
   );

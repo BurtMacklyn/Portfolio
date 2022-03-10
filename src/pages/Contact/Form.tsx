@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import * as emailjs from '@emailjs/browser';
 import type { State } from '~/types';
 
-emailjs.init(process.env['NEXT_PUBLIC_EMAIL_USER']!);
+emailjs.init(process.env.NEXT_PUBLIC_EMAIL_USER!);
 
 export function Form({ hooray: [hooray, setHooray], loading: [loading, setLoading] }: { hooray: State<boolean>; loading: State<boolean> }) {
   const [alive, setAlive] = useState(true); // to make sure asyncronous code isn't ran while component is not mounted
@@ -20,7 +20,7 @@ export function Form({ hooray: [hooray, setHooray], loading: [loading, setLoadin
       if (loading || hooray) return;
       if (!name.current?.value || !subject.current?.value || !email.current?.value || !body.current?.value) return;
 
-      const sendPromise = emailjs.send(process.env['NEXT_PUBLIC_EMAIL_SERVICE']!, process.env['NEXT_PUBLIC_EMAIL_TEMPLATE']!, {
+      const sendPromise = emailjs.send(process.env.NEXT_PUBLIC_EMAIL_SERVICE!, process.env.NEXT_PUBLIC_EMAIL_TEMPLATE!, {
         body: body.current?.value,
         email: email.current?.value,
         name: name.current?.value,
@@ -54,7 +54,7 @@ export function Form({ hooray: [hooray, setHooray], loading: [loading, setLoadin
       <input type="text" name="name" placeholder="Name" ref={name} />
       <input type="text" name="subject" placeholder="Subject" ref={subject} />
       <input type="text" name="email" placeholder="Email" ref={email} />
-      <textarea name="body" placeholder="Body" ref={body}></textarea>
+      <textarea name="body" placeholder="Body" ref={body} />
       <button type="submit">Send</button>
     </form>
   );

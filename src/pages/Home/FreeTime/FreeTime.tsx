@@ -4,7 +4,7 @@ import style from './FreeTime.module.scss';
 export function FreeTime() {
   return (
     <div className={style.FreeTime}>
-      <div className={style.circle}></div>
+      <div className={style.circle} />
       <div className={style.content}>
         <h2>Free Time</h2>
         <p>

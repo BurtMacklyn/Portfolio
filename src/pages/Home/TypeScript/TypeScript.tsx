@@ -36,7 +36,7 @@ function Scroll() {
   });
 
   return (
-    <ul className={style.Scroll + ' ' + style['focus' + focused]}>
+    <ul className={`${style.Scroll} ${style[`focus${focused}`]}`}>
       <li className={style.c1}>better</li>
       <li className={style.c2}>stronger</li>
       <li className={style.c3}>quicker</li>

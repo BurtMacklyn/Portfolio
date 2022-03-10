@@ -7,7 +7,7 @@ export function Back({ color, ...props }: { color: keyof typeof pallette } & any
   const router = useRouter();
 
   return (
-    <button className={style.Back + ' ' + props.className} onClick={() => router.back()} style={{ color: pallette[color] }}>
+    <button className={`${style.Back} ${props.className}`} onClick={() => router.back()} style={{ color: pallette[color] }}>
       <Icon style={{ color: pallette[color] }} /> Back
     </button>
   );

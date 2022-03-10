@@ -9,7 +9,7 @@ export function Quote() {
       <div className={style.cite}>
         <p className={style.name}>Jeff Atwood</p>
         <p className={style.description}>Creator of Stack Overflow</p>
-        <span className={style.circle}></span>
+        <span className={style.circle} />
       </div>
     </div>
   );

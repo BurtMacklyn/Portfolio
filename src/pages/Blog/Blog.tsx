@@ -1,6 +1,7 @@
 import style from './Blog.module.scss';
 import { Link, Portfolio, Nav, Center, Footer } from '~/components';
 import Head from 'next/head';
+import Image from 'next/image';
 
 function sort(from: string[], data: any) {
   const s: string[] = [];
@@ -25,7 +26,7 @@ export function Blog({ pages, data }: { pages: string[]; data: any }) {
           <div className={style.content}>
             {sort(pages, data).map((page) => (
               <Link key={page} href={page} className={style.Card}>
-                <img src={data[page]?.preview} alt="Preview image" />
+                <Image src={data[page]?.preview} alt="Preview image" />
                 <p>{data[page]?.title}</p>
               </Link>
             ))}

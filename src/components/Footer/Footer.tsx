@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <div className={style.footerContainer}>
       <footer>
-        <Dots className={style.dots}></Dots>
+        <Dots className={style.dots} />
 
         <div>
           <h3>Cooper Runyan</h3>
