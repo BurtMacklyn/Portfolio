@@ -1,9 +1,26 @@
-import { Link, Portfolio } from '~/components';
+import style from './Blog.module.scss';
+import { Link, Portfolio, Nav, Center } from '~/components';
 
-export function Blog() {
+type Data = {
+  title: string;
+  preview: string;
+};
+
+export function Blog({ pages, data }: { pages: string[]; data: Data }) {
+  console.log(data);
+
   return (
     <Portfolio>
-      <Link href="/blog/test">post</Link>
+      <Nav />
+      <Center>
+        <div className={style.section}>
+          {pages.map((page) => (
+            <Link key={page} href={page}>
+              {page}
+            </Link>
+          ))}
+        </div>
+      </Center>
     </Portfolio>
   );
 }
