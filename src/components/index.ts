@@ -5,3 +5,4 @@ export * from './Link';
 export * from './Footer';
 export * from './Center';
 export * from './Markdown';
+export * from './Back';

@@ -1,2 +1,2 @@
 export * from './Page';
-export * from './getStaticBlogProps';
+export * from './getStatic';
