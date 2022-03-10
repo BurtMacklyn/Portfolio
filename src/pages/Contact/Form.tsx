@@ -14,38 +14,37 @@ export function Form({ hooray: [hooray, setHooray], loading: [loading, setLoadin
   const form = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    if (form.current)
-      form.current!.onsubmit = (e) => {
-        e.preventDefault();
+    form.current!.onsubmit = (e) => {
+      e.preventDefault();
 
-        if (loading || hooray) return;
-        if (!name.current?.value || !subject.current?.value || !email.current?.value || !body.current?.value) return;
+      if (loading || hooray) return;
+      if (!name.current?.value || !subject.current?.value || !email.current?.value || !body.current?.value) return;
 
-        const sendPromise = emailjs.send(process.env['NEXT_PUBLIC_EMAIL_SERVICE']!, process.env['NEXT_PUBLIC_EMAIL_TEMPLATE']!, {
-          body: body.current?.value,
-          email: email.current?.value,
-          name: name.current?.value,
-          subject: subject.current?.value,
-        });
+      const sendPromise = emailjs.send(process.env['NEXT_PUBLIC_EMAIL_SERVICE']!, process.env['NEXT_PUBLIC_EMAIL_TEMPLATE']!, {
+        body: body.current?.value,
+        email: email.current?.value,
+        name: name.current?.value,
+        subject: subject.current?.value,
+      });
 
-        setLoading(true);
+      setLoading(true);
 
-        sendPromise.then((res) => {
-          if (!alive) return;
-          if (res.text === 'OK') {
-            setHooray(true);
-            setLoading(false);
+      sendPromise.then((res) => {
+        if (!alive) return;
+        if (res.text === 'OK') {
+          setHooray(true);
+          setLoading(false);
 
-            setTimeout(() => {
-              setHooray(false);
-            }, 2000);
+          setTimeout(() => {
+            setHooray(false);
+          }, 2000);
 
-            Array.from(form.current!.children).forEach((child: any) => {
-              if (child.value) child.value = '';
-            });
-          }
-        });
-      };
+          Array.from(form.current!.children).forEach((child: any) => {
+            if (child.value) child.value = '';
+          });
+        }
+      });
+    };
 
     return () => setAlive(false);
   }, []);
