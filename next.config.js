@@ -21,14 +21,4 @@ module.exports = withPWA({
 
     return config;
   },
-
-  async redirects() {
-    return [
-      {
-        source: '/lists',
-        destination: '/lists/0',
-        permanent: false,
-      },
-    ];
-  },
 });

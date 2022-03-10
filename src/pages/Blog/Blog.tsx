@@ -1,5 +1,6 @@
 import style from './Blog.module.scss';
 import { Link, Portfolio, Nav, Center, Footer } from '~/components';
+import Head from 'next/head';
 
 function sort(from: string[], data: any) {
   const s: string[] = [];
@@ -14,6 +15,9 @@ function sort(from: string[], data: any) {
 export function Blog({ pages, data }: { pages: string[]; data: any }) {
   return (
     <Portfolio>
+      <Head>
+        <title>Blog</title>
+      </Head>
       <Nav />
       <Center>
         <div className={style.section}>
