@@ -9,7 +9,7 @@ function _Link({
 }: { children: ReactChild | ReactChild[]; href: string; newTab?: boolean } & HTMLAttributes<HTMLAnchorElement>) {
   return (
     <Link {...props} href={href} passHref scroll={false}>
-      <a {...props} target={newTab ? '_blank' : ''} style={{ textDecoration: 'none', color: 'inherit', ...props.style }}>
+      <a {...props} rel="noopener" target={newTab ? '_blank' : ''} style={{ textDecoration: 'none', color: 'inherit', ...props.style }}>
         {children}
       </a>
     </Link>
