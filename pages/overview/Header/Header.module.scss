@@ -1,0 +1,24 @@
+@import '../../../src/style/variables.scss';
+
+.bgDot {
+  position: absolute;
+  top: -68rem;
+  right: -9.6rem;
+}
+
+.Header {
+  p {
+    max-width: 80rem;
+  }
+
+  width: 100vw;
+  max-width: $max-width;
+  position: relative;
+  padding: 18rem $margin;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2.4rem;
+}

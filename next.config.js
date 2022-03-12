@@ -5,25 +5,44 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 /** @type {import('next').NextConfig} */
-module.exports = withBundleAnalyzer(
-  withPWA({
-    reactStrictMode: true,
-    pwa: {
-      dest: 'public',
-      register: true,
-      skipWaiting: true,
-      disable: process.env.NODE_ENV === 'development',
-      runtimeCaching,
-      buildExcludes: [/middleware-manifest.json$/],
-      scope: '/',
-    },
-    webpack(config) {
-      config.module.rules.push({
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
-      });
+module.exports = withPlugins({
+  reactStrictMode: true,
+  pwa: {
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+    disable: process.env.NODE_ENV === 'development',
+    runtimeCaching,
+    buildExcludes: [/middleware-manifest.json$/],
+    scope: '/',
+  },
 
-      return config;
-    },
-  }),
-);
+  async redirects() {
+    return [
+      {
+        source: '/overview',
+        destination: '/',
+        permanent: false,
+      },
+      {
+        source: '/home',
+        destination: '/',
+        permanent: false,
+      },
+    ];
+  },
+
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
+  },
+});
+
+/** @param {import('next').NextConfig} config */
+function withPlugins(config) {
+  return withBundleAnalyzer(withPWA(config));
+}

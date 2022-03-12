@@ -40,7 +40,8 @@
     "useUnknownInCatchVariables": true,
     "watch": true,
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+      "X": ["./pages/404"]
     },
     "incremental": true
   },
