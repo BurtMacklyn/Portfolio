@@ -12,8 +12,8 @@ export function NotFound() {
       <div className={style.NotFound}>
         <Graphic className={style.Graphic} />
         <div className={style.content}>
-          <h1>404</h1>
-          <h2>Page not found</h2>
+          <h2>404</h2>
+          <h3>Page not found</h3>
           <Back color="white" />
         </div>
       </div>

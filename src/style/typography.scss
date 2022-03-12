@@ -1,0 +1,32 @@
+@import './variables.scss';
+
+// prettier-ignore
+p, a {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+// prettier-ignore
+p { line-height: 150% }
+
+// prettier-ignore
+a { text-decoration: none }
+
+// prettier-ignore
+h1, h2, h3 {
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+h1 {
+  font-size: 9.6rem;
+  letter-spacing: -0.07em;
+}
+
+// prettier-ignore
+h2 { font-size: 6.4rem }
+
+// prettier-ignore
+h3 { font-size: 5.6rem }
