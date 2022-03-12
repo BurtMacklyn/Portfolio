@@ -11,9 +11,6 @@ export default function Document() {
         <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.webp" />
         <link rel="manifest" href="/manifest.json" />
 
-        <link rel="preload" as="stylesheet" href="/fonts/inter/main.css" />
-        <link rel="preload" as="stylesheet" href="/fonts/avenir/main.css" />
-
         <meta name="theme-color" content="#fff" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
       </Head>
