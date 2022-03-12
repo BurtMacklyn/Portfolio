@@ -1,5 +1,6 @@
 /* eslint-disable no-eval */
 import { Html, Head, Main, NextScript } from 'next/document';
+import { pallette } from '~/config';
 
 export default function Document() {
   return (
@@ -11,7 +12,7 @@ export default function Document() {
         <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.webp" />
         <link rel="manifest" href="/manifest.json" />
 
-        <meta name="theme-color" content="#fff" />
+        <meta name="theme-color" content={pallette.white} />
         <meta name="apple-mobile-web-app-capable" content="yes" />
       </Head>
       <body>
