@@ -23,12 +23,12 @@ export function Portfolio({ children }: { children?: ReactChild | ReactChild[] }
               description: "Main overview page of Cooper Runyan's portfolio",
               images: [
                 {
-                  url: `${url}/imgs/banner.png`,
+                  url: `${url}/imgs/site/banner.png`,
                   alt: 'Cooper Runyan Banner',
                   type: 'image/png',
                 },
                 {
-                  url: `${url}/imgs/profile.png`,
+                  url: `${url}/imgs/site/profile.png`,
                   alt: 'Cooper Runyan Profile Picture',
                   type: 'image/png',
                 },

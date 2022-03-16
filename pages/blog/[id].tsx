@@ -1,12 +1,13 @@
 import type { GetStaticPropsContext } from 'next';
 import path from 'path';
 import fs from 'fs';
-import { getAllBlogPaths } from '~/lib';
+import { formatDate, getAllBlogPaths } from '~/lib';
 import Head from 'next/head';
 import { Portfolio, Markdown, Back, Nav, Footer } from '~/components';
 import style from '~/style/components/Blog.module.scss';
 
-export default function Page({ content }: { content: string }) {
+export default function Page({ content, metadata }: { content: string; metadata: any }) {
+  content += `#\n\n---\n\n###### Cooper Runyan: ${formatDate(metadata.timestamp)}`;
   return (
     <Portfolio>
       <Head>
@@ -27,8 +28,9 @@ export default function Page({ content }: { content: string }) {
 }
 
 export async function getStaticProps(ctx: GetStaticPropsContext) {
-  const content = fs.readFileSync(path.join(process.cwd(), `/public/_articles/${ctx.params!.id}.md`), 'utf-8');
-  return { props: { content } };
+  const content = fs.readFileSync(path.join(process.cwd(), `/public/_articles/content/${ctx.params!.id}.md`), 'utf-8');
+  const metadata = JSON.parse(fs.readFileSync(path.join(process.cwd(), `/public/_articles/metadata/${ctx.params!.id}.json`), 'utf-8'));
+  return { props: { content, metadata } };
 }
 
 export async function getStaticPaths() {

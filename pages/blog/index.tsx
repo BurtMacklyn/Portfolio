@@ -45,7 +45,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
   const data: { [key: string]: {} } = {};
 
   for (const page of pages) {
-    data[page] = JSON.parse(fs.readFileSync(path.join(process.cwd(), `/public/_articledata/${page.replace('/blog', '')}.json`), 'utf-8') || '{}');
+    data[page] = JSON.parse(fs.readFileSync(path.join(process.cwd(), `/public/_articles/metadata/${page.replace('/blog', '')}.json`), 'utf-8') || '{}');
   }
 
   return { props: { pages, data } };
