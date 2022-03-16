@@ -1,0 +1,119 @@
+@import '../variables.scss';
+
+.page {
+  width: 100%;
+  padding: $margin;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-bottom: 6.4rem;
+
+  p {
+    max-width: 70rem;
+  }
+}
+
+.searchbar {
+  background-color: $grey;
+  width: 100%;
+  max-width: 75rem;
+  border-radius: 2.4rem;
+  padding: 1.2rem 2.4rem;
+  border: 0;
+  font-size: 1.4rem;
+  color: $black;
+  outline: none !important;
+}
+
+.filters {
+  display: flex;
+  max-width: 75rem;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin-top: 2.4rem;
+
+  input {
+    display: none;
+  }
+
+  label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: $black;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  :checked ~ label {
+    opacity: 1;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 3.2rem;
+  margin-top: 8.6rem;
+
+  & > * {
+    flex: 1 1 40%;
+    min-width: 56rem;
+  }
+}
+
+.card {
+  padding: 2.4rem;
+  background: $grey;
+  border-radius: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    max-width: 32rem;
+  }
+
+  .projectName {
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.6rem;
+  }
+
+  .projectTagsMessage {
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  img {
+    border-radius: 2.4rem;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+
+    li {
+      font-size: 1.4rem;
+      user-select: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 2.4rem;
+      background: rgba($black, 0.08);
+    }
+  }
+}

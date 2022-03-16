@@ -12,22 +12,19 @@ export function Footer() {
           <h3>Cooper Runyan</h3>
           <ul>
             <li>
-              <Link href="#">Overview</Link>
+              <Link href="/overview">Overview</Link>
             </li>
             <li>
-              <Link href="#">Projects</Link>
+              <Link href="/projects">Projects</Link>
             </li>
             <li>
-              <Link href="#">Experience</Link>
+              <Link href="/blog">Blog</Link>
             </li>
             <li>
-              <Link href="#">Blog</Link>
+              <Link href="/site-map">Site Map</Link>
             </li>
             <li>
-              <Link href="#">Site Map</Link>
-            </li>
-            <li>
-              <Link href="#">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>
