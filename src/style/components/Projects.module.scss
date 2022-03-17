@@ -58,6 +58,11 @@
   & > * {
     flex: 1 1 40%;
     min-width: 56rem;
+
+    @media (max-width: calc(700em / 16)) {
+      flex: 1 1 100%;
+      min-width: unset;
+    }
   }
 }
 
@@ -70,6 +75,14 @@
   gap: 3.2rem;
   transition: all 0.15s ease-in;
   cursor: pointer;
+
+  @media (max-width: calc(700em / 16)) {
+    flex-direction: column;
+  }
+
+  img {
+    max-width: 100%;
+  }
 
   &:hover,
   &:focus {
@@ -126,6 +139,7 @@
 
 .projectpage {
   margin-block: 6.4rem;
+  padding-inline: var(--margin);
 }
 
 .back {
