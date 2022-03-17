@@ -8,7 +8,6 @@ export default function Document() {
       <Head>
         <base href="/" />
 
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.webp" />
         <link rel="manifest" href="/manifest.json" />
 

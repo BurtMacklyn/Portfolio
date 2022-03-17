@@ -2,6 +2,7 @@ import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 import type { ReactChild } from 'react';
 import { useUrl } from '~/hooks';
+import { Favicon } from '../Favicon';
 import style from './Portfolio.module.scss';
 
 export function Portfolio({ children }: { children?: ReactChild | ReactChild[] }) {
@@ -39,6 +40,8 @@ export function Portfolio({ children }: { children?: ReactChild | ReactChild[] }
               handle: '@CooperRunyan1',
             }}
           />
+
+          <Favicon />
 
           <Head>
             <meta name="description" content="A marketing and about site for web designer and developer, Cooper Runyan" />
