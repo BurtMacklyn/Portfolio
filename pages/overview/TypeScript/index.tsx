@@ -51,7 +51,7 @@ function Scroll() {
 
 function Bold(props: HTMLAttributes<HTMLSpanElement>) {
   return (
-    <span {...props} style={{ color: pallette.primary, fontWeight: 700 }}>
+    <span {...props} style={{ fontWeight: 700 }}>
       {props.children}
     </span>
   );
