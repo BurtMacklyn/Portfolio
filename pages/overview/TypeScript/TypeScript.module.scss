@@ -2,7 +2,7 @@
 
 .TypeScript {
   max-width: 80rem;
-  margin: 12rem $margin;
+  margin: 12rem var(--margin);
   display: flex;
   flex-direction: column;
   gap: 2.4rem;

@@ -11,13 +11,13 @@
     z-index: -1;
     position: absolute;
     top: 0;
-    left: $margin;
+    left: var(--margin);
     transform: translateY(-22.7rem);
   }
 
   footer {
     position: relative;
-    padding: 9.6rem $margin;
+    padding: 9.6rem var(--margin);
     background-color: $grey;
     margin: 0 auto;
     width: 100vw;

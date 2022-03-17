@@ -41,7 +41,7 @@
 
   height: 12rem;
 
-  padding-inline: $margin;
+  padding-inline: var(--margin);
 
   ul {
     display: flex;

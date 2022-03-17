@@ -15,7 +15,7 @@
   width: 100vw;
   max-width: $max-width;
   position: relative;
-  padding: 18rem $margin;
+  padding: 18rem var(--margin);
   margin: 0 auto;
 
   display: flex;
