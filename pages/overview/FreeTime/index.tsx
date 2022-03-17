@@ -12,7 +12,7 @@ export function FreeTime() {
           learning and improving. In that time I have built dev tools CLIs (Command Line Interfaces), that create project scaffolding, as well as a stock
           tracking app, and tons of small applications on Codepen.
         </p>
-        <Link href="https://codepen.io/cooperrunyan" className={style.Link}>
+        <Link newTab href="https://codepen.io/cooperrunyan" className={style.Link}>
           View my Codepen
         </Link>
       </div>
