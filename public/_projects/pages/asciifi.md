@@ -58,4 +58,4 @@ provide credit.
 
 #### [7 Full Stack App Ideas for Developers w/ Instructions Included](https://www.youtube.com/watch?v=JTOJsU3FSD8)
 
-[![7 Full Stack App Ideas for Developers w/ Instructions Included](https://img.youtube.com/vi/JTOJsU3FSD8/0.jpg)](https://www.youtube.com/watch?v=JTOJsU3FSD8)
+[![7 Full Stack App Ideas for Developers w/ Instructions Included](/_projects/assets/asciifi-inspo-thumbnail.webp)](https://www.youtube.com/watch?v=JTOJsU3FSD8)
