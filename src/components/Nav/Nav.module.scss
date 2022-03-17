@@ -59,7 +59,7 @@
       transition: all 0.1s ease-out;
 
       &:hover,
-      &:focus {
+      &:focus-visible {
         color: $primary !important;
         outline: none;
       }
@@ -68,5 +68,6 @@
 }
 
 .circle {
-  margin-left: 5.5rem;
+  position: relative;
+  left: calc(var(--margin) - 7.5rem);
 }

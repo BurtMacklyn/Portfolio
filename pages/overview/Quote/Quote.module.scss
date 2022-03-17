@@ -1,7 +1,8 @@
 @import '../../../src/style/variables.scss';
 
 .Quote {
-  margin: 12rem auto;
+  margin: var(--margin) auto;
+  padding-inline: var(--margin);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -17,8 +18,12 @@
 .Quotation {
   position: absolute;
   bottom: calc(100% + 2.4rem);
-  left: 0;
-  transform: translateX(-30%);
+  left: var(--margin);
+  transform: translateX(-40%);
+
+  @media (max-width: calc(600em / 16)) {
+    transform: translate(-40%, 25%) scale(0.7);
+  }
 }
 
 .cite {

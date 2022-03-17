@@ -13,4 +13,18 @@
   background-color: $white;
 
   @import '../../style/typography.scss';
+
+  --margin: 12.8rem;
+
+  @media (max-width: calc(1200em / 16)) {
+    --margin: 6.4rem;
+  }
+
+  @media (max-width: calc(800em / 16)) {
+    --margin: 3.2rem;
+  }
+
+  @media (max-width: calc(400em / 16)) {
+    --margin: 2.4rem;
+  }
 }

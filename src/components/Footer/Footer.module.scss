@@ -11,8 +11,10 @@
     z-index: -1;
     position: absolute;
     top: 0;
-    left: var(--margin);
-    transform: translateY(-22.7rem);
+    max-width: 100%;
+    padding-inline: var(--margin);
+    left: 0;
+    transform: translateY(-40%);
   }
 
   footer {

@@ -1,4 +1,4 @@
-import { Nav, Portfolio } from '~/components';
+import { Center, Footer, Nav, Portfolio } from '~/components';
 import style from '~/style/components/Projects.module.scss';
 import { projects } from './data/projects';
 import { Filters } from './components/Filters';
@@ -15,25 +15,28 @@ export default function Projects() {
   return (
     <Portfolio>
       <Nav />
-      <FilterContext.Provider value={[selectedFilters, setSelectedFilters]}>
-        <div className={style.page}>
-          <div className={style.head}>
-            <h2>Projects</h2>
-            <p>
-              Here are some of the projects that I&apos;ve created, Use the filter functionality below to find projects that suit what you&apos;re looking for.
-              If you aren&apos;t sure, remove all filters to filter by coolest to least-cool.
-            </p>
-          </div>
+      <Center>
+        <FilterContext.Provider value={[selectedFilters, setSelectedFilters]}>
+          <div className={style.page}>
+            <div className={style.head}>
+              <h2>Projects</h2>
+              <p>
+                Here are some of the projects that I&apos;ve created, Use the filter functionality below to find projects that suit what you&apos;re looking
+                for. If you aren&apos;t sure, remove all filters to filter by coolest to least-cool.
+              </p>
+            </div>
 
-          <Filters filters={selectedFilters} />
+            <Filters filters={selectedFilters} />
 
-          <div className={style.grid}>
-            {filter(projects, selectedFilters).map((project) => (
-              <Card key={Math.random() * Math.random()}>{project}</Card>
-            ))}
+            <div className={style.grid}>
+              {filter(projects, selectedFilters).map((project) => (
+                <Card key={Math.random() * Math.random()}>{project}</Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </FilterContext.Provider>
+        </FilterContext.Provider>
+      </Center>
+      <Footer />
     </Portfolio>
   );
 }
