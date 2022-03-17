@@ -1,14 +1,18 @@
 @import '../../../src/style/variables.scss';
 
 .Make {
-  width: calc(100% - 25.6rem);
-  margin: 12.8rem;
+  width: calc(100% - (2 * var(--margin)));
+  margin: var(--margin);
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
   position: relative;
   z-index: 0;
   margin-bottom: 18rem;
+
+  @media (max-width: calc(1000em / 16)) {
+    margin-block: 12rem;
+  }
 
   p {
     max-width: 80rem;
@@ -35,4 +39,12 @@
   border-radius: 100%;
   background: $grey;
   z-index: -1;
+
+  @media (max-width: calc(1200em / 16)) {
+    right: calc(-2 * var(--margin));
+  }
+
+  @media (max-width: calc(600em / 16)) {
+    display: none;
+  }
 }

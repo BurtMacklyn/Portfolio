@@ -39,8 +39,21 @@ h1 {
   }
 }
 
-// prettier-ignore
-h2 { font-size: 6.4rem }
+h2 {
+  font-size: 6.4rem;
+
+  @media (max-width: calc(900em / 16)) {
+    font-size: 5.6rem;
+  }
+
+  @media (max-width: calc(600em / 16)) {
+    font-size: 4.8rem;
+  }
+
+  @media (max-width: calc(400em / 16)) {
+    font-size: 4.2rem;
+  }
+}
 
 h3 {
   font-size: 5.6rem;
