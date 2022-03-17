@@ -32,7 +32,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext): Promise<GetSta
   const index = ctx.params?.project as any;
   const project = projects.filter((project) => project.link === `/projects/${index}`)[0];
 
-  const content = fs.readFileSync(path.join(process.cwd(), `/public/_projects/${project.content}.md`), 'utf-8');
+  const content = fs.readFileSync(path.join(process.cwd(), `/public/_projects/pages/${project.content}.md`), 'utf-8');
 
   return { props: { project, content } };
 }
