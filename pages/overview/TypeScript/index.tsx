@@ -14,9 +14,9 @@ export function TypeScript() {
           </span>
         </h2>
         <p>
-          While JavaScript is (arguably) <Bold>one of the best languages out there</Bold>, TypeScript is much <Bold>better</Bold> that JavaScript. Writing all
-          given to you <Bold>within</Bold> your IDE. It <Bold>simplifies and speeds</Bold> the programming process, and I thank each and every person at
-          Microsoft who contributed to its creation.
+          While JavaScript is (arguably) <Bold>one of the best languages out there</Bold>, TypeScript is much <Bold>better</Bold> than JavaScript. Types,
+          variables, properties, and methods, all given to you <Bold>within</Bold> your IDE. It <Bold>simplifies and speeds</Bold> the programming process, and
+          I thank each and every person at Microsoft who contributed to its creation.
         </p>
       </div>
     </Center>
