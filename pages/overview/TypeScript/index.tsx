@@ -27,12 +27,16 @@ const amts = [1, 2, 3, 4, 5, 6, 7, 8];
 const interval = 2400;
 
 function Scroll() {
+  const [alive, setAlive] = useState(true);
   const [focused, setFocused] = useState<typeof amts[number]>(1);
 
   useEffect(() => {
     setTimeout(() => {
+      if (!alive) return;
       setFocused(amts[focused] || amts[0]);
     }, interval);
+
+    return () => setAlive(false);
   });
 
   return (

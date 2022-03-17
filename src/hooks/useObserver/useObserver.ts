@@ -14,7 +14,7 @@ export function useObserver(element: RefObject<HTMLElement>) {
 
     observer.observe(element.current!);
 
-    return setAlive(false);
+    return () => setAlive(false);
   }, []);
 
   return intersecting;
