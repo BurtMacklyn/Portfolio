@@ -6,4 +6,5 @@ export type Project = {
   preview: string;
   tags: Tag[];
   description: string;
+  content: string;
 };

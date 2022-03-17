@@ -7,6 +7,7 @@ export const projects: Project[] = [
     preview: '/imgs/projects/stocked.webp',
     tags: ['react', 'nextjs', 'scss', 'typescript', 'docker', 'oak', 'mongodb', 'deno', 'heroku', 'nodejs'],
     description: 'Stock tracking frontend/backend application',
+    content: 'stocked',
   },
   {
     name: 'Lcnsr',
@@ -14,6 +15,7 @@ export const projects: Project[] = [
     preview: '/imgs/projects/cli.webp',
     tags: ['nodejs', 'cli', 'javascript', 'typescript', 'npm'],
     description: 'Open source license helper',
+    content: 'lcnsr',
   },
   {
     name: 'Tscf',
@@ -21,14 +23,15 @@ export const projects: Project[] = [
     preview: '/imgs/projects/cli.webp',
     tags: ['nodejs', 'cli', 'javascript', 'typescript', 'npm'],
     description: 'Typescript configurator CLI',
+    content: 'tscf',
   },
-
   {
     name: 'Asciifi',
     link: '/projects/asciifi',
     preview: '/imgs/projects/asciifi.svg',
     tags: ['nodejs', 'cli', 'javascript', 'typescript', 'npm'],
     description: 'Image > ascii converter',
+    content: 'asciifi',
   },
   {
     name: 'Snake',
@@ -36,6 +39,7 @@ export const projects: Project[] = [
     preview: '/imgs/projects/snake.webp',
     tags: ['react', 'nextjs', 'scss', 'typescript'],
     description: 'A cool web-based snake app!',
+    content: 'snake',
   },
   {
     name: 'Snake CLI',
@@ -43,6 +47,7 @@ export const projects: Project[] = [
     preview: '/imgs/projects/snake-cli.png',
     tags: ['typescript', 'cli', 'javascript', 'nodejs', 'npm'],
     description: 'Play snake in your terminal',
+    content: 'snake-cli',
   },
   {
     name: 'React Template',
@@ -50,6 +55,7 @@ export const projects: Project[] = [
     preview: '/imgs/projects/template.webp',
     tags: ['scss', 'javascript', 'nodejs', 'react', 'template', 'typescript', 'vite'],
     description: 'A template repository for React projects',
+    content: 'react-template',
   },
   {
     name: 'Nextjs Template',
@@ -57,6 +63,7 @@ export const projects: Project[] = [
     preview: '/imgs/projects/template.webp',
     tags: ['scss', 'javascript', 'nodejs', 'nextjs', 'template', 'typescript'],
     description: 'A template repository for Nextjs projects',
+    content: 'next-template',
   },
   {
     name: 'Trig Helper',
@@ -64,14 +71,15 @@ export const projects: Project[] = [
     preview: '/imgs/projects/trig-helper.webp',
     tags: ['angular', 'scss', 'heroku', 'typescript'],
     description: 'Trigonometry helper',
+    content: 'trig-helper',
   },
-
   {
     name: 'Deno Template',
     link: '/projects/deno-template',
     preview: '/imgs/projects/curl.webp',
     tags: ['scss', 'javascript', 'deno', 'template', 'typescript', 'deno', 'oak', 'docker'],
     description: 'A template repository for Deno APIs',
+    content: 'deno-template',
   },
   {
     name: 'Roth IRA Calculator',
@@ -79,6 +87,7 @@ export const projects: Project[] = [
     preview: '/imgs/projects/roth-ira.webp',
     tags: ['scss', 'react', 'typescript', 'nodejs'],
     description: 'Calculator for Roth IRAs',
+    content: 'roth-ira',
   },
 ];
 

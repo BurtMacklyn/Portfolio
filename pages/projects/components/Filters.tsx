@@ -1,7 +1,7 @@
 import style from '~/style/components/Projects.module.scss';
 import type { Tag } from '~/types';
 import { Filter } from './Filter';
-import { tags } from './tags';
+import { tags } from '../data/tags';
 
 export function Filters({ filters }: { filters: Tag[] }) {
   return (

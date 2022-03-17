@@ -1,8 +1,8 @@
 import { Nav, Portfolio } from '~/components';
 import style from '~/style/components/Projects.module.scss';
-import { projects } from './projects';
-import { Filters } from './Filters';
-import { Card } from './Card';
+import { projects } from './data/projects';
+import { Filters } from './components/Filters';
+import { Card } from './components/Card';
 // eslint-disable-next-line no-use-before-define
 import React, { useState } from 'react';
 import type { Project, State, Tag } from '~/types';
