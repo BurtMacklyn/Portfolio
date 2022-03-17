@@ -11,6 +11,10 @@
   flex-wrap: wrap;
   gap: 3.2rem;
 
+  @media (max-width: calc(400em / 16)) {
+    gap: 1.6rem;
+  }
+
   & > * {
     flex: 1 1 50rem;
   }

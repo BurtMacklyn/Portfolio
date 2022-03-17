@@ -13,9 +13,12 @@
   flex-wrap: wrap;
   max-width: 120rem;
   margin: var(--margin);
-  // width: 100%;
   width: fit-content;
   justify-content: center;
+
+  @media (max-width: calc(400em / 16)) {
+    gap: 4rem;
+  }
 
   & > * {
     flex: 0 0 24rem;

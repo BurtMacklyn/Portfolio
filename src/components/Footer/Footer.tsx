@@ -35,6 +35,7 @@ export function Footer() {
             <Link href="/contact">https://www.cooperrunyan.com/contact</Link>
           </div>
           <Signature
+            className={style.signature}
             color="black"
             style={{
               transformOrigin: 'bottom right',
