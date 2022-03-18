@@ -26,7 +26,7 @@ export function Nav() {
                 <Link href="/blog">Blog</Link>
               </li>
               <li>
-                <Link href="/site-map">Site Map</Link>
+                <Link href="/play">Games</Link>
               </li>
               <li>
                 <Link href="/contact">Contact</Link>

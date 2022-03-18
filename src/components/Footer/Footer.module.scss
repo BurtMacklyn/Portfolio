@@ -3,13 +3,8 @@
 .footerContainer {
   width: 100vw;
   position: relative;
-  margin-top: 32rem;
   z-index: 1;
   background-color: $grey;
-
-  @media (max-width: calc(500em / 16)) {
-    margin-top: 16rem;
-  }
 
   .dots {
     z-index: -1;

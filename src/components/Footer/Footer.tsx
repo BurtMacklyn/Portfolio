@@ -1,13 +1,10 @@
 import { Link, Signature } from '..';
-import { Dots } from './Dots';
 import style from './Footer.module.scss';
 
 export function Footer() {
   return (
     <div className={style.footerContainer}>
       <footer>
-        <Dots className={style.dots} />
-
         <div>
           <h3>Cooper Runyan</h3>
           <ul>
@@ -21,7 +18,7 @@ export function Footer() {
               <Link href="/blog">Blog</Link>
             </li>
             <li>
-              <Link href="/site-map">Site Map</Link>
+              <Link href="/play">Games</Link>
             </li>
             <li>
               <Link href="/contact">Contact</Link>
