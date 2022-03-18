@@ -45,7 +45,7 @@ export function Portfolio({ children }: { children?: ReactChild | ReactChild[] }
 
           <Head>
             <meta name="description" content="A marketing and about site for web designer and developer, Cooper Runyan" />
-            <title>Portfolio</title>
+            <title>Cooper Runyan</title>
           </Head>
 
           <div className={style.Portfolio}>{children}</div>
