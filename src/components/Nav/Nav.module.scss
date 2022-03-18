@@ -71,3 +71,71 @@
   position: relative;
   left: calc(var(--margin) - 7.5rem);
 }
+
+.mobileButton {
+  display: none; // initial
+
+  cursor: pointer;
+}
+
+@media (max-width: calc(900em / 16)) {
+  .mobileButton {
+    display: unset;
+  }
+
+  .desktopLinks {
+    display: none !important;
+  }
+}
+
+.mobile {
+  width: 100vw;
+  height: 100vh;
+  background-color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease-in;
+}
+
+.top {
+  padding: 3.2rem var(--margin);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1rem solid rgba($black, 0.25);
+  height: 12rem;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  overflow-x: scroll;
+  padding-inline: var(--margin);
+  list-style: none;
+  padding-top: 2.4rem;
+
+  a {
+    display: flex;
+    padding: 2.4rem 0;
+    border-top: 0.1rem solid rgba($black, 0.25);
+  }
+
+  li:first-of-type a {
+    border: none;
+  }
+}
+
+.check:checked ~ .mobile {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.X {
+  cursor: pointer;
+}
