@@ -21,8 +21,9 @@ export default function Projects() {
             <div className={style.head}>
               <h2>Projects</h2>
               <p>
-                Here are some of the projects that I&apos;ve created, Use the filter functionality below to find projects that suit what you&apos;re looking
-                for. If you aren&apos;t sure, remove all filters to filter by coolest to least-cool.
+                I enjoy not only the satisfaction of the byproduct of creating, but also the creation process itself. I think it&apos;s fun to tinker around
+                with new technologies and determine the absolute best ones. In retrospect, A lot of the things I have built are dev tools which speed up coding
+                processes, which is quite paradoxical.
               </p>
             </div>
 
