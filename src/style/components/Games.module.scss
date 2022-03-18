@@ -23,8 +23,7 @@
 }
 
 .page {
-  padding-inline: var(--margin);
-  padding-top: 6.4rem;
+  padding: 6.4rem var(--margin);
 
   h2 {
     margin-bottom: 4.8rem;

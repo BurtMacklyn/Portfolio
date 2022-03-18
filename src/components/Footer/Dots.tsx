@@ -8,13 +8,13 @@ export function Dots(props: SVGAttributes<SVGElement>) {
         style={{
           mixBlendMode: 'multiply',
         }}>
-        <circle cx="157.207" cy="264.666" r="157.207" fill={pallette.primary} />
+        <circle cx="157.207" cy="264.666" r="157.207" fill={pallette.black} />
       </g>
       <g
         style={{
           mixBlendMode: 'multiply',
         }}>
-        <circle cx="444.351" cy="287.351" r="287.351" fill={pallette.primary} />
+        <circle cx="444.351" cy="287.351" r="287.351" fill={pallette.black} />
       </g>
     </svg>
   );

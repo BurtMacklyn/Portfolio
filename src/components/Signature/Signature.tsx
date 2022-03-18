@@ -1,7 +1,7 @@
 import type { SVGAttributes } from 'react';
 import { pallette } from '~/config';
 
-export function Signature(props: SVGAttributes<any> & { color?: 'black' | 'white' | 'grey' | 'primary' }) {
+export function Signature(props: SVGAttributes<any> & { color?: 'black' | 'white' | 'grey' | 'black' }) {
   return (
     <svg
       width="225"

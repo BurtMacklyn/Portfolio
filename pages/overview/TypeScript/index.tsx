@@ -9,7 +9,7 @@ export function TypeScript() {
       <div className={style.TypeScript}>
         <h2>
           TypeScript is{' '}
-          <span style={{ color: pallette.primary }}>
+          <span style={{ color: pallette.black }}>
             <Scroll />
           </span>
         </h2>

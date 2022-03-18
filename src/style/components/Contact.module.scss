@@ -42,7 +42,7 @@
       transition: outline 0.2s ease-in;
 
       :focus {
-        outline: 1px solid $primary;
+        outline: 1px solid $black;
       }
     }
 
@@ -52,7 +52,7 @@
     }
 
     button {
-      background: $primary;
+      background: $black;
       color: $white;
       cursor: pointer;
     }
