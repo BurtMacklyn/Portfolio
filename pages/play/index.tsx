@@ -22,7 +22,7 @@ export default function Play() {
 function Card({ children: game }: { children: { name: string; link: string; image: string } }) {
   return (
     <Link href={game.link} className={style.card}>
-      <p>{game.name}</p>
+      <p>{game?.name}</p>
       <div>
         <Image src={game.image} layout="responsive" width={2400} height={2400} />
       </div>

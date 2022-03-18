@@ -39,7 +39,7 @@ export function Socials() {
 
 const Card = ({ children, href, newTab }) => (
   <Link href={href} className={style.Link} newTab={!!newTab}>
-    <p>{children.name}</p>
+    <p>{children?.name}</p>
     <children.Logo />
   </Link>
 );

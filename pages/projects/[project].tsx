@@ -14,7 +14,7 @@ export default function Project({ project, content }: { project: ProjectData; co
   return (
     <Portfolio>
       <Head>
-        <title>{project.name}</title>
+        <title>{project?.name}</title>
       </Head>
       <Nav />
       <div className={style.projectpage}>

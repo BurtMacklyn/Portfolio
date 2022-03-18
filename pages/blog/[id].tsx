@@ -7,7 +7,7 @@ import { Portfolio, Markdown, Back, Nav, Footer } from '~/components';
 import style from '~/style/components/Blog.module.scss';
 
 export default function Page({ content, metadata }: { content: string; metadata: any }) {
-  content += `#\n\n---\n\n###### Cooper Runyan: ${formatDate(metadata.timestamp)}`;
+  content += `#\n\n---\n\n###### Cooper Runyan: ${metadata ? formatDate(metadata.timestamp) : null}`;
   return (
     <Portfolio>
       <Head>
