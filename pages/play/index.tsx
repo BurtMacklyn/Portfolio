@@ -23,7 +23,9 @@ function Card({ children: game }: { children: { name: string; link: string; imag
   return (
     <Link href={game.link} className={style.card}>
       <p>{game.name}</p>
-      <Image src={game.image} layout="responsive" width={2400} height={2400} />
+      <div>
+        <Image src={game.image} layout="responsive" width={2400} height={2400} />
+      </div>
     </Link>
   );
 }

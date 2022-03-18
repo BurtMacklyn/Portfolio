@@ -80,7 +80,7 @@
 
 @media (max-width: calc(900em / 16)) {
   .mobileButton {
-    display: unset;
+    display: flex;
   }
 
   .desktopLinks {
@@ -146,7 +146,6 @@
   aspect-ratio: 1;
 
   padding: 1.6rem;
-  display: flex;
   align-items: center;
   justify-content: center;
 
