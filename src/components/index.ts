@@ -1,10 +1,9 @@
-export * as Motion from './Motion';
-export { Title } from './Title';
-export { Link } from './Link';
-export { Tag } from './Tag';
-export { Glow } from './Glow';
-export { Nav } from './Nav';
-export { Signature } from './Signature';
-export { Footer } from './Footer';
-export { App } from './App';
-export { Wave } from './Wave';
+export * from './Portfolio';
+export * from './Nav';
+export * from './Signature';
+export * from './Link';
+export * from './Footer';
+export * from './Center';
+export * from './Markdown';
+export * from './Back';
+export * from './Favicon'

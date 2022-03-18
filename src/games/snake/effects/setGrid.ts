@@ -1,3 +1,5 @@
+import type React from 'react';
+
 import { BOX_SIZE } from '../constants';
 
 export function setGrid(grid: React.RefObject<HTMLDivElement>) {
@@ -8,11 +10,11 @@ export function setGrid(grid: React.RefObject<HTMLDivElement>) {
     let totalheight = 0;
 
     for (let i = 0; i < Math.floor(window.innerWidth / BOX_SIZE); i++) {
-      width += BOX_SIZE + 'px ';
+      width += `${BOX_SIZE}px `;
     }
 
     for (let i = 0; i < Math.floor(window.innerHeight / BOX_SIZE) - 1; i++) {
-      height += BOX_SIZE + 'px ';
+      height += `${BOX_SIZE}px `;
     }
 
     for (let i = 0; i < Math.floor(window.innerWidth / BOX_SIZE); i++) {

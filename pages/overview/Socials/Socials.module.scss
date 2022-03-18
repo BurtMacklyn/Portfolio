@@ -1,0 +1,34 @@
+@import '../../../src/style/variables.scss';
+
+.Socials {
+  margin: var(--margin) auto;
+  width: 100%;
+}
+
+.content {
+  padding-inline: var(--margin);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.2rem;
+
+  @media (max-width: calc(400em / 16)) {
+    gap: 1.6rem;
+  }
+
+  & > * {
+    flex: 1 1 50rem;
+  }
+}
+
+.Link {
+  background-color: $black;
+  border-radius: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem 3.2rem;
+
+  * {
+    color: $white;
+  }
+}

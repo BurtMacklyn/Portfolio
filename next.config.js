@@ -1,8 +1,11 @@
 const withPWA = require('next-pwa');
 const runtimeCaching = require('next-pwa/cache');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 /** @type {import('next').NextConfig} */
-module.exports = withPWA({
+module.exports = withPlugins({
   reactStrictMode: true,
   pwa: {
     dest: 'public',
@@ -13,6 +16,22 @@ module.exports = withPWA({
     buildExcludes: [/middleware-manifest.json$/],
     scope: '/',
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/overview',
+        destination: '/',
+        permanent: false,
+      },
+      {
+        source: '/home',
+        destination: '/',
+        permanent: false,
+      },
+    ];
+  },
+
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -21,14 +40,9 @@ module.exports = withPWA({
 
     return config;
   },
-
-  async redirects() {
-    return [
-      {
-        source: '/lists',
-        destination: '/lists/0',
-        permanent: false,
-      },
-    ];
-  },
 });
+
+/** @param {import('next').NextConfig} config */
+function withPlugins(config) {
+  return withBundleAnalyzer(withPWA(config));
+}

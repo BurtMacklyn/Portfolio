@@ -1,49 +1,45 @@
-import { useEffect, useState } from 'react';
-import { Signature, Link, Wave } from 'src/components';
-import { pallette } from 'src/config';
+import { Link, Signature } from '..';
+import style from './Footer.module.scss';
 
-export function Footer({ noWave }: { noWave?: boolean }) {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-
-  useEffect(() => {
-    const footer = document.querySelector('footer')! as HTMLDivElement;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry?.isIntersecting && !isVisible) setTimeout(() => setIsVisible(true), 200);
-    });
-    observer.observe(footer);
-    return () => observer.unobserve(footer);
-  }, []);
-
+export function Footer() {
   return (
-    <div
-      className='footer-container'
-      style={{
-        marginTop: noWave ? 0 : '',
-      }}>
-      {!noWave && <Wave up />}
-      <footer
-        style={{
-          borderTop: noWave ? `1px solid ${pallette.white}40` : '',
-        }}>
-        <div className='half'>
-          <h3 className='white'>Cooper Runyan</h3>
+    <div className={style.footerContainer}>
+      <footer>
+        <div>
+          <h3>Cooper Runyan</h3>
           <ul>
             <li>
-              <Link href='/'>Overview</Link>
+              <Link href="/overview">Overview</Link>
             </li>
             <li>
-              <Link href='/#experience'>Experience</Link>
+              <Link href="/projects">Projects</Link>
             </li>
             <li>
-              <Link href='/#technologies'>Technologies</Link>
+              <Link href="/blog">Blog</Link>
             </li>
             <li>
-              <Link href='/contact'>Get in touch</Link>
+              <Link href="/play">Games</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
-          <p className='legal'>Copyright © 2022 Cooper Runyan</p>
         </div>
-        <div className='half'>{isVisible && <Signature className='signature' color={pallette.white} />}</div>
+        <div className={style.lower}>
+          <div className={style.contact}>
+            <p>(928) 421-2372</p>
+            <p>cooperrunyan@gmail.com</p>
+            <Link href="/contact">https://www.cooperrunyan.com/contact</Link>
+          </div>
+          <Signature
+            className={style.signature}
+            color="black"
+            style={{
+              transformOrigin: 'bottom right',
+              transform: 'scale(1.6)',
+            }}
+          />
+        </div>
       </footer>
     </div>
   );

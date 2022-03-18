@@ -1,0 +1,7 @@
+@import '../../style/variables';
+
+.center {
+  margin: 0 auto;
+  width: 100vw;
+  max-width: $max-width;
+}

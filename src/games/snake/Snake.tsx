@@ -5,14 +5,11 @@ import { Game, Gameover, Snake, MakeApple } from './components';
 import * as constants from './constants';
 import * as fx from './effects';
 
-import { useWindowSize } from 'src/hooks';
-import { Head } from 'next/document';
+import Head from 'next/head';
+import { Portfolio } from '~/components';
 
-export default function (): JSX.Element {
-  const app = useRef<HTMLDivElement>(null);
+export default function SnakeGame() {
   const appleRef = useRef<HTMLDivElement>(null);
-
-  const size = useWindowSize();
 
   const [direction, setDirection] = useState<Direction>('right');
   const [snake, setSnake] = useState<Segment[]>(constants.INITIAL_SNAKE);
@@ -21,7 +18,6 @@ export default function (): JSX.Element {
   const [playing, setPlaying] = useState<boolean>(true);
   const [apple, setApple] = useState<Apple | null>(null);
 
-  useEffect(fx.setGrid(app), [size]);
   useEffect(fx.moveSnake([snake, setSnake], [alive, setAlive], direction, playing, apple, setApple, appleRef), [snake, alive, playing]);
   useEffect(fx.changeDirection([direction, setDirection], playing), [snake, alive]);
   useEffect(fx.restart(alive, { setAlive, setDirection, setScore, setSnake }), [alive]);
@@ -34,11 +30,13 @@ export default function (): JSX.Element {
       <Head>
         <title>Snake</title>
       </Head>
-      <Game ref={app} score={score}>
-        <Snake>{snake}</Snake>
-        <Gameover isAlive={alive} snake={snake} />
-        <>{apple && snake.length >= constants.INITIAL_SNAKE.length && <MakeApple ref={appleRef}>{apple}</MakeApple>}</>
-      </Game>
+      <Portfolio>
+        <Game score={score}>
+          <Snake>{snake}</Snake>
+          <Gameover isAlive={alive} snake={snake} />
+          <>{apple && snake.length >= constants.INITIAL_SNAKE.length && <MakeApple ref={appleRef}>{apple}</MakeApple>}</>
+        </Game>
+      </Portfolio>
     </>
   );
 }

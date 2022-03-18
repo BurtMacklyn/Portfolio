@@ -1,0 +1,84 @@
+@import '../variables.scss';
+
+.Contact {
+  padding: 0 var(--margin);
+  position: relative;
+  width: 100%;
+  z-index: 0;
+
+  h2 {
+    margin-top: 2.4rem;
+    text-align: center;
+  }
+
+  form {
+    margin-block: 6.4rem;
+    border: 0.1rem solid $black;
+    box-sizing: border-box;
+    box-shadow: 0 1rem 2.4rem rgba($black, 0.14);
+    border-radius: 2.4rem;
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    max-width: 48rem;
+    width: 100%;
+    padding: 2.4rem;
+
+    input,
+    button,
+    textarea {
+      background: $grey;
+      box-shadow: 0 0.4rem 0.5rem rgba($black, 0.06);
+      border-radius: 2.4rem;
+      padding: 01rem 1.8rem;
+      border: 0;
+      color: $black;
+      font-family: inherit;
+      width: 100%;
+      resize: none;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      transition: outline 0.2s ease-in-out;
+
+      :focus {
+        outline: 1px solid $black;
+      }
+    }
+
+    textarea {
+      height: 40rem;
+      padding-block: 1.2rem;
+    }
+
+    button {
+      background: $black;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(calc(50% - #{var(--margin)}), calc(-50% + 4.8rem));
+  z-index: -1;
+}
+
+.loading,
+.hooray {
+  position: fixed;
+  z-index: 99999999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($black, 0.5);
+  backdrop-filter: blur(16px);
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -21,11 +21,11 @@ export function moveSnake(
         id: snake.at(-1)!.id + 1,
       };
 
-      let increment = newSegment.x === apple?.x && newSegment.y === apple?.y ? true : false;
+      let increment = !!(newSegment.x === apple?.x && newSegment.y === apple?.y);
 
       for (const segment of snake) {
         if (segment.x === apple?.x && segment.y === apple?.y) increment = true;
-        if ((document.querySelector('#id-' + segment.id) as HTMLDivElement).style.gridArea === appleRef.current!.style.gridArea) increment = true;
+        if ((document.querySelector(`#id-${  segment.id}`) as HTMLDivElement).style.gridArea === appleRef.current!.style.gridArea) increment = true;
 
         if (segment.x === newSegment.x && segment.y === newSegment.y && segment.id !== newSegment.id) return kill(false);
       }

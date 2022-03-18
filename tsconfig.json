@@ -36,11 +36,12 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "target": "es6",
-    "types": ["react"],
+    "types": ["react", "jest"],
     "useUnknownInCatchVariables": true,
     "watch": true,
     "paths": {
-      "@style": ["./style/css/style.css"]
+      "~/*": ["./src/*"],
+      "X": ["./pages/404"]
     },
     "incremental": true
   },

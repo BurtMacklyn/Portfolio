@@ -1,3 +1,5 @@
+import type React from 'react';
+
 export type Segment = {
   x: number;
   y: number;

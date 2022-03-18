@@ -11,6 +11,7 @@ $clr-black: #000;
   align-items: center;
   justify-content: center;
   background-color: rgb(31, 31, 31);
+  color: white;
 
   height: 100vh;
   width: 100vw;
@@ -19,7 +20,7 @@ $clr-black: #000;
   &,
   * {
     font-family: 'Press Start 2P', monospace;
-    cursor: url(pointer.svg), url(pointer.cur), cell;
+    cursor: cell;
   }
 }
 

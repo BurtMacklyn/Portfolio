@@ -1,1 +1,1 @@
-export { Signature } from './Signature';
+export * from './Signature';

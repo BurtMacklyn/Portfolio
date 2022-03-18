@@ -1,1 +1,1 @@
-export { Overview as default } from 'src/pages/Overview';
+export { default } from './overview';
