@@ -11,7 +11,7 @@ export default function Page({ content, metadata }: { content: string; metadata:
   return (
     <Portfolio>
       <Head>
-        <title>{metadata.title || 'Blog'}</title>
+        <title>{metadata?.title || 'Blog'}</title>
       </Head>
       <Nav />
       <div className={style.Page}>
