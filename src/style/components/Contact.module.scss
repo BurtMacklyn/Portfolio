@@ -39,7 +39,7 @@
       resize: none;
       font-size: 1.6rem;
       line-height: 1.5;
-      transition: outline 0.2s ease-in;
+      transition: outline 0.2s ease-in-out;
 
       :focus {
         outline: 1px solid $black;
