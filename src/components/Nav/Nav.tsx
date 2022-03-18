@@ -51,7 +51,9 @@ export function Nav() {
       <input ref={check} type="checkbox" className={style.check} name="mobile" id="mobile" style={{ display: 'none' }} />
       <div className={style.mobile}>
         <div className={style.top}>
-          <Signature color="black" className={style.sig} />
+          <Link href="/">
+            <Signature color="black" className={style.sig} />
+          </Link>
           <label htmlFor="mobile" className={style.X}>
             <X />
           </label>
