@@ -139,3 +139,18 @@
 .X {
   cursor: pointer;
 }
+
+.mobileButton {
+  background-color: $white;
+  border-radius: 100%;
+  aspect-ratio: 1;
+
+  padding: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform-origin: middle right;
+
+  transform: translate(1.6rem) scale(0.8);
+}
