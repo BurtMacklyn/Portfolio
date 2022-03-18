@@ -12,6 +12,11 @@
   flex-direction: column;
   background-color: $white;
 
+  ::selection {
+    background-color: $black;
+    color: $white;
+  }
+
   @import '../../style/typography.scss';
 
   --margin: 12.8rem;
