@@ -39,7 +39,7 @@
   }
 
   @media (max-width: calc(500em / 16)) {
-    padding-top: var(--margin);
-    padding-bottom: 9.6rem;
+    padding-top: calc(2 * var(--margin));
+    padding-bottom: 16rem;
   }
 }

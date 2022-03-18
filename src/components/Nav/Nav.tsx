@@ -25,7 +25,7 @@ export function Nav() {
         <div className={`${style.Nav} ${active ? style.active : ''}`}>
           <div className={style.content}>
             <Link href="/">
-              <Signature color="white" className={style.Signature} />
+              <Signature color="white" className={`${style.Signature} ${style.sig}`} />
             </Link>
             <label htmlFor="mobile" className={style.mobileButton}>
               <MobileSVG />
@@ -51,7 +51,7 @@ export function Nav() {
       <input ref={check} type="checkbox" className={style.check} name="mobile" id="mobile" style={{ display: 'none' }} />
       <div className={style.mobile}>
         <div className={style.top}>
-          <Signature color="black" />
+          <Signature color="black" className={style.sig} />
           <label htmlFor="mobile" className={style.X}>
             <X />
           </label>

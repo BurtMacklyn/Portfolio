@@ -153,3 +153,13 @@
 
   transform: translate(1.6rem) scale(0.8);
 }
+
+@media (max-width: calc(500em / 16)) {
+  .sig {
+    width: 20rem;
+  }
+
+  .circle {
+    left: calc(var(--margin) - 9rem);
+  }
+}
