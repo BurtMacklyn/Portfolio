@@ -4,11 +4,9 @@ import type { ReactChild } from 'react';
 import { useUrl } from '~/hooks';
 import { Favicon } from '../Favicon';
 import style from './Portfolio.module.scss';
-import { useMediaQuery } from 'usehooks-ts';
 
 export function Portfolio({ children }: { children?: ReactChild | ReactChild[] }) {
   const url = useUrl();
-  const light = useMediaQuery('(prefers-color-scheme: dark)');
 
   return (
     <>
@@ -43,7 +41,7 @@ export function Portfolio({ children }: { children?: ReactChild | ReactChild[] }
             }}
           />
 
-          <Favicon light={light} />
+          <Favicon />
 
           <Head>
             <meta name="description" content="A marketing and about site for web designer and developer, Cooper Runyan" />
