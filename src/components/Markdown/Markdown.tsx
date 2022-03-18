@@ -13,6 +13,7 @@ export function Markdown({ children }: ReactMarkdownOptions) {
         .replaceAll(/<table/gi, '<div class="table-wrapper"><table')
         .replaceAll(/<\/table>/gi, '</table></div>');
 
+      // eslint-disable-next-line no-undef
       for (const tableWrapper of Array.from(document.querySelectorAll('.table-wrapper') as NodeListOf<HTMLDivElement>)) {
         tableWrapper.style.width = '100%';
         tableWrapper.style.overflow = 'scroll';
