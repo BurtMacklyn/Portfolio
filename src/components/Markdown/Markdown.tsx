@@ -11,7 +11,9 @@ export function Markdown({ children }: ReactMarkdownOptions) {
     if (article.current) {
       article.current.innerHTML = article.current.innerHTML
         .replaceAll(/<table/gi, '<div class="table-wrapper"><table')
-        .replaceAll(/<\/table>/gi, '</table></div>');
+        .replaceAll(/<\/table>/gi, '</table></div>')
+        .replaceAll(/&gt;/gi, '>')
+        .replaceAll(/&lt;/gi, '<');
 
       // eslint-disable-next-line no-undef
       for (const tableWrapper of Array.from(document.querySelectorAll('.table-wrapper') as NodeListOf<HTMLDivElement>)) {
