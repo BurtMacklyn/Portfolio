@@ -7,6 +7,10 @@ import style from './Portfolio.module.scss';
 
 export function Portfolio({ children }: { children?: ReactChild | ReactChild[] }) {
   const url = useUrl();
+  let names = '';
+  for (let i = 0; i < 1000; i++) {
+    names += 'Cooper Runyan ';
+  }
 
   return (
     <>
@@ -45,8 +49,28 @@ export function Portfolio({ children }: { children?: ReactChild | ReactChild[] }
 
           <Head>
             <meta name="description" content="A marketing and about site for web designer and developer, Cooper Runyan" />
+            <meta name="og:description" content="A marketing and about site for web designer and developer, Cooper Runyan" />
+            <meta name="twitter:description" content="A marketing and about site for web designer and developer, Cooper Runyan" />
+            <meta name="og:title" content="Cooper Runyan" />
+            <meta name="locale" content="en_US" />
+            <link rel="canonical" href="https://www.cooperrunyan.com" />
+            <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta charSet="utf-8" />
+
             <title>Cooper Runyan</title>
           </Head>
+
+          {/* This should in theory help with SEO */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              opacity: 0,
+              pointerEvents: 'none',
+            }}>
+            {names}
+          </div>
 
           <div className={style.Portfolio}>{children}</div>
         </>

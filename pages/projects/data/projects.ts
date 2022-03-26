@@ -2,14 +2,6 @@ import type { Project } from '~/types';
 
 export const projects: Project[] = [
   {
-    name: 'Stocked',
-    link: '/projects/stocked',
-    preview: '/imgs/projects/stocked.webp',
-    tags: ['react', 'nextjs', 'scss', 'typescript', 'docker', 'oak', 'mongodb', 'deno', 'heroku', 'nodejs'],
-    description: 'Stock tracking frontend/backend application',
-    content: 'stocked',
-  },
-  {
     name: 'Lcnsr',
     link: '/projects/lcnsr',
     preview: '/imgs/projects/cli.webp',

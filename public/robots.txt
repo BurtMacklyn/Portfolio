@@ -1,0 +1,4 @@
+Sitemap: https://www.cooperrunyan.com/site-map.xml
+
+User-agent: *
+Allow: /
