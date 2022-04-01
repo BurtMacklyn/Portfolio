@@ -1,5 +1,3 @@
-<a href="https://www.cooperrunyan.com"><img src="./public/imgs/site/banner.svg" alt="Banner"/></a>
-
 # Hello world, I'm Cooper
 
 <a href="https://twitter.com/CooperRunyan1"><img src="./public/imgs/site/twitter.svg" title="Twitter" alt="Twitter Account" width="36"/></a>
@@ -15,8 +13,6 @@
 <a href="https://www.github.com/cooperrunyan"><img src="./public/imgs/site/git.svg" title="Github" alt="Github Account" width="36"/>
 
 <br>
-
-<a href="https://www.cooperrunyan.com"><img align='right' src="./public/imgs/site/profile.svg" height="250" alt="Profile Picture"/></a>
 
 ## Tech Stack
 

@@ -20,6 +20,10 @@
 .Header {
   p {
     max-width: 80rem;
+
+    span, a {
+      font-weight: 600;
+    }
   }
 
   width: 100vw;
