@@ -33,7 +33,7 @@
     font-size: 1.8rem;
     line-height: 1.5;
     letter-spacing: -0.02em;
-    color: $black;
+    color: var(--black);
     opacity: 0.4;
     cursor: pointer;
     transition: all 0.15s ease-in-out;
@@ -68,7 +68,7 @@
 
 .card {
   padding: 2.4rem;
-  background: $grey;
+  background: var(--grey);
   border-radius: 2.4rem;
   display: flex;
   justify-content: space-between;
@@ -132,7 +132,7 @@
       user-select: none;
       padding: 0.4rem 0.8rem;
       border-radius: 2.4rem;
-      background: rgba($black, 0.08);
+      background: rgba(0, 0, 0, 0.08);
     }
   }
 }

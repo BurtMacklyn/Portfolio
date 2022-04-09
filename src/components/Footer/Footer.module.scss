@@ -4,7 +4,7 @@
   width: 100vw;
   position: relative;
   z-index: 1;
-  background-color: $grey;
+  background-color: var(--grey);
 
   .dots {
     z-index: -1;
@@ -23,7 +23,7 @@
   footer {
     position: relative;
     padding: 9.6rem var(--margin);
-    background-color: $grey;
+    background-color: var(--grey);
     margin: 0 auto;
     width: 100vw;
     max-width: $max-width;

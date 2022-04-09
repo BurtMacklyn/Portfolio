@@ -1,7 +1,6 @@
 @import '../../../src/style/variables.scss';
 
 .FreeTime {
-  color: $white;
   display: grid;
   grid-template-areas: 'stuff';
   align-items: center;
@@ -14,16 +13,21 @@
   max-width: 100%;
   padding-block: 12rem;
 
+  &,
+  * {
+    color: var(--white) !important;
+  }
+
   & > * {
     grid-area: stuff;
   }
 
   a {
-    color: $white;
+    color: var(--white);
     font-weight: 600;
     font-size: 2.4rem;
     padding-bottom: 1rem;
-    border-bottom: 0.1rem solid $white;
+    border-bottom: 0.1rem solid var(--white);
     width: fit-content;
   }
 }
@@ -48,14 +52,14 @@
   position: absolute;
   aspect-ratio: 1;
   border-radius: 100%;
-  background: $black;
+  background: var(--black);
   width: 96rem;
   height: 96rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
-  box-shadow: 0 1.4rem 7rem rgba($black, 0.25);
+  box-shadow: 0 1.4rem 7rem rgba(0, 0, 0, 0.25);
 
   @media (max-width: calc(600em / 16)) {
     width: 84rem;

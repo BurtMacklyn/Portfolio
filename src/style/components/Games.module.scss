@@ -3,7 +3,7 @@
 .card {
   padding: 2.4rem;
   border-radius: 2.4rem;
-  background: $grey;
+  background: var(--grey);
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
@@ -18,7 +18,7 @@
     font-size: 3.6rem;
     line-height: 1;
     letter-spacing: -0.02em;
-    color: $black;
+    color: var(--black);
   }
 }
 

@@ -25,7 +25,7 @@ export function Nav() {
         <div className={`${style.Nav} ${active ? style.active : ''}`}>
           <div className={style.content}>
             <Link href="/">
-              <Signature color="white" className={`${style.Signature} ${style.sig}`} />
+              <Signature color={active ? 'black' : 'white'} className={`${style.Signature} ${style.sig}`} />
             </Link>
             <label htmlFor="mobile" className={style.mobileButton}>
               <MobileSVG />

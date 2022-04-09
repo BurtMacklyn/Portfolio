@@ -29,8 +29,8 @@
   width: 24rem;
   height: 24rem;
   border-radius: 100%;
-  background-color: $white;
-  box-shadow: 0 1rem 3.6rem rgba($black, 0.1);
+  background-color: var(--white);
+  box-shadow: 0 1rem 3.6rem rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;

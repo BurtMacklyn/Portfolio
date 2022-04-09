@@ -1,5 +1,5 @@
 export const pallette = {
-  black: '#000', // color(#000)
-  grey: '#f5f5f5', // color(#f5f5f5)
-  white: '#fff', // color(#fff)
+  black: 'var(--black)', // color(#000)
+  grey: 'var(--grey)', // color(#f5f5f5)
+  white: 'var(--white)', // color(#fff)
 };

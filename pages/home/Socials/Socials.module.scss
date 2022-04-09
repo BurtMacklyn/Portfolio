@@ -21,7 +21,7 @@
 }
 
 .Link {
-  background-color: $black;
+  background-color: var(--black);
   border-radius: 100vh;
   display: flex;
   align-items: center;
@@ -29,6 +29,6 @@
   padding: 1.6rem 3.2rem;
 
   * {
-    color: $white;
+    color: var(--white);
   }
 }

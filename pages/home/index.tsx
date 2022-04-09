@@ -5,7 +5,7 @@ import { Header } from './Header';
 import { Make } from './Make';
 import { Quote } from './Quote';
 import { Socials } from './Socials';
-import { TypeScript } from './TypeScript';
+import { Typescript } from './Typescript';
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <Nav />
       <Header />
       <Quote />
-      <TypeScript />
+      <Typescript />
       <FreeTime />
       <Experience />
       <Make />

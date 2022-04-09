@@ -8,7 +8,7 @@ export function Quote() {
     <Center>
       <div className={style.Quote} style={{ maxWidth: 'fit-content' }}>
         <Quotation className={style.Quotation} />
-        <h3 className={style.text}>Any application that can be written in JavaScript, will eventually be written in JavaScript.</h3>
+        <h3 className={style.text}>Any application that can be written in Javascript, will eventually be written in Javascript.</h3>
         <div className={style.cite}>
           <p className={style.name}>Jeff Atwood</p>
           <p className={style.description}>Creator of Stack Overflow</p>
