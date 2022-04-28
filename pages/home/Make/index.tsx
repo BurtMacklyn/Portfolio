@@ -9,7 +9,7 @@ export function Make() {
         <p>
           I love making games, specifically, minigames; they allow you to build applications at any scale you want, with the promise of not being overly
           ambitious. I have created the popular minigame, Snake, countless times; I created it in pure HTML/Javascript, React/Nextjs, and also a CLI version
-          (Available on npm). If you have Node installed on your computer, run “npx @cooperrunyan/snake” to try it out!
+          (Available on npm). If you have Node installed on your computer, run <code>npx snke</code> to try it out!
         </p>
         <Link newTab href="https://www.npmjs.com/~cooperrunyan">
           View my NPM profile
