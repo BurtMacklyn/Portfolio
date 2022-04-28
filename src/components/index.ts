@@ -6,4 +6,6 @@ export * from './Footer';
 export * from './Center';
 export * from './Markdown';
 export * from './Back';
-export * from './Favicon'
+export * from './Favicon';
+export * from './Portal/Portal';
+export * from './BackArrow/BackArrow';

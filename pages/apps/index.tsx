@@ -1,5 +1,5 @@
 import { Center, Portfolio, Link, Nav, Footer } from '~/components';
-import style from '~/style/components/Games.module.scss';
+import style from '~/style/components/Apps.module.scss';
 import Image from 'next/image';
 
 export default function Apps() {
@@ -8,9 +8,10 @@ export default function Apps() {
       <Nav />
       <Center>
         <div className={style.page}>
-          <h2>Games</h2>
+          <h2>Apps</h2>
           <div className={style.content}>
-            <Card>{{ name: 'Snake', link: '/play/snake', image: '/imgs/projects/snake.webp' }}</Card>
+            <Card>{{ name: 'Snake', link: '/apps/snake', image: '/imgs/projects/snake.webp' }}</Card>
+            <Card>{{ name: 'Music Player', link: '/apps/retro-music', image: '/imgs/projects/retro-music.webp' }}</Card>
           </div>
         </div>
       </Center>
