@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+/* eslint-disable no-void */
+import { useEffect, useRef, useState } from 'react';
 import { Signature, Link } from '~/components';
 import { useObserver } from '~/hooks';
 import { LogoCircle } from './LogoCircle';
@@ -9,10 +10,13 @@ import { useMediaQuery } from 'usehooks-ts';
 
 export function Nav() {
   const dummy = useRef<HTMLDivElement>(null);
-  const active = useObserver(dummy);
+  const observed = useObserver(dummy);
   const check = useRef<HTMLInputElement>(null);
   const matches = useMediaQuery('(max-width: calc(900em / 16))');
+  const [hover, setHover] = useState(false);
+  const [active, setActive] = useState(false);
 
+  useEffect(() => void setActive(observed || hover), [observed, hover]);
   useEffect(() => {
     if (check.current && check.current.checked && !matches) check.current.checked = false;
   }, [matches]);
@@ -22,7 +26,7 @@ export function Nav() {
       <div className={style.dummy} ref={dummy} style={{ width: 0, height: 0 }} />
       <div className={style.container}>
         <LogoCircle className={style.circle} />
-        <div className={`${style.Nav} ${active ? style.active : ''}`}>
+        <div className={`${style.Nav} ${active ? style.active : ''}`} onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>
           <div className={style.content}>
             <Link href="/">
               <Signature color={active ? 'black' : 'white'} className={`${style.Signature} ${style.sig}`} />
