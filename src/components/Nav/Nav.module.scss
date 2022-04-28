@@ -16,8 +16,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.active,
-.Nav:hover {
+.active {
   background-color: var(--white);
   box-shadow: 0 0 2.4rem rgba(0, 0, 0, 0.14);
 
