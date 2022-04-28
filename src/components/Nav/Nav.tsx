@@ -70,7 +70,7 @@ export function Nav() {
             <Link href="/blog">Blog</Link>
           </li>
           <li>
-            <Link href="/play">Games</Link>
+            <Link href="/apps">Apps</Link>
           </li>
           <li>
             <Link href="/contact">Contact</Link>
