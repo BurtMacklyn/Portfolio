@@ -16,15 +16,33 @@
 
   p {
     font-weight: 500;
-    font-size: 3.6rem;
+    font-size: 2.4rem;
     line-height: 1;
     letter-spacing: -0.02em;
     color: var(--black);
   }
 }
 
+@media (max-width: calc(400em /16)) {
+  .card {
+    padding: 1.6rem;
+    gap: 1.6rem;
+    border-radius: 1.6rem;
+
+    img {
+      border-radius: 1.6rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+    }
+  }
+}
+
 .page {
   padding: 6.4rem var(--margin);
+  display: flex;
+  flex-direction: column;
 
   h2 {
     margin-bottom: 4.8rem;
@@ -32,11 +50,31 @@
 }
 
 .content {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 2.4rem;
+  margin: 0 auto;
+  grid-template-columns: repeat(4, min(32rem, 100%));
+  width: calc(32rem * 4 + 2.4rem * 3);
 
-  & > * {
-    flex: 1 1;
+  @media (max-width: calc(1620em / 16)) {
+    grid-template-columns: repeat(3, min(32rem, 100%));
+    width: calc(32rem * 3 + 2.4rem * 2);
   }
+
+  @media (max-width: calc(1140em / 16)) {
+    grid-template-columns: repeat(2, min(32rem, 100%));
+    width: calc(32rem * 2 + 2.4rem);
+  }
+
+  @media (max-width: calc(740em / 16)) {
+    grid-template-columns: repeat(1, min(32rem, 100%));
+    width: min(32rem, 100%);
+  }
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
