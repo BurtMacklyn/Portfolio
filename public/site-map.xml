@@ -5,15 +5,28 @@
     <lastmod>2022-04-1</lastmod>
   </url>
   <url>
-    <loc>https://www.cooperrunyan.com/blog</loc>
-    <lastmod>2022-03-25</lastmod>
-  </url>
-  <url>
     <loc>https://www.cooperrunyan.com/projects</loc>
     <lastmod>2022-03-25</lastmod>
   </url>
   <url>
     <loc>https://www.cooperrunyan.com/games</loc>
     <lastmod>2022-03-25</lastmod>
+  </url>
+  <!-- Blog -->
+  <url>
+    <loc>https://www.cooperrunyan.com/blog</loc>
+    <lastmod>2022-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cooperrunyan.com/blog/welcome</loc>
+    <lastmod>2022-03-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cooperrunyan.com/blog/what-is-deno</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cooperrunyan.com/blog/docker-development</loc>
+    <lastmod>2022-04-27</lastmod>
   </url>
 </urlset>
