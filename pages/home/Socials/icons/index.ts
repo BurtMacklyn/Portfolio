@@ -1,10 +1,10 @@
-export * from './Linkedin';
-export * from './Twitter';
-export * from './Github';
-export * from './Email';
-export * from './Npm';
-export * from './Codepen';
-export * from './Stackoverflow';
-export * from './Contact';
+export { Linkedin } from './Linkedin';
+export { Twitter } from './Twitter';
+export { Github } from './Github';
+export { Email } from './Email';
+export { Npm } from './Npm';
+export { Codepen } from './Codepen';
+export { Stackoverflow } from './Stackoverflow';
+export { Contact } from './Contact';
 
 export { default } from 'X';
