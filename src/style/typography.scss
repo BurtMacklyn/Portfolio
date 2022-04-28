@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './font/SF\ Pro\ Display.scss';
 
 // prettier-ignore
 p, a {
@@ -69,4 +70,8 @@ h3 {
   @media (max-width: calc(400em / 16)) {
     font-size: 3.2rem;
   }
+}
+
+code {
+  font-family: 'Roboto Mono', monospace;
 }
