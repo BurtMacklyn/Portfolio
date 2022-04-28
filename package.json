@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "ls -al ./pages/home; ls -al ./pages/home/Typescript; next build",
+    "build": "next build",
     "start": "next start",
     "test": "jest",
     "lint": "next lint",
