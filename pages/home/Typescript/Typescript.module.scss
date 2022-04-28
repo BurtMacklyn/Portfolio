@@ -1,0 +1,13 @@
+@import '../../../src/style/variables.scss';
+
+.Typescript {
+  max-width: 80rem;
+  margin: 12.8rem var(--margin);
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  @media (max-width: calc(600em / 16)) {
+    margin-block: 6.4rem;
+  }
+}
