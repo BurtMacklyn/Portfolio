@@ -10,8 +10,9 @@ export default function Apps() {
         <div className={style.page}>
           <h2>Apps</h2>
           <div className={style.content}>
-            <Card>{{ name: 'Snake', link: '/apps/snake', image: '/imgs/projects/snake.webp' }}</Card>
             <Card>{{ name: 'Music Player', link: '/apps/retro-music', image: '/imgs/projects/retro-music.webp' }}</Card>
+            <Card>{{ name: 'Trig Helper', link: '/apps/trig-helper', image: '/imgs/projects/trig-helper.webp' }}</Card>
+            <Card>{{ name: 'Snake', link: '/apps/snake', image: '/imgs/projects/snake.webp' }}</Card>
           </div>
         </div>
       </Center>
