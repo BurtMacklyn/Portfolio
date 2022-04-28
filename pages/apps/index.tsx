@@ -2,7 +2,7 @@ import { Center, Portfolio, Link, Nav, Footer } from '~/components';
 import style from '~/style/components/Games.module.scss';
 import Image from 'next/image';
 
-export default function Play() {
+export default function Apps() {
   return (
     <Portfolio>
       <Nav />

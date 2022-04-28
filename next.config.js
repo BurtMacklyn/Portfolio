@@ -29,6 +29,11 @@ module.exports = withPlugins({
         destination: '/',
         permanent: false,
       },
+      {
+        source: '/snake',
+        destination: '/apps/snake',
+        permanent: false,
+      },
     ];
   },
 
