@@ -19,6 +19,14 @@
   }
 
   a {
+    font-weight: 600;
+
+    &:not(.Link) {
+      text-decoration: underline;
+    }
+  }
+
+  .Link {
     color: var(--black);
     text-decoration: none;
     font-weight: 600;

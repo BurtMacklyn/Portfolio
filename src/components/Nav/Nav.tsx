@@ -13,10 +13,20 @@ export function Nav() {
   const observed = useObserver(dummy);
   const check = useRef<HTMLInputElement>(null);
   const matches = useMediaQuery('(max-width: calc(900em / 16))');
-  const [hover, setHover] = useState(false);
   const [active, setActive] = useState(false);
+  const [hover, setHover] = useState(false);
 
-  useEffect(() => void setActive(observed || hover), [observed, hover]);
+  const onHover = () => {
+    setHover(true);
+    setActive(true);
+  };
+
+  const onUnHover = () => {
+    setHover(false);
+    setActive(observed);
+  };
+
+  useEffect(() => void setActive(observed || hover), [observed]);
   useEffect(() => {
     if (check.current && check.current.checked && !matches) check.current.checked = false;
   }, [matches]);
@@ -26,7 +36,7 @@ export function Nav() {
       <div className={style.dummy} ref={dummy} style={{ width: 0, height: 0 }} />
       <div className={style.container}>
         <LogoCircle className={style.circle} />
-        <div className={`${style.Nav} ${active ? style.active : ''}`} onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>
+        <div className={`${style.Nav} ${active ? style.active : ''}`} onMouseOver={onHover} onMouseOut={onUnHover}>
           <div className={style.content}>
             <Link href="/">
               <Signature color={active ? 'black' : 'white'} className={`${style.Signature} ${style.sig}`} />

@@ -7,11 +7,13 @@ export function Make() {
       <div className={style.Make}>
         <h2>Stuff I make</h2>
         <p>
-          I love making games, specifically, minigames; they allow you to build applications at any scale you want, with the promise of not being overly
-          ambitious. I have created the popular minigame, Snake, countless times; I created it in pure HTML/Javascript, React/Nextjs, and also a CLI version
-          (Available on npm). If you have Node installed on your computer, run <code>npx snke</code> to try it out!
+          I make a lot of devtools, usually when theres a particular need that I either can&apos;t find elsewhere, or want to recreate. For example, a while
+          back I came into a problem, there were so many open source licenses, and I didn&apos;t know what to pick for certain projects. This gave me
+          inspiration to start a project that I call LCNSR (Licenser). It&apos;s a nifty CLI that can teach you about licenses, and write them as well. If you
+          have Node.JS installed on your computer, you can run: <code>npx lcnsr -d</code>, to describe all available licenses. Learn more{' '}
+          <Link href="/projects/lcnsr">here</Link>.
         </p>
-        <Link newTab href="https://www.npmjs.com/~cooperrunyan">
+        <Link className={style.Link} newTab href="https://www.npmjs.com/~cooperrunyan">
           View my NPM profile
         </Link>
         <div className={style.circle} />
