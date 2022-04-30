@@ -1,1 +1,1 @@
-export { Snake as default } from '~/games';
+export { default } from '../../src/pages/apps/snake';
