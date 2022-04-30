@@ -4,3 +4,4 @@ sw.js
 workbox*
 .env
 .DS_Store
+sitemap*.xml

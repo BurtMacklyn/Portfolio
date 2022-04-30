@@ -28,8 +28,8 @@ export default function Page({ content, metadata }: { content: string; metadata:
 }
 
 export async function getStaticProps(ctx: GetStaticPropsContext) {
-  const content = fs.readFileSync(path.join(process.cwd(), `/public/_articles/content/${ctx.params!.id}.md`), 'utf-8');
-  const metadata = JSON.parse(fs.readFileSync(path.join(process.cwd(), `/public/_articles/metadata/${ctx.params!.id}.json`), 'utf-8'));
+  const content = fs.readFileSync(path.join(process.cwd(), `/public/articles/content/${ctx.params!.id}.md`), 'utf-8');
+  const metadata = JSON.parse(fs.readFileSync(path.join(process.cwd(), `/public/articles/metadata/${ctx.params!.id}.json`), 'utf-8'));
   return { props: { content, metadata } };
 }
 
