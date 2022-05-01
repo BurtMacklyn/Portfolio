@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import style from './Markdown.module.scss';
 
-export function Markdown({ children }) {
+/* eslint-disable-next-line no-undef */
+export const Markdown: React.FC = ({ children }) => {
   const article = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,4 +28,4 @@ export function Markdown({ children }) {
       {children}
     </article>
   );
-}
+};

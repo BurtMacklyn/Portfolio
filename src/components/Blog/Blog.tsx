@@ -1,10 +1,6 @@
 import Head from 'next/head';
-import { Back } from '../Back';
-import { Nav } from '../Nav';
-import { Portfolio } from '../Portfolio';
-import style from '~/style/components/Blog.module.scss';
-import { Footer } from '../Footer';
-import { Markdown } from '../Markdown';
+import { Back, Footer, Markdown, Nav, Portfolio } from '..';
+import style from './Blog.module.scss';
 import { formatDate } from '~/lib/formatDate';
 import { useEffect, useState } from 'react';
 import { pages } from '../../../pages/blog/index';

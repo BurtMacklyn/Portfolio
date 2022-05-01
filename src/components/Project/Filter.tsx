@@ -3,7 +3,8 @@ import { useContext, useEffect, useRef } from 'react';
 import style from '~/style/components/Projects.module.scss';
 import type { Tag } from '~/types';
 
-export function Filter({ children: filter }: { children: Tag }) {
+/* eslint-disable-next-line no-undef */
+export const Filter: React.FC<{ children: Tag }> = ({ children: filter }) => {
   const ref = useRef<HTMLInputElement>(null);
   const [selectedFilters, setSelectedFilters] = useContext(FilterContext);
 
@@ -29,4 +30,4 @@ export function Filter({ children: filter }: { children: Tag }) {
       </label>
     </div>
   );
-}
+};
