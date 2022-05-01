@@ -14,7 +14,7 @@ export function Form({ hooray: [hooray, setHooray], loading: [loading, setLoadin
   const form = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    form.current!.onsubmit = (e) => {
+    form.current!.onsubmit = e => {
       e.preventDefault();
 
       if (loading || hooray) return;
@@ -29,7 +29,7 @@ export function Form({ hooray: [hooray, setHooray], loading: [loading, setLoadin
 
       setLoading(true);
 
-      sendPromise.then((res) => {
+      sendPromise.then(res => {
         if (!alive) return;
         if (res.text === 'OK') {
           setHooray(true);
@@ -59,5 +59,3 @@ export function Form({ hooray: [hooray, setHooray], loading: [loading, setLoadin
     </form>
   );
 }
-
-export { default } from 'X';

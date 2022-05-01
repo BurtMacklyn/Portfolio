@@ -12,5 +12,3 @@ export function Github() {
     </svg>
   );
 }
-
-export { default } from 'X';

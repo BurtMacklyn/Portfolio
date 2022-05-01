@@ -12,5 +12,3 @@ export function Webpack() {
     </svg>
   );
 }
-
-export { default } from 'X';

@@ -10,5 +10,3 @@ export function Codepen() {
     </svg>
   );
 }
-
-export { default } from 'X';

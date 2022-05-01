@@ -12,5 +12,3 @@ export function Css() {
     </svg>
   );
 }
-
-export { default } from 'X';

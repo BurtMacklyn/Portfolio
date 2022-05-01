@@ -5,3 +5,4 @@ workbox*
 .env
 .DS_Store
 sitemap*.xml
+robots.txt

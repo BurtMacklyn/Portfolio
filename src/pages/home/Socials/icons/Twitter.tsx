@@ -10,5 +10,3 @@ export function Twitter() {
     </svg>
   );
 }
-
-export { default } from 'X';

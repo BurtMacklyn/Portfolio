@@ -14,5 +14,3 @@ export function Node() {
     </svg>
   );
 }
-
-export { default } from 'X';

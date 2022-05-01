@@ -19,5 +19,3 @@ export function Experience() {
     </div>
   );
 }
-
-export { default } from 'X';

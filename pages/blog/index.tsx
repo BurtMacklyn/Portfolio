@@ -1,21 +1,13 @@
 import style from '~/style/components/Blog.module.scss';
 import { Link, Portfolio, Nav, Center, Footer } from '~/components';
 import Head from 'next/head';
-import Image from 'next/image';
-import { sortBlogs, getAllBlogPaths } from '~/lib';
-import type { GetStaticPropsContext } from 'next';
-import fs from 'fs';
-import path from 'path';
+import { generatePageData } from '~/lib/generatePageData';
 
-export default function Blog({ pages, data }: { pages: string[]; data: any }) {
+export default function Blog() {
   return (
     <Portfolio>
       <Head>
         <title>Blog</title>
-
-        {pages.map(page => (
-          <link rel="prefetch" href={data[page].preview} key={data[page].preview} />
-        ))}
       </Head>
       <Nav />
       <Center>
@@ -23,12 +15,10 @@ export default function Blog({ pages, data }: { pages: string[]; data: any }) {
           <div className={style.section}>
             <h2>Blog</h2>
             <div className={style.content}>
-              {sortBlogs(pages, data).map(page => (
-                <Link key={page} href={page} className={style.Card}>
-                  <div>
-                    <Image layout="responsive" width={4000} height={2400} src={data[page]?.preview} alt="Preview image" />
-                  </div>
-                  <p>{data[page]?.title}</p>
+              {pages.map(page => (
+                <Link key={page.path} href={`/blog/${page.path}`} className={style.Card}>
+                  <page.Preview />
+                  <p>{page.title}</p>
                 </Link>
               ))}
             </div>
@@ -40,14 +30,8 @@ export default function Blog({ pages, data }: { pages: string[]; data: any }) {
   );
 }
 
-export async function getStaticProps(ctx: GetStaticPropsContext) {
-  const pages = getAllBlogPaths();
-  console.log({ pages });
-  const data: { [key: string]: {} } = {};
-
-  for (const page of pages) {
-    data[page] = JSON.parse(fs.readFileSync(path.join(process.cwd(), `/public/articles/metadata/${page.replace('/blog', '')}.json`), 'utf-8') || '{}');
-  }
-
-  return { props: { pages, data } };
-}
+export const pages = generatePageData([
+  { id: 'docker-development', title: 'The Key To Development In Docker', timestamp: 'April 27' },
+  { id: 'what-is-deno', title: 'Deno. What is it?', timestamp: 'March 19' },
+  { id: 'welcome', title: 'Welcome to my blog', timestamp: 'March 16' },
+]);

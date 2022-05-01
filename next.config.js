@@ -1,12 +1,27 @@
-const withPWA = require('next-pwa');
-const runtimeCaching = require('next-pwa/cache');
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
+import withPWA from 'next-pwa';
+import runtimeCaching from 'next-pwa/cache.js';
+import gfm from 'remark-gfm';
+import bundleAnalyzer from '@next/bundle-analyzer';
+import mdx from '@next/mdx';
+
+const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
 
+const withMDX = mdx({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [gfm],
+    rehypePlugins: [],
+    providerImportSource: '@mdx-js/react',
+  },
+});
+
 /** @type {import('next').NextConfig} */
-module.exports = withPlugins({
+export default withPlugins({
   reactStrictMode: true,
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+
   pwa: {
     dest: 'public',
     register: true,
@@ -19,6 +34,16 @@ module.exports = withPlugins({
 
   async redirects() {
     return [
+      {
+        source: '/git',
+        destination: 'https://www.github.com/cooperrunyan/cooperrunyan',
+        permanent: false,
+      },
+      {
+        source: '/github',
+        destination: 'https://www.github.com/cooperrunyan/',
+        permanent: false,
+      },
       {
         source: '/overview',
         destination: '/',
@@ -49,5 +74,5 @@ module.exports = withPlugins({
 
 /** @param {import('next').NextConfig} config */
 function withPlugins(config) {
-  return withBundleAnalyzer(withPWA(config));
+  return withMDX(withBundleAnalyzer(withPWA(config)));
 }

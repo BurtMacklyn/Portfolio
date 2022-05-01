@@ -20,5 +20,3 @@ export function Lwc() {
     </svg>
   );
 }
-
-export { default } from 'X';

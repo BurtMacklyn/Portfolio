@@ -18,5 +18,3 @@ export function Deno() {
     </svg>
   );
 }
-
-export { default } from 'X';

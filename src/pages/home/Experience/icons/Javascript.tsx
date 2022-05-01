@@ -12,5 +12,3 @@ export function Javascript() {
     </svg>
   );
 }
-
-export { default } from 'X';

@@ -10,5 +10,3 @@ export function Sass() {
     </svg>
   );
 }
-
-export { default } from 'X';

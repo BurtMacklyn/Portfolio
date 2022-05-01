@@ -24,5 +24,3 @@ function Bold(props: HTMLAttributes<HTMLSpanElement>) {
     </span>
   );
 }
-
-export { default } from 'X';

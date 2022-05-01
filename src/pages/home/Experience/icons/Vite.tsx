@@ -23,5 +23,3 @@ export function Vite() {
     </svg>
   );
 }
-
-export { default } from 'X';

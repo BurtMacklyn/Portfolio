@@ -15,5 +15,3 @@ export function Next() {
     </svg>
   );
 }
-
-export { default } from 'X';

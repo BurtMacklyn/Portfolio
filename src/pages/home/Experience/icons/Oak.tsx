@@ -12,5 +12,3 @@ export function Oak() {
     </svg>
   );
 }
-
-export { default } from 'X';

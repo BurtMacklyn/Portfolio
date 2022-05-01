@@ -50,5 +50,3 @@ export function MongoDB() {
     </svg>
   );
 }
-
-export { default } from 'X';

@@ -23,6 +23,7 @@
     background-color: var(--white);
     overflow: hidden;
     transition: all 0.2s ease-in-out;
+    border: 0.1rem solid #eee;
 
     box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0);
     flex: 1 0 25%;
@@ -33,19 +34,12 @@
       box-shadow: 0 1.2rem 1.6rem rgba(0, 0, 0, 0.05);
     }
 
-    &,
-    & > div {
-      border: 0.1rem solid #eee;
-      border-radius: 2.4rem;
-    }
-
-    img {
-      object-fit: cover;
+    svg {
       object-position: center;
       width: 100%;
       border-radius: 2.4rem;
-      aspect-ratio: 453 / 240;
       user-select: none;
+      border: 0.1rem solid #eee;
     }
 
     p {

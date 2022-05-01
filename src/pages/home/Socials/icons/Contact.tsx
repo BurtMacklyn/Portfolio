@@ -10,5 +10,3 @@ export function Contact() {
     </svg>
   );
 }
-
-export { default } from 'X';

@@ -13,5 +13,3 @@ export function Angular() {
     </svg>
   );
 }
-
-export { default } from 'X';

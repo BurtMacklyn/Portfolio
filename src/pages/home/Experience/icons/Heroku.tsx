@@ -10,5 +10,3 @@ export function Heroku() {
     </svg>
   );
 }
-
-export { default } from 'X';
