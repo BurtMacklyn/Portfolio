@@ -14,7 +14,7 @@ Volumes are storage bins that hold data that can be used from container to conta
 
 ## Use Cases
 
-A typical use case would be database files. In development, instead of storing user data within its container (which gets reset every time a new container instance is created). To fix this, you can create a volume for the container to connect to and store the files there. This way, whenever the container stops or gets destroyed, _all data_ stored in a volume gets _saved_.
+A typical use case would be database files. In development, instead of storing user data within its container (which gets reset every time a new container instance is created). To fix this, you can create a volume for the container and store the files inside. This way, whenever the container stops or gets destroyed, _all data_ stored in a volume will get _saved_.
 
 Another use for volumes would be sharing data between multiple containers. Each container can communicate with the volume and read/write data (as long as read/write permission was granted).
 
@@ -29,7 +29,7 @@ volumes:
 
 The volume can then be referenced in the image service later in the file:
 
-```yaml
+```YAML
 services:
   your_service_name:
     volumes:
@@ -45,11 +45,11 @@ Volumes can be used in another way; they can connect local computer files with f
 
 This allows for container files to update whenever a local corresponding file.
 
-For example, if you are editing a file called hello.js, and a volume is setup for it, whenever you save the file, the hello.js within the docker container gets updated.
+For example, if you are editing a file called hello.js, and a volume is set up for it, whenever you save the file, the hello.js within the docker container gets updated.
 
 Start by creating a `docker-compose.yml` file.
 
-```yaml
+```YAML
 version: '3.4'
 
 services:
@@ -65,7 +65,7 @@ If this looks too complicated, ignore everything but the `volumes` section.
 
 The volume syntax is:
 
-```yaml
+```YAML
 volumes:
   - PATH_TO_SOURCE:ABSOLUTE_PATH
 ```
@@ -74,7 +74,7 @@ volumes:
 
 > `ABSOLUTE_PATH` is an absolute path within the container `ABSOLUTE_PATH` can also be represented as `WORKDIR`/`RELATIVE_PATH`
 
-> As well, `PATH_TO_SOURCE` can be either a path or directory If it is a directory, every file within it is tracked
+> As well, `PATH_TO_SOURCE` can be either a path or a directory If it is a directory, every file within it is tracked
 
 ## How it can help
 
@@ -96,7 +96,7 @@ Project
  └─.dockerignore
 ```
 
-```yaml
+```YAML
 # docker-compose.yml
 
 services:
