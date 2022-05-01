@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { pallette } from '~/config';
 import style from '~/style/components/Contact.module.scss';
-import { Ellipsis } from 'react-awesome-spinners';
 import { Footer } from '~/components/Footer/Footer';
 import { Nav } from '~/components/Nav/Nav';
 import { Portfolio } from '~/components/Portfolio/Portfolio';
@@ -38,7 +37,7 @@ const Contact = () => {
         {/* Loading page */}
         {loading && (
           <div className={style.loading}>
-            <Ellipsis color={pallette.white} />
+            <h4>Loading...</h4>
           </div>
         )}
       </>

@@ -36,7 +36,7 @@ export const Project: React.FC<{ children: any }> = ({ children }) => {
 
           <br />
           <hr />
-          <h6>Cooper Runyan</h6>
+          <p style={{ fontWeight: 'bold' }}>Cooper Runyan</p>
         </Markdown>
       </div>
       <Footer />

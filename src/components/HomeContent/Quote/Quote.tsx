@@ -5,7 +5,7 @@ export const Quote = () => (
   <div className="center">
     <div className={style.Quote} style={{ maxWidth: 'fit-content' }}>
       <Quotation />
-      <h3 className={style.text}>Any application that can be written in Javascript, will eventually be written in Javascript.</h3>
+      <h2 className={style.text}>Any application that can be written in Javascript, will eventually be written in Javascript.</h2>
       <div className={style.cite}>
         <p className={style.name}>Jeff Atwood</p>
         <p className={style.description}>Creator of Stack Overflow</p>

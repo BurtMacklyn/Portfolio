@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-import { pallette } from '~/config';
 
 const Document = () => (
   <Html lang="en">
@@ -9,7 +8,7 @@ const Document = () => (
       <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.webp" />
       <link rel="manifest" href="/manifest.json" />
 
-      <meta name="theme-color" content={pallette.white} />
+      <meta name="theme-color" content="#ffffff" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
 
       <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -13,9 +13,9 @@ const Apps = () => (
         <h2>Apps</h2>
         <div className={style.center}>
           <div className={style.content}>
-            <Card>{{ name: 'Music Player', link: '/apps/retro-music', image: '/imgs/projects/retro-music.webp' }}</Card>
-            <Card>{{ name: 'Trig Helper', link: '/apps/trig-helper', image: '/imgs/projects/trig-helper.webp' }}</Card>
-            <Card>{{ name: 'Snake', link: '/apps/snake', image: '/imgs/projects/snake.webp' }}</Card>
+            <Card>{{ name: 'Music Player', link: '/apps/retro-music', image: '/imgs/apps/retro-music.webp' }}</Card>
+            <Card>{{ name: 'Trig Helper', link: '/apps/trig-helper', image: '/imgs/apps/trig-helper.webp' }}</Card>
+            <Card>{{ name: 'Snake', link: '/apps/snake', image: '/imgs/apps/snake.webp' }}</Card>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@ const Card: React.FC<{ children: { name: string; link: string; image: string } }
   <Link href={game.link} className={style.card}>
     <p>{game?.name}</p>
     <div>
-      <Image src={game.image} layout="responsive" width={2400} height={2400} />
+      <Image quality={10} loading="eager" src={game.image} alt={game.name} layout="responsive" width={2400} height={2400} />
     </div>
   </Link>
 );

@@ -1,12 +1,8 @@
 import Head from 'next/head';
-import useSystemTheme from 'react-use-system-theme';
 
-export const Favicon = () => {
-  const systemTheme = useSystemTheme();
-  return (
-    <Head>
-      {systemTheme === 'dark' && <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon-light/favicon.ico" />}
-      {systemTheme !== 'dark' && <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon-dark/favicon.ico" />}
-    </Head>
-  );
-};
+export const Favicon = () => (
+  <Head>
+    {window.matchMedia('(prefers-color-scheme: dark)').matches && <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon-light/favicon.ico" />}
+    {!window.matchMedia('(prefers-color-scheme: dark)').matches && <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon-dark/favicon.ico" />}
+  </Head>
+);

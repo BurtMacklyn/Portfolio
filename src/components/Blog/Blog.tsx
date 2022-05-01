@@ -38,7 +38,7 @@ export const Blog: React.FC<{ children: any }> = ({ children }) => {
             {children}
             <br />
             <hr />
-            <h6>Cooper Runyan: {meta ? formatDate(meta?.timestamp) : ''}</h6>
+            <p style={{ fontWeight: 'bold' }}>Cooper Runyan: {meta ? formatDate(meta?.timestamp) : ''}</p>
           </Markdown>
         </div>
       </div>

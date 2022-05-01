@@ -9,6 +9,22 @@
   gap: 4rem;
   z-index: 1;
   margin-bottom: 18.5rem;
+
+  h2.text {
+    font-size: 5.6rem;
+
+    @media (max-width: calc(900em / 16)) {
+      font-size: 4.8rem;
+    }
+
+    @media (max-width: calc(600em / 16)) {
+      font-size: 3.6rem;
+    }
+
+    @media (max-width: calc(400em / 16)) {
+      font-size: 3.2rem;
+    }
+  }
 }
 
 .text {

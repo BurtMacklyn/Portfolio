@@ -53,7 +53,7 @@ export const Portfolio: React.FC = ({ children }) => {
             <meta name="twitter:description" content="A marketing and about site for web designer and developer, Cooper Runyan" />
             <meta name="og:title" content="Cooper Runyan" />
             <meta name="locale" content="en_US" />
-            <link rel="canonical" href="https://www.cooperrunyan.com" />
+            <link rel="canonical" href={url} />
             <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
             <meta charSet="utf-8" />
 

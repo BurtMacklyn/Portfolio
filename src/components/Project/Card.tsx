@@ -5,6 +5,7 @@ import { Link } from '~/components/Link/Link';
 /* eslint-disable-next-line no-undef */
 export const Card: React.FC<{ children: Project }> = ({ children: project }) => (
   <Link href={`/projects/${project?.id}`} className={style.card} key={project?.name}>
+    <span style={{ opacity: '0', pointerEvents: 'none', position: 'absolute' }}>{project.name}</span>
     <div className={style.content}>
       <div>
         <p className={style.projectName}>{project?.name}</p>

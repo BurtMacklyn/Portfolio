@@ -41,6 +41,7 @@ export function Nav() {
         <div className={`${style.Nav} ${active ? style.active : ''}`} onMouseOver={onHover} onMouseOut={onUnHover}>
           <div className={style.content}>
             <Link href="/">
+              <span style={{ opacity: '0', pointerEvents: 'none', position: 'absolute' }}>Home</span>
               <Signature color={active ? 'black' : 'white'} className={`${style.Signature} ${style.sig}`} />
             </Link>
             <label htmlFor="mobile" className={style.mobileButton}>
@@ -72,6 +73,7 @@ export function Nav() {
       <div className={style.mobile}>
         <div className={style.top}>
           <Link href="/">
+            <span style={{ opacity: '0', pointerEvents: 'none', position: 'absolute' }}>Home</span>
             <Signature color="black" className={style.sig} />
           </Link>
           <label htmlFor="mobile" className={style.X}>

@@ -1,7 +1,7 @@
 import { Footer } from '~/components/Footer/Footer';
 import { Nav } from '~/components/Nav/Nav';
 import { Experience } from '~/components/HomeContent/Experience/Experience';
-import { Typescript } from '~/components/HomeContent/Experience/icons';
+import { Typescript } from '~/components/HomeContent/Typescript/Typescript';
 import { FreeTime } from '~/components/HomeContent/FreeTime/FreeTime';
 import { Header } from '~/components/HomeContent/Header/Header';
 import { Make } from '~/components/HomeContent/Make/Make';
