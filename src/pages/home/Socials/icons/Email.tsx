@@ -10,5 +10,3 @@ export function Email() {
     </svg>
   );
 }
-
-export { default } from 'X';

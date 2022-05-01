@@ -14,5 +14,3 @@ export function ReactIcon() {
     </svg>
   );
 }
-
-export { default } from 'X';

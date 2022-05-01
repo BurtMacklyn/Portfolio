@@ -12,5 +12,3 @@ export function Linkedin() {
     </svg>
   );
 }
-
-export { default } from 'X';

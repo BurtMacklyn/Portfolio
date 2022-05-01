@@ -10,5 +10,3 @@ export function Netlify() {
     </svg>
   );
 }
-
-export { default } from 'X';

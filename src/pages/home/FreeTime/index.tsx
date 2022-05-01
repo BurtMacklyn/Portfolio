@@ -19,5 +19,3 @@ export function FreeTime() {
     </div>
   );
 }
-
-export { default } from 'X';

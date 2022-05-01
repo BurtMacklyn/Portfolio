@@ -10,3 +10,4 @@ export * from './Favicon';
 export * from './Portal/Portal';
 export * from './BackArrow/BackArrow';
 export * from './Blog/Blog';
+export * from './Project/Project';

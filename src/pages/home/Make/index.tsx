@@ -21,5 +21,3 @@ export function Make() {
     </Center>
   );
 }
-
-export { default } from 'X';

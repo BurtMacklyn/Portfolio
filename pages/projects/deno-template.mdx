@@ -1,3 +1,5 @@
+import { Project } from '../../src/components/index';
+
 # Deno API Template
 
 Starter api project in deno/oak. It uses Deno, TypeScript, Oak, Docker,
@@ -89,4 +91,6 @@ Mongo is a free simple cloud database solution.
 
 ## Support me!
 
-<a href="https://www.buymeacoffee.com/cooperrunyE" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+{/* <a href="https://www.buymeacoffee.com/cooperrunyE" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a> */}
+
+export default ({ children }) => <Project>{children}</Project>

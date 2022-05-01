@@ -11,5 +11,3 @@ export function Stackoverflow() {
     </svg>
   );
 }
-
-export { default } from 'X';

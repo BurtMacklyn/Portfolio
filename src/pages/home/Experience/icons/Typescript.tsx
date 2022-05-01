@@ -12,5 +12,3 @@ export function Typescript() {
     </svg>
   );
 }
-
-export { default } from 'X';

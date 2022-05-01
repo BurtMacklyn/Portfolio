@@ -12,5 +12,3 @@ export function Npm() {
     </svg>
   );
 }
-
-export { default } from 'X';

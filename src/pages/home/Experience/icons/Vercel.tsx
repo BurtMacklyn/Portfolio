@@ -10,5 +10,3 @@ export function Vercel() {
     </svg>
   );
 }
-
-export { default } from 'X';

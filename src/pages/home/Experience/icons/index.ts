@@ -20,5 +20,3 @@ export { Docker } from './Docker';
 export { Angular } from './Angular';
 export { Oak } from './Oak';
 export { Vite } from './Vite';
-
-export { default } from 'X';

@@ -42,5 +42,3 @@ function BgDot(props: SVGAttributes<SVGElement>) {
     </svg>
   );
 }
-
-export { default } from 'X';

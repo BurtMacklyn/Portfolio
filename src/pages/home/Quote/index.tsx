@@ -27,5 +27,3 @@ function Quotation(props: SVGAttributes<SVGElement>) {
     </svg>
   );
 }
-
-export { default } from 'X';

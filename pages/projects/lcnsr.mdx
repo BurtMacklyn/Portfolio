@@ -1,3 +1,5 @@
+import { Project } from '../../src/components/index';
+
 # Lcnsr
 
 ## Overview
@@ -15,7 +17,7 @@ publication date.
 
 ---
 
-##### 
+#####
 
 ## Installation
 
@@ -30,7 +32,7 @@ To install, run:
 npm i -g lcnsr
 ```
 
-##### 
+#####
 
 ### Alternatively
 
@@ -42,7 +44,7 @@ npx lcnsr
 
 ---
 
-##### 
+#####
 
 ## Usage
 
@@ -50,7 +52,7 @@ npx lcnsr
 lcnsr [options] [license]
 ```
 
-##### 
+#####
 
 ### Arguments
 
@@ -65,7 +67,7 @@ lcnsr [options] [license]
 
 ---
 
-##### 
+#####
 
 ## How it works
 
@@ -95,7 +97,7 @@ specified.
 - `lcnsr -f 'eclipse public-license'`
 - `lcnsr -f 'eclipsepublic-license'`
 
-##### 
+#####
 
 ### Step 2: Most Similar Name
 
@@ -106,7 +108,7 @@ licenses and return the most similar license name to the query.
 
 ---
 
-##### 
+#####
 
 ## Supported licenses
 
@@ -142,3 +144,5 @@ licenses and return the most similar license name to the query.
 | `NCSA`                                                                                                           | NCSA                                     |
 | `UNLICENSE`                                                                                                      | Unlicense                                |
 | `ZLIB`                                                                                                           | ZLib                                     |
+
+export default ({ children }) => <Project>{children}</Project>

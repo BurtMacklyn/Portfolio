@@ -6,5 +6,3 @@ export { Npm } from './Npm';
 export { Codepen } from './Codepen';
 export { Stackoverflow } from './Stackoverflow';
 export { Contact } from './Contact';
-
-export { default } from 'X';

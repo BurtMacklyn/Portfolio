@@ -16,5 +16,3 @@ export const tags = [
   'cli',
   'template',
 ] as const;
-
-export { default } from 'X';

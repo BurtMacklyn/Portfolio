@@ -18,5 +18,3 @@ export function Figma() {
     </svg>
   );
 }
-
-export { default } from 'X';

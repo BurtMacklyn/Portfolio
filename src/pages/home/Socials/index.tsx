@@ -43,5 +43,3 @@ const Card = ({ children, href, newTab }) => (
     <children.Logo />
   </Link>
 );
-
-export { default } from 'X';

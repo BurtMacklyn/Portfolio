@@ -80,7 +80,8 @@
     flex-direction: column;
   }
 
-  img {
+  img,
+  svg {
     max-width: 100%;
   }
 
@@ -117,7 +118,8 @@
     margin-bottom: 0.8rem;
   }
 
-  img {
+  img,
+  svg {
     border-radius: 2.4rem;
   }
 

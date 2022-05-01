@@ -10,5 +10,3 @@ export function Express() {
     </svg>
   );
 }
-
-export { default } from 'X';

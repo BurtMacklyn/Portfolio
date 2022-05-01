@@ -19,5 +19,3 @@ export function Docker() {
     </svg>
   );
 }
-
-export { default } from 'X';

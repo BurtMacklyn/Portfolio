@@ -1,7 +1,7 @@
+import { FilterContext } from 'pages/projects';
 import { useContext, useEffect, useRef } from 'react';
 import style from '~/style/components/Projects.module.scss';
 import type { Tag } from '~/types';
-import { FilterContext } from '..';
 
 export function Filter({ children: filter }: { children: Tag }) {
   const ref = useRef<HTMLInputElement>(null);
@@ -30,5 +30,3 @@ export function Filter({ children: filter }: { children: Tag }) {
     </div>
   );
 }
-
-export { default } from 'X';
