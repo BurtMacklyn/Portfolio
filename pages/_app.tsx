@@ -1,22 +1,24 @@
+/* eslint-disable @next/next/no-sync-scripts */
+
 import 'src/style/base.scss';
 import Head from 'next/head';
-import Script from 'next/script';
-import { MDXProvider } from '@mdx-js/react';
+import { Partytown } from '@builder.io/partytown/react';
+import type { AppProps } from 'next/app';
 
-const App = ({ Component, pageProps }: any) => (
+const App = ({ Component, pageProps }: AppProps) => (
   <>
-    <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
-    <Script strategy="lazyOnload" id="google-analytics">
-      {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');`}
-    </Script>
-
     <Head>
+      <Partytown debug forward={['dataLayer.push']} />
+
+      <script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
+      <script type="text/partytown" id="google-analytics">
+        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');`}
+      </script>
+
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
     </Head>
 
-    <MDXProvider>
-      <Component {...pageProps} />
-    </MDXProvider>
+    <Component {...pageProps} />
   </>
 );
 

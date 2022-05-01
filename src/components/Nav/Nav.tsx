@@ -1,10 +1,12 @@
 /* eslint-disable no-void */
 import { useEffect, useRef, useState } from 'react';
-import { Signature, Link } from '~/components';
 import { useObserver } from '~/hooks';
-import style from './Nav.module.scss';
 import { useMediaQuery } from 'usehooks-ts';
 import { pallette } from '~/config';
+import { Signature } from '../Signature/Signature';
+import { Link } from '../Link/Link';
+
+import style from './Nav.module.scss';
 
 export function Nav() {
   const dummy = useRef<HTMLDivElement>(null);

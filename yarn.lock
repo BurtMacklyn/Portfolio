@@ -1053,6 +1053,11 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@builder.io/partytown@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@builder.io/partytown/-/partytown-0.5.2.tgz#ba40369f7c0fd22169eaf6906325c150d7f77dd0"
+  integrity sha512-DHJPs5WPVFExUuGMsuA6yZQ6OPtVVv/3JJK9pzGrNfvuGNvlip5v7xOhXwZG26HLU9ZrrOFsOGhn5FUT2H7dPw==
+
 "@corex/deepmerge@^2.6.148":
   version "2.6.148"
   resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-2.6.148.tgz#8fa825d53ffd1cbcafce1b6a830eefd3dcc09dd5"
@@ -6178,6 +6183,11 @@ postcss@8.4.5:
     nanoid "^3.1.30"
     picocolors "^1.0.0"
     source-map-js "^1.0.1"
+
+preact@^10.7.1:
+  version "10.7.1"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.7.1.tgz#bdd2b2dce91a5842c3b9b34dfe050e5401068c9e"
+  integrity sha512-MufnRFz39aIhs9AMFisonjzTud1PK1bY+jcJLo6m2T9Uh8AqjD77w11eAAawmjUogoGOnipECq7e/1RClIKsxg==
 
 prebuild-install@^7.0.1:
   version "7.1.0"

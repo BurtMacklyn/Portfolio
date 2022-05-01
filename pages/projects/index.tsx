@@ -1,7 +1,9 @@
-import { Footer, Nav, Portfolio } from '~/components';
 import style from '~/style/components/Projects.module.scss';
 import { Filters } from '~/components/Project/Filters';
 import { Card } from '~/components/Project/Card';
+import { Footer } from '~/components/Footer/Footer';
+import { Nav } from '~/components/Nav/Nav';
+import { Portfolio } from '~/components/Portfolio/Portfolio';
 import type { Project, State, Tag } from '~/types';
 
 // eslint-disable-next-line no-use-before-define

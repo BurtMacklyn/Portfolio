@@ -6,7 +6,6 @@ import * as constants from './constants';
 import * as fx from './effects';
 
 import Head from 'next/head';
-import { Portfolio } from '~/components';
 
 const SnakeGame = () => {
   const appleRef = useRef<HTMLDivElement>(null);
@@ -30,13 +29,13 @@ const SnakeGame = () => {
       <Head>
         <title>Snake</title>
       </Head>
-      <Portfolio>
-        <Game score={score}>
-          <Snake>{snake}</Snake>
-          <Gameover isAlive={alive} snake={snake} />
-          <>{apple && snake.length >= constants.INITIAL_SNAKE.length && <MakeApple ref={appleRef}>{apple}</MakeApple>}</>
-        </Game>
-      </Portfolio>
+      {/* <Portfolio> */}
+      <Game score={score}>
+        <Snake>{snake}</Snake>
+        <Gameover isAlive={alive} snake={snake} />
+        <>{apple && snake.length >= constants.INITIAL_SNAKE.length && <MakeApple ref={appleRef}>{apple}</MakeApple>}</>
+      </Game>
+      {/* </Portfolio> */}
     </>
   );
 };

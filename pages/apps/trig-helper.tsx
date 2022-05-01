@@ -2,7 +2,8 @@
 import type React from 'react';
 
 import Head from 'next/head';
-import { Portfolio, Portal } from '~/components';
+import { Portal } from '~/components/Portal/Portal';
+import { Portfolio } from '~/components/Portfolio/Portfolio';
 
 const TrigHelper: React.FC = () => (
   <Portfolio>

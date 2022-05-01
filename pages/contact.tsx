@@ -1,9 +1,12 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import { Portfolio, Nav, Footer, ContactForm as Form } from '~/components';
 import { pallette } from '~/config';
 import style from '~/style/components/Contact.module.scss';
 import { Ellipsis } from 'react-awesome-spinners';
+import { Footer } from '~/components/Footer/Footer';
+import { Nav } from '~/components/Nav/Nav';
+import { Portfolio } from '~/components/Portfolio/Portfolio';
+import { ContactForm } from '~/components/ContactForm/ContactForm';
 
 const Contact = () => {
   const [hooray, setHooray] = useState(false);
@@ -18,7 +21,7 @@ const Contact = () => {
         <Nav />
         <section className={style.Contact}>
           <h2>Contact</h2>
-          <Form hooray={[hooray, setHooray]} loading={[loading, setLoading]} />
+          <ContactForm hooray={[hooray, setHooray]} loading={[loading, setLoading]} />
           <svg className={style.circle} width="841" height="841" viewBox="0 0 841 841" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="420.5" cy="420.5" r="420.5" fill={pallette.grey} />
           </svg>

@@ -1,7 +1,10 @@
 import style from '~/components/Blog/Blog.module.scss';
-import { Link, Portfolio, Nav, Footer } from '~/components';
 import Head from 'next/head';
 import { generatePageData } from '~/lib/generatePageData';
+import { Footer } from '~/components/Footer/Footer';
+import { Link } from '~/components/Link/Link';
+import { Nav } from '~/components/Nav/Nav';
+import { Portfolio } from '~/components/Portfolio/Portfolio';
 
 const Blog = () => (
   <Portfolio>

@@ -1,4 +1,4 @@
-import { Link } from '~/components';
+import { Link } from '~/components/Link/Link';
 import style from './Make.module.scss';
 
 export const Make = () => (

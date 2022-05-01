@@ -1,9 +1,13 @@
 import Head from 'next/head';
-import { Back, Footer, Markdown, Nav, Portfolio } from '~/components';
 import { projects } from '../../../pages/projects';
 import style from '~/style/components/Projects.module.scss';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
+import { Back } from '../Back/Back';
+import { Footer } from '../Footer/Footer';
+import { Markdown } from '../Markdown/Markdown';
+import { Nav } from '../Nav/Nav';
+import { Portfolio } from '../Portfolio/Portfolio';
 
 /* eslint-disable-next-line no-undef */
 export const Project: React.FC<{ children: any }> = ({ children }) => {

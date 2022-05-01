@@ -1,6 +1,6 @@
 import style from '~/style/components/Projects.module.scss';
 import type { Project } from '~/types';
-import { Link } from '~/components';
+import { Link } from '~/components/Link/Link';
 
 /* eslint-disable-next-line no-undef */
 export const Card: React.FC<{ children: Project }> = ({ children: project }) => (

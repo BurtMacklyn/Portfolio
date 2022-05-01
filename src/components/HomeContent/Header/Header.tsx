@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from '~/components';
+import { Link } from '~/components/Link/Link';
 import style from './Header.module.scss';
 
 const BIRTH_YEAR = 2006;

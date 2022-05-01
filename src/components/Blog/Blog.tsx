@@ -1,11 +1,15 @@
 import Head from 'next/head';
-import { Back, Footer, Markdown, Nav, Portfolio } from '..';
 import style from './Blog.module.scss';
 import { formatDate } from '~/lib/formatDate';
 import { useEffect, useState } from 'react';
 import { pages } from '../../../pages/blog/index';
 import { useRouter } from 'next/router';
 import type { generatePageData } from '~/lib/generatePageData';
+import { Back } from '../Back/Back';
+import { Footer } from '../Footer/Footer';
+import { Markdown } from '../Markdown/Markdown';
+import { Nav } from '../Nav/Nav';
+import { Portfolio } from '../Portfolio/Portfolio';
 
 /* eslint-disable-next-line no-undef */
 export const Blog: React.FC<{ children: any }> = ({ children }) => {

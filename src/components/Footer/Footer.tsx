@@ -1,4 +1,5 @@
-import { Link, Signature } from '..';
+import { Link } from '../Link/Link';
+import { Signature } from '../Signature/Signature';
 import style from './Footer.module.scss';
 
 export function Footer() {

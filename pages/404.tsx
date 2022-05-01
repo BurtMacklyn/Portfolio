@@ -1,7 +1,8 @@
 import style from '~/style/components/404.module.scss';
 import Head from 'next/head';
-import { Portfolio, Back } from '~/components';
 import { ErrorGraphic } from '~/components/ErrorGraphic/ErrorGraphic';
+import { Back } from '~/components/Back/Back';
+import { Portfolio } from '~/components/Portfolio/Portfolio';
 
 const Error = () => (
   <Portfolio>

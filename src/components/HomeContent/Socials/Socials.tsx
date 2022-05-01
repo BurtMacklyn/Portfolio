@@ -1,4 +1,4 @@
-import { Link } from '~/components';
+import { Link } from '~/components/Link/Link';
 import { Codepen, Contact, Email, Github, Linkedin, Npm, Stackoverflow, Twitter } from './icons';
 import style from './Socials.module.scss';
 
