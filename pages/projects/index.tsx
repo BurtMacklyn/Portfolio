@@ -1,4 +1,4 @@
-import { Center, Footer, Nav, Portfolio } from '~/components';
+import { Footer, Nav, Portfolio } from '~/components';
 import style from '~/style/components/Projects.module.scss';
 import { Filters } from '~/components/Project/Filters';
 import { Card } from '~/components/Project/Card';
@@ -9,13 +9,13 @@ import React, { useState } from 'react';
 
 export const FilterContext = React.createContext<State<Tag[]>>([[], () => {}]);
 
-export default function Projects() {
+const Projects = () => {
   const [selectedFilters, setSelectedFilters] = useState<Tag[]>([]);
 
   return (
     <Portfolio>
       <Nav />
-      <Center>
+      <div className="center">
         <FilterContext.Provider value={[selectedFilters, setSelectedFilters]}>
           <div className={style.page}>
             <div className={style.head}>
@@ -36,11 +36,13 @@ export default function Projects() {
             </div>
           </div>
         </FilterContext.Provider>
-      </Center>
+      </div>
       <Footer />
     </Portfolio>
   );
-}
+};
+
+export default Projects;
 
 function checkIncludesTag(tags: Tag[], filters: Tag[]) {
   let val = true;
@@ -50,9 +52,7 @@ function checkIncludesTag(tags: Tag[], filters: Tag[]) {
   return val;
 }
 
-function filter(projects: Project[], filters: Tag[]) {
-  return projects.filter(project => checkIncludesTag(project.tags, filters));
-}
+const filter = (projects: Project[], filters: Tag[]) => projects.filter(project => checkIncludesTag(project.tags, filters));
 
 export const projects: Project[] = [
   {

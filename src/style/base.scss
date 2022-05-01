@@ -20,3 +20,9 @@ html {
   --white: #fff;
   --black: #000;
 }
+
+.center {
+  margin: 0 auto;
+  width: 100vw;
+  max-width: $max-width;
+}

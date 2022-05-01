@@ -1,11 +1,11 @@
 import { NextSeo } from 'next-seo';
 import Head from 'next/head';
-import type { ReactChild } from 'react';
 import { useUrl } from '~/hooks';
 import { Favicon } from '../Favicon';
 import style from './Portfolio.module.scss';
 
-export function Portfolio({ children }: { children?: ReactChild | ReactChild[] }) {
+/* eslint-disable-next-line no-undef */
+export const Portfolio: React.FC = ({ children }) => {
   const url = useUrl();
   let names = '';
   for (let i = 0; i < 1000; i++) {
@@ -77,4 +77,4 @@ export function Portfolio({ children }: { children?: ReactChild | ReactChild[] }
       )}
     </>
   );
-}
+};

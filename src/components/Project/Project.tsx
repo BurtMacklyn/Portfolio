@@ -5,7 +5,8 @@ import style from '~/style/components/Projects.module.scss';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 
-export function Project({ children }: { children: any }) {
+/* eslint-disable-next-line no-undef */
+export const Project: React.FC<{ children: any }> = ({ children }) => {
   const router = useRouter();
 
   const [meta, setMeta] = useState<typeof projects[number]>();
@@ -37,4 +38,4 @@ export function Project({ children }: { children: any }) {
       <Footer />
     </Portfolio>
   );
-}
+};

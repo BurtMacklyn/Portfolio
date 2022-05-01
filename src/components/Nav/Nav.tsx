@@ -2,11 +2,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Signature, Link } from '~/components';
 import { useObserver } from '~/hooks';
-import { LogoCircle } from './LogoCircle';
 import style from './Nav.module.scss';
-import MobileSVG from './Mobile';
-import X from './X';
 import { useMediaQuery } from 'usehooks-ts';
+import { pallette } from '~/config';
 
 export function Nav() {
   const dummy = useRef<HTMLDivElement>(null);
@@ -35,14 +33,20 @@ export function Nav() {
     <>
       <div className={style.dummy} ref={dummy} style={{ width: 0, height: 0 }} />
       <div className={style.container}>
-        <LogoCircle className={style.circle} />
+        <svg className={style.circle} width="386" height="203" viewBox="0 0 386 203" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="193" cy="10" r="193" fill={pallette.black} />
+        </svg>
         <div className={`${style.Nav} ${active ? style.active : ''}`} onMouseOver={onHover} onMouseOut={onUnHover}>
           <div className={style.content}>
             <Link href="/">
               <Signature color={active ? 'black' : 'white'} className={`${style.Signature} ${style.sig}`} />
             </Link>
             <label htmlFor="mobile" className={style.mobileButton}>
-              <MobileSVG />
+              <svg width="50" viewBox="0 0 100 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="2" y1="3" x2="98" y2="3" stroke={pallette.black} strokeWidth="4" strokeLinecap="round" />
+                <line x1="2" y1="27" x2="98" y2="27" stroke={pallette.black} strokeWidth="4" strokeLinecap="round" />
+                <line x1="2" y1="51" x2="98" y2="51" stroke={pallette.black} strokeWidth="4" strokeLinecap="round" />
+              </svg>
             </label>
             <ul className={style.desktopLinks}>
               <li>
@@ -69,7 +73,10 @@ export function Nav() {
             <Signature color="black" className={style.sig} />
           </Link>
           <label htmlFor="mobile" className={style.X}>
-            <X />
+            <svg height="30" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="2.82843" y1="3" x2="69" y2="69.1716" stroke="black" strokeWidth="4px" strokeLinecap="round" />
+              <line x1="69" y1="2.82843" x2="2.82843" y2="69" stroke="black" strokeWidth="4px" strokeLinecap="round" />
+            </svg>
           </label>
         </div>
         <ul className={style.mobileLinks}>

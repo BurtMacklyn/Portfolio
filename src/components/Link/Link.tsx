@@ -1,19 +1,17 @@
 import type { HTMLAttributes, ReactChild } from 'react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 
-function _Link({
-  children,
-  href,
-  newTab,
-  ...props
-}: { children: ReactChild | ReactChild[]; href: string; newTab?: boolean } & HTMLAttributes<HTMLAnchorElement>) {
-  return (
-    <Link {...props} href={href} passHref scroll>
-      <a {...props} rel="noopener" target={newTab ? '_blank' : ''} style={{ textDecoration: 'none', color: 'inherit', ...props.style }}>
-        {children}
-      </a>
-    </Link>
-  );
+interface Props {
+  children: ReactChild | ReactChild[];
+  href: string;
+  newTab?: boolean;
 }
 
-export { _Link as Link };
+// eslint-disable-next-line no-undef
+export const Link: React.FC<Props & HTMLAttributes<HTMLAnchorElement>> = ({ children, href, newTab, ...props }) => (
+  <NextLink {...props} href={href} passHref scroll>
+    <a {...props} rel="noopener" target={newTab ? '_blank' : ''} style={{ textDecoration: 'none', color: 'inherit', ...props.style }}>
+      {children}
+    </a>
+  </NextLink>
+);

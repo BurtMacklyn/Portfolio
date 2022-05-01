@@ -1,27 +1,26 @@
-/* eslint-disable no-eval */
 import { Html, Head, Main, NextScript } from 'next/document';
 import { pallette } from '~/config';
 
-export default function Document() {
-  return (
-    <Html lang="en">
-      <Head>
-        <base href="/" />
+const Document = () => (
+  <Html lang="en">
+    <Head>
+      <base href="/" />
 
-        <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.webp" />
-        <link rel="manifest" href="/manifest.json" />
+      <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.webp" />
+      <link rel="manifest" href="/manifest.json" />
 
-        <meta name="theme-color" content={pallette.white} />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="theme-color" content={pallette.white} />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  );
-}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+    </Head>
+    <body>
+      <Main />
+      <NextScript />
+    </body>
+  </Html>
+);
+
+export default Document;
