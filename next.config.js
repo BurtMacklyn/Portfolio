@@ -3,10 +3,20 @@ const runtimeCaching = require('next-pwa/cache');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+    providerImportSource: '@mdx-js/react',
+  },
+});
 
 /** @type {import('next').NextConfig} */
 module.exports = withPlugins({
   reactStrictMode: true,
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+
   pwa: {
     dest: 'public',
     register: true,
@@ -19,6 +29,16 @@ module.exports = withPlugins({
 
   async redirects() {
     return [
+      {
+        source: '/git',
+        destination: 'https://www.github.com/cooperrunyan/cooperrunyan',
+        permanent: false,
+      },
+      {
+        source: '/github',
+        destination: 'https://www.github.com/cooperrunyan/',
+        permanent: false,
+      },
       {
         source: '/overview',
         destination: '/',
@@ -49,5 +69,5 @@ module.exports = withPlugins({
 
 /** @param {import('next').NextConfig} config */
 function withPlugins(config) {
-  return withBundleAnalyzer(withPWA(config));
+  return withMDX(withBundleAnalyzer(withPWA(config)));
 }

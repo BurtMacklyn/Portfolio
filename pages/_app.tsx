@@ -1,9 +1,10 @@
 import 'src/style/base.scss';
 import Head from 'next/head';
-import type { AppProps } from 'next/app';
+// import type { AppProps } from 'next/app';
 import Script from 'next/script';
+import { MDXProvider } from '@mdx-js/react';
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: any) {
   return (
     <>
       <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
@@ -15,7 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
       </Head>
 
-      <Component {...pageProps} />
+      <MDXProvider>
+        <Component {...pageProps} />
+      </MDXProvider>
     </>
   );
 }

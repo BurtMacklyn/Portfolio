@@ -3,7 +3,7 @@ import { Graphic } from './Graphic';
 import Head from 'next/head';
 import { Portfolio, Back } from '~/components';
 
-export default function Err() {
+export default function Error() {
   return (
     <Portfolio>
       <Head>
