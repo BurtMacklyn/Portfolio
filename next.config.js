@@ -36,12 +36,22 @@ export default withPlugins({
     return [
       {
         source: '/git',
-        destination: 'https://www.github.com/cooperrunyan/cooperrunyan',
+        destination: 'https://www.github.com/cooperrunyan',
         permanent: false,
       },
       {
-        source: '/github',
-        destination: 'https://www.github.com/cooperrunyan/',
+        source: '/git/:slug',
+        destination: 'https://www.github.com/cooperrunyan/:slug',
+        permanent: false,
+      },
+      {
+        source: '/repo',
+        destination: 'https://www.github.com/cooperrunyan/cooperrunyan/',
+        permanent: false,
+      },
+      {
+        source: '/repo/:slug',
+        destination: 'https://www.github.com/cooperrunyan/cooperrunyan/:slug',
         permanent: false,
       },
       {
