@@ -36,7 +36,7 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "target": "es6",
-    "types": ["react", "jest"],
+    "types": ["react", "node"],
     "useUnknownInCatchVariables": true,
     "watch": true,
     "paths": {

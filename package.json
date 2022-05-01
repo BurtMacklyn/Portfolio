@@ -1,20 +1,32 @@
 {
-  "name": "portfolio",
+  "name": "cooperrunyan",
   "version": "2.0.0",
-  "description": "",
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "prebuild": "yarn run partytown",
+    "prebuild": "partytown copylib public/~partytown",
     "build": "next build",
     "postbuild": "next-sitemap --config next-sitemap.cjs",
-    "partytown": "partytown copylib public/~partytown",
     "start": "next start",
-    "test": "jest",
     "lint": "next lint",
     "analyze": "ANALYZE=true next build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cooperrunyan/cooperrunyan.git"
+  },
+  "keywords": [],
+  "author": "Cooper Runyan",
+  "license": "EPL-2.0",
+  "bugs": {
+    "url": "https://github.com/cooperrunyan/cooperrunyan/issues"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
+  "homepage": "https://www.cooperrunyan.com",
   "dependencies": {
     "@builder.io/partytown": "^0.5.2",
     "@emailjs/browser": "^3.4.0",
@@ -33,48 +45,13 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.1.0",
-    "@next/eslint-plugin-next": "^12.1.0",
     "@svgr/webpack": "^6.2.0",
-    "@testing-library/jest-dom": "^5.15.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "@types/jest": "^27.4.1",
     "@types/node": "16.11.11",
     "@types/react": "^17.0.37",
-    "@typescript-eslint/eslint-plugin": "^5.14.0",
-    "@typescript-eslint/parser": "^5.14.0",
-    "babel-jest": "^27.5.1",
-    "eslint": "^7.32.0",
-    "eslint-config-next": "12.1.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.2.0",
-    "eslint-plugin-react": "^7.29.3",
-    "jest": "^27.5.1",
-    "node-notifier": "^10.0.1",
+    "eslint": "^8.14.0",
     "sass": "^1.48.0",
     "sharp": "^0.30.2",
-    "ts-jest": "^27.1.3",
-    "ts-node": "^10.7.0",
     "tslib": "^2.3.1",
     "typescript": "4.5.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cooperrunyan/Portfolio.git"
-  },
-  "keywords": [],
-  "author": "Cooper Runyan",
-  "license": "EPL-2.0",
-  "bugs": {
-    "url": "https://github.com/cooperrunyan/Portfolio/issues"
-  },
-  "browser": {
-    "fs": false,
-    "path": false,
-    "os": false
-  },
-  "homepage": "https://www.cooperrunyan.com"
+  }
 }

@@ -4,12 +4,14 @@ import type React from 'react';
 import style from './Portal.module.scss';
 import { BackArrow } from '../BackArrow/BackArrow';
 
-export const Portal: React.FC<{ url: URL }> = ({ url }) => {
+export const Portal: React.FC<{ url: URL; noBack?: true }> = ({ url, noBack }) => {
   return (
     <div className={style.Portal}>
-      <span className={style.Back}>
-        <BackArrow color="white" />
-      </span>
+      {!noBack && (
+        <span className={style.Back}>
+          <BackArrow color="white" />
+        </span>
+      )}
       <iframe src={url.href} frameBorder="0" />
     </div>
   );
