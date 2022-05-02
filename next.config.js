@@ -17,10 +17,17 @@ const withMDX = mdx({
   },
 });
 
+const languages = ['js', 'ts', 'tsx'];
+const types = ['page', 'api', 'server'];
+
 /** @type {import('next').NextConfig} */
 export default withPlugins({
   reactStrictMode: true,
-  pageExtensions: ['page.js', 'page.jsx', 'page.ts', 'page.tsx', 'page.md', 'mdx'],
+  pageExtensions: [...types.map(type => languages.map(lang => `${type}.${lang}`)).flat(), 'mdx'],
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 
   pwa: {
     dest: 'public',
