@@ -1,6 +1,6 @@
 import { Link } from '../link/link.component';
 import { Signature } from '../signature/signature.component';
-import style from './Footer.module.scss';
+import style from './footer.module.scss';
 
 export function Footer() {
   return (

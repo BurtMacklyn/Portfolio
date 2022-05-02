@@ -5,7 +5,7 @@ import { pallette } from '~/config/pallette';
 import { Signature } from '../signature/signature.component';
 import { Link } from '../link/link.component';
 
-import style from './Nav.module.scss';
+import style from './nav.module.scss';
 
 export function Nav() {
   const dummy = useRef<HTMLDivElement>(null);
