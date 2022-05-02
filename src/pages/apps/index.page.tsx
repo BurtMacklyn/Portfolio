@@ -1,5 +1,6 @@
-import style from '~/style/components/Apps.module.scss';
+import style from './style/apps.module.scss';
 import Image from 'next/image';
+
 import { Footer } from '~/components/footer/footer.component';
 import { Link } from '~/components/link/link.component';
 import { Nav } from '~/components/nav/nav.component';

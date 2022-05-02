@@ -1,4 +1,4 @@
-import style from '~/style/components/Projects.module.scss';
+import style from '../style/projects.module.scss';
 import type { Project } from '~/types';
 import { Link } from '~/components/link/link.component';
 

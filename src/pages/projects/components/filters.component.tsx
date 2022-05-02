@@ -1,6 +1,6 @@
 import { useRef, useContext, useEffect } from 'react';
 import { FilterContext } from '~/pages/projects/index.page';
-import style from '~/style/components/Projects.module.scss';
+import style from '../style/projects.module.scss';
 import type { Tag } from '~/types';
 import { tags } from '../data/tags';
 

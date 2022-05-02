@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { projects } from '../data/projects';
-import style from '~/style/components/Projects.module.scss';
+import style from '../style/projects.module.scss';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 

@@ -1,4 +1,4 @@
-import style from '~/style/components/Projects.module.scss';
+import style from './style/projects.module.scss';
 import { Footer } from '~/components/footer/footer.component';
 import { Nav } from '~/components/nav/nav.component';
 import { Portfolio } from '~/components/portfolio/portfolio.component';

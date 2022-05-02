@@ -1,6 +1,8 @@
-import style from '~/style/components/404.module.scss';
+import style from './style/404.module.scss';
 import Head from 'next/head';
+
 import { ErrorGraphic } from './graphic.component';
+
 import { Back } from '~/components/back/back.component';
 import { Portfolio } from '~/components/portfolio/portfolio.component';
 
