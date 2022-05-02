@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { projects } from '~/pages/projects';
+import { projects } from '~/pages/projects/index.page';
 import style from '~/style/components/Projects.module.scss';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';

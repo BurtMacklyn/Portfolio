@@ -2,7 +2,7 @@ import Head from 'next/head';
 import style from './Blog.module.scss';
 import { formatDate } from '~/lib/formatDate';
 import { useEffect, useState } from 'react';
-import { pages } from '~/pages/blog';
+import { pages } from '~/pages/blog/index.page';
 import { useRouter } from 'next/router';
 import type { generatePageData } from '~/lib/generatePageData';
 import { Back } from '../Back/Back';

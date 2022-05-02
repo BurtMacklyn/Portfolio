@@ -1,4 +1,4 @@
-import { FilterContext } from '~/pages/projects';
+import { FilterContext } from '~/pages/projects/index.page';
 import { useContext, useEffect, useRef } from 'react';
 import style from '~/style/components/Projects.module.scss';
 import type { Tag } from '~/types';

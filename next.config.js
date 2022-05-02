@@ -20,7 +20,7 @@ const withMDX = mdx({
 /** @type {import('next').NextConfig} */
 export default withPlugins({
   reactStrictMode: true,
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  pageExtensions: ['page.ts', 'page.tsx', 'page.md', 'page.mdx'],
 
   pwa: {
     dest: 'public',
