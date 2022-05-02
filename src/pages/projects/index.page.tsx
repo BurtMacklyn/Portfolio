@@ -4,8 +4,8 @@ import { Nav } from '~/components/nav/nav.component';
 import { Portfolio } from '~/components/portfolio/portfolio.component';
 import type { Project, State, Tag } from '~/types';
 
-import { Filters } from './components/Filters.component';
-import { Card } from './components/Card.component';
+import { Filters } from './components/filters.component';
+import { Card } from './components/card.component';
 
 // eslint-disable-next-line no-use-before-define
 import React, { useState } from 'react';

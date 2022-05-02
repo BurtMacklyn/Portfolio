@@ -7,3 +7,4 @@ workbox*
 sitemap*.xml
 robots.txt
 ~partytown
+.vercel
