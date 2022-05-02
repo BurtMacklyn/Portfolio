@@ -5,7 +5,7 @@ import style from '~/style/components/Contact.module.scss';
 import { Footer } from '~/components/footer/footer.component';
 import { Nav } from '~/components/nav/nav.component';
 import { Portfolio } from '~/components/portfolio/portfolio.component';
-import { ContactForm } from './Form.component';
+import { ContactForm } from './form.component';
 
 const Contact = () => {
   const [hooray, setHooray] = useState(false);
