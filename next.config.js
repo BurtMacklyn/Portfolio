@@ -20,7 +20,7 @@ const withMDX = mdx({
 /** @type {import('next').NextConfig} */
 export default withPlugins({
   reactStrictMode: true,
-  pageExtensions: ['page.ts', 'page.tsx', 'page.md', 'page.mdx'],
+  pageExtensions: ['page.js', 'page.jsx', 'page.ts', 'page.tsx', 'page.md', 'mdx'],
 
   pwa: {
     dest: 'public',
@@ -68,16 +68,6 @@ export default withPlugins({
       {
         source: '/repo/:slug',
         destination: 'https://www.github.com/cooperrunyan/cooperrunyan/:slug',
-        permanent: false,
-      },
-      {
-        source: '/overview',
-        destination: '/',
-        permanent: false,
-      },
-      {
-        source: '/home',
-        destination: '/',
         permanent: false,
       },
       {
