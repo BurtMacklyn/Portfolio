@@ -1,0 +1,35 @@
+.wrapper {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Experience {
+  display: flex;
+  gap: 8rem;
+  flex-wrap: wrap;
+  max-width: 120rem;
+  margin: var(--margin);
+  width: fit-content;
+  justify-content: center;
+
+  @media (max-width: calc(400em / 16)) {
+    gap: 4rem;
+  }
+
+  & > * {
+    flex: 0 0 24rem;
+  }
+}
+
+.card {
+  width: 24rem;
+  height: 24rem;
+  border-radius: 100%;
+  background-color: var(--white);
+  box-shadow: 0 1rem 3.6rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

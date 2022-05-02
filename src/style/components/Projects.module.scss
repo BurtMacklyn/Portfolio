@@ -1,0 +1,150 @@
+.page {
+  width: 100%;
+  padding: var(--margin);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-bottom: 4.8rem;
+
+  p {
+    max-width: 80rem;
+  }
+}
+
+.filters {
+  display: flex;
+  max-width: 75rem;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+
+  input {
+    display: none;
+  }
+
+  label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  :checked ~ label {
+    opacity: 1;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 3.2rem;
+  margin-top: 8.6rem;
+
+  & > * {
+    flex: 1 1 40%;
+    min-width: 56rem;
+
+    @media (max-width: calc(700em / 16)) {
+      flex: 1 1 100%;
+      min-width: unset;
+    }
+  }
+}
+
+.card {
+  padding: 2.4rem;
+  background: var(--grey);
+  border-radius: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 3.2rem;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+
+  @media (max-width: calc(700em / 16)) {
+    flex-direction: column;
+  }
+
+  img,
+  svg {
+    max-width: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    background: #e5e5e5;
+    outline: none;
+  }
+
+  .content {
+    max-width: 32rem;
+    width: 100%;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  .projectName {
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.6rem;
+  }
+
+  .projectTagsMessage {
+    margin-bottom: 0.8rem;
+  }
+
+  img,
+  svg {
+    border-radius: 2.4rem;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+
+    li {
+      font-size: 1.4rem;
+      user-select: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 2.4rem;
+      background: rgba(0, 0, 0, 0.08);
+    }
+  }
+}
+
+.projectpage {
+  margin-block: 6.4rem;
+  padding-inline: var(--margin);
+}
+
+.back {
+  width: 100%;
+  max-width: 96rem;
+  margin: 0 auto;
+  margin-bottom: 3.2rem;
+}
