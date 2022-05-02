@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-sync-scripts */
 
-import 'src/style/base.scss';
+import '~/style/variables.scss';
+import '~/style/base.scss';
 import Head from 'next/head';
 import { Partytown } from '@builder.io/partytown/react';
 import type { AppProps } from 'next/app';

@@ -1,3 +1,2 @@
-export * from './useUrl';
-export * from './useObserver';
+export * from './useObserver.hook';
 export * from './useWindowSize';

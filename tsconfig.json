@@ -40,11 +40,10 @@
     "useUnknownInCatchVariables": true,
     "watch": true,
     "paths": {
-      "~/*": ["./src/*"],
-      "X": ["./pages/404"]
+      "~/*": ["./src/*"]
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/images/experience/.svg.tsx"],
   "exclude": ["node_modules"]
 }

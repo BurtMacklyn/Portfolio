@@ -2,8 +2,8 @@
 import type React from 'react';
 
 import Head from 'next/head';
-import { Portal } from '~/components/Portal/Portal';
-import { Portfolio } from '~/components/Portfolio/Portfolio';
+import { Portal } from '~/components/portal/portal.component';
+import { Portfolio } from '~/components/portfolio/portfolio.component';
 
 const Snake: React.FC = () => (
   <Portfolio>

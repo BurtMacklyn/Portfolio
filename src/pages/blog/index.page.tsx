@@ -1,10 +1,11 @@
-import style from '~/components/Blog/Blog.module.scss';
 import Head from 'next/head';
-import { generatePageData } from '~/lib/generatePageData';
-import { Footer } from '~/components/Footer/Footer';
-import { Link } from '~/components/Link/Link';
-import { Nav } from '~/components/Nav/Nav';
-import { Portfolio } from '~/components/Portfolio/Portfolio';
+import { Footer } from '~/components/footer/footer.component';
+import { Link } from '~/components/link/link.component';
+import { Nav } from '~/components/nav/nav.component';
+import { Portfolio } from '~/components/portfolio/portfolio.component';
+
+import style from './template/template.module.scss';
+import { pages } from './data/pages';
 
 const Blog = () => (
   <Portfolio>
@@ -32,9 +33,3 @@ const Blog = () => (
 );
 
 export default Blog;
-
-export const pages = generatePageData([
-  { id: 'docker-development', title: 'The Key To Development In Docker', timestamp: 'April 27, 2022' },
-  { id: 'what-is-deno', title: 'Deno. What is it?', timestamp: 'March 19, 2022' },
-  { id: 'welcome', title: 'Welcome to my blog', timestamp: 'March 16, 2022' },
-]);

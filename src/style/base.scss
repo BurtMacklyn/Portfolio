@@ -15,14 +15,8 @@ html {
   overflow-x: hidden;
 }
 
-:root {
-  --grey: #f5f5f5;
-  --white: #fff;
-  --black: #000;
-}
-
 .center {
   margin: 0 auto;
   width: 100vw;
-  max-width: $max-width;
+  max-width: var(--max-width);
 }

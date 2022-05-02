@@ -1,5 +1,3 @@
-@import '../../style/variables.scss';
-
 .footerContainer {
   width: 100vw;
   position: relative;
@@ -26,7 +24,7 @@
     background-color: var(--grey);
     margin: 0 auto;
     width: 100vw;
-    max-width: $max-width;
+    max-width: var(--max-width);
 
     h3 {
       margin-bottom: 4.4rem;

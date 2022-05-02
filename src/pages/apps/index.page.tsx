@@ -1,9 +1,9 @@
 import style from '~/style/components/Apps.module.scss';
 import Image from 'next/image';
-import { Footer } from '~/components/Footer/Footer';
-import { Link } from '~/components/Link/Link';
-import { Nav } from '~/components/Nav/Nav';
-import { Portfolio } from '~/components/Portfolio/Portfolio';
+import { Footer } from '~/components/footer/footer.component';
+import { Link } from '~/components/link/link.component';
+import { Nav } from '~/components/nav/nav.component';
+import { Portfolio } from '~/components/portfolio/portfolio.component';
 
 const Apps = () => (
   <Portfolio>

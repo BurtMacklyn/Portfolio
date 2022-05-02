@@ -1,3 +1,8 @@
-$font-family: 'Helvetica Neue', 'SF Pro Display', 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
+@at-root :root {
+  --grey: #f5f5f5;
+  --white: #fff;
+  --black: #000;
 
-$max-width: 180rem;
+  --font-family: 'Helvetica Neue', 'SF Pro Display', 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
+  --max-width: 180rem;
+}
