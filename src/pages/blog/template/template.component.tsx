@@ -14,7 +14,6 @@ import { pages } from '../data/pages';
 /* eslint-disable-next-line no-undef */
 export const Template: React.FC<{ children: any }> = ({ children }) => {
   const router = useRouter();
-
   const [meta, setMeta] = useState<{ path: string; title: string; timestamp: Date; Preview: any }>();
 
   useEffect(() => {
@@ -38,7 +37,7 @@ export const Template: React.FC<{ children: any }> = ({ children }) => {
             {children}
             <br />
             <hr />
-            <p style={{ fontWeight: 'bold' }}>Cooper Runyan: {meta ? formatDate(meta?.timestamp) : ''}</p>
+            <p style={{ fontWeight: 'bold' }}>Cooper Runyan: </p>
           </Markdown>
         </div>
       </div>
