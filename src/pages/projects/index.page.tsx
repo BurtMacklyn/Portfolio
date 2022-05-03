@@ -2,7 +2,7 @@ import style from './projects.module.scss';
 import { Footer } from '~/components/footer/footer.component';
 import { Nav } from '~/components/nav/nav.component';
 import { Portfolio } from '~/components/portfolio/portfolio.component';
-import type { Project, State, Tag } from '~/types';
+import type { State } from '~/types';
 
 import { Filters } from './components/filters.component';
 import { Card } from './components/card.component';
@@ -11,10 +11,10 @@ import { Card } from './components/card.component';
 import React, { useState } from 'react';
 import { getMarkdownMeta } from '~/lib/getMarkdownMeta';
 
-export const FilterContext = React.createContext<State<Tag[]>>([[], () => {}]);
+export const FilterContext = React.createContext<State<string[]>>([[], () => {}]);
 
 const Projects = ({ pages }) => {
-  const [selectedFilters, setSelectedFilters] = useState<Tag[]>([]);
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
   return (
     <Portfolio>
@@ -54,7 +54,7 @@ export const getStaticProps = getMarkdownMeta({
 
 export default Projects;
 
-function checkIncludesTag(tags: Tag[], filters: Tag[]) {
+function checkIncludesTag(tags: string[], filters: string[]) {
   let val = true;
   for (const filter of filters) {
     if (!tags.includes(filter)) val = false;
@@ -62,4 +62,4 @@ function checkIncludesTag(tags: Tag[], filters: Tag[]) {
   return val;
 }
 
-const filter = (projects: Project[], filters: Tag[]) => projects.filter(project => checkIncludesTag(project.tags, filters));
+const filter = (projects: any[], filters: string[]) => projects.filter(project => checkIncludesTag(project.tags, filters));

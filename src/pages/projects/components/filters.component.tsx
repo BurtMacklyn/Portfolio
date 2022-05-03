@@ -1,7 +1,6 @@
 import { useRef, useContext, useEffect } from 'react';
 import { FilterContext } from '~/pages/projects/index.page';
 import style from '../projects.module.scss';
-import type { Tag } from '~/types';
 
 export const Filters = () => (
   <form className={style.filters}>
@@ -11,7 +10,7 @@ export const Filters = () => (
   </form>
 );
 
-const Filter: React.FC<{ children: Tag }> = ({ children: filter }) => {
+const Filter: React.FC<{ children: string }> = ({ children: filter }) => {
   const ref = useRef<HTMLInputElement>(null);
   const [selectedFilters, setSelectedFilters] = useContext(FilterContext);
 
