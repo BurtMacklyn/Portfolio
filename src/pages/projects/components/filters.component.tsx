@@ -1,8 +1,7 @@
 import { useRef, useContext, useEffect } from 'react';
 import { FilterContext } from '~/pages/projects/index.page';
-import style from '../style/projects.module.scss';
+import style from '../projects.module.scss';
 import type { Tag } from '~/types';
-import { tags } from '../data/tags';
 
 export const Filters = () => (
   <form className={style.filters}>
@@ -39,3 +38,22 @@ const Filter: React.FC<{ children: Tag }> = ({ children: filter }) => {
     </div>
   );
 };
+
+export const tags = [
+  'deno',
+  'typescript',
+  'javascript',
+  'docker',
+  'heroku',
+  'react',
+  'nextjs',
+  'nodejs',
+  'npm',
+  'scss',
+  'oak',
+  'angular',
+  'vite',
+  'mongodb',
+  'cli',
+  'template',
+] as const;

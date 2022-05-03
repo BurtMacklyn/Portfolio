@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { ReactElement, useEffect, useRef } from 'react';
 import style from './markdown.module.scss';
 
 /* eslint-disable-next-line no-undef */
-export const Markdown: React.FC = ({ children }) => {
+export const Markdown: React.FC<{ children: ReactElement | ReactElement[] }> = ({ children }) => {
   const article = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

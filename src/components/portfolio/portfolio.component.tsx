@@ -3,10 +3,10 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import style from './portfolio.module.scss';
 import useSystemTheme from 'react-use-system-theme';
-import { useEffect, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 
 /* eslint-disable-next-line no-undef */
-export const Portfolio: React.FC = ({ children }) => {
+export const Portfolio: React.FC<{ children: ReactElement | ReactElement[] }> = ({ children }) => {
   const [url, setUrl] = useState('');
   const router = useRouter();
   const matches = useSystemTheme() === 'dark';

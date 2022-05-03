@@ -1,14 +1,13 @@
-import style from '../style/projects.module.scss';
-import type { Project } from '~/types';
+import style from '../projects.module.scss';
 import { Link } from '~/components/link/link.component';
 
 /* eslint-disable-next-line no-undef */
-export const Card: React.FC<{ children: Project }> = ({ children: project }) => (
-  <Link href={`/projects/${project?.id}`} className={style.card} key={project?.name}>
-    <span style={{ opacity: '0', pointerEvents: 'none', position: 'absolute' }}>{project.name}</span>
+export const Card: React.FC<{ children: any }> = ({ children: project }) => (
+  <Link href={`/projects/${project?.slug}`} className={style.card} key={project?.title}>
+    <span style={{ opacity: '0', pointerEvents: 'none', position: 'absolute' }}>{project?.name}</span>
     <div className={style.content}>
       <div>
-        <p className={style.projectName}>{project?.name}</p>
+        <p className={style.projectName}>{project?.title}</p>
         <p className={style.projectDescription}>{project?.description}</p>
       </div>
       <div>

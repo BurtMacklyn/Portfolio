@@ -1,4 +1,14 @@
-import { Template } from './template/template.component';
+---
+title: Asciifi
+description: Image > ascii converter
+timestamp: 3-12-22
+tags:
+  - nodejs
+  - cli
+  - javascript
+  - typescript
+  - npm
+---
 
 # Asciifi
 
@@ -27,8 +37,6 @@ If you only want to run it once, and not globally install the package, run:
 npx asciifi -y
 ```
 
----
-
 ## Usage
 
 ```bash
@@ -43,8 +51,6 @@ asciifi ./test-img.png -b .75 -w 432
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------- | ----------- | ------- | ------------------------------------------------------------------------------------------ |
 | Brightness                   | `-b`, `--brightness`                                                                                                      | `number`        | 0-1         | 0.8     | Set the brightness with a value between 0 and 1. Lower values have less detail.            |
 | Width                        | `-w` `—width`                                                                                                             | `number`        | 0-1000      | 150     | Set the width of the outputted image. Higher widths will result in a higher quality image. |
-
----
 
 ## Inspiration
 
@@ -61,5 +67,3 @@ provide credit.
 #### [7 Full Stack App Ideas for Developers w/ Instructions Included](https://www.youtube.com/watch?v=JTOJsU3FSD8)
 
 [![7 Full Stack App Ideas for Developers w/ Instructions Included](/projects/assets/asciifi-inspo-thumbnail.webp)](https://www.youtube.com/watch?v=JTOJsU3FSD8)
-
-export default ({ children }) => <Template>{children}</Template>

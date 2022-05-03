@@ -1,0 +1,12 @@
+.Page {
+  .back {
+    width: 100%;
+    max-width: 96rem;
+    margin: 0 auto;
+  }
+
+  .blog {
+    margin-block: 6.4rem;
+    padding-inline: var(--margin);
+  }
+}

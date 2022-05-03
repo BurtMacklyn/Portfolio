@@ -1,4 +1,7 @@
-import { Template } from './template/template.component';
+---
+title: The Key To Development In Docker
+timestamp: 4-27-22
+---
 
 # The Key To Development In Docker
 
@@ -106,5 +109,3 @@ services:
 ```
 
 In this example, we'll say you have `tsc . -w` server running in the docker container. This watches the files in the `./src` directory, so whenever a file changes, it recompiles. With the volume set up in the `docker-compose` file, whenever you make an update to a file in the `./src` directory, it will automatically update that file in the docker container without needing to rebuild the image.
-
-export default ({ children }) => <Template>{children}</Template>

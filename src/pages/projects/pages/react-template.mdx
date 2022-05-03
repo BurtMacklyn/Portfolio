@@ -1,9 +1,21 @@
-import { Template } from './template/template.component';
+---
+title: React Template
+description: A template repository for React projects
+timestamp: 3-12-22
+tags:
+  - scss
+  - javascript
+  - nodejs
+  - react
+  - template
+  - typescript
+  - vite
+---
 
-# Nextjs Template
+# React Template
 
-Starter project in Next js. It uses TypeScript, Scss, Next, Jest, Prettier, and
-ESLint. You don't **_need_** to know all of these technologies to use this.
+Starter project in react. It uses TypeScript, Scss, Vite, Jest, Prettier, and
+ESLint. You don't **_need_** to know all of these technologies to use it.
 
 ## Setup
 
@@ -41,6 +53,28 @@ test("logic works correctly", () => {
 Assuming you have a `jest.config.ts` or `jest.config.js` file, and jest
 installed, run: `$ npx jest` to run all test suites.
 
+## Vite
+
+[Vite](https://github.com/vitejs/vite) is an extremely fast frontend
+building/development tool. It is also super easy to learn how to use.
+
+#### Upsides
+
+Vite is
+
+- Super fast
+- Similar to webpack or liveserver
+- Extremely simple
+
+#### To remove
+
+- Delete `vite.config.ts`
+- Remove from `package.json`
+  - `ts-node`
+  - `@vitejs/plugin-react`
+  - `vite`
+  - `vite-tsconfig-paths`
+
 ## React
 
 [React](https://github.com/facebook/react) is a frontend Javascript framework
@@ -71,5 +105,3 @@ the `sass` package from `package.json`.
 ### Support me!
 
 {/* <a href="https://www.buymeacoffee.com/cooperrunyE" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a> */}
-
-export default ({ children }) => <Template>{children}</Template>

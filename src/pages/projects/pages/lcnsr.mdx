@@ -1,5 +1,14 @@
-import { Template } from './template/template.component';
-
+---
+title: Lcnsr
+description: Open source license helper
+timestamp: 3-12-22
+tags:
+  - nodejs
+  - cli
+  - javascript
+  - typescript
+  - npm
+---
 # Lcnsr
 
 ## Overview
@@ -15,7 +24,7 @@ out a description of the license. But how do I know if a license is supported or
 not? Run `npx lcnsr -d` to list all licenses, including their full name, ID, and
 publication date.
 
----
+
 
 #####
 
@@ -42,7 +51,7 @@ If you only want to run it once, and not globally install the package, run:
 npx lcnsr
 ```
 
----
+
 
 #####
 
@@ -65,7 +74,7 @@ lcnsr [options] [license]
 | Find                         | `-f`, `--find`                                                                                    | `boolean`       | `false` | Query for a license code but don't do anything with it.                                                                 |
 | Version                      | `-v`, `--version`                                                                                 | none            | none    | Output the current version                                                                                              |
 
----
+
 
 #####
 
@@ -106,7 +115,7 @@ feature entitled “Most Similar Name.” If there isn't a license that gets mat
 by the query after RegEx detection, the program will look through all supported
 licenses and return the most similar license name to the query.
 
----
+
 
 #####
 
@@ -144,5 +153,3 @@ licenses and return the most similar license name to the query.
 | `NCSA`                                                                                                           | NCSA                                     |
 | `UNLICENSE`                                                                                                      | Unlicense                                |
 | `ZLIB`                                                                                                           | ZLib                                     |
-
-export default ({ children }) => <Template>{children}</Template>

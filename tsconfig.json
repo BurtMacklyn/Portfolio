@@ -44,6 +44,6 @@
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/blog/data/pages.js", "src/lib/frontmatter.js", "src/lib/frontmatter.js"],
   "exclude": ["node_modules"]
 }

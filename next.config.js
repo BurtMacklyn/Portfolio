@@ -10,20 +10,20 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const withMDX = mdx({
   extension: /\.mdx?$/,
+  loader: '@mdx-js/loader',
   options: {
     remarkPlugins: [gfm],
-    rehypePlugins: [],
     providerImportSource: '@mdx-js/react',
   },
 });
 
-const languages = ['js', 'ts', 'tsx'];
-const types = ['page', 'api', 'server'];
+const languages = ['js', 'ts', 'tsx', 'mdx'];
+const types = ['page', 'api'];
 
 /** @type {import('next').NextConfig} */
 export default withPlugins({
   reactStrictMode: true,
-  pageExtensions: [...types.map(type => languages.map(lang => `${type}.${lang}`)).flat(), 'mdx'],
+  pageExtensions: types.map(type => languages.map(lang => `${type}.${lang}`)).flat(),
 
   eslint: {
     ignoreDuringBuilds: true,

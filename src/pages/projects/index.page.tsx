@@ -1,4 +1,4 @@
-import style from './style/projects.module.scss';
+import style from './projects.module.scss';
 import { Footer } from '~/components/footer/footer.component';
 import { Nav } from '~/components/nav/nav.component';
 import { Portfolio } from '~/components/portfolio/portfolio.component';
@@ -9,11 +9,11 @@ import { Card } from './components/card.component';
 
 // eslint-disable-next-line no-use-before-define
 import React, { useState } from 'react';
-import { projects } from './data/projects';
+import { getMarkdownMeta } from '~/lib/getMarkdownMeta';
 
 export const FilterContext = React.createContext<State<Tag[]>>([[], () => {}]);
 
-const Projects = () => {
+const Projects = ({ pages }) => {
   const [selectedFilters, setSelectedFilters] = useState<Tag[]>([]);
 
   return (
@@ -34,7 +34,7 @@ const Projects = () => {
             <Filters />
 
             <div className={style.grid}>
-              {filter(projects, selectedFilters).map(project => (
+              {filter(pages, selectedFilters).map(project => (
                 <Card key={Math.random() * Math.random()}>{project}</Card>
               ))}
             </div>
@@ -45,6 +45,12 @@ const Projects = () => {
     </Portfolio>
   );
 };
+
+export const getStaticProps = getMarkdownMeta({
+  access: '/projects',
+  full: 'src/pages/projects/pages',
+  img: '/imgs/project',
+});
 
 export default Projects;
 
