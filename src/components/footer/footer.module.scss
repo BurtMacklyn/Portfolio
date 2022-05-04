@@ -4,6 +4,10 @@
   z-index: 1;
   background-color: var(--grey);
 
+  ::selection {
+    background-color: var(--dark-selection);
+  }
+
   .dots {
     z-index: -1;
     position: absolute;

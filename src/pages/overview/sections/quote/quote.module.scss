@@ -72,4 +72,8 @@
   border-radius: 100%;
   background: var(--grey);
   z-index: -1;
+
+  ::selection {
+    background-color: var(--dark-selection);
+  }
 }

@@ -12,8 +12,7 @@
   background-color: var(--white);
 
   ::selection {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--light-selection);
   }
 
   @import '../../style/typography.scss';

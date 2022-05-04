@@ -75,4 +75,8 @@ code {
   background-color: var(--grey);
   border-radius: 1.2rem;
   padding: 0.4rem 0.8rem;
+
+  ::selection {
+    background-color: var(--dark-selection);
+  }
 }

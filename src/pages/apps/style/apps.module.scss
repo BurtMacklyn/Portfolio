@@ -7,6 +7,10 @@
   gap: 2.4rem;
   max-width: 32rem;
 
+  ::selection {
+    background-color: var(--dark-selection);
+  }
+
   img {
     border-radius: 2.4rem;
     object-fit: cover;

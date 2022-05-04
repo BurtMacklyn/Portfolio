@@ -45,6 +45,9 @@
   border-radius: 100%;
   background: var(--grey);
   z-index: -1;
+  ::selection {
+    background-color: var(--dark-selection);
+  }
 
   @media (max-width: calc(1200em / 16)) {
     right: calc(-2 * var(--margin));
