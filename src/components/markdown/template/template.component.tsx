@@ -14,10 +14,20 @@ import { Portfolio } from '~/components/portfolio/portfolio.component';
 import style from './template.module.scss';
 import { Markdown } from '~/components/markdown/markdown.component';
 import gfm from 'remark-gfm';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 const formatDate = (date: Date) => new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(new Date(date));
 
 export const Page: React.FC<{ content: string; meta: Record<string, any> }> = ({ content, meta }) => {
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem(`allow-profanity-${router.query.slug}`) === 'true') return setOpen(false);
+    setOpen(!!meta.warn);
+  }, [meta]);
+
   return (
     <>
       <Portfolio>
@@ -27,6 +37,32 @@ export const Page: React.FC<{ content: string; meta: Record<string, any> }> = ({
           </Head>
           <Nav />
           <div className={style.Page}>
+            {open && (
+              <>
+                <dialog open={open} className={style.dialog}>
+                  <p>{meta.warn}</p>
+                  <div>
+                    <button
+                      onClick={e => {
+                        e.preventDefault();
+                        router.back();
+                      }}>
+                      Go back
+                    </button>
+                    <button
+                      className={style.ok}
+                      onClick={e => {
+                        e.preventDefault();
+                        localStorage.setItem(`allow-profanity-${router.query.slug}`, 'true');
+                        setOpen(false);
+                      }}>
+                      I'm fine with that
+                    </button>
+                  </div>
+                </dialog>
+                <div className={style.dialogBackdrop} />
+              </>
+            )}
             <div className={style.blog}>
               <div className={style.back}>
                 <Back color="black" />
