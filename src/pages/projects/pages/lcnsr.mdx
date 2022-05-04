@@ -9,6 +9,7 @@ tags:
   - typescript
   - npm
 ---
+
 # Lcnsr
 
 ## Overview
@@ -23,8 +24,6 @@ I don't know what that does? That's easy, run `npx lcnsr <LICENSE> -d` to print
 out a description of the license. But how do I know if a license is supported or
 not? Run `npx lcnsr -d` to list all licenses, including their full name, ID, and
 publication date.
-
-
 
 #####
 
@@ -51,8 +50,6 @@ If you only want to run it once, and not globally install the package, run:
 npx lcnsr
 ```
 
-
-
 #####
 
 ## Usage
@@ -69,12 +66,10 @@ lcnsr [options] [license]
 | ---------------------------- | ------------------------------------------------------------------------------------------------- | --------------- | ------- | ----------------------------------------------------------------------------------------------------------------------- |
 | Describe                     | `-d`, `--describe`                                                                                | `boolean`       | `false` | Get help information for a given license.                                                                               |
 | Strict                       | `-s`, `--strict`                                                                                  | `boolean`       | `true`  | Make sure queried license matches a license instead of picking the most similar. See How it works for more information. |
-| Log                          | `--log`                                                                                           | `boolean`       | `false` | Print the licensed content to stdout instead of writing the file.                                                        |
+| Log                          | `--log`                                                                                           | `boolean`       | `false` | Print the licensed content to stdout instead of writing the file.                                                       |
 | Quiet                        | `-q`, `--quiet`                                                                                   | `boolean`       | `false` | Don't write any completion message                                                                                      |
 | Find                         | `-f`, `--find`                                                                                    | `boolean`       | `false` | Query for a license code but don't do anything with it.                                                                 |
 | Version                      | `-v`, `--version`                                                                                 | none            | none    | Output the current version                                                                                              |
-
-
 
 #####
 
@@ -114,8 +109,6 @@ Sometimes, people make typos, and to make this program more simple, there is a
 feature entitled “Most Similar Name.” If there isn't a license that gets matched
 by the query after RegEx detection, the program will look through all supported
 licenses and return the most similar license name to the query.
-
-
 
 #####
 

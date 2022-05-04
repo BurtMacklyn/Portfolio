@@ -17,7 +17,7 @@ const withMDX = mdx({
   },
 });
 
-const languages = ['js', 'ts', 'tsx', 'mdx'];
+const languages = ['js', 'ts', 'tsx', 'mdx', 'md'];
 const types = ['page', 'api'];
 
 /** @type {import('next').NextConfig} */
