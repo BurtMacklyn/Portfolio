@@ -47,10 +47,10 @@ asciifi ./test-img.png -b .75 -w 432
 
 ### Arguments
 
-| Name&nbsp;&nbsp;&nbsp;&nbsp; | Command&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Input&nbsp;Type | Range&nbsp; | Default | Description                                                                                |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------- | ----------- | ------- | ------------------------------------------------------------------------------------------ |
-| Brightness                   | `-b`, `--brightness`                                                                                                      | `number`        | 0-1         | 0.8     | Set the brightness with a value between 0 and 1. Lower values have less detail.            |
-| Width                        | `-w` `—width`                                                                                                             | `number`        | 0-1000      | 150     | Set the width of the outputted image. Higher widths will result in a higher quality image. |
+| Name       | Command              | Input Type | Range  | Default | Description                                                                                |
+| ---------- | -------------------- | ---------- | ------ | ------- | ------------------------------------------------------------------------------------------ |
+| Brightness | `-b`, `--brightness` | `number`   | 0-1    | 0.8     | Set the brightness with a value between 0 and 1. Lower values have less detail.            |
+| Width      | `-w` `—width`        | `number`   | 0-1000 | 150     | Set the width of the outputted image. Higher widths will result in a higher quality image. |
 
 ## Inspiration
 

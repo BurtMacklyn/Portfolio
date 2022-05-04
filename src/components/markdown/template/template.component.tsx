@@ -84,7 +84,9 @@ export const Page: React.FC<{ content: string; meta: Record<string, any> }> = ({
 
 export function getStaticProps({ fullPath }: Props) {
   return async (ctx: GetStaticPropsContext) => {
-    const file = fs.readFileSync(`${fullPath}/${ctx.params?.slug}.mdx`, 'utf8');
+    const dir = fs.existsSync(`${fullPath}/${ctx.params?.slug}.mdx`) ? `${fullPath}/${ctx.params?.slug}.mdx` : `${fullPath}/${ctx.params?.slug}.md`;
+
+    const file = fs.readFileSync(dir, 'utf8');
     const { content, data } = matter(file);
     const mdxSource = await serialize(content, {
       mdxOptions: {
@@ -108,7 +110,7 @@ export function getStaticPaths({ accessPath, fullPath }: Props) {
       paths: fs
         .readdirSync(fullPath)
         .filter(p => /\.mdx$/.test(p))
-        .map(slug => `${accessPath}/${slug.replace('.mdx', '')}`),
+        .map(slug => `${accessPath}/${slug.replace('.mdx', '').replace('.md', '')}`),
       fallback: 'blocking',
     };
   };

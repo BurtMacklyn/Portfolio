@@ -9,6 +9,11 @@
     margin-block: 6.4rem;
     padding-inline: var(--margin);
   }
+
+  img[alt='Buy me a coffee'] {
+    height: 6rem;
+    margin-top: 0;
+  }
 }
 
 .dialog {
