@@ -2,7 +2,7 @@ import style from './projects.module.scss';
 import { Footer } from '~/components/footer/footer.component';
 import { Nav } from '~/components/nav/nav.component';
 import { Portfolio } from '~/components/portfolio/portfolio.component';
-import type { State } from '~/types';
+import type { State } from 'types';
 
 import { Filters } from './components/filters.component';
 import { Card } from './components/card.component';
