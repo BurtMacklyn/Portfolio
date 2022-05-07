@@ -3,7 +3,6 @@ import fs from 'fs';
 import matter from 'gray-matter';
 
 export function getMarkdownMeta({ img, full }: Props) {
-  console.log(full, fs.readdirSync(full));
   return async (ctx: GetStaticPropsContext) => {
     const pages = fs
       .readdirSync(full)
@@ -20,6 +19,8 @@ export function getMarkdownMeta({ img, full }: Props) {
         if (!a.timestamp || !b.timestamp) return 1;
         return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
       });
+
+    console.log(pages);
 
     return {
       props: {
