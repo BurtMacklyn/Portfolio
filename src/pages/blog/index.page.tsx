@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 import style from './blog.module.scss';
 import { getMarkdownMeta } from '~/lib/getMarkdownMeta';
+import path from 'path';
 
 const Blog = ({ pages }) => (
   <Portfolio>
@@ -38,7 +39,7 @@ const Blog = ({ pages }) => (
 export const getStaticProps = getMarkdownMeta({
   img: '/imgs/blog',
   access: '/blog',
-  full: './src/pages/blog/pages',
+  full: import.meta.url.replace('index.page.tsx', 'pages'),
 });
 
 export default Blog;
