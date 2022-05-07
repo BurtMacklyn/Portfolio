@@ -10,8 +10,8 @@ export function getMarkdownMeta({ img, full }: Props) {
       .map(
         ({ meta, page }) =>
           ({
-            preview: `${img}/${page.replaceAll('.mdx', '').replaceAll('.md', '')}.${meta.image || 'svg'}`,
-            slug: page.replaceAll('.mdx', '').replaceAll('.md', ''),
+            preview: `${img}/${page.replace('.mdx', '').replace('.md', '')}.${meta.image || 'svg'}`,
+            slug: page.replace('.mdx', '').replace('.md', ''),
             ...meta,
           } as any),
       )
