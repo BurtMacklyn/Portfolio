@@ -20,8 +20,6 @@ export function getMarkdownMeta({ img, full }: Props) {
         return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
       });
 
-    console.log(pages);
-
     return {
       props: {
         pages,
