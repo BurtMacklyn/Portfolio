@@ -10,9 +10,9 @@ const Apps = () => (
   <Portfolio>
     <Nav />
     <div className="center">
-      <div className={style.page}>
-        <h2>Apps</h2>
-        <div className={style.center}>
+      <div className={style.Main}>
+        <div className={style.section}>
+          <h2>Apps</h2>
           <div className={style.content}>
             <Card>{{ name: 'Music Player', link: '/apps/retro-music', image: '/imgs/apps/retro-music.webp' }}</Card>
             <Card>{{ name: 'Trig Helper', link: '/apps/trig-helper', image: '/imgs/apps/trig-helper.webp' }}</Card>
@@ -28,11 +28,11 @@ const Apps = () => (
 export default Apps;
 
 /* eslint-disable-next-line no-undef */
-const Card: React.FC<{ children: { name: string; link: string; image: string } }> = ({ children: game }) => (
-  <Link href={game.link} className={style.card}>
-    <p>{game?.name}</p>
+const Card: React.FC<{ children: { name: string; link: string; image: string } }> = ({ children: app }) => (
+  <Link href={app.link} className={style.card}>
     <div>
-      <Image quality={10} loading="eager" src={game.image} alt={game.name} layout="responsive" width={2400} height={2400} />
+      <Image layout="responsive" alt={`Preview image for ${app.name}`} width={4000} height={2400} src={app.image} />
     </div>
+    <p>{app.name}</p>
   </Link>
 );

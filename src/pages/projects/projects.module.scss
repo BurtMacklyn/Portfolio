@@ -34,7 +34,7 @@
     color: var(--black);
     opacity: 0.6;
     cursor: pointer;
-    transition: all 0.15s ease-in-out;
+    transition: opacity 0.15s ease-in-out;
 
     &:hover {
       opacity: 1;
@@ -71,7 +71,7 @@
   display: flex;
   justify-content: space-between;
   gap: 3.2rem;
-  transition: all 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out, outline 0.15s ease-in-out;
   cursor: pointer;
 
   ::selection {

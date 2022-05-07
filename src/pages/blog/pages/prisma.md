@@ -1,6 +1,7 @@
 ---
 title: Prisma, the ORM Made for Typescript
 timestamp: 5-4-22
+hidden: true
 ---
 
 # Prisma

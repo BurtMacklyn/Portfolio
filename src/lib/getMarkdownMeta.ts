@@ -18,7 +18,8 @@ export function getMarkdownMeta({ img, full }: Props) {
       .sort((a, b) => {
         if (!a.timestamp || !b.timestamp) return 1;
         return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
-      });
+      })
+      .filter(page => !page.hidden);
 
     return {
       props: {
