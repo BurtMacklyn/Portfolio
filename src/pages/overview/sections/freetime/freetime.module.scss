@@ -11,9 +11,8 @@
   max-width: 100%;
   padding-block: 12rem;
 
-  &,
-  * {
-    color: var(--white) !important;
+  ::selection {
+    background-color: var(--dark-selection);
   }
 
   & > * {
@@ -21,11 +20,10 @@
   }
 
   a {
-    color: var(--white);
     font-weight: 600;
     font-size: 2.4rem;
     padding-bottom: 1rem;
-    border-bottom: 0.1rem solid var(--white);
+    border-bottom: 0.1rem solid var(--black);
     width: fit-content;
   }
 }
@@ -50,14 +48,14 @@
   position: absolute;
   aspect-ratio: 1;
   border-radius: 100%;
-  background: var(--black);
+  background: var(--grey);
   width: 96rem;
   height: 96rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
-  box-shadow: 0 1.4rem 7rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.1);
 
   @media (max-width: calc(600em / 16)) {
     width: 84rem;

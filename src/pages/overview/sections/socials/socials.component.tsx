@@ -12,7 +12,7 @@ export const Socials = () => (
         <Card newTab href="https://twitter.com/CooperRunyan1">
           {{ name: 'Twitter', logo: Twitter }}
         </Card>
-        <Card newTab href="https://www.github.com/cooperrunyan?tab=repositories">
+        <Card newTab href="https://www.github.com/cooperrunyan">
           {{ name: 'Github', logo: Github }}
         </Card>
         <Card newTab href="mailto:cooperrunyan@gmail.com">
@@ -24,7 +24,7 @@ export const Socials = () => (
         <Card newTab href="https://codepen.io/cooperrunyan">
           {{ name: 'Codepen', logo: Codepen }}
         </Card>
-        <Card newTab href="https://stackoverflow.com/story/cooperrunyan">
+        <Card newTab href="https://stackoverflow.com/users/17047560/cooper-runyan">
           {{ name: 'Stackoverflow', logo: Stackoverflow }}
         </Card>
         <Card newTab={false} href="/contact">
@@ -38,6 +38,6 @@ export const Socials = () => (
 const Card = ({ children, href, newTab }) => (
   <Link href={href} className={style.Link} newTab={!!newTab}>
     <p>{children?.name}</p>
-    <children.logo />
+    <children.logo color="var(--black)" />
   </Link>
 );

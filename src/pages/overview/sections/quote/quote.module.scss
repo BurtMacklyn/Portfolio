@@ -52,6 +52,10 @@
   line-height: 1.2;
   text-align: right;
   letter-spacing: -0.055em;
+
+  ::selection {
+    background-color: var(--dark-selection);
+  }
 }
 
 .name {
@@ -60,6 +64,10 @@
   font-size: 2.4rem !important;
   text-align: right !important;
   letter-spacing: -0.055em !important;
+
+  ::selection {
+    background-color: var(--dark-selection);
+  }
 }
 
 .circle {
