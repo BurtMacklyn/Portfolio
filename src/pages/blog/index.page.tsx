@@ -39,7 +39,7 @@ const Blog = ({ pages }) => (
 export const getStaticProps = getMarkdownMeta({
   img: '/imgs/blog',
   access: '/blog',
-  full: import.meta.url.replace('index.page.tsx', 'pages'),
+  full: import.meta.url.replace('index.page.tsx', 'pages').replace('file://', ''),
 });
 
 export default Blog;

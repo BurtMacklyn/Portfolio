@@ -49,7 +49,7 @@ const Projects = ({ pages }) => {
 export const getStaticProps = getMarkdownMeta({
   access: '/projects',
   img: '/imgs/project',
-  full: import.meta.url.replace('index.page.tsx', 'pages'),
+  full: import.meta.url.replace('index.page.tsx', 'pages').replace('file://', ''),
 });
 
 export default Projects;
