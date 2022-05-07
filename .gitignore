@@ -8,3 +8,4 @@ sitemap*.xml
 robots.txt
 ~partytown
 .vercel
+tsconfig.tsbuildinfo

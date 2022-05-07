@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import * as emailjs from '@emailjs/browser';
-import type { State } from '~/types';
+import type { State } from 'types';
 
 emailjs.init(process.env.NEXT_PUBLIC_EMAIL_USER!);
 
