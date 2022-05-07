@@ -3,6 +3,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 
 export function getMarkdownMeta({ img, full }: Props) {
+  console.log(full, fs.readdirSync(full));
   return async (ctx: GetStaticPropsContext) => {
     const pages = fs
       .readdirSync(full)
