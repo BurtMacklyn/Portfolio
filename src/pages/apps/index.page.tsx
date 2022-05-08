@@ -14,6 +14,7 @@ const Apps = () => (
         <div className={style.section}>
           <h2>Apps</h2>
           <div className={style.content}>
+            <Card>{{ name: 'Music Player v2', link: '/apps/retro-music-2', image: '/imgs/apps/retro-music-2.webp' }}</Card>
             <Card>{{ name: 'Music Player', link: '/apps/retro-music', image: '/imgs/apps/retro-music.webp' }}</Card>
             <Card>{{ name: 'Trig Helper', link: '/apps/trig-helper', image: '/imgs/apps/trig-helper.webp' }}</Card>
             <Card>{{ name: 'Snake', link: '/apps/snake', image: '/imgs/apps/snake.webp' }}</Card>
