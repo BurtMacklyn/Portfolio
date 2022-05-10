@@ -16,7 +16,7 @@ const App = ({ Component, pageProps }: AppProps) => (
       <Script strategy="lazyOnload" type="text/partytown" id="google-analytics">
         {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');`}
       </Script>
-      <Script strategy="lazyOnload" type="text/partytown" id="hotjar">
+      <Script strategy="afterInteractive" id="hotjar">
         {`(function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
             h._hjSettings={hjid:2963323,hjsv:6};
