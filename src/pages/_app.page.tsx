@@ -16,7 +16,7 @@ const App = ({ Component, pageProps }: AppProps) => (
       <Script strategy="lazyOnload" type="text/partytown" id="google-analytics">
         {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');`}
       </Script>
-      <Script strategy="afterInteractive" id="hotjar">
+      <script id="hotjar">
         {`(function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
             h._hjSettings={hjid:2963323,hjsv:6};
@@ -25,7 +25,7 @@ const App = ({ Component, pageProps }: AppProps) => (
             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=')`}
-      </Script>
+      </script>
 
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, minimum-scale=1" />
     </Head>
