@@ -7,7 +7,7 @@ import { Partytown } from '@builder.io/partytown/react';
 import type { AppProps } from 'next/app';
 import Script from 'next/script';
 
-const App = ({ Component, pageProps }: AppProps) => (
+const App = ({ Component, pageProps, env }: AppProps & { env: typeof process.env.NODE_ENV }) => (
   <>
     <Head>
       <Partytown debug forward={['dataLayer.push']} />
@@ -16,12 +16,14 @@ const App = ({ Component, pageProps }: AppProps) => (
       <Script strategy="lazyOnload" type="text/partytown" id="google-analytics">
         {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');`}
       </Script>
-      <script
-        id="hotjar"
-        dangerouslySetInnerHTML={{
-          __html: `(function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:2963323,hjsv:6};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=')`,
-        }}
-      />
+      {env === 'production' && (
+        <script
+          id="hotjar"
+          dangerouslySetInnerHTML={{
+            __html: `(function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:2963323,hjsv:6};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=')`,
+          }}
+        />
+      )}
 
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, minimum-scale=1" />
     </Head>
@@ -31,3 +33,11 @@ const App = ({ Component, pageProps }: AppProps) => (
 );
 
 export default App;
+
+export async function getStaticProps() {
+  return {
+    props: {
+      env: process.env.NODE_ENV,
+    },
+  };
+}
