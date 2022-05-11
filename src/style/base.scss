@@ -21,6 +21,4 @@ html {
   max-width: var(--max-width);
 }
 
-.table-wrapper {
-  margin-top: 0 !important;
-}
+@import './markdown.scss';

@@ -147,7 +147,7 @@ model User {
 }
 
 model Profile {
-  id String @id @unique @default(uuid())
+  id     String @id @unique @default(uuid())
   userId String @unique
 }
 ```
@@ -156,12 +156,12 @@ Then, add the `profile` field to the User model.
 
 ```prisma
 model User {
-  id String @id @unique @default(uuid())
+  id      String @id @unique @default(uuid())
   profile Profile?
 }
 
 model Profile {
-  id String @id @unique @default(uuid())
+  id     String @id @unique @default(uuid())
   userId String @unique
 }
 ```
@@ -172,12 +172,12 @@ The `@relation` parameter will connect the Profile's `userId` to a User with an
 
 ```prisma
 model User {
-  id String @id @unique @default(uuid())
+  id      String  @id @unique @default(uuid())
   profile Profile?
 }
 
 model Profile {
-  id String @id @unique @default(uuid())
+  id     String @id @unique @default(uuid())
   userId String @unique
   user   User   @relation(fields: [userId], references: [id])
 }

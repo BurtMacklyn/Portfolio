@@ -28,6 +28,13 @@ export const Page: React.FC<{ content: string; meta: Record<string, any> }> = ({
     setOpen(!!meta.warn);
   }, [meta]);
 
+  useEffect(() => {
+    const el = document.querySelector('.rendered-markdown');
+
+    console.log(hydrateContentWithCodeHighlights(el!.innerHTML));
+    el!.innerHTML = hydrateContentWithCodeHighlights(el!.innerHTML);
+  }, []);
+
   return (
     <>
       <Portfolio>
@@ -68,7 +75,9 @@ export const Page: React.FC<{ content: string; meta: Record<string, any> }> = ({
                 <Back color="black" />
               </div>
               <Markdown>
-                <MDXRemote compiledSource={content} />
+                <span className="rendered-markdown">
+                  <MDXRemote compiledSource={content} />
+                </span>
                 <br />
                 <hr />
                 <p style={{ fontWeight: 'bold' }}>Cooper Runyan{meta?.timestamp ? `: ${formatDate(meta?.timestamp || '')}` : ''}</p>
@@ -119,4 +128,21 @@ export function getStaticPaths({ accessPath, fullPath }: Props) {
 interface Props {
   accessPath: string; // '/blog'
   fullPath: string; // './src/pages/blog/pages'
+}
+
+function hydrateContentWithCodeHighlights(content: string): string {
+  const prismaTester = /(?<=<pre><code class="language-prisma">).*?(?=<\/code><\/pre>)/gms;
+
+  return content.replaceAll(prismaTester, block => {
+    return block
+      .replaceAll(/".*"|'.*'|`.*`/g, word => `<span class="green">${word}</span>`)
+      .replaceAll(/(?<=\n\s*)\w+/g, word => `<span class="red">${word}</span>`)
+      .replaceAll(/datasource|model|generator/g, word => `<span class="magenta">${word}</span>`)
+      .replaceAll(/\/\/.*(?=\n)/g, word => `<span class="grey">${word}</span>`)
+      .replaceAll(/\w+(?=\s*{)/g, word => `<span class="yellow">${word}</span>`)
+      .replaceAll(/(?<=class="red".+<\/span>\s+)\w+/g, word => `<span class="yellow">${word}</span>`)
+      .replaceAll(/(?<=@\w+\()\w+(?=\(\))/g, word => `<span class="cyan">${word}</span>`)
+      .replaceAll(/@\w+/g, word => `<span class="blue">${word}</span>`)
+      .replaceAll(/\w+(?=:)/g, word => `<span class="red">${word}</span>`);
+  });
 }

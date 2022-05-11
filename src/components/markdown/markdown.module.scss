@@ -80,16 +80,18 @@ article.article {
   pre {
     border-radius: 1.2rem;
     padding: 1.8rem;
-    background-color: var(--grey);
+    // background-color: var(--grey);
+    background-color: #282c34;
     overflow: scroll;
 
     ::selection {
-      background-color: var(--dark-selection);
+      background-color: #3f4451;
     }
 
     code {
       padding: 0;
       font-size: initial;
+      background-color: transparent;
     }
   }
 
