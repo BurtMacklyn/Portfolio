@@ -2,54 +2,14 @@
   margin-top: 0 !important;
 }
 
-html body span.rendered-markdown pre code {
-  color: #abb3bf;
+pre {
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.24);
 
-  span.black {
-    color: #282c34;
-  }
-
-  span.lightblack {
-    color: #3f4451;
-  }
-
-  span.red {
-    color: #e05561;
-  }
-
-  span.green {
-    color: #8cc265;
+  code {
+    color: #abb3bf;
 
     * {
-      color: inherit !important;
-    }
-  }
-
-  span.blue {
-    color: #4aa5f0;
-  }
-
-  span.magenta {
-    color: #c162de;
-  }
-
-  span.cyan {
-    color: #42b3c2;
-  }
-
-  span.orange {
-    color: #d18f52;
-  }
-
-  span.yellow {
-    color: #e5c07b;
-  }
-
-  span.grey {
-    color: #7f848e;
-
-    * {
-      color: inherit !important;
+      font-style: normal !important;
     }
   }
 }

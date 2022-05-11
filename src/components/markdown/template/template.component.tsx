@@ -1,8 +1,6 @@
 import type { GetStaticPathsContext, GetStaticPropsContext } from 'next';
 import fs from 'fs';
 import matter from 'gray-matter';
-import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote } from 'next-mdx-remote';
 
 import Head from 'next/head';
 
@@ -13,9 +11,11 @@ import { Portfolio } from '~/components/portfolio/portfolio.component';
 
 import style from './template.module.scss';
 import { Markdown } from '~/components/markdown/markdown.component';
-import gfm from 'remark-gfm';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+
+import { marked } from 'marked';
+import { getHighlighter } from 'shiki';
 
 const formatDate = (date: Date) => new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(new Date(date));
 
@@ -27,13 +27,6 @@ export const Page: React.FC<{ content: string; meta: Record<string, any> }> = ({
     if (localStorage.getItem(`allow-profanity-${router.query.slug}`) === 'true') return setOpen(false);
     setOpen(!!meta.warn);
   }, [meta]);
-
-  useEffect(() => {
-    const el = document.querySelector('.rendered-markdown');
-
-    console.log(hydrateContentWithCodeHighlights(el!.innerHTML));
-    el!.innerHTML = hydrateContentWithCodeHighlights(el!.innerHTML);
-  }, []);
 
   return (
     <>
@@ -75,9 +68,7 @@ export const Page: React.FC<{ content: string; meta: Record<string, any> }> = ({
                 <Back color="black" />
               </div>
               <Markdown>
-                <span className="rendered-markdown">
-                  <MDXRemote compiledSource={content} />
-                </span>
+                <span dangerouslySetInnerHTML={{ __html: content }} />
                 <br />
                 <hr />
                 <p style={{ fontWeight: 'bold' }}>Cooper Runyan{meta?.timestamp ? `: ${formatDate(meta?.timestamp || '')}` : ''}</p>
@@ -97,16 +88,23 @@ export function getStaticProps({ fullPath }: Props) {
 
     const file = fs.readFileSync(dir, 'utf8');
     const { content, data } = matter(file);
-    const mdxSource = await serialize(content, {
-      mdxOptions: {
-        remarkPlugins: [gfm],
-      },
+
+    const highlighter = await getHighlighter({
+      theme: 'one-dark-pro',
+      langs: ['ts', 'tsx', 'js', 'jsx', 'html', 'css', 'scss', 'yaml', 'prisma', 'bash'],
+    });
+
+    const html = marked(content).replaceAll(/<pre><code class="language-(\w+)">.+?<\/code><\/pre>/gs, (block, lang) => {
+      return highlighter.codeToHtml(
+        replace(block.replace(/<pre><code class="language-\w+">/gs, '').replace(/<\/code><\/pre>/gs, '')),
+        (lang || '').toLowerCase(),
+      );
     });
 
     return {
       props: {
         raw: content,
-        content: mdxSource.compiledSource,
+        content: html,
         meta: data,
       },
     };
@@ -130,19 +128,46 @@ interface Props {
   fullPath: string; // './src/pages/blog/pages'
 }
 
-function hydrateContentWithCodeHighlights(content: string): string {
-  const prismaTester = /(?<=<pre><code class="language-prisma">).*?(?=<\/code><\/pre>)/gms;
-
-  return content.replaceAll(prismaTester, block => {
-    return block
-      .replaceAll(/".*"|'.*'|`.*`/g, word => `<span class="green">${word}</span>`)
-      .replaceAll(/(?<=\n\s*)\w+/g, word => `<span class="red">${word}</span>`)
-      .replaceAll(/datasource|model|generator/g, word => `<span class="magenta">${word}</span>`)
-      .replaceAll(/\/\/.*(?=\n)/g, word => `<span class="grey">${word}</span>`)
-      .replaceAll(/\w+(?=\s*{)/g, word => `<span class="yellow">${word}</span>`)
-      .replaceAll(/(?<=class="red".+<\/span>\s+)\w+/g, word => `<span class="yellow">${word}</span>`)
-      .replaceAll(/(?<=@\w+\()\w+(?=\(\))/g, word => `<span class="cyan">${word}</span>`)
-      .replaceAll(/@\w+/g, word => `<span class="blue">${word}</span>`)
-      .replaceAll(/\w+(?=:)/g, word => `<span class="red">${word}</span>`);
-  });
+function replace(str: string) {
+  return str
+    .replaceAll(`&quot;`, `"`)
+    .replaceAll(`&apos;`, `'`)
+    .replaceAll(`&#39;`, `'`)
+    .replaceAll(`&amp;`, `&`)
+    .replaceAll(`&lt;`, `<`)
+    .replaceAll(`&gt;`, `>`)
+    .replaceAll(`&nbsp;`, ` `)
+    .replaceAll(`&iexcl;`, `¡`)
+    .replaceAll(`&cent;`, `¢`)
+    .replaceAll(`&pound;`, `£`)
+    .replaceAll(`&curren;`, `¤`)
+    .replaceAll(`&yen;`, `¥`)
+    .replaceAll(`&brvbar;`, `¦`)
+    .replaceAll(`&sect;`, `§`)
+    .replaceAll(`&uml;`, `¨`)
+    .replaceAll(`&copy;`, `©`)
+    .replaceAll(`&ordf;`, `ª`)
+    .replaceAll(`&laquo;`, `«`)
+    .replaceAll(`&not;`, `¬`)
+    .replaceAll(`&shy;`, `­`)
+    .replaceAll(`&reg;`, `®`)
+    .replaceAll(`&macr;`, `¯`)
+    .replaceAll(`&deg;`, `°`)
+    .replaceAll(`&plusmn;`, `±`)
+    .replaceAll(`&sup2;`, `²`)
+    .replaceAll(`&sup3;`, `³`)
+    .replaceAll(`&acute;`, `´`)
+    .replaceAll(`&micro;`, `µ`)
+    .replaceAll(`&para;`, `¶`)
+    .replaceAll(`&middot;`, `·`)
+    .replaceAll(`&cedil;`, `¸`)
+    .replaceAll(`&sup1;`, `¹`)
+    .replaceAll(`&ordm;`, `º`)
+    .replaceAll(`&raquo;`, `»`)
+    .replaceAll(`&frac14;`, `¼`)
+    .replaceAll(`&frac12;`, `½`)
+    .replaceAll(`&frac34;`, `¾`)
+    .replaceAll(`&iquest;`, `¿`)
+    .replaceAll(`&times;`, `×`)
+    .replaceAll(`&divide;`, `÷`);
 }
