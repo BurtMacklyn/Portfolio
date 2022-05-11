@@ -9,10 +9,9 @@ import Script from 'next/script';
 import { useEffect } from 'react';
 import { hotjar } from 'react-hotjar';
 
-const App = ({ Component, pageProps, env }: AppProps & { env: typeof process.env.NODE_ENV }) => {
+const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
-    if (window) (window as any).env = env;
-    if (env === 'production') hotjar.initialize(2963323, 6);
+    hotjar.initialize(2963323, 6);
   }, []);
 
   return (
@@ -32,13 +31,5 @@ const App = ({ Component, pageProps, env }: AppProps & { env: typeof process.env
     </>
   );
 };
-
-export async function getStaticProps() {
-  return {
-    props: {
-      env: process.env.NODE_ENV,
-    },
-  };
-}
 
 export default App;
