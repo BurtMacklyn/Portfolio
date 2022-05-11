@@ -34,8 +34,6 @@ const App = ({ Component, pageProps, env }: AppProps & { env: typeof process.env
   );
 };
 
-export default App;
-
 export async function getStaticProps() {
   return {
     props: {
@@ -43,3 +41,5 @@ export async function getStaticProps() {
     },
   };
 }
+
+export default App;
