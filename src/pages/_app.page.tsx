@@ -11,7 +11,7 @@ import { hotjar } from 'react-hotjar';
 
 const App = ({ Component, pageProps, env }: AppProps & { env: typeof process.env.NODE_ENV }) => {
   useEffect(() => {
-    (window as any).env = env;
+    if (window) (window as any).env = env;
     if (env === 'production') hotjar.initialize(2963323, 6);
   }, []);
 
