@@ -6,31 +6,33 @@ import Head from 'next/head';
 import { Partytown } from '@builder.io/partytown/react';
 import type { AppProps } from 'next/app';
 import Script from 'next/script';
+import { useEffect } from 'react';
+import { hotjar } from 'react-hotjar';
 
-const App = ({ Component, pageProps, env }: AppProps & { env: typeof process.env.NODE_ENV }) => (
-  <>
-    <Head>
-      <Partytown debug forward={['dataLayer.push']} />
+const App = ({ Component, pageProps, env }: AppProps & { env: typeof process.env.NODE_ENV }) => {
+  (window as any).env = env;
 
-      <Script strategy="lazyOnload" type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
-      <Script strategy="lazyOnload" type="text/partytown" id="google-analytics">
-        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');`}
-      </Script>
-      {env === 'production' && (
-        <script
-          id="hotjar"
-          dangerouslySetInnerHTML={{
-            __html: `(function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:2963323,hjsv:6};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=')`,
-          }}
-        />
-      )}
+  useEffect(() => {
+    if (env === 'production') hotjar.initialize(2963323, 6);
+  }, []);
 
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, minimum-scale=1" />
-    </Head>
+  return (
+    <>
+      <Head>
+        <Partytown debug forward={['dataLayer.push']} />
 
-    <Component {...pageProps} />
-  </>
-);
+        <Script strategy="lazyOnload" type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
+        <Script strategy="lazyOnload" type="text/partytown" id="google-analytics">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');`}
+        </Script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, minimum-scale=1" />
+      </Head>
+
+      <Component {...pageProps} />
+    </>
+  );
+};
 
 export default App;
 
