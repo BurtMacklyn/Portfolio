@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "allowUmdGlobalAccess": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "alwaysStrict": true,
     "baseUrl": ".",
     "checkJs": true,
-    "declaration": true,
-    "declarationDir": "./types",
     "downlevelIteration": true,
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": true,
@@ -44,6 +43,6 @@
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/blog/data/pages.js", "src/lib/frontmatter.js", "src/lib/frontmatter.js"],
+  "include": ["next-env.d.ts", "./types.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

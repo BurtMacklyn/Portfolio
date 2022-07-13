@@ -1,13 +1,10 @@
 @at-root :root {
   --white: #fff;
-  --grey: #f5f5f5;
-  --grey-2: #eee;
-  --grey-3: #ddd;
   --black: #000;
+  --primary: #00c2ff;
 
-  --font-family: 'Helvetica Neue', 'SF Pro Display', 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
+  --sans: 'BR Cobane', 'Inter', 'Roboto', 'Lato', sans-serif;
+  --mono: 'Roboto Mono', 'Consolas', 'Menlo', monospace;
+
   --max-width: 180rem;
-
-  --light-selection: rgb(232, 232, 232);
-  --dark-selection: rgb(211, 211, 211);
 }

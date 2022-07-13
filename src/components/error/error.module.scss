@@ -11,21 +11,22 @@
   }
 
   .backgroundCode {
-    font-family: var(--font-family);
+    font-family: var(--sans);
     font-weight: 700;
     user-select: none;
     pointer-events: none;
     font-size: 30.8vw;
     line-height: 90%;
-    letter-spacing: -0.03em;
-    color: rgba(0, 0, 0, 0.05);
+    letter-spacing: -0.075em;
+    color: var(--white);
+    opacity: 0.05;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     @media (max-width: calc(1600em / 16)) {
-      font-size: 50rem;
+      font-size: calc(50rem * (62.5 / 100));
     }
 
     @media (max-width: calc(1000em / 16)) {
@@ -33,15 +34,15 @@
     }
 
     @media (max-width: calc(600em / 16)) {
-      font-size: 28rem;
+      font-size: calc(28rem * (62.5 / 100));
     }
 
     @media (max-width: calc(480em / 16)) {
-      font-size: 24rem;
+      font-size: calc(24rem * (62.5 / 100));
     }
 
     @media (min-width: calc(3200em / 16)) {
-      font-size: 98rem;
+      font-size: calc(98rem * (62.5 / 100));
     }
   }
 
@@ -49,7 +50,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2.4rem;
+    gap: calc(4.8rem * (62.5 / 100));
 
     @media (max-width: calc(640em / 16)) {
       flex-direction: column;
@@ -60,15 +61,15 @@
     }
 
     .code {
-      font-family: var(--font-family);
+      font-family: var(--sans);
       font-weight: 100;
-      font-size: 15.5rem;
+      font-size: calc(15.5rem * (62.5 / 100));
       line-height: 90%;
-      letter-spacing: -0.03em;
-      color: var(--black);
+      letter-spacing: -0.095em;
+      color: var(--white);
 
       @media (max-width: calc(1200em / 16)) {
-        font-size: 12rem;
+        font-size: calc(12rem * (62.5 / 100));
       }
     }
 
@@ -77,15 +78,15 @@
     }
 
     .message {
-      font-family: var(--font-family);
+      font-family: var(--sans);
       font-weight: 500;
-      font-size: 6.2rem;
-      letter-spacing: -0.01em;
+      font-size: calc(6.2rem * (62.5 / 100));
+      letter-spacing: -0.025em;
 
-      color: var(--black);
+      color: var(--white);
 
       @media (max-width: calc(1200em / 16)) {
-        font-size: 4.8rem;
+        font-size: calc(4.8rem * (62.5 / 100));
       }
 
       @media (max-width: calc(480em / 16)) {
