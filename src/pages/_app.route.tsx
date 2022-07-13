@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 
-import '~/style/variables.scss';
-import '~/style/base.scss';
+import '~/style/variables.sass';
+import '~/style/base.sass';
 
 import type { AppProps } from 'next/app';
 

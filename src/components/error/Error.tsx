@@ -1,6 +1,6 @@
 import React from 'react';
 
-import style from './Error.module.scss';
+import style from './Error.module.sass';
 
 interface Props {
   code: number;

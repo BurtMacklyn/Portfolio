@@ -7,11 +7,7 @@ const Document = () => (
     <Head>
       <base href="/" />
 
-      <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.webp" />
-      <link rel="manifest" href="/manifest.json" />
-
-      <meta name="theme-color" content="#ffffff" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="theme-color" content="#000000" />
 
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

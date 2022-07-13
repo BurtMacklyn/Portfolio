@@ -1,7 +1,1 @@
-import React from 'react';
-
-const IndexPage: React.FC = () => {
-  return <div>hello world</div>;
-};
-
-export default IndexPage;
+export { default } from './overview/index';

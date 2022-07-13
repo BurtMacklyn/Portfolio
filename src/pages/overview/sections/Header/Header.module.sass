@@ -1,0 +1,28 @@
+@import '../../../../style/functions'
+
+.Header
+  margin: 0 auto
+  max-width: var(--max-width)
+  padding-inline: var(--margin)
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+  gap: px(24)
+
+  .headings
+    display: flex
+    flex-direction: column
+
+  h1
+    font-weight: 500
+    font-size: px(96)
+    line-height: 118.5%
+    letter-spacing: -0.065em
+
+    &.dark
+      opacity: .25
+      margin-bottom: px(8)
+
+  p
+    margin-bottom: px(16)
