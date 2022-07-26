@@ -1,8 +1,0 @@
-node_modules
-.next
-.env
-.DS_Store
-sitemap*.xml
-robots.txt
-.vercel
-tsconfig.tsbuildinfo
