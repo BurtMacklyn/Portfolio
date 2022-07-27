@@ -19,11 +19,17 @@ export const config: Configuration = {
       mono: ['Roboto Mono', 'monospace'],
     },
     screens: {
+      m2xl: { min: 'calc(1800em / 16)' },
       '2xl': { max: 'calc(1800em / 16)' },
+      mxl: { min: 'calc(1400em / 16)' },
       xl: { max: 'calc(1400em / 16)' },
+      mlg: { min: 'calc(1200em / 16)' },
       lg: { max: 'calc(1200em / 16)' },
+      mmd: { min: 'calc(900em / 16)' },
       md: { max: 'calc(900em / 16)' },
+      msm: { min: 'calc(600em / 16)' },
       sm: { max: 'calc(600em / 16)' },
+      mxs: { min: 'calc(400em / 16)' },
       xs: { max: 'calc(400em / 16)' },
     },
     extend: {
