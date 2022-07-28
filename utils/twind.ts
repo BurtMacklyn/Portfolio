@@ -37,6 +37,7 @@ export const config: Configuration = {
     },
     extend: {
       spacing: {
+        '4.5': '1.125rem',
         '22': '5.5rem',
         '45': '11.25rem',
       },
