@@ -8,6 +8,7 @@ import Nav from '../islands/Nav.tsx';
 import Hero from '../islands/Hero.tsx';
 import Brainfuck from '../islands/Brainfuck.tsx';
 import TechnologiesSection from '../islands/TechnologiesSection.tsx';
+import About from '../islands/About.tsx';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <Brainfuck />
         <TechnologiesSection />
+        <About />
       </div>
     </div>
   );

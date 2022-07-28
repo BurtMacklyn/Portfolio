@@ -4,11 +4,12 @@
 
 import * as $0 from "./routes/api/ping.ts";
 import * as $1 from "./routes/index.tsx";
-import * as $$0 from "./islands/Brainfuck.tsx";
-import * as $$1 from "./islands/Card.tsx";
-import * as $$2 from "./islands/Hero.tsx";
-import * as $$3 from "./islands/Nav.tsx";
-import * as $$4 from "./islands/TechnologiesSection.tsx";
+import * as $$0 from "./islands/About.tsx";
+import * as $$1 from "./islands/Brainfuck.tsx";
+import * as $$2 from "./islands/Card.tsx";
+import * as $$3 from "./islands/Hero.tsx";
+import * as $$4 from "./islands/Nav.tsx";
+import * as $$5 from "./islands/TechnologiesSection.tsx";
 
 const manifest = {
   routes: {
@@ -16,11 +17,12 @@ const manifest = {
     "./routes/index.tsx": $1,
   },
   islands: {
-    "./islands/Brainfuck.tsx": $$0,
-    "./islands/Card.tsx": $$1,
-    "./islands/Hero.tsx": $$2,
-    "./islands/Nav.tsx": $$3,
-    "./islands/TechnologiesSection.tsx": $$4,
+    "./islands/About.tsx": $$0,
+    "./islands/Brainfuck.tsx": $$1,
+    "./islands/Card.tsx": $$2,
+    "./islands/Hero.tsx": $$3,
+    "./islands/Nav.tsx": $$4,
+    "./islands/TechnologiesSection.tsx": $$5,
   },
   baseUrl: import.meta.url,
 };
