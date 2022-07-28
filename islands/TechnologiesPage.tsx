@@ -31,7 +31,7 @@ const technologies = [
   { link: 'https://vitejs.dev/', title: 'Vite', description: 'The better version of Webpack (it uses HMR)' },
   { link: 'https://lit.dev/', title: 'Lit', description: 'Abstraction framework for WebComponents' },
   { link: 'https://ionic.io/', title: 'Ionic', description: 'Fullstack framework for building applications' },
-  { link: 'https://prisma.dev/', title: 'Prisma', description: 'A TypeScript-based ORM (abstraction layer) for SQL database management' },
+  { link: 'https://prisma.io/', title: 'Prisma', description: 'A TypeScript-based ORM (abstraction layer) for SQL database management' },
   { link: 'https://electronjs.org/', title: 'Electron', description: 'Creates desktop apps with JavaScript' },
 ];
 
