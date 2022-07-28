@@ -5,7 +5,7 @@ import { tw } from '@twind';
 
 import { useEffect, useRef, useState } from 'preact/hooks';
 
-import { maxWidth } from '../config.ts';
+import { email, maxWidth } from '../config.ts';
 
 export default function Nav() {
   const dummy = useRef<HTMLSpanElement>(null);
@@ -51,7 +51,7 @@ export default function Nav() {
               blog
             </a>
             ,{' '}
-            <a href="/contact" class={linkClass}>
+            <a href={email} class={linkClass}>
               contact
             </a>
             ,{' '}
@@ -90,7 +90,7 @@ export default function Nav() {
 
                 <code>{'  <li>'}</code>
                 <span class={tw`text-primary`}>{'{'}</span>
-                <a href="/contact" class={tw`transition text-white hover:text-secondary`}>
+                <a href={email} class={tw`transition text-white hover:text-secondary`}>
                   contact
                 </a>
                 <span class={tw`text-primary`}>{'}'}</span>
