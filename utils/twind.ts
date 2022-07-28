@@ -10,12 +10,15 @@ export const config: Configuration = {
     colors: {
       black: '#000',
       white: '#fff',
-      primary: '#00C2FF',
-      grey1: '#404040',
-      grey2: '#0A0A0A',
+      primary: '#B030FF',
+      secondary: '#009BD4',
+      g8: '#141414',
+      g40: '#666666',
+      g60: '#999999',
+      g80: '#cccccc',
     },
     fontFamily: {
-      sans: ['BR Cobane', 'Inter', 'sans-serif'],
+      sans: ['Inter', 'sans-serif'],
       mono: ['Roboto Mono', 'monospace'],
     },
     screens: {
@@ -34,7 +37,28 @@ export const config: Configuration = {
     },
     extend: {
       spacing: {
-        '800': '50rem',
+        '22': '5.5rem',
+        '45': '11.25rem',
+      },
+      animation: {
+        'slide-left': 'slide-left .15s ease-in-out both',
+        'slide-right': 'slide-right .15s ease-in-out both',
+        'fade-in': 'fade .15s ease-in-out both',
+        'fade-out': 'fade .15s ease-in-out both reverse',
+      },
+      keyframes: {
+        'slide-left': {
+          from: { transform: 'translateX(100%)' },
+          to: { transform: 'translateX(0%)' },
+        },
+        'slide-right': {
+          from: { transform: 'translateX(0%)' },
+          to: { transform: 'translateX(100%)' },
+        },
+        fade: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
       },
     },
   },
