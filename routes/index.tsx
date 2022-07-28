@@ -12,13 +12,12 @@ import About from '../islands/About.tsx';
 import Quotes from '../islands/Quotes.tsx';
 import Contact from '../islands/Contact.tsx';
 import Footer from '../islands/Footer.tsx';
+import { Head } from '../components/Head.tsx';
 
 export default function Home() {
   return (
     <Fragment>
-      <title>Cooper Runyan</title>
-      <link rel="shortcut icon" href="/favicon.ico" />
-      <link rel="stylesheet" href="/style/base.css" />
+      <Head />
       <div class={tw`relative bg-black text-white mx-auto flex flex-col items-center`}>
         <div class={tw`w-full min-h-screen flex flex-col ${margin} max-w-[${maxWidth}] pt-22`}>
           <Nav />
