@@ -47,10 +47,10 @@ export default function Nav() {
               overiew
             </a>
             ,{' '}
-            <a href="/blog" class={linkClass}>
+            {/* <a href="/blog" class={linkClass}>
               blog
             </a>
-            ,{' '}
+            ,{' '} */}
             <a href={email} class={linkClass}>
               contact
             </a>
@@ -58,10 +58,10 @@ export default function Nav() {
             <a href="/technologies" class={linkClass}>
               technologies
             </a>
-            ,{' '}
+            {/* ,{' '}
             <a href="/work" class={linkClass}>
               work
-            </a>
+            </a> */}
             ]
           </code>
           {hasClicked && (
@@ -79,14 +79,14 @@ export default function Nav() {
                 </a>
                 <span class={tw`text-primary`}>{'}'}</span>
                 <code>{'</li>\n'}</code>
-
+                {/*
                 <code>{'  <li>'}</code>
                 <span class={tw`text-primary`}>{'{'}</span>
                 <a href="/blog" class={tw`transition text-white hover:text-secondary`}>
                   blog
                 </a>
                 <span class={tw`text-primary`}>{'}'}</span>
-                <code>{'</li>\n'}</code>
+                <code>{'</li>\n'}</code> */}
 
                 <code>{'  <li>'}</code>
                 <span class={tw`text-primary`}>{'{'}</span>
@@ -104,13 +104,13 @@ export default function Nav() {
                 <span class={tw`text-primary`}>{'}'}</span>
                 <code>{'</li>\n'}</code>
 
-                <code>{'  <li>'}</code>
+                {/* <code>{'  <li>'}</code>
                 <span class={tw`text-primary`}>{'{'}</span>
                 <a href="/work" class={tw`transition text-white hover:text-secondary`}>
                   work
                 </a>
                 <span class={tw`text-primary`}>{'}'}</span>
-                <code>{'</li>\n'}</code>
+                <code>{'</li>\n'}</code> */}
 
                 <code>{'</ul>'}</code>
               </pre>
