@@ -19,7 +19,7 @@ export default function Card({ title, description, clickable, onClick, className
         clickable && 'hover:border-primary cursor-pointer select-none'
       } ${className}`}>
       <p class={tw`tracking-tighter font-semibold text-2xl leading-none`}>{title}</p>
-      <p class={tw`tracking-tighter leading-tight`}>{description}</p>
+      <p class={tw`tracking-tighter leading`}>{description}</p>
     </div>
   );
 }
