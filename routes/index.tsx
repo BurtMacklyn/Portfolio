@@ -7,6 +7,7 @@ import { maxWidth } from '../config.ts';
 import Nav from '../islands/Nav.tsx';
 import Hero from '../islands/Hero.tsx';
 import Brainfuck from '../islands/Brainfuck.tsx';
+import TechnologiesSection from '../islands/TechnologiesSection.tsx';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Nav />
         <Hero />
         <Brainfuck />
+        <TechnologiesSection />
       </div>
     </div>
   );
