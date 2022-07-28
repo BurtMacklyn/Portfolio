@@ -8,7 +8,7 @@ export default function Nav() {
   const commonLinks = tw`transition-all py-3 px-4.5 rounded text-black font-semibold tracking-tight leading-none`;
 
   return (
-    <div class={tw`mt-45 md:mt-32`}>
+    <div class={tw`my-45 md:my-32`}>
       <h1 class={commonText}>Cooper Runyan</h1>
       <h1 class={commonText}>fullstack web</h1>
       <h1 class={tw`${commonText} text-primary`}>developer</h1>
