@@ -28,7 +28,15 @@ export default function Nav() {
   return (
     <Fragment>
       <span ref={dummy} />
-      <div class={tw`transition-all blurry fixed top-0 left-0 w-full h-22 bg-black backdrop-blur-xl z-10 border-g8 ${!isAtTopOfDocument && 'border-b-2'}`}>
+      <div
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.7)',
+          backdropFilter: 'blur(8px)',
+          borderBottomColor: isAtTopOfDocument ? 'transparent' : '',
+        }}
+        class={tw`transition-all fixed top-0 left-0 w-full h-22 bg-black backdrop-blur-xl z-10 border-b-1 border-transparent ${
+          !isAtTopOfDocument && 'border-g8'
+        }`}>
         <div class={tw`flex items-center justify-between px-8 w-full h-full mx-auto max-w-[${maxWidth}]`}>
           <a href="/" class={tw`xs:hidden ${nameClass}`}>
             Cooper Runyan

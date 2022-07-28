@@ -17,8 +17,8 @@ export default function Home() {
   return (
     <Fragment>
       <title>Cooper Runyan</title>
+      <link rel="stylesheet" href="/style/base.css" />
       <div class={tw`relative bg-black text-white mx-auto flex flex-col items-center`}>
-        <link rel="stylesheet" href="/style/base.css" />
         <div class={tw`w-full min-h-screen flex flex-col ${margin} max-w-[${maxWidth}] pt-22`}>
           <Nav />
           <Hero />

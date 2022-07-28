@@ -7,11 +7,22 @@ export const config: Configuration = {
   darkMode: 'media',
   mode: 'silent',
   theme: {
+    // colors: {
+    //   black: '#fff',
+    //   white: '#000',
+    //   primary: '#7503BB',
+    //   secondary: '#0066AF',
+    //   g4: '#F5F5F5',
+    //   g8: '#EBEBEB',
+    //   g40: '#999999',
+    //   g60: '#666666',
+    //   g80: '#333333',
+    // },
     colors: {
       black: '#000',
       white: '#fff',
       primary: '#B030FF',
-      secondary: '#009BD4',
+      secondary: '#00C2FF',
       g4: '#0A0A0A',
       g8: '#141414',
       g40: '#666666',
@@ -35,6 +46,9 @@ export const config: Configuration = {
       sm: { max: 'calc(600em / 16)' },
       mxs: { min: 'calc(400em / 16)' },
       xs: { max: 'calc(400em / 16)' },
+      xxs: { max: 'calc(360em / 16)' },
+
+      'height-sm': { raw: '(max-height: calc(700em / 16))' },
     },
     extend: {
       spacing: {

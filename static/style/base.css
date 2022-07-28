@@ -1,4 +1,4 @@
-.blurry {
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
+html {
+  color-scheme: dark;
+  background-color: black;
 }
