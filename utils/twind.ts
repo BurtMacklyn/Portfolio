@@ -12,6 +12,7 @@ export const config: Configuration = {
       white: '#fff',
       primary: '#B030FF',
       secondary: '#009BD4',
+      g4: '#0A0A0A',
       g8: '#141414',
       g40: '#666666',
       g60: '#999999',
