@@ -23,7 +23,6 @@ export default function Nav() {
 
   const linkClass = tw`text-white hover:text-secondary transition cursor-pointer`;
   const lineClass = tw`transition-all rounded-full absolute w-full h-0.5 bg-white top-[50%] left-[50%] -translate-x-1/2`;
-  const nameClass = tw`text-sans text-white text-2xl leading-none font-semibold tracking-tighter`;
 
   const activeNav = !isAtTopOfDocument || clicked;
 
@@ -38,7 +37,7 @@ export default function Nav() {
         }}
         class={tw`transition-all fixed top-0 left-0 w-full h-22 bg-black backdrop-blur-xl z-[12] border-b-1 border-transparent ${activeNav && 'border-g8'}`}>
         <div class={tw`flex items-center justify-between px-8 w-full h-full mx-auto max-w-[${maxWidth}]`}>
-          <a href="/" class={tw`z-[20] ${nameClass}`}>
+          <a href="/" class={tw`z-[20] text-sans text-white text-2xl leading-none font-semibold tracking-tighter`}>
             Cooper Runyan
           </a>
           <code class={tw`text-mono text-g40 select-none lg:hidden`}>
