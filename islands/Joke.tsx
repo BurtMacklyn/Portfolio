@@ -3,7 +3,7 @@
 import { h } from 'preact';
 import { tw } from '@twind';
 
-export default function Brainfuck() {
+export default function Joke() {
   return (
     <section class={tw`mb-16`}>
       <code class={tw`break-all text-g40 sm:text-xs sm:leading-none leading-none`}>
