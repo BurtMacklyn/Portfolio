@@ -10,7 +10,7 @@ import Brainfuck from '../islands/Brainfuck.tsx';
 import TechnologiesSection from '../islands/TechnologiesSection.tsx';
 import About from '../islands/About.tsx';
 import Quotes from '../islands/Quotes.tsx';
-import Contact from '../islands/Contact.tsx';
+import ContactSection from '../islands/ContactSection.tsx';
 import Footer from '../islands/Footer.tsx';
 import { Head } from '../components/Head.tsx';
 
@@ -26,7 +26,7 @@ export default function Home() {
           <TechnologiesSection />
           <About />
           <Quotes />
-          <Contact />
+          <ContactSection />
         </div>
       </div>
       <Footer />
