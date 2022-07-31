@@ -4,7 +4,7 @@ import { h } from 'preact';
 import { tw } from '@twind';
 import { email } from '../config.ts';
 
-export default function Contact() {
+export default function ContactSection() {
   const button = tw`transition-all select-none border-1 border-current text-g40 font-semibold leading-none tracking-tight py-3 px-4.5 rounded`;
 
   return (

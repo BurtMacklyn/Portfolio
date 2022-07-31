@@ -8,7 +8,7 @@ import * as $2 from "./routes/technologies.tsx";
 import * as $$0 from "./islands/About.tsx";
 import * as $$1 from "./islands/Brainfuck.tsx";
 import * as $$2 from "./islands/Card.tsx";
-import * as $$3 from "./islands/Contact.tsx";
+import * as $$3 from "./islands/ContactSection.tsx";
 import * as $$4 from "./islands/Footer.tsx";
 import * as $$5 from "./islands/Hero.tsx";
 import * as $$6 from "./islands/Nav.tsx";
@@ -26,7 +26,7 @@ const manifest = {
     "./islands/About.tsx": $$0,
     "./islands/Brainfuck.tsx": $$1,
     "./islands/Card.tsx": $$2,
-    "./islands/Contact.tsx": $$3,
+    "./islands/ContactSection.tsx": $$3,
     "./islands/Footer.tsx": $$4,
     "./islands/Hero.tsx": $$5,
     "./islands/Nav.tsx": $$6,
