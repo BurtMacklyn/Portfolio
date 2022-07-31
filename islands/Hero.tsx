@@ -5,7 +5,7 @@ import { tw } from '@twind';
 import { email } from '../config.ts';
 
 export default function Nav() {
-  const commonText = tw`font-semibold text-8xl sm:text-7xl xxs:text-6xl tracking-tighter leading-none`;
+  const commonText = tw`font-bold text-8xl sm:text-7xl xxs:text-6xl tracking-tighter leading-none`;
   const commonLinks = tw`transition-all select-none py-3 px-4.5 rounded text-black font-semibold tracking-tight leading-none`;
 
   return (
