@@ -6,7 +6,9 @@ import { tw } from '@twind';
 import { useEffect, useState } from 'preact/hooks';
 
 export default function JokeSection() {
-  const [joke, setJoke] = useState(jokes[new Date().getDate() % jokes.length]);
+  const [joke, setJoke] = useState(jokes[0]);
+
+  useEffect(() => setJoke(jokes[new Date().getDate() % jokes.length]), []);
 
   return (
     <section class={tw`mb-16`}>
