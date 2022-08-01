@@ -21,7 +21,7 @@ export default function Nav() {
     return () => observer.unobserve(dummy.current!);
   }, []);
 
-  const linkClass = tw`text-white hover:text-secondary transition cursor-pointer`;
+  const linkClass = tw`text-white hover:text-secondary active:text-primary transition cursor-pointer`;
   const lineClass = tw`transition-all rounded-full absolute w-full h-0.5 bg-white top-[50%] left-[50%] -translate-x-1/2`;
 
   const activeNav = !isAtTopOfDocument || clicked;
@@ -92,7 +92,7 @@ export default function Nav() {
 
               <code>{'  <li>'}</code>
               <span class={tw`text-primary`}>{'{'}</span>
-              <a href="/" class={tw`transition text-white hover:text-secondary`}>
+              <a href="/" class={tw`transition text-white hover:text-secondary active:text-primary`}>
                 overview
               </a>
               <span class={tw`text-primary`}>{'}'}</span>
@@ -100,7 +100,7 @@ export default function Nav() {
               {/*
                   <code>{'  <li>'}</code>
                   <span class={tw`text-primary`}>{'{'}</span>
-                  <a href="/blog" class={tw`transition text-white hover:text-secondary`}>
+                  <a href="/blog" class={tw`transition text-white hover:text-secondary active:text-primary`}>
                     blog
                   </a>
                   <span class={tw`text-primary`}>{'}'}</span>
@@ -108,7 +108,7 @@ export default function Nav() {
 
               <code>{'  <li>'}</code>
               <span class={tw`text-primary`}>{'{'}</span>
-              <a href={email} class={tw`transition text-white hover:text-secondary`}>
+              <a href={email} class={tw`transition text-white hover:text-secondary active:text-primary`}>
                 contact
               </a>
               <span class={tw`text-primary`}>{'}'}</span>
@@ -116,7 +116,7 @@ export default function Nav() {
 
               <code>{'  <li>'}</code>
               <span class={tw`text-primary`}>{'{'}</span>
-              <a href="/technologies" class={tw`transition text-white hover:text-secondary`}>
+              <a href="/technologies" class={tw`transition text-white hover:text-secondary active:text-primary`}>
                 technologies
               </a>
               <span class={tw`text-primary`}>{'}'}</span>
@@ -124,7 +124,7 @@ export default function Nav() {
 
               {/* <code>{'  <li>'}</code>
                   <span class={tw`text-primary`}>{'{'}</span>
-                  <a href="/work" class={tw`transition text-white hover:text-secondary`}>
+                  <a href="/work" class={tw`transition text-white hover:text-secondary active:text-primary`}>
                     work
                   </a>
                   <span class={tw`text-primary`}>{'}'}</span>
