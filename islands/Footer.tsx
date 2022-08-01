@@ -9,7 +9,7 @@ export default function Footer() {
     <footer class={tw`bg-g4 text-g80`}>
       <div class={tw`${margin} mx-auto py-6 max-w-[${maxWidth}] flex flex-col gap-2`}>
         <p class={tw`text-sm`}>
-          <Name /> Portfolio v5.2.4
+          <Name /> Portfolio v5.2.5
         </p>
         <p class={tw`text-sm`}>
           Copyright © 2022 - All rights reserved by <Name />.

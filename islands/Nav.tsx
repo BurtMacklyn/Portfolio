@@ -5,7 +5,7 @@ import { tw } from '@twind';
 
 import { useEffect, useRef, useState } from 'preact/hooks';
 
-import { email, maxWidth } from '../config.ts';
+import { email, margin, maxWidth } from '../config.ts';
 
 export default function Nav() {
   const dummy = useRef<HTMLSpanElement>(null);
@@ -36,7 +36,7 @@ export default function Nav() {
           borderBottomColor: !activeNav ? 'transparent' : '',
         }}
         class={tw`transition-all fixed top-0 left-0 w-full h-22 bg-black backdrop-blur-xl z-[12] border-b-1 border-transparent ${activeNav && 'border-g8'}`}>
-        <div class={tw`flex items-center justify-between px-8 w-full h-full mx-auto max-w-[${maxWidth}]`}>
+        <div class={tw`flex items-center justify-between ${margin} w-full h-full mx-auto max-w-[${maxWidth}]`}>
           <a href="/" class={tw`z-[20] text-sans text-white text-2xl leading-none font-semibold tracking-tighter`}>
             Cooper Runyan
           </a>
