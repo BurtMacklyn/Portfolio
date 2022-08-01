@@ -10,7 +10,9 @@ export default function JokeSection() {
 
   useEffect(() => {
     const date = new Date().getDate();
-    setJoke(jokes[date % jokes.length]);
+    const j = jokes[date % jokes.length];
+    setJoke(j);
+    console.log(`Joke of the day:\n${j.decoded}`);
   }, []);
 
   return (
