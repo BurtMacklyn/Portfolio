@@ -2,37 +2,37 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $0 from './routes/api/ping.ts';
-import * as $1 from './routes/index.tsx';
-import * as $2 from './routes/technologies.tsx';
-import * as $$0 from './islands/About.tsx';
-import * as $$1 from './islands/Joke.tsx';
-import * as $$2 from './islands/Card.tsx';
-import * as $$3 from './islands/ContactSection.tsx';
-import * as $$4 from './islands/Footer.tsx';
-import * as $$5 from './islands/Hero.tsx';
-import * as $$6 from './islands/Nav.tsx';
-import * as $$7 from './islands/Quotes.tsx';
-import * as $$8 from './islands/TechnologiesPage.tsx';
-import * as $$9 from './islands/TechnologiesSection.tsx';
+import * as $0 from "./routes/api/ping.ts";
+import * as $1 from "./routes/index.tsx";
+import * as $2 from "./routes/technologies.tsx";
+import * as $$0 from "./islands/About.tsx";
+import * as $$1 from "./islands/Card.tsx";
+import * as $$2 from "./islands/ContactSection.tsx";
+import * as $$3 from "./islands/Footer.tsx";
+import * as $$4 from "./islands/Hero.tsx";
+import * as $$5 from "./islands/Joke.tsx";
+import * as $$6 from "./islands/Nav.tsx";
+import * as $$7 from "./islands/Quotes.tsx";
+import * as $$8 from "./islands/TechnologiesPage.tsx";
+import * as $$9 from "./islands/TechnologiesSection.tsx";
 
 const manifest = {
   routes: {
-    './routes/api/ping.ts': $0,
-    './routes/index.tsx': $1,
-    './routes/technologies.tsx': $2,
+    "./routes/api/ping.ts": $0,
+    "./routes/index.tsx": $1,
+    "./routes/technologies.tsx": $2,
   },
   islands: {
-    './islands/About.tsx': $$0,
-    './islands/Joke.tsx': $$1,
-    './islands/Card.tsx': $$2,
-    './islands/ContactSection.tsx': $$3,
-    './islands/Footer.tsx': $$4,
-    './islands/Hero.tsx': $$5,
-    './islands/Nav.tsx': $$6,
-    './islands/Quotes.tsx': $$7,
-    './islands/TechnologiesPage.tsx': $$8,
-    './islands/TechnologiesSection.tsx': $$9,
+    "./islands/About.tsx": $$0,
+    "./islands/Card.tsx": $$1,
+    "./islands/ContactSection.tsx": $$2,
+    "./islands/Footer.tsx": $$3,
+    "./islands/Hero.tsx": $$4,
+    "./islands/Joke.tsx": $$5,
+    "./islands/Nav.tsx": $$6,
+    "./islands/Quotes.tsx": $$7,
+    "./islands/TechnologiesPage.tsx": $$8,
+    "./islands/TechnologiesSection.tsx": $$9,
   },
   baseUrl: import.meta.url,
 };
