@@ -5,7 +5,13 @@ import { tw } from '@twind';
 
 import { useEffect, useRef, useState } from 'preact/hooks';
 
-import { email, margin, maxWidth } from '../config.ts';
+import { email, margin, maxWidth } from '../lib/config.ts';
+
+const navItems = [
+  { name: 'overview', href: '/' },
+  { name: 'contact', href: email },
+  { name: 'technologies', href: '/technologies' },
+];
 
 export default function Nav() {
   const dummy = useRef<HTMLSpanElement>(null);
@@ -21,7 +27,7 @@ export default function Nav() {
     return () => observer.unobserve(dummy.current!);
   }, []);
 
-  const linkClass = tw`text-white hover:text-secondary active:text-primary transition cursor-pointer`;
+  const linkClass = tw`text-white hover:text-secondary transition cursor-pointer`;
   const lineClass = tw`transition-all rounded-full absolute w-full h-0.5 bg-white top-[50%] left-[50%] -translate-x-1/2`;
 
   const activeNav = !isAtTopOfDocument || clicked;
@@ -42,26 +48,15 @@ export default function Nav() {
           </a>
           <code class={tw`text-mono text-g40 select-none lg:hidden`}>
             const nav: Page[] = [
-            <a href="/" class={linkClass}>
-              overiew
-            </a>
-            ,{' '}
-            {/* <a href="/blog" class={linkClass}>
-              blog
-            </a>
-            ,{' '} */}
-            <a href={email} class={linkClass}>
-              contact
-            </a>
-            ,{' '}
-            <a href="/technologies" class={linkClass}>
-              technologies
-            </a>
-            {/* ,{' '}
-            <a href="/work" class={linkClass}>
-              work
-            </a> */}
-            ]
+            {navItems.map((item, i, { length }) => (
+              <Fragment>
+                <a href={item.href} class={linkClass}>
+                  {item.name}
+                </a>
+                {i < length - 1 && ', '}
+              </Fragment>
+            ))}
+            ];
           </code>
 
           <button
@@ -90,45 +85,17 @@ export default function Nav() {
             <pre class={tw`text-g40 select-none`}>
               <code>{'<ul>\n'}</code>
 
-              <code>{'  <li>'}</code>
-              <span class={tw`text-primary`}>{'{'}</span>
-              <a href="/" class={tw`transition text-white hover:text-secondary active:text-primary`}>
-                overview
-              </a>
-              <span class={tw`text-primary`}>{'}'}</span>
-              <code>{'</li>\n'}</code>
-              {/*
+              {navItems.map(item => (
+                <Fragment>
                   <code>{'  <li>'}</code>
                   <span class={tw`text-primary`}>{'{'}</span>
-                  <a href="/blog" class={tw`transition text-white hover:text-secondary active:text-primary`}>
-                    blog
+                  <a href={item.href} class={tw`transition text-white hover:text-secondary`}>
+                    {item.name}
                   </a>
                   <span class={tw`text-primary`}>{'}'}</span>
-                  <code>{'</li>\n'}</code> */}
-
-              <code>{'  <li>'}</code>
-              <span class={tw`text-primary`}>{'{'}</span>
-              <a href={email} class={tw`transition text-white hover:text-secondary active:text-primary`}>
-                contact
-              </a>
-              <span class={tw`text-primary`}>{'}'}</span>
-              <code>{'</li>\n'}</code>
-
-              <code>{'  <li>'}</code>
-              <span class={tw`text-primary`}>{'{'}</span>
-              <a href="/technologies" class={tw`transition text-white hover:text-secondary active:text-primary`}>
-                technologies
-              </a>
-              <span class={tw`text-primary`}>{'}'}</span>
-              <code>{'</li>\n'}</code>
-
-              {/* <code>{'  <li>'}</code>
-                  <span class={tw`text-primary`}>{'{'}</span>
-                  <a href="/work" class={tw`transition text-white hover:text-secondary active:text-primary`}>
-                    work
-                  </a>
-                  <span class={tw`text-primary`}>{'}'}</span>
-                  <code>{'</li>\n'}</code> */}
+                  <code>{'</li>\n'}</code>
+                </Fragment>
+              ))}
 
               <code>{'</ul>'}</code>
             </pre>

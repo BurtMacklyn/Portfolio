@@ -2,10 +2,10 @@
 
 import { h } from 'preact';
 import { tw } from '@twind';
-import { email } from '../config.ts';
+import { email } from '../lib/config.ts';
 
 export default function ContactSection() {
-  const button = tw`transition-all select-none border-1 border-current text-g40 font-semibold leading-none tracking-tight py-3 px-4.5 rounded hover:text-secondary active:text-primary`;
+  const button = tw`transition-all select-none border-1 border-current text-g40 font-semibold leading-none tracking-tight py-3 px-4.5 rounded hover:text-secondary`;
 
   return (
     <section class={tw`my-16`}>

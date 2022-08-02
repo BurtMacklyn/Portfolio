@@ -2,14 +2,14 @@
 
 import { h } from 'preact';
 import { tw } from '@twind';
-import { margin, maxWidth } from '../config.ts';
+import { margin, maxWidth } from '../lib/config.ts';
 
 export default function Footer() {
   return (
     <footer class={tw`bg-g4 text-g80`}>
       <div class={tw`${margin} mx-auto py-6 max-w-[${maxWidth}] flex flex-col gap-2`}>
         <p class={tw`text-sm`}>
-          <Name /> Portfolio v5.2.5
+          <Name /> Portfolio v5.2.6
         </p>
         <p class={tw`text-sm`}>
           Copyright © 2022 - All rights reserved by <Name />.
