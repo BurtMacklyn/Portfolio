@@ -1,7 +1,7 @@
 /** @jsx h */
 
-import { Fragment, h } from 'preact';
 import { tw } from '@twind';
+import { Fragment, h } from 'preact';
 
 import { useEffect, useRef, useState } from 'preact/hooks';
 

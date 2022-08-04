@@ -1,7 +1,7 @@
 /** @jsx h */
 
-import { h } from 'preact';
 import { tw } from '@twind';
+import { h } from 'preact';
 import { lastUpdated, margin, maxWidth, version } from '../lib/config.ts';
 
 export default function Footer() {

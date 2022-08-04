@@ -1,7 +1,7 @@
 /** @jsx h */
 
-import { h } from 'preact';
 import { tw } from '@twind';
+import { h } from 'preact';
 import { jokes } from '../lib/jokes.ts';
 
 export default function JokeSection() {

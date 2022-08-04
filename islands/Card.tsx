@@ -1,7 +1,7 @@
 /** @jsx h */
 
-import { h } from 'preact';
 import { tw } from '@twind';
+import { h } from 'preact';
 
 interface Props {
   title: string;
