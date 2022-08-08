@@ -12,9 +12,8 @@ export default function TechnologiesSection() {
     <section class={tw`my-16`}>
       <h2 class={tw`lowercase font-semibold text-5xl tracking-tighter leading-none`}>Technologies.</h2>
       <p class={tw`font-normal leading-none tracking-tight text-g60 mt-6`}>
-        For a full list, see{' '}
-        <a class={tw`transition text-white hover:text-secondary`} href="/technologies">
-          here
+        <a class={tw`transition text-secondary`} href="/technologies" aria-label="View a full list of technologies">
+          View full list
         </a>
         .
       </p>

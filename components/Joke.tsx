@@ -22,7 +22,7 @@ const Joke = ({ children, content }: { children: string; content: string }) => {
         {content}
       </code>
       <br />
-      <code aria-hidden class={tw`text-g40 break-all ${shared}`}>
+      <code aria-hidden class={tw`text-g50 break-all ${shared}`}>
         {children}
       </code>
     </div>

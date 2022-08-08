@@ -44,8 +44,10 @@ export default function Nav() {
           <a href="/" class={tw`z-[20] text-sans text-white text-2xl leading-none font-semibold tracking-tighter`}>
             Cooper Runyan
           </a>
-          <code class={tw`text-mono text-g40 select-none lg:hidden`}>
-            const nav: Page[] = [
+          <code class={tw`text-mono select-none lg:hidden`}>
+            <span class={tw`text-g50`} aria-hidden>
+              const nav: Page[] = [
+            </span>
             {navItems.map((item, i, { length }) => (
               <Fragment>
                 <a href={item.href} class={linkClass}>
@@ -54,7 +56,9 @@ export default function Nav() {
                 {i < length - 1 && ', '}
               </Fragment>
             ))}
-            ];
+            <span class={tw`text-g50`} aria-hidden>
+              ];
+            </span>
           </code>
 
           <button
@@ -80,22 +84,30 @@ export default function Nav() {
             } !xs:bg-black w-full h-[calc(100%-5.5rem)] xs:h-screen xs:top-0 border-l-2 border-g8 xs:${
               clicked ? 'animation-fade-in' : 'animation-fade-out'
             } max-w-xs xs:max-w-full xs:border-0 fixed top-22 right-0 z-[10] flex items-center justify-center`}>
-            <pre class={tw`text-g40 select-none`}>
-              <code>{'<ul>\n'}</code>
+            <pre class={tw`select-none`}>
+              <code class={tw`text-g50`} aria-hidden>
+                {'<ul>\n'}
+              </code>
 
               {navItems.map(item => (
                 <Fragment>
-                  <code>{'  <li>'}</code>
+                  <code class={tw`text-g50`} aria-hidden>
+                    {'  <li>'}
+                  </code>
                   <span class={tw`text-primary`}>{'{'}</span>
                   <a href={item.href} class={tw`transition text-white hover:text-secondary`}>
                     {item.name}
                   </a>
                   <span class={tw`text-primary`}>{'}'}</span>
-                  <code>{'</li>\n'}</code>
+                  <code class={tw`text-g50`} aria-hidden>
+                    {'</li>\n'}
+                  </code>
                 </Fragment>
               ))}
 
-              <code>{'</ul>'}</code>
+              <code class={tw`text-g50`} aria-hidden>
+                {'</ul>'}
+              </code>
             </pre>
           </div>
         )}

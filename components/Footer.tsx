@@ -19,9 +19,13 @@ export default function Footer() {
           Site created and designed by <Name /> using Deno and Fresh (React)
         </p>
         <p class={tw`text-sm`}>
-          View source code{' '}
-          <a class={tw`text-secondary`} href="https://www.github.com/cooperrunyan/cooperrunyan" aria-content="View repository">
-            here
+          <a
+            class={tw`text-secondary`}
+            href="https://www.github.com/cooperrunyan/cooperrunyan"
+            target="_blank"
+            rel="alternate"
+            aria-label="View full source code">
+            View source code
           </a>
           .
         </p>

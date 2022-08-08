@@ -16,7 +16,7 @@ export const config: Configuration = {
       secondary: '#00C2FF',
       g4: '#0A0A0A',
       g8: '#141414',
-      g40: '#666666',
+      g50: '#808080',
       g60: '#999999',
       g80: '#cccccc',
     },

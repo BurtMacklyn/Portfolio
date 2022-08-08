@@ -17,6 +17,7 @@ export default ({ children }: { children: any }) => {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <meta name="theme" content={(config?.theme?.colors as any)?.black} />
+        <meta name="description" content="Personal website for Cooper Runyan" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400&display=swap" rel="prefetch" as="style" />
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
