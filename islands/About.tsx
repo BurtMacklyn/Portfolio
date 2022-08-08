@@ -1,7 +1,6 @@
 /** @jsx h */
 import { h } from 'preact';
-
-import { tw } from '@twind';
+import { tw } from 'style';
 
 export default function About() {
   return (

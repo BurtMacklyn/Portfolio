@@ -1,10 +1,9 @@
 /** @jsx h */
 import { Fragment, h } from 'preact';
+import { tw } from 'style';
 
-import { tw } from '@twind';
-
+import { email, margin, maxWidth } from 'lib/config.ts';
 import { useEffect, useRef, useState } from 'preact/hooks';
-import { email, margin, maxWidth } from '../lib/config.ts';
 
 const navItems = [
   { name: 'overview', href: '/' },

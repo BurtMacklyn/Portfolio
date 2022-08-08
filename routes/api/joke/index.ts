@@ -1,4 +1,4 @@
-import { HandlerContext } from '$fresh/server.ts';
+import { HandlerContext } from 'fresh/server.ts';
 import { jokes } from '../../../lib/jokes.ts';
 
 export const handler = (req: Request, ctx: HandlerContext): Response => {

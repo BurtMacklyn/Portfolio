@@ -1,16 +1,16 @@
 /** @jsx h */
 import { h } from 'preact';
+import { tw } from 'style';
 
-import { tw } from '@twind';
-import { App } from '../components/App.tsx';
-import Card from '../islands/Card.tsx';
+import Card from 'i/Card.tsx';
+import Layout from '~/components/Layout.tsx';
 
 export default function Technologies() {
   const cardClass = tw`flex-grow-1 flex-shrink-1 basis-96`;
   const click = (link: string) => () => window.open(link, '_blank');
 
   return (
-    <App>
+    <Layout>
       <section class={tw`my-16`}>
         <h2 class={tw`lowercase font-semibold text-5xl tracking-tighter leading-none`}>Technologies.</h2>
         <div class={tw`flex flex-wrap flex-row mt-8 gap-4`}>
@@ -19,7 +19,7 @@ export default function Technologies() {
           ))}
         </div>
       </section>
-    </App>
+    </Layout>
   );
 }
 

@@ -1,8 +1,8 @@
 /** @jsx h */
 import { h } from 'preact';
+import { tw } from 'style';
 
-import { tw } from '@twind';
-import { email } from '../lib/config.ts';
+import { email } from 'lib/config.ts';
 
 export default function ContactSection() {
   const button = tw`transition-all select-none border-1 border-current text-g40 font-semibold leading-none tracking-tight py-3 px-4.5 rounded hover:text-secondary`;

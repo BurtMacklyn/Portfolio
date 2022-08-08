@@ -1,11 +1,10 @@
 /** @jsx h */
 import { h } from 'preact';
+import { tw } from 'style';
 
-import { tw } from '@twind';
+import { jokes } from 'lib/jokes.ts';
 
-import { jokes } from '../lib/jokes.ts';
-
-export default function JokeSection() {
+export default () => {
   const joke = jokes[new Date().getDate() % jokes.length];
 
   return (
@@ -13,7 +12,7 @@ export default function JokeSection() {
       <Joke content={joke.content}>{joke.bf}</Joke>
     </section>
   );
-}
+};
 
 const Joke = ({ children, content }: { children: string; content: string }) => {
   const shared = tw`m:text-xs sm:leading-none leading-none`;

@@ -1,4 +1,4 @@
-import { HandlerContext } from '$fresh/server.ts';
+import { HandlerContext } from 'fresh/server.ts';
 import { jokes } from '../../../lib/jokes.ts';
 import { sendJoke } from './index.ts';
 

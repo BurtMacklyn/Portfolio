@@ -1,23 +1,24 @@
 /** @jsx h */
 import { h } from 'preact';
 
-import { App } from '../components/App.tsx';
-import JokeSection from '../components/Joke.tsx';
-import About from '../islands/About.tsx';
-import ContactSection from '../islands/ContactSection.tsx';
-import Hero from '../islands/Hero.tsx';
-import Quotes from '../islands/Quotes.tsx';
-import TechnologiesSection from '../islands/TechnologiesSection.tsx';
+import About from 'i/About.tsx';
+import ContactSection from 'i/ContactSection.tsx';
+import Quotes from 'i/Quotes.tsx';
+import TechnologiesSection from 'i/TechnologiesSection.tsx';
+
+import Layout from 'c/Layout.tsx';
+import Hero from 'c/Hero.tsx';
+import JokeSection from 'c/Joke.tsx';
 
 export default function Home() {
   return (
-    <App>
+    <Layout>
       <Hero />
       <JokeSection />
       <TechnologiesSection />
       <About />
       <Quotes />
       <ContactSection />
-    </App>
+    </Layout>
   );
 }

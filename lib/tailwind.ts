@@ -1,9 +1,9 @@
-import { IS_BROWSER } from '$fresh/runtime.ts';
-import { Configuration, setup } from 'https://esm.sh/twind@0.16.17';
+import { IS_BROWSER } from 'fresh/runtime.ts';
+import { Configuration, setup } from 'tailwind';
 import { styled } from './styled.ts';
 
-export * from 'https://esm.sh/twind@0.16.17';
-export * as sheets from 'https://esm.sh/twind@0.16.17/sheets';
+export * from 'tailwind';
+export * as sheets from 'tailwind/sheets';
 
 export const config: Configuration = {
   darkMode: 'media',

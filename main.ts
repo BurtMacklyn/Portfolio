@@ -4,10 +4,10 @@
 /// <reference lib="deno.ns" />
 /// <reference lib="deno.unstable" />
 
-import { InnerRenderFunction, RenderContext, start } from '$fresh/server.ts';
+import { InnerRenderFunction, RenderContext, start } from 'fresh/server.ts';
 import manifest from './fresh.gen.ts';
 
-import { config, overrides, setup, sheets } from '@twind';
+import { config, overrides, setup, sheets } from 'style';
 
 const sheet = sheets.virtualSheet();
 sheet.reset();
