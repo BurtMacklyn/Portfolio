@@ -1,7 +1,8 @@
 /** @jsx h */
+import { h } from 'preact';
 
 import { tw } from '@twind';
-import { h } from 'preact';
+
 import Card from './Card.tsx';
 
 export default function TechnologiesSection() {

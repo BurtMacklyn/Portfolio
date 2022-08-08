@@ -1,7 +1,8 @@
 /** @jsx h */
-
 import { h } from 'preact';
+
 import { tw } from '@twind';
+
 import { email } from '../lib/config.ts';
 
 export default function Nav() {

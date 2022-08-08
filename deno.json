@@ -2,5 +2,11 @@
   "tasks": {
     "start": "deno run -A --watch=static/,routes/ dev.ts"
   },
-  "importMap": "./import_map.json"
+  "importMap": "./import_map.json",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "jsxFactory": "preact.createElement",
+    "jsxFragmentFactory": "preact.Fragment",
+    "jsxImportSource": "preact"
+  }
 }

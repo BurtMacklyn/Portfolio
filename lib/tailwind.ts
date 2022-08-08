@@ -1,23 +1,14 @@
 import { IS_BROWSER } from '$fresh/runtime.ts';
-import { Configuration, setup } from 'twind';
+import { Configuration, setup } from 'https://esm.sh/twind@0.16.17';
+import { styled } from './styled.ts';
 
-export * from 'twind';
+export * from 'https://esm.sh/twind@0.16.17';
+export * as sheets from 'https://esm.sh/twind@0.16.17/sheets';
 
 export const config: Configuration = {
   darkMode: 'media',
   mode: 'silent',
   theme: {
-    // colors: {
-    //   black: '#fff',
-    //   white: '#000',
-    //   primary: '#7503BB',
-    //   secondary: '#0066AF',
-    //   g4: '#F5F5F5',
-    //   g8: '#EBEBEB',
-    //   g40: '#999999',
-    //   g60: '#666666',
-    //   g80: '#333333',
-    // },
     colors: {
       black: '#000',
       white: '#fff',
@@ -79,5 +70,12 @@ export const config: Configuration = {
     },
   },
 };
+
+export const overrides = styled`
+  html {
+    color-scheme: dark;
+    background-color: ${(config?.theme?.colors as any)?.black};
+  }
+`;
 
 if (IS_BROWSER) setup(config);

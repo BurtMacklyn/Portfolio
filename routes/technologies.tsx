@@ -1,7 +1,7 @@
 /** @jsx h */
+import { h } from 'preact';
 
 import { tw } from '@twind';
-import { h } from 'preact';
 import { App } from '../components/App.tsx';
 import Card from '../islands/Card.tsx';
 
