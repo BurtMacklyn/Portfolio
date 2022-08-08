@@ -2,8 +2,8 @@
 import { h } from 'preact';
 import { tw } from 'style';
 
-import Card from 'i/Card.tsx';
-import Layout from '~/components/Layout.tsx';
+import Card from 'c/Card.tsx';
+import Layout from 'c/Layout.tsx';
 
 export default function Technologies() {
   const cardClass = tw`flex-grow-1 flex-shrink-1 basis-96`;
