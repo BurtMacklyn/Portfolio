@@ -9,7 +9,11 @@ import Nav from 'c/Nav.tsx';
 
 import { margin, maxWidth } from 'lib/config.ts';
 
-export default ({ children }: { children: any }) => {
+interface Props {
+  children?: any;
+}
+
+export default ({ children }: Props) => {
   return (
     <Fragment>
       <Head>

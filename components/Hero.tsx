@@ -4,7 +4,7 @@ import { tw } from 'style';
 
 import { email } from 'lib/config.ts';
 
-export default function Nav() {
+export default function Hero() {
   const commonText = tw`font-bold text-8xl sm:text-7xl xxs:text-6xl tracking-tighter leading-none`;
   const commonLinks = tw`transition-all select-none py-3 px-4.5 rounded font-semibold tracking-tight leading-none border-1 border-current hover:text-secondary`;
 
