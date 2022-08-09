@@ -30,7 +30,7 @@ export default function Snake() {
           ref={ref}
           class={tw`h-[calc(100vh-11rem)] border-1 border-g8 rounded`}
           src={`https://cooperrunyan-snake.netlify.app/?showScore=false&primary=${encodeURIComponent(theme.secondary)}&secondary=${encodeURIComponent(
-            theme.primary,
+            theme.tertiary,
           )}&black=${encodeURIComponent(theme.black)}&white=${encodeURIComponent(theme.white)}&autoRestart=true`}
         />
       )}
