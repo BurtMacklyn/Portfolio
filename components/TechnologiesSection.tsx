@@ -1,6 +1,7 @@
 /** @jsx h */
 import { h } from 'preact';
 import { tw } from 'style';
+import { technologies } from '../lib/technologies.ts';
 
 import Card from './Card.tsx';
 
@@ -18,45 +19,9 @@ export default function TechnologiesSection() {
         .
       </p>
       <div class={tw`flex flex-wrap flex-row mt-16 gap-4`}>
-        <Card
-          className={cardClass}
-          clickable
-          onClick={click('https://nextjs.org/')}
-          title="Next JS"
-          description="A fullstack non-opinionated framework for React"
-        />
-        <Card
-          className={cardClass}
-          clickable
-          onClick={click('https://reactjs.org/')}
-          title="React"
-          description="The world's most popular non-opinionated frontend UI framework."
-        />
-        <Card
-          className={cardClass}
-          clickable
-          onClick={click('https://nodejs.org/')}
-          title="NodeJS"
-          description="Server-side JavaScript runtime built on Google Chrome's V8 JS engine."
-        />
-        <Card className={cardClass} clickable onClick={click('https://www.typescriptlang.org/')} title="TypeScript" description="A better JavaScript" />
-        <Card
-          className={cardClass}
-          clickable
-          onClick={click('https://deno.land')}
-          title="Deno"
-          description="The successor to NodeJS built in Rust and focused on TypeScript"
-        />
-        <Card className={cardClass} clickable onClick={click('https://sass-lang.com/')} title="SCSS" description="The TypeScript of CSS" />
-        <Card className={cardClass} clickable onClick={click('https://expressjs.com/')} title="Express" description="Node library for http server creation." />
-        <Card className={cardClass} clickable onClick={click('https://www.docker.com/')} title="Docker" description="Containerization for apps" />
-        <Card
-          className={cardClass}
-          clickable
-          onClick={click('https://fresh.deno.dev')}
-          title="Fresh"
-          description="React framework built in Deno (used for this site)"
-        />
+        {technologies.slice(0, 9).map(tech => (
+          <Card className={cardClass} clickable onClick={click(tech.link)} title={tech.title} description={tech.description} />
+        ))}
       </div>
     </section>
   );
