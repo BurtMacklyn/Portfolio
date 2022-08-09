@@ -4,9 +4,6 @@
   },
   "importMap": "./import_map.json",
   "compilerOptions": {
-    "experimentalDecorators": true,
-    "jsxFactory": "preact.createElement",
-    "jsxFragmentFactory": "preact.Fragment",
-    "jsxImportSource": "preact"
+    "lib": ["deno.ns", "dom", "dom.iterable", "dom.asynciterable"]
   }
 }
