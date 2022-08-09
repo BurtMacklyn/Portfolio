@@ -9,8 +9,10 @@ import * as $3 from "./routes/api/joke/daily.ts";
 import * as $4 from "./routes/api/joke/index.ts";
 import * as $5 from "./routes/api/ping.ts";
 import * as $6 from "./routes/index.tsx";
-import * as $7 from "./routes/technologies.tsx";
+import * as $7 from "./routes/snake.tsx";
+import * as $8 from "./routes/technologies.tsx";
 import * as $$0 from "./islands/Nav.tsx";
+import * as $$1 from "./islands/Snake.tsx";
 
 const manifest = {
   routes: {
@@ -21,10 +23,12 @@ const manifest = {
     "./routes/api/joke/index.ts": $4,
     "./routes/api/ping.ts": $5,
     "./routes/index.tsx": $6,
-    "./routes/technologies.tsx": $7,
+    "./routes/snake.tsx": $7,
+    "./routes/technologies.tsx": $8,
   },
   islands: {
     "./islands/Nav.tsx": $$0,
+    "./islands/Snake.tsx": $$1,
   },
   baseUrl: import.meta.url,
 };

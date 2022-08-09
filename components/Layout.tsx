@@ -11,9 +11,10 @@ import { margin, maxWidth } from 'lib/config.ts';
 
 interface Props {
   children?: any;
+  noFooter?: boolean;
 }
 
-export default ({ children }: Props) => {
+export default ({ children, noFooter }: Props) => {
   return (
     <Fragment>
       <Head>
@@ -31,7 +32,7 @@ export default ({ children }: Props) => {
           {children}
         </div>
       </div>
-      <Footer />
+      {!noFooter && <Footer />}
     </Fragment>
   );
 };
