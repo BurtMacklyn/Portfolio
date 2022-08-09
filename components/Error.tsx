@@ -20,7 +20,7 @@ export default function Error({ code, message }: Props) {
       <div class={tw`my-40 md:my-32 height-sm:mt-12`}>
         <h1 class={commonText}>Error</h1>
         <h1 class={commonText}>{message}</h1>
-        <h1 class={tw`${commonText} text-primary`}>Code {code}</h1>
+        <h1 class={tw`${commonText} text-tertiary`}>Code {code}</h1>
         <div class={tw`mt-8 flex items-stretch gap-4`}>
           <a class={tw`${commonLinks} text-black bg-white !hover:bg-black`} href="/">
             Home page

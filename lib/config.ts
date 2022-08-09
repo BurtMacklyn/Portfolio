@@ -4,4 +4,4 @@ export const emailAddress = 'cooperrunyan@gmail.com';
 export const email = `mailto:${emailAddress}`;
 
 export const lastUpdated = 'August 8, 2022 8:14 PM MST';
-export const version = '5.4.0';
+export const version = '5.4.1';

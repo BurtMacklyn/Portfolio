@@ -14,6 +14,7 @@ export const config: Configuration = {
       white: '#fff',
       primary: '#B030FF',
       secondary: '#00C2FF',
+      tertiary: '#FF5530',
       g4: '#0A0A0A',
       g8: '#141414',
       g50: '#808080',
