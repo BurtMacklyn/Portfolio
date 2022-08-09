@@ -5,7 +5,7 @@ import { config, tw } from 'style';
 import { Head } from 'fresh/runtime.ts';
 
 import Footer from 'c/Footer.tsx';
-import Nav from 'c/Nav.tsx';
+import Nav from 'i/Nav.tsx';
 
 import { margin, maxWidth } from 'lib/config.ts';
 
