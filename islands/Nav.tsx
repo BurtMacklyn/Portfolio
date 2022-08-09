@@ -9,6 +9,7 @@ const navItems = [
   { name: 'overview', href: '/' },
   { name: 'contact', href: email },
   { name: 'technologies', href: '/technologies' },
+  { name: 'snake', href: '/snake' },
 ];
 
 export default function Nav() {
