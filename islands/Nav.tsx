@@ -8,7 +8,6 @@ import { useEffect, useRef, useState } from 'preact/hooks';
 const navItems = [
   { name: 'overview', href: '/' },
   { name: 'contact', href: email },
-  { name: 'technologies', href: '/technologies' },
   { name: 'snake', href: '/snake' },
 ];
 
