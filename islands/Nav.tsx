@@ -2,41 +2,29 @@
 import { Fragment, h } from 'preact';
 import { tw } from 'style';
 
-import { email, margin, maxWidth } from 'lib/config.ts';
-import { useEffect, useRef, useState } from 'preact/hooks';
+import { blurred, margin, maxWidth } from 'lib/config.ts';
+import { useState } from 'preact/hooks';
 
-const navItems = [
-  { name: 'overview', href: '/' },
-  { name: 'contact', href: email },
-  { name: 'snake', href: '/snake' },
-];
+import NavLinks, { NavType } from 'c/NavLinks.tsx';
+import { useIntersector } from 'hooks/useIntersector.ts';
 
 export default function Nav() {
-  const dummy = useRef<HTMLSpanElement>(null);
-
   const [clicked, setClicked] = useState(false);
   const [hasClicked, setHasClicked] = useState(false);
-  const [isAtTopOfDocument, setIsAtTopOfDocument] = useState(true);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => setIsAtTopOfDocument(entry.isIntersecting));
-    observer.observe(dummy.current!);
-
-    return () => observer.unobserve(dummy.current!);
-  }, []);
-
-  const linkClass = tw`text-white hover:text-secondary transition cursor-pointer`;
-  const lineClass = tw`transition-all rounded-full absolute w-full h-0.5 bg-white top-[50%] left-[50%] -translate-x-1/2`;
-
+  const [dummy, isAtTopOfDocument] = useIntersector();
   const activeNav = !isAtTopOfDocument || clicked;
+
+  const drawerAnimation = clicked ? tw`animate-sll xs:animate-fin` : tw`animate-slr xs:animate-fout`;
+
+  const lineClass = tw`transition-all rounded-full absolute h-0.5 bg-white`;
 
   return (
     <Fragment>
       <span ref={dummy} />
       <div
         style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.7)',
-          backdropFilter: 'blur(8px)',
+          ...blurred,
           borderBottomColor: !activeNav ? 'transparent' : '',
         }}
         class={tw`transition-all sticky top-0 left-0 w-full h-22 bg-black backdrop-blur-xl z-[12] border-b-1 border-transparent ${activeNav && 'border-g8'}`}>
@@ -44,74 +32,35 @@ export default function Nav() {
           <a href="/" class={tw`z-[20] text-sans text-white text-2xl leading-none font-semibold tracking-tighter`}>
             Cooper Runyan
           </a>
-          <code class={tw`text-mono select-none lg:hidden`}>
-            <span class={tw`text-g50`} aria-hidden>
-              const nav: Page[] = [
-            </span>
-            {navItems.map((item, i, { length }) => (
-              <Fragment>
-                <a href={item.href} class={linkClass}>
-                  {item.name}
-                </a>
-                {i < length - 1 && ', '}
-              </Fragment>
-            ))}
-            <span class={tw`text-g50`} aria-hidden>
-              ];
-            </span>
-          </code>
+
+          <NavLinks type={NavType.Typescript} />
 
           <button
             onClick={() => {
               setClicked(!clicked);
               setHasClicked(true);
             }}
-            class={tw`cursor-pointer mlg:hidden relative h-8 w-8 z-[12] !outline-none`}>
-            <span class={lineClass + ' ' + (!clicked ? tw`-translate-y-[250%]` : tw`rotate-45`)} />
-            <span class={lineClass + ' ' + (!clicked ? tw`translate-y-[250%]` : tw`-rotate-45`)} />
+            class={tw`transition-all cursor-pointer mlg:hidden relative h-8 w-8 z-[12] !outline-none`}>
+            <span class={tw(`${lineClass} top-[25%] left-0 origin-left w-[50%] ${clicked ? tw`rotate-45 left-[${rem(0.8)}] !top-0` : tw``}`)} />
+            <span
+              class={tw`${lineClass} top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full ${clicked ? tw`-rotate-45 w-[${rem(43)}]` : tw``}`}
+            />
+            <span class={tw`${lineClass} bottom-[25%] origin-right right-0 w-[50%] ${clicked ? tw`rotate-45 right-[${rem(0.8)}] !bottom-0` : tw``}`} />
           </button>
         </div>
       </div>
+
       <div>
         {hasClicked && (
           <div
-            style={{
-              backgroundColor: 'rgba(0, 0, 0, 0.7)',
-              backdropFilter: 'blur(8px)',
-            }}
-            class={tw`mlg:hidden ${
-              clicked ? 'animate-slide-left' : 'animate-slide-right'
-            } !xs:bg-black w-full h-[calc(100%-5.5rem)] xs:h-screen xs:top-0 border-l-2 border-g8 xs:${
-              clicked ? 'animation-fade-in' : 'animation-fade-out'
-            } max-w-xs xs:max-w-full xs:border-0 fixed top-22 right-0 z-[10] flex items-center justify-center`}>
-            <pre class={tw`select-none`}>
-              <code class={tw`text-g50`} aria-hidden>
-                {'<ul>\n'}
-              </code>
-
-              {navItems.map(item => (
-                <Fragment>
-                  <code class={tw`text-g50`} aria-hidden>
-                    {'  <li>'}
-                  </code>
-                  <span class={tw`text-primary`}>{'{'}</span>
-                  <a href={item.href} class={tw`transition text-white hover:text-secondary`}>
-                    {item.name}
-                  </a>
-                  <span class={tw`text-primary`}>{'}'}</span>
-                  <code class={tw`text-g50`} aria-hidden>
-                    {'</li>\n'}
-                  </code>
-                </Fragment>
-              ))}
-
-              <code class={tw`text-g50`} aria-hidden>
-                {'</ul>'}
-              </code>
-            </pre>
+            style={blurred}
+            class={tw`mlg:hidden ${drawerAnimation} !xs:bg-black w-full h-[calc(100%-5.5rem)] xs:h-screen xs:top-0 border-l-2 border-g8 max-w-xs xs:max-w-full xs:border-0 fixed top-22 right-0 z-[10] flex items-center justify-center`}>
+            <NavLinks type={NavType.Html} />
           </div>
         )}
       </div>
     </Fragment>
   );
 }
+
+const rem = (x: number) => x / 16 + 'rem';

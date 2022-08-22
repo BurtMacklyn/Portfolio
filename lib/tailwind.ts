@@ -50,10 +50,10 @@ export const config: Configuration = {
         '45': '11.25rem',
       },
       animation: {
-        'slide-left': 'slide-left .15s ease-in-out both',
-        'slide-right': 'slide-right .15s ease-in-out both',
-        'fade-in': 'fade .15s ease-in-out both',
-        'fade-out': 'fade .15s ease-in-out both reverse',
+        sll: 'slide-left .15s ease-in-out both',
+        slr: 'slide-right .15s ease-in-out both',
+        fin: 'fade .15s ease-in-out both',
+        fout: 'fade .15s ease-in-out both reverse',
       },
       keyframes: {
         'slide-left': {
