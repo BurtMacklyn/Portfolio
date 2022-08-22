@@ -10,7 +10,7 @@ import { useMediaQuery } from '../hooks/useMediaQuery.ts';
 const theme = config.theme?.colors as any;
 
 export default function Snake() {
-  const matches = useMediaQuery('only screen');
+  const matches = useMediaQuery('screen');
 
   const ref = useRef<HTMLIFrameElement>(null);
 

@@ -29,10 +29,10 @@ export default ({ children, noFooter, joke }: Props) => {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400&display=swap" rel="prefetch" as="style" />
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <div class={tw`relative bg-black text-white mx-auto flex flex-col items-center`}>
+      <div class={tw`relative bg-black text-white mx-auto flex flex-col items-center min-h-screen`}>
         {joke && <Banner>{joke.content}</Banner>}
         <Nav />
-        <div class={tw`w-full min-h-screen flex flex-col ${margin} max-w-[${maxWidth}]`}>{children}</div>
+        <div class={tw`w-full flex flex-col ${margin} max-w-[${maxWidth}]`}>{children}</div>
       </div>
       {!noFooter && <Footer />}
     </Fragment>
