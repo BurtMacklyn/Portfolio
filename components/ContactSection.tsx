@@ -12,7 +12,7 @@ export default function ContactSection() {
       <h2 class={tw`lowercase font-semibold text-5xl tracking-tighter leading-none`}>Contact.</h2>
       <p class={tw`font-normal leading-relaxed tracking-tight mt-6`}>Let's get in touch!</p>
       <div class={tw`flex flex-wrap gap-4 mt-6`}>
-        <a href={email} target="_blank" class={tw`${button} !text-black bg-white hover:bg-black`}>
+        <a href={email} target="_blank" class={tw`${button} !text-black !hover:text-secondary bg-white hover:bg-black`}>
           Email
         </a>
         <a href="https://www.linkedin.com/in/cooper-runyan-52a343225/" target="_blank" class={button}>

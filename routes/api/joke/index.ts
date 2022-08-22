@@ -1,11 +1,11 @@
 import { HandlerContext } from 'fresh/server.ts';
-import { jokes } from '../../../lib/jokes.ts';
+import { JokeType, useJoke } from 'hooks/useJoke.ts';
 
 export const handler = (req: Request, ctx: HandlerContext): Response => {
-  return sendJoke(jokes[Math.floor(Math.random() * jokes.length)], req);
+  return sendJoke(useJoke(JokeType.Random), req);
 };
 
-export const sendJoke = (joke: typeof jokes[number], req: Request) => {
+export const sendJoke = (joke: ReturnType<typeof useJoke>, req: Request) => {
   try {
     if (req.headers.get('accept')?.includes('brainfuck') || new URL(req.url).searchParams.get('bf') === 'true') return new Response(joke.bf);
   } catch {}

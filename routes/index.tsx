@@ -6,15 +6,18 @@ import ContactSection from 'c/ContactSection.tsx';
 import Quotes from 'c/Quotes.tsx';
 
 import Hero from 'c/Hero.tsx';
-import JokeSection from 'c/Joke.tsx';
+import Joke from 'c/Joke.tsx';
 import Layout from 'c/Layout.tsx';
 import TechnologiesSection from 'c/TechnologiesSection.tsx';
+import { JokeType, useJoke } from 'hooks/useJoke.ts';
 
 export default function Home() {
+  const joke = useJoke(JokeType.Temporal);
+
   return (
-    <Layout>
+    <Layout joke={joke}>
       <Hero />
-      <JokeSection />
+      <Joke>{joke.bf}</Joke>
       <TechnologiesSection />
       <About />
       <Quotes />

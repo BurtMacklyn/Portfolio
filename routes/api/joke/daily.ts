@@ -1,7 +1,7 @@
 import { HandlerContext } from 'fresh/server.ts';
-import { jokes } from '../../../lib/jokes.ts';
+import { JokeType, useJoke } from '../../../hooks/useJoke.ts';
 import { sendJoke } from './index.ts';
 
 export const handler = (req: Request, ctx: HandlerContext): Response => {
-  return sendJoke(jokes[new Date().getDate() % jokes.length], req);
+  return sendJoke(useJoke(JokeType.Temporal), req);
 };

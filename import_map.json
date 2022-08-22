@@ -12,6 +12,7 @@
     "~/": "./",
     "i/": "./islands/",
     "c/": "./components/",
-    "lib/": "./lib/"
+    "lib/": "./lib/",
+    "hooks/": "./hooks/"
   }
 }

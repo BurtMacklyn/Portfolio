@@ -39,7 +39,7 @@ export default function Nav() {
           backdropFilter: 'blur(8px)',
           borderBottomColor: !activeNav ? 'transparent' : '',
         }}
-        class={tw`transition-all fixed top-0 left-0 w-full h-22 bg-black backdrop-blur-xl z-[12] border-b-1 border-transparent ${activeNav && 'border-g8'}`}>
+        class={tw`transition-all sticky top-0 left-0 w-full h-22 bg-black backdrop-blur-xl z-[12] border-b-1 border-transparent ${activeNav && 'border-g8'}`}>
         <div class={tw`flex items-center justify-between ${margin} w-full h-full mx-auto max-w-[${maxWidth}]`}>
           <a href="/" class={tw`z-[20] text-sans text-white text-2xl leading-none font-semibold tracking-tighter`}>
             Cooper Runyan

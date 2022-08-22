@@ -7,14 +7,17 @@ import { Head } from 'fresh/runtime.ts';
 import Footer from 'c/Footer.tsx';
 import Nav from 'i/Nav.tsx';
 
+import type { useJoke } from 'hooks/useJoke.ts';
 import { margin, maxWidth } from 'lib/config.ts';
+import Banner from './Banner.tsx';
 
 interface Props {
   children?: any;
   noFooter?: boolean;
+  joke?: ReturnType<typeof useJoke>;
 }
 
-export default ({ children, noFooter }: Props) => {
+export default ({ children, noFooter, joke }: Props) => {
   return (
     <Fragment>
       <Head>
@@ -27,10 +30,9 @@ export default ({ children, noFooter }: Props) => {
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <div class={tw`relative bg-black text-white mx-auto flex flex-col items-center`}>
-        <div class={tw`w-full min-h-screen flex flex-col ${margin} max-w-[${maxWidth}] pt-22`}>
-          <Nav />
-          {children}
-        </div>
+        {joke && <Banner>{joke.content}</Banner>}
+        <Nav />
+        <div class={tw`w-full min-h-screen flex flex-col ${margin} max-w-[${maxWidth}]`}>{children}</div>
       </div>
       {!noFooter && <Footer />}
     </Fragment>
