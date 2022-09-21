@@ -55,7 +55,11 @@ const TypescriptLinks = () => (
         <a href={item.href} class={tw`text-white hover:text-secondary transition cursor-pointer`}>
           {item.name}
         </a>
-        {i < length - 1 && ', '}
+        {i < length - 1 && (
+          <span class={tw`text-g50`} aria-hidden>
+            {"', '"}
+          </span>
+        )}
       </Fragment>
     ))}
     <span class={tw`text-g50`} aria-hidden>
