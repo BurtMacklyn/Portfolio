@@ -57,7 +57,7 @@ const TypescriptLinks = () => (
         </a>
         {i < length - 1 && (
           <span class={tw`text-g50`} aria-hidden>
-            {"', '"}
+            {', '}
           </span>
         )}
       </Fragment>
