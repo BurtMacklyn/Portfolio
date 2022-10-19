@@ -11,6 +11,7 @@ import * as $5 from "./routes/api/ping.ts";
 import * as $6 from "./routes/index.tsx";
 import * as $7 from "./routes/snake.tsx";
 import * as $$0 from "./islands/Nav.tsx";
+import * as $$1 from "./islands/TechnologiesSection.tsx";
 
 const manifest = {
   routes: {
@@ -25,6 +26,7 @@ const manifest = {
   },
   islands: {
     "./islands/Nav.tsx": $$0,
+    "./islands/TechnologiesSection.tsx": $$1,
   },
   baseUrl: import.meta.url,
 };
