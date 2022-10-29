@@ -10,6 +10,7 @@ import * as $4 from "./routes/api/joke/index.ts";
 import * as $5 from "./routes/api/ping.ts";
 import * as $6 from "./routes/index.tsx";
 import * as $7 from "./routes/snake.tsx";
+import * as $8 from "./routes/snake-ai.tsx";
 import * as $$0 from "./islands/Nav.tsx";
 import * as $$1 from "./islands/TechnologiesSection.tsx";
 
@@ -23,6 +24,7 @@ const manifest = {
     "./routes/api/ping.ts": $5,
     "./routes/index.tsx": $6,
     "./routes/snake.tsx": $7,
+    "./routes/snake-ai.tsx": $8,
   },
   islands: {
     "./islands/Nav.tsx": $$0,
