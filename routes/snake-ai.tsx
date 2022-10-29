@@ -19,7 +19,7 @@ export default function Snake() {
           class={tw`h-[calc(100vh-11rem)] border-1 border-g8 rounded`}
           src={`https://aisnake.netlify.app/?primary=${encodeURIComponent(theme.secondary)}&secondary=${encodeURIComponent(
             theme.primary,
-          )}&bg=${encodeURIComponent(theme.black)}&fg=${encodeURIComponent(theme.white)}&tickRate=40`}
+          )}&bg=${encodeURIComponent(theme.black)}&fg=${encodeURIComponent(theme.white)}&tickRate=30`}
         />
       )}
       {matches && (
