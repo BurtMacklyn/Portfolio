@@ -5,8 +5,8 @@ export const margin = 'xl:px-24 lg:px-16 md:px-12 sm:px-8 xs:px-4 mxl:px-32';
 export const emailAddress = 'cooperrunyan@gmail.com';
 export const email = `mailto:${emailAddress}`;
 
-export const lastUpdated = 'October 30, 2022 12:35 PM MST';
-export const version = '5.10.1';
+export const lastUpdated = 'November 3, 2022 11:52 AM MST';
+export const version = '5.10.2';
 
 export const navItems = [
   { name: 'overview', href: '/' },
