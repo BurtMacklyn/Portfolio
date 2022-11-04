@@ -20,7 +20,7 @@ export default function Footer() {
         </p>
         <p class={tw`text-sm`}>
           <a
-            class={tw`text-secondary`}
+            class={tw`text-primary`}
             href="https://www.github.com/cooperrunyan/cooperrunyan"
             target="_blank"
             rel="alternate"
@@ -35,7 +35,7 @@ export default function Footer() {
 }
 
 const Name = () => (
-  <a class={tw`text-sm text-secondary`} href="https://www.github.com/cooperrunyan">
+  <a class={tw`text-sm text-primary`} href="https://www.github.com/cooperrunyan">
     Cooper Runyan
   </a>
 );

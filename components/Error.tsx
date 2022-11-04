@@ -13,7 +13,7 @@ export default function Error({ code, message }: Props) {
   const joke = jokes[Math.floor(Math.random() * jokes.length)];
 
   const commonText = tw`font-bold text-8xl sm:text-7xl xxs:text-6xl tracking-tighter leading-none`;
-  const commonLinks = tw`transition-all select-none py-3 px-4.5 rounded font-semibold tracking-tight leading-none border-1 border-current hover:text-secondary`;
+  const commonLinks = tw`transition-all select-none py-3 px-4.5 rounded font-semibold tracking-tight leading-none border-1 border-current hover:text-primary`;
 
   return (
     <div>

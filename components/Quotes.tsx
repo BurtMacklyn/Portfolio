@@ -27,7 +27,7 @@ const quotes = [
 
 export default function Quotes() {
   const quoteClass = tw`font-normal leading-relaxed tracking-tight mt-6 w-full max-w-[36rem] text-g80`;
-  const authorClass = tw`text-white font-semibold transition hover:text-secondary`;
+  const authorClass = tw`text-white font-semibold transition hover:text-primary`;
   const descriptionClass = tw`text-g60`;
 
   return (

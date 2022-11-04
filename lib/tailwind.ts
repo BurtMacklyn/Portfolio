@@ -1,5 +1,6 @@
 import { IS_BROWSER } from 'fresh/runtime.ts';
 import { Configuration, setup } from 'tailwind';
+import { colors } from './config.ts';
 import { styled } from './styled.ts';
 
 export * from 'tailwind';
@@ -9,19 +10,7 @@ export const config: Configuration = {
   darkMode: 'media',
   mode: 'silent',
   theme: {
-    colors: {
-      black: '#000',
-      white: '#fff',
-      primary: '#B030FF',
-      secondary: '#00C2FF',
-      tertiary: '#FF5530',
-      g4: '#0A0A0A',
-      g6: '#0F0F0F',
-      g8: '#141414',
-      g50: '#808080',
-      g60: '#999999',
-      g80: '#cccccc',
-    },
+    colors,
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
       mono: ['Roboto Mono', 'monospace'],

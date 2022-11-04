@@ -29,8 +29,8 @@ export default function Snake() {
         <iframe
           ref={ref}
           class={tw`h-[calc(100vh-11rem)] border-1 border-g8 rounded`}
-          src={`https://cooperrunyan-snake.netlify.app/?primary=${encodeURIComponent(theme.secondary)}&secondary=${encodeURIComponent(
-            theme.primary,
+          src={`https://cooperrunyan-snake.netlify.app/?secondary=${encodeURIComponent(theme.primary)}&primary=${encodeURIComponent(
+            theme.secondary,
           )}&bg=${encodeURIComponent(theme.black)}&fg=${encodeURIComponent(theme.white)}`}
         />
       )}

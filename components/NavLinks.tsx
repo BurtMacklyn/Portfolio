@@ -28,11 +28,11 @@ const HTMLLinks = () => (
         <code class={tw`text-g50`} aria-hidden>
           {'  <li>'}
         </code>
-        <span class={tw`text-primary`}>{'{'}</span>
-        <a href={item.href} class={tw`transition text-white hover:text-secondary`}>
+        <span class={tw`text-secondary`}>{'{'}</span>
+        <a href={item.href} class={tw`transition text-white hover:text-primary`}>
           {item.name}
         </a>
-        <span class={tw`text-primary`}>{'}'}</span>
+        <span class={tw`text-secondary`}>{'}'}</span>
         <code class={tw`text-g50`} aria-hidden>
           {'</li>\n'}
         </code>
@@ -52,7 +52,7 @@ const TypescriptLinks = () => (
     </span>
     {navItems.map((item, i, { length }) => (
       <Fragment>
-        <a href={item.href} class={tw`text-white hover:text-secondary transition cursor-pointer`}>
+        <a href={item.href} class={tw`text-white hover:text-primary transition cursor-pointer`}>
           {item.name}
         </a>
         {i < length - 1 && (

@@ -5,8 +5,8 @@ export const margin = 'xl:px-24 lg:px-16 md:px-12 sm:px-8 xs:px-4 mxl:px-32';
 export const emailAddress = 'cooperrunyan@gmail.com';
 export const email = `mailto:${emailAddress}`;
 
-export const lastUpdated = 'November 3, 2022 11:52 AM MST';
-export const version = '5.10.2';
+export const lastUpdated = 'November 4, 2022 10:526AM MST';
+export const version = '5.10.3';
 
 export const navItems = [
   { name: 'overview', href: '/' },
@@ -17,4 +17,18 @@ export const navItems = [
 export const blurred: h.JSX.CSSProperties = {
   backgroundColor: 'rgba(0, 0, 0, 0.7)',
   backdropFilter: 'blur(8px)',
+};
+
+export const colors = {
+  black: '#000',
+  white: '#fff',
+  primary: '#00C2FF',
+  secondary: '#B030FF',
+  tertiary: '#FF5530',
+  g4: '#0A0A0A',
+  g6: '#0F0F0F',
+  g8: '#141414',
+  g50: '#808080',
+  g60: '#999999',
+  g80: '#cccccc',
 };
