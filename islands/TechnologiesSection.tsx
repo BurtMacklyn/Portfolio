@@ -17,7 +17,7 @@ export default function TechnologiesSection() {
       <h2 class={tw`lowercase font-semibold text-5xl tracking-tighter leading-none`}>Technologies.</h2>
 
       <div
-        class={tw`technology-cards flex flex-wrap flex-row mt-16 gap-2`}
+        class={tw`technology-cards flex flex-wrap flex-row mt-6 gap-2`}
         onMouseMove={e => {
           setTarget({ x: e.clientX, y: e.clientY });
           setHover(true);
