@@ -5,6 +5,7 @@ import { technologies } from '../lib/technologies.ts';
 
 import Card from 'c/Card.tsx';
 import { useState } from 'preact/hooks';
+import { SectionTitle } from '../components/Typography.tsx';
 
 export default function TechnologiesSection() {
   const cardClass = tw`flex-grow-1 flex-shrink-1 basis-96`;
@@ -14,10 +15,10 @@ export default function TechnologiesSection() {
 
   return (
     <section class={tw`my-16`}>
-      <h2 class={tw`lowercase font-semibold text-5xl tracking-tighter leading-none`}>Technologies.</h2>
+      <SectionTitle>Technologies</SectionTitle>
 
       <div
-        class={tw`technology-cards flex flex-wrap flex-row mt-6 gap-2`}
+        class={tw`technology-cards flex flex-wrap flex-row gap-2`}
         onMouseMove={e => {
           setTarget({ x: e.clientX, y: e.clientY });
           setHover(true);

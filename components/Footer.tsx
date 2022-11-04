@@ -3,39 +3,37 @@ import { h } from 'preact';
 import { tw } from 'style';
 
 import { lastUpdated, margin, maxWidth, version } from 'lib/config.ts';
+import { Link, Typography } from './Typography.tsx';
 
 export default function Footer() {
   return (
-    <footer class={tw`bg-g4 text-g80`}>
+    <footer class={tw`bg-g4`}>
       <div class={tw`${margin} mx-auto py-6 max-w-[${maxWidth}] flex flex-col gap-2`}>
-        <p class={tw`text-sm`}>Last updated: {lastUpdated}</p>
-        <p class={tw`text-sm`}>
+        <Typography variant="p" class={tw`text-sm text-g80!`}>
+          Last updated: {lastUpdated}
+        </Typography>
+        <Typography variant="p" class={tw`text-sm text-g80!`}>
           <Name /> Portfolio v{version}
-        </p>
-        <p class={tw`text-sm`}>
+        </Typography>
+        <Typography variant="p" class={tw`text-sm text-g80!`}>
           Copyright © 2022 - All rights reserved by <Name />.
-        </p>
-        <p class={tw`text-sm`}>
+        </Typography>
+        <Typography variant="p" class={tw`text-sm text-g80!`}>
           Site created and designed by <Name /> using Deno and Fresh (React)
-        </p>
-        <p class={tw`text-sm`}>
-          <a
-            class={tw`text-primary`}
-            href="https://www.github.com/cooperrunyan/cooperrunyan"
-            target="_blank"
-            rel="alternate"
-            aria-label="View full source code">
+        </Typography>
+        <Typography variant="p" class={tw`text-sm text-g80!`}>
+          <Link class={tw`text-primary! font-semibold`} href="https://www.github.com/cooperrunyan/cooperrunyan" newTab>
             View source code
-          </a>
+          </Link>
           .
-        </p>
+        </Typography>
       </div>
     </footer>
   );
 }
 
 const Name = () => (
-  <a class={tw`text-sm text-primary`} href="https://www.github.com/cooperrunyan">
+  <Link newTab class={tw`text-primary font-semibold`} href="https://www.github.com/cooperrunyan">
     Cooper Runyan
-  </a>
+  </Link>
 );

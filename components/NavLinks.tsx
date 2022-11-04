@@ -3,6 +3,7 @@ import { Fragment, h } from 'preact';
 import { tw } from 'style';
 
 import { navItems } from 'lib/config.ts';
+import { Link, Typography } from './Typography.tsx';
 
 export enum NavType {
   Html,
@@ -18,52 +19,40 @@ export default ({ type }: { type: NavType }) => {
 };
 
 const HTMLLinks = () => (
-  <pre class={tw`select-none`}>
-    <code class={tw`text-g50`} aria-hidden>
+  <Typography variant="codeBlock">
+    <span class={tw`select-none`} aria-hidden>
       {'<ul>\n'}
-    </code>
+    </span>
 
     {navItems.map(item => (
       <Fragment>
-        <code class={tw`text-g50`} aria-hidden>
+        <span class={tw`select-none`} aria-hidden>
           {'  <li>'}
-        </code>
-        <span class={tw`text-secondary`}>{'{'}</span>
-        <a href={item.href} class={tw`transition text-white hover:text-primary`}>
-          {item.name}
-        </a>
-        <span class={tw`text-secondary`}>{'}'}</span>
-        <code class={tw`text-g50`} aria-hidden>
+        </span>
+        <span class={tw`select-none text-secondary`}>{'{'}</span>
+        <Link href={item.href}>{item.name}</Link>
+        <span class={tw`select-none text-secondary`}>{'}'}</span>
+        <span class={tw`select-none`} aria-hidden>
           {'</li>\n'}
-        </code>
+        </span>
       </Fragment>
     ))}
 
-    <code class={tw`text-g50`} aria-hidden>
+    <span class={tw`select-none`} aria-hidden>
       {'</ul>'}
-    </code>
-  </pre>
+    </span>
+  </Typography>
 );
 
 const TypescriptLinks = () => (
-  <code class={tw`text-mono select-none lg:hidden`}>
-    <span class={tw`text-g50`} aria-hidden>
-      const nav: Page[] = [
-    </span>
+  <Typography variant="code" class={tw`select-none lg:hidden`}>
+    <span aria-hidden>const nav: Page[] = [</span>
     {navItems.map((item, i, { length }) => (
       <Fragment>
-        <a href={item.href} class={tw`text-white hover:text-primary transition cursor-pointer`}>
-          {item.name}
-        </a>
-        {i < length - 1 && (
-          <span class={tw`text-g50`} aria-hidden>
-            {', '}
-          </span>
-        )}
+        <Link href={item.href}>{item.name}</Link>
+        {i < length - 1 && <span aria-hidden>{', '}</span>}
       </Fragment>
     ))}
-    <span class={tw`text-g50`} aria-hidden>
-      ];
-    </span>
-  </code>
+    <span aria-hidden>];</span>
+  </Typography>
 );

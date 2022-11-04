@@ -7,6 +7,7 @@ import { useState } from 'preact/hooks';
 
 import NavLinks, { NavType } from 'c/NavLinks.tsx';
 import { useIntersector } from 'hooks/useIntersector.ts';
+import { Link, Typography } from '../components/Typography.tsx';
 
 export default function Nav() {
   const [clicked, setClicked] = useState(false);
@@ -27,11 +28,11 @@ export default function Nav() {
           ...blurred,
           borderBottomColor: !activeNav ? 'transparent' : '',
         }}
-        class={tw`transition-all sticky top-0 left-0 w-full h-22 bg-black backdrop-blur-xl z-[12] border-b-1 border-transparent ${activeNav && 'border-g8'}`}>
+        class={tw`transition-all sticky top-0 left-0 w-full h-22 bg-black backdrop-blur-xl z-[12] border-b-1 border-transparent ${activeNav && `border-g8`}`}>
         <div class={tw`flex items-center justify-between ${margin} w-full h-full mx-auto max-w-[${maxWidth}]`}>
-          <a href="/" class={tw`z-[20] text-sans text-white text-2xl leading-none font-semibold tracking-tighter`}>
-            Cooper Runyan
-          </a>
+          <Link href="/" class={tw`z-[20] text-white!`}>
+            <Typography variant="h3">Cooper Runyan</Typography>
+          </Link>
 
           <NavLinks type={NavType.Typescript} />
 

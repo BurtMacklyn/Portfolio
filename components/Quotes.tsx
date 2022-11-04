@@ -1,6 +1,7 @@
 /** @jsx h */
 import { h } from 'preact';
 import { tw } from 'style';
+import { Link, SectionTitle, Typography } from './Typography.tsx';
 
 const quotes = [
   {
@@ -26,21 +27,17 @@ const quotes = [
 ];
 
 export default function Quotes() {
-  const quoteClass = tw`font-normal leading-relaxed tracking-tight mt-6 w-full max-w-[36rem] text-g80`;
-  const authorClass = tw`text-white font-semibold transition hover:text-primary`;
-  const descriptionClass = tw`text-g60`;
-
   return (
     <section class={tw`my-16`}>
-      <h2 class={tw`lowercase font-semibold text-5xl tracking-tighter leading-none`}>Quotes.</h2>
+      <SectionTitle>Quotes</SectionTitle>
       {quotes.map(quote => (
-        <p key={quote.content} class={quoteClass}>
+        <Typography variant="p" key={quote.content} class={tw`mt-6 max-w-[36rem]!`}>
           “{quote.content}” -{' '}
-          <a target="_blank" href={`https://www.google.com/search?q=${encodeURIComponent(quote.author)}`} class={authorClass}>
+          <Link newTab href={`https://www.google.com/search?q=${encodeURIComponent(quote.author)}`} class={tw`font-semibold`}>
             {quote.author}
-          </a>
-          , <span class={descriptionClass}>{quote.description}</span>
-        </p>
+          </Link>
+          , <span class={tw`text-g60`}>{quote.description}</span>
+        </Typography>
       ))}
     </section>
   );

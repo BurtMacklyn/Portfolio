@@ -3,14 +3,15 @@ import { h } from 'preact';
 import { tw } from 'style';
 
 import { email } from 'lib/config.ts';
+import { SectionTitle } from './Typography.tsx';
 
 export default function ContactSection() {
   const button = tw`transition-all select-none border-1 border-current text-g60 font-semibold leading-none tracking-tight py-3 px-4.5 rounded hover:text-primary`;
 
   return (
     <section class={tw`my-16`}>
-      <h2 class={tw`lowercase font-semibold text-5xl tracking-tighter leading-none`}>Contact.</h2>
-      <p class={tw`font-normal leading-relaxed tracking-tight mt-6`}>Let's get in touch!</p>
+      <SectionTitle>Contact</SectionTitle>
+      <p class={tw`font-normal leading-relaxed tracking-tight`}>Let's get in touch!</p>
       <div class={tw`flex flex-wrap gap-4 mt-6`}>
         <a href={email} target="_blank" class={tw`${button} !text-black !hover:text-primary bg-white hover:bg-black`}>
           Email

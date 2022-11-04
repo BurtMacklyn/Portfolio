@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'preact/hooks';
 import { tw } from 'style';
 import { colors } from '../lib/config.ts';
 import { opacity } from '../lib/opacity.ts';
+import { Typography } from './Typography.tsx';
 
 interface Props {
   title: string;
@@ -47,8 +48,10 @@ export default function Card({ title, description, href, className, target, hove
             class={tw`transition duration-200	rounded group-hover:opacity-[1] top-0 left-0 z-[2] absolute opacity-0 w-full h-full`}
           />
 
-          <p class={tw`tracking-tighter font-semibold text-2xl leading-none`}>{title}</p>
-          <p class={tw`tracking-tighter leading`}>{description}</p>
+          <Typography variant="h3">{title}</Typography>
+          <Typography variant="p" class={tw`tracking-tighter leading`}>
+            {description}
+          </Typography>
         </div>
       </div>
     </a>
