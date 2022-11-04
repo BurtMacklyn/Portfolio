@@ -22,9 +22,9 @@ export const blurred: h.JSX.CSSProperties = {
 export const colors = {
   black: '#000',
   white: '#fff',
-  primary: '#00C2FF',
-  secondary: '#B030FF',
-  tertiary: '#FF5530',
+  primary: '#009dff',
+  secondary: '#bd30ff',
+  tertiary: '#ff442c',
   g4: '#0A0A0A',
   g6: '#0F0F0F',
   g8: '#141414',
