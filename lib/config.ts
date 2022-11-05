@@ -20,8 +20,8 @@ export const blurred: h.JSX.CSSProperties = {
 };
 
 export const colors = {
-  black: '#000',
-  white: '#fff',
+  black: '#000000',
+  white: '#ffffff',
   primary: '#009dff',
   error: '#ff442c',
   g4: '#0A0A0A',

@@ -1,1 +1,1 @@
-export const styled = (x: TemplateStringsArray, ...sub: any[]) => String.raw(x, sub);
+export const styled = (x: TemplateStringsArray, ...sub: any[]) => String.raw(x, ...sub);

@@ -1,6 +1,7 @@
 import { IS_BROWSER } from 'fresh/runtime.ts';
 import { Configuration, setup } from 'tailwind';
 import { colors } from './config.ts';
+import { opacity } from './opacity.ts';
 import { styled } from './styled.ts';
 
 export * from 'tailwind';
@@ -65,7 +66,11 @@ export const config: Configuration = {
 export const overrides = styled`
   html {
     color-scheme: dark;
-    background-color: ${(config?.theme?.colors as any)?.black};
+    background-color: ${colors.black};
+  }
+
+  ::selection {
+    background-color: ${colors.primary + opacity(0.25)};
   }
 `;
 
