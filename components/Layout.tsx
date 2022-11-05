@@ -28,6 +28,7 @@ export default ({ children, noFooter, joke }: Props) => {
         <meta name="description" content="Personal website for Cooper Runyan" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400&display=swap" rel="prefetch" as="style" />
         <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/style.css" />
       </Head>
       <div class={tw`relative bg-black text-white mx-auto flex flex-col items-center min-h-screen`}>
         {joke && <Banner>{joke.content}</Banner>}

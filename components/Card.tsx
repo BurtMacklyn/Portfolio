@@ -34,7 +34,7 @@ export default function Card({ title, description, href, className, target, hove
 
   return (
     <a ref={card} href={href || ''} target="_blank" class={className} {...props}>
-      <div class={tw`relative w-full h-full card group transition-all rounded select-none`}>
+      <div class={tw`relative w-full h-full card group transition-all rounded`}>
         <div
           style={{
             background: `radial-gradient(${hover ? '200px' : '0px'} circle at ${x}px ${y}px, ${colors.primary + opacity(0.6)}, ${colors.g8})`,

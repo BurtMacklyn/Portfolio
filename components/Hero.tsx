@@ -8,7 +8,7 @@ import { Button } from './Button.tsx';
 
 export default function Hero() {
   return (
-    <div class={tw`my-45 md:my-32 height-sm:mt-12 mb-32`}>
+    <div class={tw`mb-48 mt-32 md:my-32 height-sm:mt-12 mb-32`}>
       <Typography variant="h1" class={tw`text-primary`}>
         Cooper Runyan
       </Typography>
