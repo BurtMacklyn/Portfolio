@@ -13,7 +13,6 @@ interface Props {
 
 export default function CoolCards(props: Props) {
   const cardClass = tw`flex-grow-1 flex-shrink-1`;
-  // const cardClass = tw`flex-grow-1 flex-shrink-1 basis-96`;
 
   const [hover, setHover] = useState(false);
   const [target, setTarget] = useState({ x: 0, y: 0 });
@@ -27,7 +26,7 @@ export default function CoolCards(props: Props) {
       }}
       onMouseOut={() => setHover(false)}>
       {props.cards.map(({ Component, props }: any) => (
-        <Component {...props} className={cardClass} target={target} hover={hover} />
+        <Component {...props} className={cardClass} target={target} hover={hover} style={{ flexBasis: '24rem' }} />
       ))}
     </div>
   );
