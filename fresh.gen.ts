@@ -11,10 +11,13 @@ import * as $5 from "./routes/api/ping.ts";
 import * as $6 from "./routes/index.tsx";
 import * as $7 from "./routes/snake-game.tsx";
 import * as $8 from "./routes/snake.tsx";
-import * as $$0 from "./islands/ContactSection.tsx";
-import * as $$1 from "./islands/CoolCards.tsx";
-import * as $$2 from "./islands/Nav.tsx";
-import * as $$3 from "./islands/TechnologiesSection.tsx";
+import * as $$0 from "./islands/Button.tsx";
+import * as $$1 from "./islands/Card.tsx";
+import * as $$2 from "./islands/CardSection.tsx";
+import * as $$3 from "./islands/ContactSection.tsx";
+import * as $$4 from "./islands/Hero.tsx";
+import * as $$5 from "./islands/Nav.tsx";
+import * as $$6 from "./islands/TechnologiesSection.tsx";
 
 const manifest = {
   routes: {
@@ -29,10 +32,13 @@ const manifest = {
     "./routes/snake.tsx": $8,
   },
   islands: {
-    "./islands/ContactSection.tsx": $$0,
-    "./islands/CoolCards.tsx": $$1,
-    "./islands/Nav.tsx": $$2,
-    "./islands/TechnologiesSection.tsx": $$3,
+    "./islands/Button.tsx": $$0,
+    "./islands/Card.tsx": $$1,
+    "./islands/CardSection.tsx": $$2,
+    "./islands/ContactSection.tsx": $$3,
+    "./islands/Hero.tsx": $$4,
+    "./islands/Nav.tsx": $$5,
+    "./islands/TechnologiesSection.tsx": $$6,
   },
   baseUrl: import.meta.url,
 };

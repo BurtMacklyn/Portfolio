@@ -2,16 +2,16 @@
 import { h } from 'preact';
 import { tw } from 'style';
 
-import type { Props as CoolCardProps } from '../components/CoolCard.tsx';
+import type { Props as CardProps } from 'i/Card.tsx';
 
+import Card from 'i/Card.tsx';
 import { useState } from 'preact/hooks';
-import Card from '../components/CoolCard.tsx';
 
 interface Props {
-  cards: Partial<CoolCardProps>[];
+  cards: Partial<CardProps>[];
 }
 
-export default function CoolCards(props: Props) {
+export default function CardSection(props: Props) {
   const cardClass = tw`flex-grow-1 flex-shrink-1`;
 
   const [hover, setHover] = useState(false);

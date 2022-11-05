@@ -1,11 +1,10 @@
 /** @jsx h */
-import { HtmlAttributes } from 'https://esm.sh/v87/csstype@3.1.0/index.d.ts';
 import { h } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { tw } from 'style';
 import { colors } from '../lib/config.ts';
 import { opacity } from '../lib/opacity.ts';
-import { Typography } from './Typography.tsx';
+import { Typography } from 'c/Typography.tsx';
 
 export interface Props {
   title: string;

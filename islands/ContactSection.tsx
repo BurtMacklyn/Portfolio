@@ -4,7 +4,7 @@ import { tw } from 'style';
 
 import { SectionTitle } from 'c/Typography.tsx';
 import { email } from 'lib/config.ts';
-import CoolCards from '../islands/CoolCards.tsx';
+import CardSection from '../islands/CardSection.tsx';
 
 const contacts = [
   { place: 'Email', url: email, description: 'A great method of proffessional communication. Click here to get a conversation started.' },
@@ -25,7 +25,7 @@ export default function ContactSection() {
   return (
     <section class={tw`my-16`}>
       <SectionTitle>Contact</SectionTitle>
-      <CoolCards
+      <CardSection
         cards={contacts.map(contact => ({
           href: contact.url,
           title: contact.place,
