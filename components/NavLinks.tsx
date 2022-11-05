@@ -29,9 +29,9 @@ const HTMLLinks = () => (
         <span class={tw`select-none`} aria-hidden>
           {'  <li>'}
         </span>
-        <span class={tw`select-none text-secondary`}>{'{'}</span>
+        <span class={tw`select-none`}>{'{'}</span>
         <Link href={item.href}>{item.name}</Link>
-        <span class={tw`select-none text-secondary`}>{'}'}</span>
+        <span class={tw`select-none`}>{'}'}</span>
         <span class={tw`select-none`} aria-hidden>
           {'</li>\n'}
         </span>

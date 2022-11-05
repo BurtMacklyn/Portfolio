@@ -2,8 +2,9 @@
 import { h } from 'preact';
 import { tw } from 'style';
 
+import { Typography } from 'c/Typography.tsx';
+import Button from 'i/Button.tsx';
 import { jokes } from 'lib/jokes.ts';
-import { Typography } from './Typography.tsx';
 
 interface Props {
   code: string;
@@ -20,13 +21,15 @@ export default function Error({ code, message }: Props) {
       <div class={tw`my-40 md:my-32 height-sm:mt-12`}>
         <Typography variant="h1">Error</Typography>
         <Typography variant="h1">{message}</Typography>
-        <Typography variant="h1" class={tw`text-tertiary`}>
+        <Typography variant="h1" class={tw`text-error`}>
           Code {code}
         </Typography>
         <div class={tw`mt-8 flex items-stretch gap-4`}>
-          <a class={tw`${commonLinks} text-black bg-white !hover:bg-black`} href="/">
-            Home page
-          </a>
+          <Button href="/">
+            <p class={tw`flex gap-[.5ch]`}>
+              <p>Home</p> <p>page</p>
+            </p>
+          </Button>
         </div>
       </div>
       <div>
