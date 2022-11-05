@@ -1,4 +1,5 @@
 /** @jsx h */
+import { HtmlAttributes } from 'https://esm.sh/v87/csstype@3.1.0/index.d.ts';
 import { h } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { tw } from 'style';
@@ -19,7 +20,7 @@ interface Props {
   };
 }
 
-export default function Card({ title, description, href, className, target, hover }: Props) {
+export default function Card({ title, description, href, className, target, hover, ...props }: Props & any) {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
@@ -32,7 +33,7 @@ export default function Card({ title, description, href, className, target, hove
   }, [target]);
 
   return (
-    <a ref={card} href={href || ''} target="_blank" class={className}>
+    <a ref={card} href={href || ''} target="_blank" class={className} {...props}>
       <div class={tw`relative w-full h-full card group transition-all rounded select-none`}>
         <div
           style={{

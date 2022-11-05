@@ -4,6 +4,7 @@ import { tw } from 'style';
 
 import { email } from 'lib/config.ts';
 import { Typography } from './Typography.tsx';
+import { Button } from './Button.tsx';
 
 export default function Hero() {
   return (
@@ -16,11 +17,7 @@ export default function Hero() {
         developer<span class={tw`text-primary`}>{'.'}</span>
       </Typography>
       <div class={tw`mt-8 flex items-stretch gap-4`}>
-        <a
-          class={tw`transition-all select-none py-3 px-4.5 rounded font-semibold tracking-tight leading-none border-1 border-current hover:text-primary text-black bg-white !hover:bg-black`}
-          href={email}>
-          Contact
-        </a>
+        <Button href={email}>Contact</Button>
       </div>
     </div>
   );
