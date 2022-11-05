@@ -7,7 +7,7 @@ import { colors } from '../lib/config.ts';
 import { opacity } from '../lib/opacity.ts';
 import { Typography } from './Typography.tsx';
 
-interface Props {
+export interface Props {
   title: string;
   description: string;
   clickable?: boolean;

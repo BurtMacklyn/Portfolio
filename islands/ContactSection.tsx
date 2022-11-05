@@ -2,7 +2,6 @@
 import { h } from 'preact';
 import { tw } from 'style';
 
-import Card from 'c/Card.tsx';
 import { SectionTitle } from 'c/Typography.tsx';
 import { email } from 'lib/config.ts';
 import CoolCards from '../islands/CoolCards.tsx';
@@ -28,8 +27,9 @@ export default function ContactSection() {
       <SectionTitle>Contact</SectionTitle>
       <CoolCards
         cards={contacts.map(contact => ({
-          Component: Card,
-          props: { href: contact.url, title: contact.place, description: contact.description },
+          href: contact.url,
+          title: contact.place,
+          description: contact.description,
         }))}
       />
     </section>

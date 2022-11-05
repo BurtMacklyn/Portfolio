@@ -2,13 +2,13 @@
 import { h } from 'preact';
 import { tw } from 'style';
 
+import type { Props as CoolCardProps } from '../components/CoolCard.tsx';
+
 import { useState } from 'preact/hooks';
+import Card from '../components/CoolCard.tsx';
 
 interface Props {
-  cards: {
-    Component: any;
-    props: { [key: string]: any };
-  }[];
+  cards: Partial<CoolCardProps>[];
 }
 
 export default function CoolCards(props: Props) {
@@ -25,8 +25,8 @@ export default function CoolCards(props: Props) {
         setHover(true);
       }}
       onMouseOut={() => setHover(false)}>
-      {props.cards.map(({ Component, props }: any) => (
-        <Component {...props} className={cardClass} target={target} hover={hover} style={{ flexBasis: '24rem' }} />
+      {props.cards.map(props => (
+        <Card {...props} className={cardClass} target={target} hover={hover} style={{ flexBasis: '24rem' }} />
       ))}
     </div>
   );
