@@ -17,9 +17,7 @@ export default function Hero() {
         developer<span class={tw`text-primary`}>{'.'}</span>
       </Typography>
       <div class={tw`mt-8 flex items-stretch gap-4`}>
-        <Button href={email}>
-          <p>Contact</p>
-        </Button>
+        <Button href={email}>Contact</Button>
       </div>
     </div>
   );

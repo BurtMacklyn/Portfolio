@@ -5,6 +5,8 @@ import { tw } from 'style';
 import { colors } from '../lib/config.ts';
 import { opacity } from '../lib/opacity.ts';
 
+import { Typography } from 'c/Typography.tsx';
+
 interface Props {
   children: any;
   href?: string;
@@ -44,7 +46,7 @@ export default function Button(props: Props) {
             class={tw`transition duration-200	rounded group-hover:opacity-[1] top-0 left-0 z-[2] absolute opacity-0 w-full h-full`}
           />
 
-          {props.children}
+          <Typography variant="p">{props.children}</Typography>
         </div>
       </div>
     </AorButton>
