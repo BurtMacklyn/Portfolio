@@ -11,7 +11,13 @@
 
 ## Most used Languages
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=cooperrunyan&show_icons=true&theme=github_dark&count_private=true&layout=compact&hide_border=true)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=cooperrunyan&show_icons=true&count_private=true&layout=compact&theme=github_dark&#gh-dark-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-dark-mode-only)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=cooperrunyan&show_icons=true&count_private=true&layout=compact&theme=github_default&#gh-light-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-light-mode-only)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api?username=cooperrunyan&show_icons=true&count_private=true&theme=github_dark&#gh-dark-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-dark-mode-only)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api?username=cooperrunyan&show_icons=true&count_private=true&theme=github_default&#gh-light-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-light-mode-only)
 
 ## Movie recomendations
 
