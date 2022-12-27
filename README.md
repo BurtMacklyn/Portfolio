@@ -1,5 +1,8 @@
 # Hello world, I'm Cooper
 
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+
 [![Top Langs](https://github-readme-stats.vercel.app/api?username=cooperrunyan&show_icons=true&border_color=555555&count_private=true&theme=github_dark&#gh-dark-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-dark-mode-only)
 
 [![Top Langs](https://github-readme-stats.vercel.app/api?username=cooperrunyan&show_icons=true&count_private=true&border_color=555555&theme=github_default&#gh-light-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-light-mode-only)
