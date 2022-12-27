@@ -19,6 +19,12 @@
 - https://www.npmjs.com/~cooperrunyan
 - https://www.github.com/cooperrunyan
 
+Get to know me from your terminal
+```bash
+npx cooperrunyan
+```
+
+
 ## Movie recomendations
 
 - Wargames
