@@ -1,6 +1,16 @@
 # Hello world, I'm Cooper
 
 <!--START_SECTION:waka-->
+
+```text
+From: 27 December 2022 - To: 28 December 2022
+
+Total Time: 52 mins
+
+JavaScript   32 mins         ███████████████▒░░░░░░░░░   61.76 %
+Other        12 mins         █████▓░░░░░░░░░░░░░░░░░░░   22.77 %
+```
+
 <!--END_SECTION:waka-->
 
 [![Top Langs](https://github-readme-stats.vercel.app/api?username=cooperrunyan&show_icons=true&border_color=555555&count_private=true&theme=github_dark&#gh-dark-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-dark-mode-only)
