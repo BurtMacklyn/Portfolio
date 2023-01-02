@@ -3,12 +3,12 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 27 December 2022 - To: 30 December 2022
+From: 27 December 2022 - To: 31 December 2022
 
-Total Time: 8 hrs 25 mins
+Total Time: 15 hrs 56 mins
 
-Bash         5 hrs 25 mins   ████████████████░░░░░░░░░   64.44 %
-Other        59 mins         ███░░░░░░░░░░░░░░░░░░░░░░   11.75 %
+Bash         11 hrs 53 mins  ██████████████████▓░░░░░░   74.62 %
+Other        1 hr 18 mins    ██░░░░░░░░░░░░░░░░░░░░░░░   08.19 %
 ```
 
 <!--END_SECTION:waka-->
