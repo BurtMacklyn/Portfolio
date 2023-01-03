@@ -3,12 +3,13 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 27 December 2022 - To: 31 December 2022
+From: 27 December 2022 - To: 02 January 2023
 
-Total Time: 15 hrs 56 mins
+Total Time: 19 hrs 51 mins
 
-Bash         11 hrs 53 mins  ██████████████████▓░░░░░░   74.62 %
-Other        1 hr 18 mins    ██░░░░░░░░░░░░░░░░░░░░░░░   08.19 %
+Bash         13 hrs 17 mins  ████████████████▓░░░░░░░░   66.96 %
+JSON         1 hr 51 mins    ██▒░░░░░░░░░░░░░░░░░░░░░░   09.36 %
+Other        1 hr 36 mins    ██░░░░░░░░░░░░░░░░░░░░░░░   08.06 %
 ```
 
 <!--END_SECTION:waka-->
