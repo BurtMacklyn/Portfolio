@@ -13,13 +13,13 @@ Other        3 hrs 19 mins   ██▒░░░░░░░░░░░░░░
 
 <!--END_SECTION:waka-->
 
-[![Top Langs](https://github-readme-stats.vercel.app/api?username=cooperrunyan&show_icons=true&border_color=555555&count_private=true&theme=github_dark&#gh-dark-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-dark-mode-only)
+[![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=cooperrunyan&show_icons=true&border_color=555555&count_private=true&theme=github_dark&#gh-dark-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-dark-mode-only)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api?username=cooperrunyan&show_icons=true&count_private=true&border_color=555555&theme=github_default&#gh-light-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-light-mode-only)
+[![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=cooperrunyan&show_icons=true&count_private=true&border_color=555555&theme=github_default&#gh-light-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-light-mode-only)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=cooperrunyan&show_icons=true&count_private=true&layout=compact&border_color=555555&theme=github_dark&#gh-dark-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-dark-mode-only)
+[![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=cooperrunyan&show_icons=true&count_private=true&layout=compact&border_color=555555&theme=github_dark&#gh-dark-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-dark-mode-only)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=cooperrunyan&show_icons=true&count_private=true&layout=compact&border_color=555555&theme=github_default&#gh-light-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-light-mode-only)
+[![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=cooperrunyan&show_icons=true&count_private=true&layout=compact&border_color=555555&theme=github_default&#gh-light-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-light-mode-only)
 
 ## Socials
 
