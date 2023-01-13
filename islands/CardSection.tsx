@@ -26,7 +26,13 @@ export default function CardSection(props: Props) {
       }}
       onMouseOut={() => setHover(false)}>
       {props.cards.map(props => (
-        <Card {...props} className={cardClass} target={target} hover={hover} style={{ flexBasis: '24rem' }} />
+        <Card
+          {...props}
+          className={cardClass}
+          target={target}
+          hover={hover}
+          style={{ flexBasis: `24rem` }}
+        />
       ))}
     </div>
   );

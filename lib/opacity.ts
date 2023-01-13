@@ -1,7 +1,6 @@
-export const opacity = (percentage: number) => {
-  const v = Math.round(percentage * 255).toString(16);
-  if (v.length === 2) return v;
-  if (v.length === 1) return '0' + v;
-  if (v.length === 0) return '00';
-  return v;
-};
+export function opacity<T extends string>(color: T, percentage: number) {
+  return (color +
+    Math.round(percentage * 255)
+      .toString(16)
+      .padStart(2, '0')) as `${T}**`;
+}

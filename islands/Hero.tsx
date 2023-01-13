@@ -4,7 +4,7 @@ import { tw } from 'style';
 
 import { Typography } from 'c/Typography.tsx';
 import Button from 'i/Button.tsx';
-import { email } from 'lib/config.ts';
+import { config } from 'config';
 
 export default function Hero() {
   return (
@@ -17,7 +17,7 @@ export default function Hero() {
         developer<span class={tw`text-primary`}>{'.'}</span>
       </Typography>
       <div class={tw`mt-8 flex items-stretch gap-4`}>
-        <Button href={email}>Contact</Button>
+        <Button href={`mailto:${config.email}`}>Contact</Button>
       </div>
     </div>
   );

@@ -9,10 +9,11 @@
     "testing": "https://deno.land/std@0.151.0/testing/asserts.ts",
     "validate-email": "https://deno.land/x/validation@v0.2.1/email.ts",
     "style": "./lib/tailwind.ts",
-    "~/": "./",
     "i/": "./islands/",
     "c/": "./components/",
     "lib/": "./lib/",
-    "hooks/": "./hooks/"
+    "hooks/": "./hooks/",
+    "config": "./config/index.ts",
+    "~/": "./"
   }
 }

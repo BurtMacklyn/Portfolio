@@ -1,6 +1,6 @@
-import { emailAddress } from '../../lib/config.ts';
+import { config } from 'config';
 
 export const handler = (req: Request): Response => {
-  if (req.method === 'GET') return new Response(emailAddress);
+  if (req.method === 'GET') return new Response(config.email);
   return new Response(null, { status: 406 });
 };

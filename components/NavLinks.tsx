@@ -2,7 +2,7 @@
 import { Fragment, h } from 'preact';
 import { tw } from 'style';
 
-import { navItems } from 'lib/config.ts';
+import { config } from 'config';
 import { Link, Typography } from './Typography.tsx';
 
 export enum NavType {
@@ -24,13 +24,13 @@ const HTMLLinks = () => (
       {'<ul>\n'}
     </span>
 
-    {navItems.map(item => (
+    {Object.entries(config.pages).map(([name, href]) => (
       <Fragment>
         <span class={tw`select-none`} aria-hidden>
           {'  <li>'}
         </span>
         <span class={tw`select-none`}>{'{'}</span>
-        <Link href={item.href}>{item.name}</Link>
+        <Link href={href}>{name}</Link>
         <span class={tw`select-none`}>{'}'}</span>
         <span class={tw`select-none`} aria-hidden>
           {'</li>\n'}
@@ -47,9 +47,9 @@ const HTMLLinks = () => (
 const TypescriptLinks = () => (
   <Typography variant="code" class={tw`select-none lg:hidden`}>
     <span aria-hidden>const nav: Page[] = [</span>
-    {navItems.map((item, i, { length }) => (
+    {Object.entries(config.pages).map(([name, href], i, { length }) => (
       <Fragment>
-        <Link href={item.href}>{item.name}</Link>
+        <Link href={href}>{name}</Link>
         {i < length - 1 && <span aria-hidden>{', '}</span>}
       </Fragment>
     ))}

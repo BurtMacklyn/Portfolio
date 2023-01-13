@@ -3,21 +3,32 @@ import { h } from 'preact';
 import { tw } from 'style';
 
 import { SectionTitle } from 'c/Typography.tsx';
-import { email } from 'lib/config.ts';
+import { config } from 'config';
 import CardSection from '../islands/CardSection.tsx';
 
 const contacts = [
-  { place: 'Email', url: email, description: 'A great method of proffessional communication. Click here to get a conversation started.' },
-  { place: 'LinkedIn', url: 'https://www.linkedin.com/in/cooper-runyan-52a343225/', description: 'Connect with me, learn more about my career.' },
+  {
+    place: 'Email',
+    url: `mailto:${config.email}`,
+    description:
+      'A great method of proffessional communication. Click here to get a conversation started.',
+  },
+  {
+    place: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/cooper-runyan-52a343225/',
+    description: 'Connect with me, learn more about my career.',
+  },
   {
     place: 'Github',
     url: 'https://www.github.com/cooperrunyan',
-    description: 'Where I store all of my projects, most of which are public repositories. Click here to gain some insight for what I do.',
+    description:
+      'Where I store all of my projects, most of which are public repositories. Click here to gain some insight for what I do.',
   },
   {
     place: 'Codepen',
     url: 'https://codepen.io/cooperrunyan',
-    description: 'Where I play around with HTML and CSS. Check out some small snippets of code here.',
+    description:
+      'Where I play around with HTML and CSS. Check out some small snippets of code here.',
   },
 ];
 

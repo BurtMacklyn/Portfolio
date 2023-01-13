@@ -1,43 +1,46 @@
 import { IS_BROWSER } from 'fresh/runtime.ts';
 import { Configuration, setup } from 'tailwind';
-import { colors } from './config.ts';
-import { opacity } from './opacity.ts';
+import { config } from '../config/index.ts';
 import { styled } from './styled.ts';
 
-export * from 'tailwind';
-export * as sheets from 'tailwind/sheets';
-
-export const config: Configuration = {
+const styleconfig: Configuration = {
   darkMode: 'media',
   mode: 'silent',
   theme: {
-    colors,
+    colors: {
+      ...config.colors,
+      ...Object.fromEntries(
+        Object.entries(config.colors.greyscale).map(([k, v]) => [
+          `grey${k}`,
+          v,
+        ]),
+      ),
+    },
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
       mono: ['Roboto Mono', 'monospace'],
     },
     screens: {
-      m2xl: { min: 'calc(1800em / 16)' },
-      '2xl': { max: 'calc(1800em / 16)' },
-      mxl: { min: 'calc(1400em / 16)' },
-      xl: { max: 'calc(1400em / 16)' },
-      mlg: { min: 'calc(1200em / 16)' },
-      lg: { max: 'calc(1200em / 16)' },
-      mmd: { min: 'calc(900em / 16)' },
-      md: { max: 'calc(900em / 16)' },
-      msm: { min: 'calc(600em / 16)' },
-      sm: { max: 'calc(600em / 16)' },
-      mxs: { min: 'calc(400em / 16)' },
-      xs: { max: 'calc(400em / 16)' },
-      xxs: { max: 'calc(360em / 16)' },
+      m2xl: { min: `${1800 / 16}em` },
+      '2xl': { max: `${1800 / 16}em` },
+      mxl: { min: `${1400 / 16}em` },
+      xl: { max: `${1400 / 16}em` },
+      mlg: { min: `${1200 / 16}em` },
+      lg: { max: `${1200 / 16}em` },
+      mmd: { min: `${900 / 16}em` },
+      md: { max: `${900 / 16}em` },
+      msm: { min: `${600 / 16}em` },
+      sm: { max: `${600 / 16}em` },
+      mxs: { min: `${400 / 16}em` },
+      xs: { max: `${400 / 16}em` },
+      xxs: { max: `${360 / 16}em` },
 
       'height-sm': { raw: '(max-height: calc(700em / 16))' },
     },
     extend: {
       spacing: {
-        '4.5': '1.125rem',
-        '22': '5.5rem',
-        '45': '11.25rem',
+        x18: `${18 / 16}rem`, // 4.5
+        x90: `${90 / 16}rem`, // 22
       },
       animation: {
         sll: 'slide-left .15s ease-in-out both',
@@ -66,12 +69,16 @@ export const config: Configuration = {
 export const overrides = styled`
   html {
     color-scheme: dark;
-    background-color: ${colors.black};
+    background-color: ${config.colors.greyscale[0]};
   }
 
   ::selection {
-    background-color: ${colors.primary + opacity(0.25)};
+    background-color: ${config.colors.greyscale[25]};
   }
 `;
 
-if (IS_BROWSER) setup(config);
+export * from 'tailwind';
+export * as sheets from 'tailwind/sheets';
+export { styleconfig as config };
+
+if (IS_BROWSER) setup(styleconfig);

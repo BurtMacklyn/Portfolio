@@ -1,10 +1,10 @@
 /** @jsx h */
 import { h } from 'preact';
 import { tw } from 'style';
-import { technologies } from '../lib/technologies.ts';
+import { technologies } from 'lib/technologies.ts';
 
 import CardSection from 'i/CardSection.tsx';
-import { SectionTitle } from '../components/Typography.tsx';
+import { SectionTitle } from 'c/Typography.tsx';
 
 export default function TechnologiesSection() {
   return (
