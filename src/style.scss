@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-family: inherit;
+  color: inherit;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+}
+
+$xxl: 1800em / 16;
+$xl: 1400em / 16;
+$lg: 1200em / 16;
+$md: 896em / 16;
+$sm: 640em / 16;
+$xs: 384em / 16;
+
+html {
+  color-scheme: dark;
+  background-color: var(--layer-0);
+  color: var(--layer-100);
+  box-sizing: border-box;
+  font-family: var(--sans);
+  min-height: 100vh;
+  display: flex;
+
+  --margin: var(--margin-default);
+
+  @media (max-width: $xl) {
+    --margin: var(--margin-xl);
+  }
+
+  @media (max-width: $lg) {
+    --margin: var(--margin-lg);
+  }
+
+  @media (max-width: $md) {
+    --margin: var(--margin-md);
+  }
+
+  @media (max-width: $sm) {
+    --margin: var(--margin-sm);
+  }
+
+  @media (max-width: $xs) {
+    --margin: var(--margin-xs);
+  }
+}
+
+::selection {
+  background-color: var(--layer-24);
+}
+
+.layout {
+  max-width: min(100vw, var(--maxWidth));
+  overflow-x: hidden;
+  padding-inline: var(--margin);
+  margin: 0 auto;
+  position: relative;
+}
