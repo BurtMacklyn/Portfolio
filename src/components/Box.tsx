@@ -1,4 +1,4 @@
-import { style } from '@/config/style';
+import { color, style } from '@/config/style';
 import { percent, rem, Space, variable } from '@/css';
 import { CSSProperties } from 'react';
 
@@ -10,10 +10,11 @@ interface Props {
   h?: 'fill' | Space;
   w?: 'fill' | Space;
   round?: boolean;
+  smooth?: boolean;
   margin?: boolean | 'auto';
   paddingBlock?: Space;
   paddingInline?: Space;
-  bg?: keyof typeof style.colors.layer;
+  bg?: keyof typeof style.color;
   style?: CSSProperties;
 }
 
@@ -46,8 +47,13 @@ export const Box: React.FC<Props> = props => {
             ? rem(props.w)
             : undefined,
         borderRadius: props.round ? style.borderRadius : undefined,
-        background:
-          props.bg !== undefined ? style.colors.layer[props.bg] : undefined,
+        background: props.bg !== undefined ? color(props.bg) : undefined,
+        transitionProperty: props.smooth
+          ? style.transition.property
+          : undefined,
+        transitionDuration: style.transition.time,
+        transitionTimingFunction: style.transition.function,
+
         ...props.style,
       }}>
       {props.children}

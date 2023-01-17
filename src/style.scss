@@ -20,8 +20,8 @@ $xs: 384em / 16;
 
 html {
   color-scheme: dark;
-  background-color: var(--layer-0);
-  color: var(--layer-100);
+  background-color: var(--color-0);
+  color: var(--color-100);
   box-sizing: border-box;
   font-family: var(--sans);
   min-height: 100vh;
@@ -51,7 +51,7 @@ html {
 }
 
 ::selection {
-  background-color: var(--layer-24);
+  background-color: var(--color-24);
 }
 
 .layout {

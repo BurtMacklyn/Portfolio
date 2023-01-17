@@ -13,7 +13,7 @@ export const PageTitle: React.FC<
         fontWeight: font.sans.bold,
         fontSize: rem(64),
         lineHeight: percent(100),
-        letterSpacing: percent(-5),
+        letterSpacing: percent(-5, 'em'),
         ...props.style,
       }}>
       {props.children}

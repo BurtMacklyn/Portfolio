@@ -1,5 +1,3 @@
-import { style } from '@/config/style';
-
 export function rem<T extends Space>(px: T) {
   return `${px / 16}rem` as `${T}px`;
 }
@@ -8,8 +6,9 @@ export function em<T extends number>(px: T) {
   return `${px / 16}em` as `${T}px`;
 }
 
-export function percent<T extends number>(pct: T) {
-  return `${pct}%` as `${T}%`;
+export function percent<T extends number, U extends 'em'>(pct: T, unit?: U) {
+  if (!unit) return `${pct}%` as `${T}%`;
+  return `${pct / 100}em` as `${T}${U}`;
 }
 
 export function variable<T extends string>(v: T) {
@@ -18,7 +17,7 @@ export function variable<T extends string>(v: T) {
 
 export function opacity<T extends string>(color: T, percentage: number) {
   return (color +
-    Math.round(percentage * 255)
+    Math.round((percentage / 100) * 255)
       .toString(16)
       .padStart(2, '0')) as `${T}**`;
 }

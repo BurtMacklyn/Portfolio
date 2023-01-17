@@ -12,7 +12,7 @@ export const Hero: React.FC<HTMLAttributes<HTMLHeadingElement>> = props => {
         fontSize: rem(96),
         lineHeight: percent(100),
         width: percent(100),
-        letterSpacing: percent(-5),
+        letterSpacing: percent(-5, 'em'),
         ...props.style,
       }}>
       {props.children}

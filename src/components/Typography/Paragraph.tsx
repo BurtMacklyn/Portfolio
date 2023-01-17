@@ -15,7 +15,7 @@ export const Paragraph: React.FC<
         lineHeight: percent(162.5),
         width: percent(100),
         maxWidth: rem(640),
-        letterSpacing: percent(-1),
+        letterSpacing: percent(-1, 'em'),
         ...props.style,
       }}>
       {props.children}
