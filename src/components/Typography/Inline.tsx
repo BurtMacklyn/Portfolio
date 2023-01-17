@@ -6,6 +6,7 @@ interface Props {
   bold?: boolean;
   color?: Exclude<keyof typeof style.colors, 'layer'>;
   layer?: keyof typeof style.colors.layer;
+  hidden?: boolean;
   children: any;
 }
 
@@ -19,6 +20,7 @@ export const Inline: React.FC<Props> = props => {
           ? variable(props.color)
           : undefined,
         fontWeight: props.bold ? font.sans.bold : undefined,
+        cursor: props.hidden ? 'none' : undefined,
       }}>
       {props.children}
     </span>
