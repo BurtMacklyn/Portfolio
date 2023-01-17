@@ -11,7 +11,7 @@ export const font = {
   mono: {
     family: variable('mono'),
     variable: '--mono',
-    weight: 500,
+    weight: 400,
     fallback: ['Consolas', 'Menlo', 'monospace'],
   },
 } as const;

@@ -9,8 +9,8 @@ import Head from 'next/head';
 
 import { useEffect } from 'react';
 
-import { Inter, Roboto_Mono } from '@next/font/google';
 import { font } from '@/config/font';
+import { Inter, Roboto_Mono } from '@next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -56,8 +56,8 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <style jsx global>{`
         html {
-          ${font.sans.variable}: ${inter.style.fontFamily};
-          ${font.mono.variable}: ${mono.style.fontFamily};
+          --sans: ${inter.style.fontFamily};
+          --mono: ${mono.style.fontFamily};
         }
       `}</style>
       <Component {...pageProps} />

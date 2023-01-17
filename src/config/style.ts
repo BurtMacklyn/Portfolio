@@ -2,6 +2,7 @@ import { em, rem } from '../css';
 
 export const style = {
   maxWidth: rem(1800),
+  borderRadius: rem(4),
   margin: {
     default: rem(128),
 

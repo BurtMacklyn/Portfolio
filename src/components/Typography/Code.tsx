@@ -10,7 +10,7 @@ export const Code: React.FC<HTMLAttributes<HTMLSpanElement>> = props => {
       style={{
         fontFamily: font.mono.family,
         fontWeight: font.mono.weight,
-        color: style.colors.layer[64],
+        color: style.colors.layer[50],
         letterSpacing: percent(-1),
         ...props.style,
       }}>
