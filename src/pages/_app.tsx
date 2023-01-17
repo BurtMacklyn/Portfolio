@@ -1,6 +1,7 @@
 import '@/style.scss';
 
-import { config, css, style } from '@/config';
+import { config } from '@/config/config';
+import { setCSSVariables, style } from '@/config/style';
 
 import type { AppProps } from 'next/app';
 
@@ -9,23 +10,25 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 
 import { Inter, Roboto_Mono } from '@next/font/google';
+import { font } from '@/config/font';
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '600'],
   variable: '--sans',
   fallback: ['Roboto', 'Helvetica Neue', 'system-ui'],
 });
 
 const mono = Roboto_Mono({
   subsets: ['latin'],
-  weight: ['400', '600'],
   variable: '--mono',
   fallback: ['Consolas', 'Menlo', 'monospace'],
 });
 
+(font.sans as any).variable = inter.variable as any;
+(font.mono as any).variable = mono.variable as any;
+
 export default function App({ Component, pageProps }: AppProps) {
-  useEffect(() => css(), []);
+  useEffect(() => setCSSVariables(), []);
   return (
     <>
       <Head>
@@ -53,8 +56,8 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <style jsx global>{`
         html {
-          --sans: ${inter.style.fontFamily};
-          --mono: ${mono.style.fontFamily};
+          ${font.sans.variable}: ${inter.style.fontFamily};
+          ${font.mono.variable}: ${mono.style.fontFamily};
         }
       `}</style>
       <Component {...pageProps} />

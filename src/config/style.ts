@@ -1,28 +1,4 @@
-import pkg from '../package.json';
-import { em, rem } from './utils/spacing';
-
-const email = 'c@cooperrunyan.com';
-
-export const config = {
-  // metadata
-  title: 'Cooper Runyan',
-  version: pkg.version,
-  description: pkg.description,
-  email,
-  lastUpdated: 'January 12, 2023 9:41 PM MST',
-
-  siteImg: '/profile.png',
-
-  // Pages
-  pages: {
-    overview: '/',
-    contact: `mailto:${email}`,
-    snake: '/snake',
-  },
-
-  // meta tags
-  meta: [],
-} as const;
+import { em, rem } from '../css';
 
 export const style = {
   maxWidth: rem(1800),
@@ -65,7 +41,7 @@ export const style = {
 } as const;
 
 // prettier-ignore
-export function css() {
+export function setCSSVariables() {
   const setvar = (k: string, v: any) => document?.documentElement?.style?.setProperty(`--${k}`, v)
 
   for (const [k, v] of Object.entries(style.colors.layer)) setvar(`layer-${k}`, v);

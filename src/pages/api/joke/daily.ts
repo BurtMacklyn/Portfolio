@@ -1,4 +1,4 @@
-import { getJoke } from '@/utils/getJoke';
+import { getJoke } from './index';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default function handler(
