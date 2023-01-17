@@ -2,20 +2,21 @@ import { font } from '@/config/font';
 import { percent, rem } from '@/css';
 import { HTMLAttributes } from 'react';
 
-export const Hero: React.FC<HTMLAttributes<HTMLHeadingElement>> = props => {
+export const SectionTitle: React.FC<
+  HTMLAttributes<HTMLHeadingElement>
+> = props => {
   return (
-    <h1
+    <h2
       {...props}
       style={{
         fontFamily: font.sans.family,
         fontWeight: font.sans.bold,
-        fontSize: rem(96),
+        fontSize: rem(48),
         lineHeight: percent(100),
-        width: percent(100),
         letterSpacing: percent(-5),
         ...props.style,
       }}>
       {props.children}
-    </h1>
+    </h2>
   );
 };
