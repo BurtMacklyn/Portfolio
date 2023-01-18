@@ -3,8 +3,8 @@ import { Link } from '@components/Link';
 import { Heading } from '@components/Typography/Heading';
 
 import { config } from '@/config/config';
-import { color, style } from '@/config/style';
-import { opacity, rem } from '@/css';
+import { color, style, Z } from '@/config/style';
+import { opacity, percent, rem } from '@/css';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { Button } from '@components/Button';
@@ -18,10 +18,11 @@ const blurredBackgroundStyles = {
 };
 
 export const Nav: React.FC = () => {
-  const matches = useMediaQuery(`(max-width: ${style.breakpoints.md})`);
+  const matches = useMediaQuery(
+    `screen and (max-width: ${style.breakpoints.md})`,
+  );
 
   const [clicked, setClicked] = useState(false);
-  const [hasClicked, setHasClicked] = useState(false);
 
   const [dummy, isAtTopOfDocument] = useIntersectionObserver();
   const activeNav = !isAtTopOfDocument || (clicked && matches);
@@ -30,46 +31,55 @@ export const Nav: React.FC = () => {
     <>
       <span ref={dummy} />
 
-      <Box
-        w="fill"
-        h={96}
-        margin
-        smooth
-        spaceBetween
-        row
+      <nav
         style={{
-          alignItems: 'center',
           position: 'sticky',
           top: 0,
           left: 0,
-          borderBottomColor: activeNav ? opacity(color(100), 8) : 'transparent',
-          borderBottomStyle: 'solid',
-          borderBottomWidth: rem(2),
-          ...blurredBackgroundStyles,
+          height: rem(96),
+          width: percent(100),
+          zIndex: Z.Nav,
         }}>
-        <Name />
+        <Box
+          w="fill"
+          h={96}
+          margin
+          smooth
+          spaceBetween
+          row
+          style={{
+            alignItems: 'center',
+            borderBottomColor: activeNav
+              ? opacity(color(100), 8)
+              : 'transparent',
+            borderBottomStyle: 'solid',
+            borderBottomWidth: rem(2),
+            ...blurredBackgroundStyles,
+          }}>
+          <Name />
 
-        {!matches ? (
-          <Code hidden>
-            const nav: Page[] = [
-            {Object.entries(config.pages).map(([k, v], i, a) => (
-              <Fragment key={v}>
-                <Link to={v}>
-                  <Inline color={100} hover="primary">
-                    {k}
-                  </Inline>
-                </Link>
-                {i !== a.length - 1 && ', '}
-              </Fragment>
-            ))}
-            ];
-          </Code>
-        ) : (
-          <Button onClick={() => setClicked(!clicked)}>
-            <NavIcon clicked={clicked && matches} />
-          </Button>
-        )}
-      </Box>
+          {!matches ? (
+            <Code hidden>
+              const nav: Page[] = [
+              {Object.entries(config.pages).map(([k, v], i, a) => (
+                <Fragment key={v}>
+                  <Link to={v}>
+                    <Inline color={100} hover="primary">
+                      {k}
+                    </Inline>
+                  </Link>
+                  {i !== a.length - 1 && ', '}
+                </Fragment>
+              ))}
+              ];
+            </Code>
+          ) : (
+            <Button onClick={() => setClicked(!clicked)}>
+              <NavIcon clicked={clicked && matches} />
+            </Button>
+          )}
+        </Box>
+      </nav>
     </>
   );
 };

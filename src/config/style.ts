@@ -47,6 +47,13 @@ export const style = {
 
 export type Color = keyof typeof style.color;
 
+export enum Z {
+  Content = 1,
+  Overlay,
+  Nav,
+  Banner,
+}
+
 export function color<T extends Color>(opt: T) {
   return style.color[opt];
 }
