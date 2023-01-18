@@ -136,7 +136,7 @@ const Name = () => {
   return (
     <Link to="/">
       <Heading>
-        <Inline hover="primary">Lorem Ipsum</Inline>
+        <Inline hover="primary">Cooper Runyan</Inline>
       </Heading>
     </Link>
   );
