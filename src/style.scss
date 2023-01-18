@@ -31,22 +31,37 @@ html {
 
   @media (max-width: $xl) {
     --margin: var(--margin-xl);
+    .mq-xl {
+      display: none;
+    }
   }
 
   @media (max-width: $lg) {
     --margin: var(--margin-lg);
+    .mq-lg {
+      display: none;
+    }
   }
 
   @media (max-width: $md) {
     --margin: var(--margin-md);
+    .mq-md {
+      display: none;
+    }
   }
 
   @media (max-width: $sm) {
     --margin: var(--margin-sm);
+    .mq-sm {
+      display: none;
+    }
   }
 
   @media (max-width: $xs) {
     --margin: var(--margin-xs);
+    .mq-xs {
+      display: none;
+    }
   }
 }
 

@@ -1,7 +1,7 @@
 import '@/style.scss';
 
 import { config } from '@/config/config';
-import { color, setCSSVariables, style } from '@/config/style';
+import { color, setCSSVariables } from '@/config/style';
 
 import type { AppProps } from 'next/app';
 
@@ -33,6 +33,8 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>{config.title}</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="shortcut icon" href="/favicon.ico" sizes="any" />
         <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />

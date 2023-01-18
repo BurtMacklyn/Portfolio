@@ -2,7 +2,7 @@ import { color, style } from '@/config/style';
 import { percent, rem, Space, variable } from '@/css';
 import { CSSProperties } from 'react';
 
-interface Props {
+export interface BoxProps {
   children?: any;
   row?: boolean;
   spaceBetween?: boolean;
@@ -18,7 +18,7 @@ interface Props {
   style?: CSSProperties;
 }
 
-export const Box: React.FC<Props> = props => {
+export const Box: React.FC<BoxProps> = props => {
   return (
     <div
       style={{
