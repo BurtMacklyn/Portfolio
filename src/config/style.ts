@@ -6,7 +6,7 @@ export const style = {
   transition: {
     property:
       'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
-    time: '0.1s',
+    time: 100,
     function: 'ease-in-out',
   },
   margin: {
@@ -49,6 +49,10 @@ export type Color = keyof typeof style.color;
 
 export enum Z {
   Content = 1,
+  Elevated,
+  Elevated2,
+  Elevated3,
+  Elevated4,
   Overlay,
   Nav,
   Banner,

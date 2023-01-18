@@ -7,12 +7,14 @@ import { Section } from '../Section';
 import { BigText } from '../Typography/BigText';
 
 export const IndexJoke: React.FC = () => {
-  const [joke, setJoke] = useState<string>('');
+  const [joke, setJoke] = useState<string>(
+    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, sequi.',
+  );
 
   const matches = useMediaQuery(`(max-width: ${style.breakpoints.sm})`);
 
   useEffect(() => {
-    setJoke(getJoke('daily'));
+    // setJoke(getJoke('daily'));
   }, []);
 
   return (

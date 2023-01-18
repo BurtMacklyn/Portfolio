@@ -2,12 +2,12 @@ import { Box } from '@components/Box';
 import { Link } from '@components/Link';
 import { Heading } from '@components/Typography/Heading';
 
+import { PlainButton } from '@/components/PlainButton';
 import { config } from '@/config/config';
 import { color, style, Z } from '@/config/style';
 import { opacity, rem } from '@/css';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { PlainButton } from '@/components/PlainButton';
 import { Code } from '@components/Typography/Code';
 import { Inline } from '@components/Typography/Inline';
 import { Fragment, useState } from 'react';
@@ -169,7 +169,7 @@ const NavIcon = ({ clicked }: any) => {
             : `translate(${rem(((size - slantHeight) / 2) as any)}, ${rem(
                 ((size - slantHeight) / 2) as any,
               )}) translateY(-50%) rotate(45deg)`,
-          transitionDuration: style.transition.time,
+          transitionDuration: style.transition.time + 'ms',
           transitionProperty: 'all',
           transitionTimingFunction: style.transition.function,
           transformOrigin: '0% 50%',
@@ -185,7 +185,7 @@ const NavIcon = ({ clicked }: any) => {
           top: rem((size / 2 - width / 2) as any),
           left: 0,
           transform: !clicked ? undefined : 'rotate(-45deg)',
-          transitionDuration: style.transition.time,
+          transitionDuration: style.transition.time + 'ms',
           transitionProperty: 'all',
           transitionTimingFunction: style.transition.function,
         }}
@@ -208,7 +208,7 @@ const NavIcon = ({ clicked }: any) => {
             : `translate(-${rem(((size - slantHeight) / 2) as any)}, -${rem(
                 ((size - slantHeight) / 2) as any,
               )}) translateY(50%) rotate(45deg)`,
-          transitionDuration: style.transition.time,
+          transitionDuration: style.transition.time + 'ms',
           transitionProperty: 'all',
           transitionTimingFunction: style.transition.function,
           transformOrigin: '100% 50%',

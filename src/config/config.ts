@@ -1,22 +1,28 @@
 import pkg from '../../package.json';
 
-const email = 'c@cooperrunyan.com';
-
 export const config = {
   // metadata
-  title: 'Cooper Runyan',
+  title: pkg.author.name,
   version: pkg.version,
   description: pkg.description,
-  email,
+  email: pkg.author.email,
   lastUpdated: 'January 12, 2023 9:41 PM MST',
 
   siteImg: '/profile.png',
+  emailLink: `mailto:${pkg.author.email}`,
 
   // Pages
   pages: {
     overview: '/',
-    contact: `mailto:${email}`,
+    contact: `mailto:${pkg.author.email}`,
     snake: '/snake',
+  },
+
+  social: {
+    github: {
+      value: pkg.author.github,
+      link: `https://github.com/${pkg.author.github}`,
+    },
   },
 
   // meta tags

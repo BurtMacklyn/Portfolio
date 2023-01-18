@@ -1,6 +1,12 @@
 {
   "name": "cooperrunyan",
   "description": "My personal website",
+  "author": {
+    "name": "Cooper Runyan",
+    "email": "c@cooperrunyan.com",
+    "url": "https://cooperrunyan.com",
+    "github": "cooperrunyan"
+  },
   "version": "6.0.0",
   "private": true,
   "scripts": {

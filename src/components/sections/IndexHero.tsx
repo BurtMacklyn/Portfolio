@@ -1,8 +1,9 @@
+import { config } from '@/config/config';
+import { Box } from '@components/Box';
+import { Button } from '@components/Button';
 import { Section } from '@components/Section';
 import { Hero } from '@components/Typography/Hero';
 import { Inline } from '@components/Typography/Inline';
-import { config } from '@/config/config';
-import { Button } from '../Button';
 
 export const IndexHero: React.FC = () => {
   return (
@@ -15,7 +16,10 @@ export const IndexHero: React.FC = () => {
         dolor sit <br />
         amet<Inline color="primary">.</Inline> <br />
       </Hero>
-      <Button href={config.pages.contact}>Contact</Button>
+      <Box row gap={8}>
+        <Button href={config.pages.contact}>Contact</Button>
+        <Button href={config.social.github.link}>Github</Button>
+      </Box>
     </Section>
   );
 };

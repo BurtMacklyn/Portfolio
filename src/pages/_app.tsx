@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 
 import { font } from '@/config/font';
 import { Inter, Roboto_Mono } from '@next/font/google';
+import { opacity } from '@/css';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -91,7 +92,7 @@ export default function App({ Component, pageProps }: AppProps) {
           .join('\n')}
 
         ::selection {
-          background-color: ${color(24)};
+          background-color: ${opacity(color(100), 24)};
         }
       `}</style>
       <Component {...pageProps} />
