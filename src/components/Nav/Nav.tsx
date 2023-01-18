@@ -7,7 +7,7 @@ import { color, style, Z } from '@/config/style';
 import { opacity, rem } from '@/css';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { Button } from '@components/Button';
+import { PlainButton } from '@components/Button';
 import { Code } from '@components/Typography/Code';
 import { Inline } from '@components/Typography/Inline';
 import { Fragment, useState } from 'react';
@@ -76,9 +76,9 @@ export const Nav: React.FC = () => {
               ];
             </Code>
           ) : (
-            <Button onClick={() => setClicked(!clicked)}>
+            <PlainButton onClick={() => setClicked(!clicked)}>
               <NavIcon clicked={clicked && matches} />
-            </Button>
+            </PlainButton>
           )}
         </Box>
 

@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
-import { Box, BoxProps } from './Box';
+import { BoxProps } from './Box';
 
-interface ButtonProps {
+interface PlainButtonProps {
   children?: any;
   box?: BoxProps;
   onClick?: () => any;
@@ -9,7 +9,7 @@ interface ButtonProps {
   style?: CSSProperties;
 }
 
-export const Button: React.FC<ButtonProps> = props => {
+export const PlainButton: React.FC<PlainButtonProps> = props => {
   return (
     <button
       onClick={e => {
