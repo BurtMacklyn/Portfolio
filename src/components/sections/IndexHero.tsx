@@ -1,25 +1,18 @@
-import { style } from '@/config/style';
-import { rem } from '@/css';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { Section } from '@components/Section';
 import { Hero } from '@components/Typography/Hero';
 import { Inline } from '@components/Typography/Inline';
-import { HTMLAttributes } from 'react';
 
-export const IndexHero: React.FC<
-  HTMLAttributes<HTMLHeadingElement>
-> = props => {
-  const matches = useMediaQuery(
-    `(max-height: ${700 / 16}em) or (max-width: ${style.breakpoints.sm})`,
-  );
-
+export const IndexHero: React.FC = () => {
   return (
-    <Hero
-      style={{
-        marginTop: !matches ? rem(128) : rem(48),
-      }}>
-      <Inline color="primary">Cooper Runyan</Inline> <br />
-      fullstack web <br />
-      developer<Inline color="primary">.</Inline> <br />
-    </Hero>
+    <Section>
+      <Hero>
+        {/* <Inline color="primary">Cooper Runyan</Inline> <br />
+        fullstack web <br />
+        developer<Inline color="primary">.</Inline> <br /> */}
+        <Inline color="primary">Lorem ipsum</Inline> <br />
+        dolor sit <br />
+        amet<Inline color="primary">.</Inline> <br />
+      </Hero>
+    </Section>
   );
 };
