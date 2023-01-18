@@ -1,12 +1,24 @@
 import { style } from '@/config/style';
-import { rem } from '@/css';
+import { rem, Space } from '@/css';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
-export const Section: React.FC<{ children?: any }> = ({ children }) => {
+interface Props {
+  children?: any;
+  row?: boolean;
+  gap?: Space;
+}
+
+export const Section: React.FC<Props> = props => {
   const matches = useMediaQuery(`(max-width: ${style.breakpoints.sm})`);
   return (
-    <section style={{ marginBlock: !matches ? rem(128) : rem(64) }}>
-      {children}
+    <section
+      style={{
+        marginBlock: !matches ? rem(128) : rem(64),
+        display: 'flex',
+        flexDirection: !props.row ? 'column' : 'row',
+        gap: props.gap ? rem(props.gap) : undefined,
+      }}>
+      {props.children}
     </section>
   );
 };
