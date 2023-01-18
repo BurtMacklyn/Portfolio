@@ -1,7 +1,5 @@
-import '@/style.scss';
-
 import { config } from '@/config/config';
-import { color, setCSSVariables } from '@/config/style';
+import { color, setCSSVariables, style } from '@/config/style';
 
 import type { AppProps } from 'next/app';
 
@@ -57,9 +55,43 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:image" content={config.siteImg} />
       </Head>
       <style jsx global>{`
+        *,
+        *::before,
+        *::after {
+          box-sizing: inherit;
+          font-family: inherit;
+          color: inherit;
+          flex-direction: column;
+          margin: 0;
+          padding: 0;
+          outline: 0;
+          border: 0;
+        }
+
         html {
           --sans: ${inter.style.fontFamily};
           --mono: ${mono.style.fontFamily};
+          --margin: ${style.margin.default};
+          font-family: ${inter.style.fontFamily};
+          background-color: ${color(0)};
+          color: ${color(100)};
+          color-scheme: dark;
+          box-sizing: border-box;
+          min-height: 100vh;
+          display: flex;
+        }
+
+        ${(['xl', 'lg', 'md', 'sm', 'xs'] as const)
+          .map(
+            mq => `
+          @media (max-width: ${style.breakpoints[mq]}) {
+            html { --margin: ${style.margin[mq]}; }
+          }`,
+          )
+          .join('\n')}
+
+        ::selection {
+          background-color: ${color(24)};
         }
       `}</style>
       <Component {...pageProps} />

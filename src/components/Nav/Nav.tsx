@@ -4,7 +4,7 @@ import { Heading } from '@components/Typography/Heading';
 
 import { config } from '@/config/config';
 import { color, style, Z } from '@/config/style';
-import { opacity, percent, rem } from '@/css';
+import { opacity, rem } from '@/css';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { Button } from '@components/Button';
@@ -22,6 +22,8 @@ export const Nav: React.FC = () => {
     `screen and (max-width: ${style.breakpoints.md})`,
   );
 
+  const matchesXS = useMediaQuery(`(max-width: ${style.breakpoints.xs})`);
+
   const [clicked, setClicked] = useState(false);
 
   const [dummy, isAtTopOfDocument] = useIntersectionObserver();
@@ -37,7 +39,7 @@ export const Nav: React.FC = () => {
           top: 0,
           left: 0,
           height: rem(96),
-          width: percent(100),
+          width: '100vw',
           zIndex: Z.Nav,
         }}>
         <Box
@@ -78,6 +80,52 @@ export const Nav: React.FC = () => {
               <NavIcon clicked={clicked && matches} />
             </Button>
           )}
+        </Box>
+
+        <Box
+          style={{
+            display: matches ? undefined : 'none',
+            position: 'sticky',
+            top: rem(96),
+            left: 0,
+            height: `calc(100vh - ${rem(96)})`,
+            width: '100vw',
+            zIndex: Z.Nav,
+            overflowX: 'hidden',
+            pointerEvents: 'none',
+          }}>
+          <Box
+            style={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              height: '100%',
+              width: `min(100vw, ${rem(384)})`,
+              borderLeft: matchesXS ? undefined : `${rem(2)} solid ${color(8)}`,
+              zIndex: Z.Nav,
+              transform: clicked ? `translateX(0)` : `translateX(100%)`,
+              pointerEvents: 'all',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              ...blurredBackgroundStyles,
+            }}>
+            <pre>
+              <Code hidden>{'<ul>\n'}</Code>
+              {Object.entries(config.pages).map(([k, v]) => (
+                <Fragment key={v}>
+                  <Code hidden>{'  <li>{'}</Code>
+                  <Link to={v}>
+                    <Code style={{ color: color(100) }}>
+                      <Inline hover="primary">{k}</Inline>
+                    </Code>
+                  </Link>
+                  <Code hidden>{'}</li>\n'}</Code>
+                </Fragment>
+              ))}
+              <Code hidden>{'</ul>'}</Code>
+            </pre>
+          </Box>
         </Box>
       </nav>
     </>
