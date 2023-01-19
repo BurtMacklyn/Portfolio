@@ -48,7 +48,7 @@ export const Button: React.FC<ButtonProps> = props => {
           h="fill"
           smooth="slow"
           style={{
-            background: hover ? style.color[24] : style.color[12],
+            background: style.color[12],
             paddingBlock: 'inherit',
             paddingInline: 'inherit',
             position: 'absolute',

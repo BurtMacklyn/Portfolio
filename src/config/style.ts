@@ -48,7 +48,10 @@ export const style = {
 export type Color = keyof typeof style.color;
 
 export enum Z {
-  Content = 1,
+  _,
+  Background,
+  BehindContent,
+  Content,
   Elevated,
   Elevated2,
   Elevated3,
