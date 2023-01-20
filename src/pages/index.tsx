@@ -1,3 +1,4 @@
+import { IndexQuotes } from '@/components/sections/IndexQuotes';
 import { Banner } from '@components/Banner';
 import { Main } from '@components/Main';
 import { Nav } from '@components/Nav/Nav';
@@ -16,6 +17,7 @@ export default function Home() {
         <IndexJoke />
         <IndexAbout />
         <IndexTechnologies />
+        <IndexQuotes />
       </Main>
     </>
   );
