@@ -4,7 +4,6 @@ export const font = {
   sans: {
     family: variable('sans'),
     variable: '--sans',
-    light: 200,
     weight: 400,
     bold: 600,
     fallback: ['Roboto', 'Helvetica Neue', 'system-ui'],

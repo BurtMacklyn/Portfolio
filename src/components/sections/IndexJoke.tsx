@@ -14,7 +14,7 @@ export const IndexJoke: React.FC = () => {
   const matches = useMediaQuery(`(max-width: ${style.breakpoints.sm})`);
 
   useEffect(() => {
-    // setJoke(getJoke('daily'));
+    setJoke(getJoke('daily'));
   }, []);
 
   return (
