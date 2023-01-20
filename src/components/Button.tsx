@@ -17,6 +17,9 @@ export interface ButtonProps {
   };
   hover?: boolean;
   raw?: CSSProperties;
+  large?: boolean;
+  fillX?: boolean;
+  fillY?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = props => {
@@ -44,7 +47,8 @@ export const Button: React.FC<ButtonProps> = props => {
         paddingBlock={12}
         paddingInline={16 as any}
         style={{
-          width: 'fit-content',
+          width: props.fillX ? '100%' : 'fit-content',
+          height: props.fillY ? '100%' : undefined,
           // border: `${rem(2)} solid ${style.color[8]}`,
         }}
         raw={{
@@ -84,7 +88,9 @@ export const Button: React.FC<ButtonProps> = props => {
           w="fill"
           h="fill"
           style={{
-            background: `radial-gradient(75px circle at ${x}px ${y}px, ${opacity(
+            background: `radial-gradient(${
+              props.large ? 200 : 75
+            }px circle at ${x}px ${y}px, ${opacity(
               style.color.primary,
               60,
             )}, transparent)`,
@@ -114,9 +120,11 @@ export const Button: React.FC<ButtonProps> = props => {
           <Box
             smooth="slow"
             style={{
-              background: `radial-gradient(200px circle at ${x}px ${y}px, ${opacity(
+              background: `radial-gradient(${
+                props.large ? 600 : 200
+              }px circle at ${x}px ${y}px, ${opacity(
                 style.color.primary,
-                25,
+                props.large ? 20 : 25,
               )}, transparent 40%)`,
 
               opacity: hover ? 1 : 0,

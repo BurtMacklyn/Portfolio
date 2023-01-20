@@ -3,8 +3,8 @@ import { rem } from '@/css';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { getJoke } from '@/pages/api/joke';
 import { useEffect, useState } from 'react';
-import { Section } from '../Section';
-import { BigText } from '../Typography/BigText';
+import { Section } from '@components/Section';
+import { BigText } from '@components/Typography/BigText';
 
 export const IndexJoke: React.FC = () => {
   const [joke, setJoke] = useState<string>(

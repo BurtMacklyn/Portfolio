@@ -5,14 +5,12 @@ import { Button, ButtonProps } from './Button';
 interface Props {
   buttons: ButtonProps[];
   style?: CSSProperties;
-  rawButtonStyle?: CSSProperties;
 }
 
 export const ButtonGroup: React.FC<Props> = props => {
   const ref = useRef<HTMLDivElement>(null);
 
   const [target, setTarget] = useState({ x: 0, y: 0 });
-
   const [hover, setHover] = useState(false);
 
   return (
@@ -32,12 +30,7 @@ export const ButtonGroup: React.FC<Props> = props => {
         onMouseOut: () => setHover(false),
       }}>
       {props.buttons.map(button => (
-        <Button
-          {...button}
-          target={target}
-          hover={hover}
-          raw={props.rawButtonStyle}
-        />
+        <Button {...button} key={button.href} target={target} hover={hover} />
       ))}
     </Box>
   );

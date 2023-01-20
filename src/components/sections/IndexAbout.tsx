@@ -1,8 +1,8 @@
+import { SectionTitle } from '@/components/Typography/SectionTitle';
 import { Box } from '@components/Box';
 import { Section } from '@components/Section';
 import { Inline } from '@components/Typography/Inline';
 import { Paragraph } from '@components/Typography/Paragraph';
-import { SectionTitle } from '@components/Typography/SectionTitle';
 import { useEffect, useState } from 'react';
 
 const startYear = 2021;

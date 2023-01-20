@@ -1,4 +1,4 @@
-import jokes from '@public/jokes.json' assert { type: 'json' };
+import jokes from '@static/jokes.json' assert { type: 'json' };
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default function handler(
