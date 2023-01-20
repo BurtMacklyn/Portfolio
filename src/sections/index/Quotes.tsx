@@ -5,8 +5,8 @@ import { Paragraph } from '@/components/Typography/Paragraph';
 import { SectionTitle } from '@/components/Typography/SectionTitle';
 import { rem } from '@/css';
 
-import quotes from '@static/quotes.json' assert { type: 'json' };
 import { Link } from '@/components/Button/Link';
+import quotes from '@static/quotes.json' assert { type: 'json' };
 
 export const Quotes: React.FC = () => {
   return (
@@ -28,7 +28,7 @@ export const Quotes: React.FC = () => {
                 {q.author}
               </Link>
             </Inline>
-            , <Inline color={64}>{q.description}</Inline>
+            , <Inline color={'64'}>{q.description}</Inline>
           </Paragraph>
         ))}
       </Box>
