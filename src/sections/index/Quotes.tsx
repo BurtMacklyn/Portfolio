@@ -6,7 +6,7 @@ import { SectionTitle } from '@/components/Typography/SectionTitle';
 import { rem } from '@/css';
 
 import quotes from '@static/quotes.json' assert { type: 'json' };
-import { Link } from '../../components/Link';
+import { Link } from '@/components/Button/Link';
 
 export const Quotes: React.FC = () => {
   return (

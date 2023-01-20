@@ -1,5 +1,5 @@
 import { Box } from '@/components/Box';
-import { Link } from '@/components/Link';
+import { Link } from '@/components/Button/Link';
 import { Heading } from '@/components/Typography/Heading';
 
 import { PlainButton } from '@/components/PlainButton';
