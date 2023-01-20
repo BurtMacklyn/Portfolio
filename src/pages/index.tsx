@@ -1,3 +1,4 @@
+import { IndexAbout } from '@/components/sections/IndexAbout';
 import { Banner } from '@components/Banner';
 import { Main } from '@components/Main';
 import { Nav } from '@components/Nav/Nav';
@@ -12,6 +13,7 @@ export default function Home() {
       <Main>
         <IndexHero />
         <IndexJoke />
+        <IndexAbout />
       </Main>
     </>
   );

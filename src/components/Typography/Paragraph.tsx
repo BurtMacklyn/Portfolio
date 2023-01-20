@@ -1,5 +1,5 @@
 import { font } from '@/config/font';
-import { percent, rem } from '@/css';
+import { em, percent, rem } from '@/css';
 import { HTMLAttributes } from 'react';
 
 export const Paragraph: React.FC<
@@ -15,7 +15,6 @@ export const Paragraph: React.FC<
         lineHeight: percent(162.5),
         width: percent(100),
         maxWidth: rem(640),
-        letterSpacing: percent(-1, 'em'),
         ...props.style,
       }}>
       {props.children}

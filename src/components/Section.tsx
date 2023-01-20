@@ -13,7 +13,7 @@ export const Section: React.FC<Props> = props => {
   return (
     <section
       style={{
-        marginBlock: !matches ? rem(128) : rem(64),
+        marginBlock: !matches ? rem(96) : rem(64),
         display: 'flex',
         flexDirection: !props.row ? 'column' : 'row',
         gap: props.gap ? rem(props.gap) : undefined,
