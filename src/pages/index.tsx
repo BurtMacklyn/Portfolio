@@ -1,4 +1,5 @@
 import { Banner } from '@/components/Banner';
+import { Footer } from '@/components/Footer';
 import { Main } from '@/components/Main';
 import { Nav } from '@/components/Nav/Nav';
 
@@ -20,6 +21,7 @@ export default function Index() {
         <Technologies />
         <Quotes />
       </Main>
+      <Footer />
     </>
   );
 }

@@ -2,7 +2,7 @@ import { Box } from '@/components/Box';
 import { Link } from '@/components/Button/Link';
 import { Heading } from '@/components/Typography/Heading';
 
-import { PlainButton } from '@/components/PlainButton';
+import { PlainButton } from '@/components/Button/PlainButton';
 import { Code } from '@/components/Typography/Code';
 import { Inline } from '@/components/Typography/Inline';
 import { config } from '@/config/config';
@@ -41,21 +41,21 @@ export const Nav: React.FC = () => {
           height: rem(96),
           width: '100vw',
           zIndex: Z.Nav,
+          borderBottomColor: activeNav ? opacity(color(100), 8) : 'transparent',
+          borderBottomStyle: 'solid',
+          borderBottomWidth: rem(2),
         }}>
         <Box
           w="fill"
-          h={96}
+          h="fill"
           margin
           smooth
           spaceBetween
           row
           style={{
             alignItems: 'center',
-            borderBottomColor: activeNav
-              ? opacity(color(100), 8)
-              : 'transparent',
-            borderBottomStyle: 'solid',
-            borderBottomWidth: rem(2),
+            maxWidth: style.maxWidth,
+            marginInline: 'auto',
             ...blurredBackgroundStyles,
           }}>
           <Name />
@@ -100,7 +100,7 @@ export const Nav: React.FC = () => {
               top: 0,
               right: 0,
               height: '100%',
-              width: `min(100vw, ${rem(384)})`,
+              width: `min(100vw, ${style.breakpoints.xs})`,
               borderLeft: matchesXS ? undefined : `${rem(2)} solid ${color(8)}`,
               zIndex: Z.Nav,
               transform: clicked ? `translateX(0)` : `translateX(100%)`,

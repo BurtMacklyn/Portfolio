@@ -13,12 +13,18 @@ export const Banner: React.FC = () => {
   return (
     <Box
       w="fill"
-      margin
       bg={4}
-      paddingBlock={12}
-      relative
       style={{ zIndex: Z.Banner, display: matches ? 'none' : undefined }}>
-      <Code>{config.email}</Code>
+      <Box
+        w="fill"
+        margin
+        paddingBlock={12}
+        style={{
+          maxWidth: style.maxWidth,
+          marginInline: 'auto',
+        }}>
+        <Code>{config.email}</Code>
+      </Box>
     </Box>
   );
 };

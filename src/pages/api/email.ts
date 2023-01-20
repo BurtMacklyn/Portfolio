@@ -1,4 +1,4 @@
-import { config } from '@/config/style';
+import { config } from '@/config/config';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default function handler(

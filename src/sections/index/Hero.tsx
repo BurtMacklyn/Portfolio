@@ -33,6 +33,7 @@ export const Hero: React.FC = () => {
         style={{
           isolation: 'isolate',
           width: 'fit-content',
+          paddingTop: rem(64),
 
           fontFamily: font.sans.family,
           fontWeight: 700,
@@ -66,7 +67,7 @@ export const Hero: React.FC = () => {
         />
         <HeroLine>
           <HeroText value={hover} set={setHover1} color="primary">
-            Cooper Runyan &nbsp;
+            Cooper Runyan
           </HeroText>
         </HeroLine>
         <HeroLine>
@@ -79,7 +80,7 @@ export const Hero: React.FC = () => {
             developer
           </HeroText>
           <HeroText value={hover} set={setHover4} color="primary">
-            . &nbsp;
+            .
           </HeroText>
         </HeroLine>
       </Box>

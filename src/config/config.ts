@@ -7,6 +7,7 @@ export const config = {
   description: pkg.description,
   email: pkg.author.email,
   lastUpdated: 'January 12, 2023 9:41 PM MST',
+  repo: pkg.repository.url,
 
   siteImg: '/profile.png',
   emailLink: `mailto:${pkg.author.email}`,

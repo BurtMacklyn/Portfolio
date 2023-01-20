@@ -17,7 +17,7 @@ export const style = {
     lg: rem(64),
     md: rem(48),
     sm: rem(32),
-    xs: rem(16),
+    xs: rem(24),
   },
   color: {
     primary: '#009dff',
@@ -41,7 +41,7 @@ export const style = {
     lg: em(1200),
     md: em(896),
     sm: em(640),
-    xs: em(384),
+    xs: em(420),
   },
 } as const;
 

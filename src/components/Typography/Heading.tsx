@@ -14,9 +14,6 @@ export const Heading: React.FC<HTMLAttributes<HTMLHeadingElement>> = props => {
         lineHeight: percent(100),
         letterSpacing: percent(-5, 'em'),
         color: 'inherit',
-        transitionProperty: style.transition.property,
-        transitionDuration: style.transition.time,
-        transitionTimingFunction: style.transition.function,
 
         ...props.style,
       }}>
