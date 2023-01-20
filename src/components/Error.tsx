@@ -34,7 +34,7 @@ export const Error: React.FC<Props> = ({ code, message }) => {
           left: '50%',
           transform: 'translate(-50%, -50%)',
           letterSpacing: '-0.065em',
-          color: color(8),
+          color: color('8'),
           userSelect: 'none',
           pointerEvents: 'none',
           zIndex: Z.BehindContent,
@@ -47,7 +47,7 @@ export const Error: React.FC<Props> = ({ code, message }) => {
             fontWeight: 200,
             fontSize: rem(mq.sm ? 32 : mq.md ? 64 : mq.lg ? 96 : 144),
             letterSpacing: '-0.095em',
-            color: color(100),
+            color: color('100'),
             zIndex: Z.Content,
           }}>
           {code}
@@ -55,7 +55,7 @@ export const Error: React.FC<Props> = ({ code, message }) => {
         <p
           style={{
             fontWeight: 600,
-            color: color(100),
+            color: color('100'),
             fontSize: rem(mq.sm ? 24 : mq.md ? 32 : mq.lg ? 48 : 64),
             letterSpacing: '-0.025em',
             zIndex: Z.Content,

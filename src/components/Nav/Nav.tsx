@@ -13,7 +13,7 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { Fragment, useState } from 'react';
 
 const blurredBackgroundStyles = {
-  backgroundColor: opacity(color(0), 50),
+  backgroundColor: opacity(color('0'), 50),
   backdropFilter: 'blur(8px)',
 };
 
@@ -34,10 +34,12 @@ export const Nav: React.FC = () => {
           position: 'fixed',
           top: 0,
           left: 0,
-          height: rem(96),
+          height: rem(style.navHeight),
           width: '100vw',
           zIndex: Z.Nav,
-          borderBottomColor: activeNav ? opacity(color(100), 8) : 'transparent',
+          borderBottomColor: activeNav
+            ? opacity(color('100'), 8)
+            : 'transparent',
           borderBottomStyle: 'solid',
           borderBottomWidth: rem(2),
           transitionDuration: style.transition.time + 'ms',
@@ -57,7 +59,9 @@ export const Nav: React.FC = () => {
             justifyContent: 'flex-end',
             paddingInline: mq.xxl
               ? variable('margin')
-              : `min(${variable('margin')},${rem(48)})`,
+              : `min(${variable('margin')},${rem(
+                  (style.navHeight / 2) as any,
+                )})`,
             ...blurredBackgroundStyles,
           }}>
           {/* <Name /> */}
@@ -68,7 +72,7 @@ export const Nav: React.FC = () => {
               {Object.entries(config.pages).map(([k, v], i, a) => (
                 <Fragment key={v}>
                   <Link to={v}>
-                    <Inline color={100} hover="primary">
+                    <Inline color={'100'} hover="primary">
                       {k}
                     </Inline>
                   </Link>
@@ -89,11 +93,11 @@ export const Nav: React.FC = () => {
           margin
           style={{
             position: 'fixed',
-            top: rem(96),
+            top: rem(style.navHeight),
             right: 0,
             bottom: 0,
             width: `min(100vw, ${style.breakpoints.xs})`,
-            borderLeft: mq.xs ? undefined : `${rem(2)} solid ${color(8)}`,
+            borderLeft: mq.xs ? undefined : `${rem(2)} solid ${color('8')}`,
             zIndex: Z.Nav,
             transform:
               clicked && !mq.xxl ? `translateX(0)` : `translateX(100%)`,
@@ -109,7 +113,7 @@ export const Nav: React.FC = () => {
               <Fragment key={v}>
                 <Code hidden>{'  <li>{'}</Code>
                 <Link to={v}>
-                  <Code style={{ color: color(100) }}>
+                  <Code style={{ color: color('100') }}>
                     <Inline hover="primary">{k}</Inline>
                   </Code>
                 </Link>
@@ -147,7 +151,7 @@ const NavIcon = ({ clicked }: any) => {
         style={{
           top: 0,
           left: 0,
-          background: color(100),
+          background: color('100'),
           height: rem(width as any),
           borderRadius: style.borderRadius,
           position: 'absolute',
@@ -169,7 +173,7 @@ const NavIcon = ({ clicked }: any) => {
       />
       <span
         style={{
-          background: color(100),
+          background: color('100'),
           height: rem(width as any),
           width: rem(size),
           borderRadius: style.borderRadius,
@@ -184,7 +188,7 @@ const NavIcon = ({ clicked }: any) => {
       />
       <span
         style={{
-          background: color(100),
+          background: color('100'),
           height: rem(width),
           borderRadius: style.borderRadius,
           position: 'absolute',

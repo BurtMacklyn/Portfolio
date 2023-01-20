@@ -41,7 +41,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <meta itemProp="name" content={config.title} />
         <meta itemProp="description" content={config.description} />
-        <meta name="theme" content={color(0)} />
+        <meta name="theme" content={color('0')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta itemProp="image" content={config.siteImg} />
 
@@ -75,8 +75,8 @@ export default function App({ Component, pageProps }: AppProps) {
           --mono: ${mono.style.fontFamily};
           --margin: ${style.margin.default};
           font-family: ${inter.style.fontFamily};
-          background-color: ${color(0)};
-          color: ${color(100)};
+          background-color: ${color('0')};
+          color: ${color('100')};
           color-scheme: dark;
           box-sizing: border-box;
           min-height: 100vh;
@@ -93,7 +93,7 @@ export default function App({ Component, pageProps }: AppProps) {
           .join('\n')}
 
         ::selection {
-          background-color: ${opacity(color(100), 24)};
+          background-color: ${opacity(color('100'), 24)};
         }
       `}</style>
       <MQProvider>

@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
   const [hover4, setHover4] = useState(false); // blue
 
   const hover = !mq.touchscreen && (hover1 || hover2 || hover3 || hover4);
-  const currentColor = hover1 || hover4 ? color('primary') : color(64);
+  const currentColor = hover1 || hover4 ? color('primary') : color('64');
 
   return (
     <Section gap={32}>
@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
           fontSize: !mq.sm ? rem(96) : rem(64),
           lineHeight: 1,
           letterSpacing: percent(-5, 'em'),
-          marginTop: !mq.md ? rem(96) : rem(48),
+          marginTop: !mq.md ? rem(style.navHeight) : rem(48),
         }}
         raw={{
           onMouseMove: mq.touchscreen
@@ -76,12 +76,12 @@ export const Hero: React.FC = () => {
           </HeroText>
         </Box>
         <Box row>
-          <HeroText value={hover} set={setHover2} color={hover ? 64 : 100}>
+          <HeroText value={hover} set={setHover2} color={hover ? '64' : '100'}>
             fullstack web
           </HeroText>
         </Box>
         <Box row>
-          <HeroText value={hover} set={setHover3} color={hover ? 64 : 100}>
+          <HeroText value={hover} set={setHover3} color={hover ? '64' : '100'}>
             developer
           </HeroText>
           <HeroText value={hover} set={setHover4} color="primary">
@@ -115,7 +115,7 @@ const HeroText: React.FC<{
       style={{
         fontSize: '1em',
         zIndex: Z.Content,
-        color: props.value ? color(0) : color(props.color),
+        color: props.value ? color('0') : color(props.color),
         display: 'inline',
         width: 'fit-content',
         transition: `all ${animationSpeed} ${style.transition.function}, font-size 0s, letter-spacing 0s`,
@@ -126,9 +126,9 @@ const HeroText: React.FC<{
             )}, 1px 1px 0 ${color(props.color)}, -1px 1px 0 ${color(
               props.color,
             )}`
-          : `-1px -1px 0 ${color(4)}, 1px -1px 0 ${color(4)}, 1px 1px 0 ${color(
-              4,
-            )}, -1px 1px 0 ${color(4)}`,
+          : `-1px -1px 0 ${color('4')}, 1px -1px 0 ${color(
+              '4',
+            )}, 1px 1px 0 ${color('4')}, -1px 1px 0 ${color('4')}`,
       }}>
       {props.children}
     </h1>

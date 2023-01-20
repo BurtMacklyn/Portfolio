@@ -11,8 +11,8 @@ export const Footer: React.FC = () => {
     <footer
       style={{
         width: '100%',
-        background: color(4),
-        borderTop: `${rem(1)} solid ${color(12)}`,
+        background: color('4'),
+        borderTop: `${rem(1)} solid ${color('12')}`,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -25,19 +25,19 @@ export const Footer: React.FC = () => {
         style={{
           maxWidth: style.maxWidth,
         }}>
-        <Paragraph style={{ color: color(80) }}>
+        <Paragraph style={{ color: color('80') }}>
           Last updated: {config.lastUpdated}
         </Paragraph>
-        <Paragraph style={{ color: color(80) }}>
+        <Paragraph style={{ color: color('80') }}>
           <Name /> Portfolio v{config.version}
         </Paragraph>
-        <Paragraph style={{ color: color(80) }}>
+        <Paragraph style={{ color: color('80') }}>
           Copyright © 2022 - All rights reserved by <Name />.
         </Paragraph>
-        <Paragraph style={{ color: color(80) }}>
+        <Paragraph style={{ color: color('80') }}>
           Site created and designed by <Name /> using NextJS v13.1
         </Paragraph>
-        <Paragraph style={{ color: color(80) }}>
+        <Paragraph style={{ color: color('80') }}>
           <Link to={config.repo} new>
             <Inline bold color="primary">
               View source code

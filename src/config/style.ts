@@ -3,6 +3,7 @@ import { em, rem } from '../css';
 export const style = {
   maxWidth: rem(2000 as any),
   borderRadius: rem(4),
+  navHeight: 96,
   transition: {
     property:
       'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
@@ -24,16 +25,16 @@ export const style = {
     secondary: '#b030ff',
     error: '#ff442c',
 
-    0: '#000000',
-    4: '#0a0a0a',
-    8: '#141414',
-    12: '#1f1f1f',
-    24: '#3d3d3d',
-    36: '#5c5c5c',
-    50: '#808080',
-    64: '#a3a3a3',
-    80: '#cccccc',
-    100: '#ffffff',
+    '0': '#000000',
+    '4': '#0a0a0a',
+    '8': '#141414',
+    '12': '#1f1f1f',
+    '24': '#3d3d3d',
+    '36': '#5c5c5c',
+    '50': '#808080',
+    '64': '#a3a3a3',
+    '80': '#cccccc',
+    '100': '#ffffff',
   },
   breakpoints: {
     lg: em(1200),

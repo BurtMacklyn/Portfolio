@@ -11,7 +11,7 @@ export const BigText: React.FC<HTMLAttributes<HTMLHeadingElement>> = props => {
         fontFamily: font.sans.family,
         fontWeight: font.sans.weight,
         fontSize: rem(64),
-        color: color(50),
+        color: color('50'),
         lineHeight: percent(125),
         letterSpacing: percent(-3, 'em'),
         ...props.style,

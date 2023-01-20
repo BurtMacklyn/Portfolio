@@ -11,7 +11,7 @@ export const Code: React.FC<HTMLAttributes<HTMLSpanElement>> = props => {
       style={{
         fontFamily: font.mono.family,
         fontWeight: font.mono.weight,
-        color: color(50),
+        color: color('50'),
         letterSpacing: percent(-1, 'em'),
         cursor: props.hidden ? 'default' : undefined,
         userSelect: props.hidden ? 'none' : undefined,
