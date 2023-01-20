@@ -27,7 +27,7 @@ export const Inline: React.FC<Props> = props => {
         fontWeight: props.bold ? font.sans.bold : undefined,
         cursor: props.hidden ? 'none' : undefined,
         transitionProperty: style.transition.property,
-        transitionDuration: style.transition.time,
+        transitionDuration: `${style.transition.time}ms`,
         transitionTimingFunction: style.transition.function,
       }}>
       {props.children}
