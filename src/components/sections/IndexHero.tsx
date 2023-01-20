@@ -4,9 +4,9 @@ import { color, Color, style, Z } from '@/config/style';
 import { percent, rem } from '@/css';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { Box } from '@components/Box';
-import { Button } from '@components/Button';
 import { Section } from '@components/Section';
 import { useRef, useState } from 'react';
+import { ButtonGroup } from '../ButtonGroup';
 
 const animationSpeed = `${style.transition.time * 4}ms`;
 
@@ -83,10 +83,13 @@ export const IndexHero: React.FC = () => {
           </HeroText>
         </HeroLine>
       </Box>
-      <Box row gap={8}>
-        <Button href={config.pages.contact}>Contact</Button>
-        <Button href={config.social.github.link}>Github</Button>
-      </Box>
+      <ButtonGroup
+        style={{}}
+        buttons={[
+          { href: config.pages.contact, children: 'Contact' },
+          { href: config.social.github.link, children: 'Github' },
+        ]}
+      />
     </Section>
   );
 };

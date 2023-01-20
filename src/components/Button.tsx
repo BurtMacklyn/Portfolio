@@ -4,13 +4,19 @@ import { opacity, percent, rem } from '@/css';
 import { Box } from '@components/Box';
 import { PlainButton } from '@components/PlainButton';
 import NextLink from 'next/link';
-import { useRef, useState } from 'react';
+import { CSSProperties, useEffect, useRef, useState } from 'react';
 
-interface ButtonProps {
+export interface ButtonProps {
   children?: any;
   onClick?: () => any;
   href?: string;
   new?: boolean;
+  target?: {
+    x: number;
+    y: number;
+  };
+  hover?: boolean;
+  raw?: CSSProperties;
 }
 
 export const Button: React.FC<ButtonProps> = props => {
@@ -19,6 +25,14 @@ export const Button: React.FC<ButtonProps> = props => {
   const [y, setY] = useState(0);
 
   const [hover, setHover] = useState(false);
+
+  useEffect(() => {
+    if (!props.target) return;
+
+    const rect = ref.current?.getBoundingClientRect()!;
+    setX(props.target.x - rect.left);
+    setY(props.target.y - rect.top);
+  }, [props.target]);
 
   return (
     <DetermineButtonElement {...props}>
@@ -34,11 +48,13 @@ export const Button: React.FC<ButtonProps> = props => {
           // border: `${rem(2)} solid ${style.color[8]}`,
         }}
         raw={{
-          onMouseMove: e => {
-            const rect = ref.current!.getBoundingClientRect();
-            setX(e.clientX - rect.left);
-            setY(e.clientY - rect.top);
-          },
+          onMouseMove: props.target
+            ? undefined
+            : e => {
+                const rect = ref.current!.getBoundingClientRect();
+                setX(e.clientX - rect.left);
+                setY(e.clientY - rect.top);
+              },
           onMouseOver: () => setHover(true),
           onMouseOut: () => setHover(false),
         }}>
@@ -78,7 +94,7 @@ export const Button: React.FC<ButtonProps> = props => {
             zIndex: Z.Elevated,
             top: 0,
             left: 0,
-            opacity: hover ? 1 : 0,
+            opacity: (props.hover !== undefined ? props.hover : hover) ? 1 : 0,
             borderRadius: 'inherit',
           }}
         />
@@ -143,6 +159,7 @@ const DetermineButtonElement: React.FC<ButtonProps> = props => {
     cursor: 'pointer',
     userSelect: 'none',
     width: 'fit-content',
+    ...props.raw,
   } as const;
 
   if (props.href)
