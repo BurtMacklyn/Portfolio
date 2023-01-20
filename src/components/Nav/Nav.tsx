@@ -92,7 +92,7 @@ export const Nav: React.FC = () => {
             top: rem(96),
             right: 0,
             bottom: 0,
-            maxWidth: `100vw`,
+            width: `min(100vw, ${style.breakpoints.xs})`,
             borderLeft: mq.xs ? undefined : `${rem(2)} solid ${color(8)}`,
             zIndex: Z.Nav,
             transform:

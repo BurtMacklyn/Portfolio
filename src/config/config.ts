@@ -35,5 +35,3 @@ export const config = {
   // meta tags
   meta: [],
 } as const;
-
-console.log(config.lastUpdated);

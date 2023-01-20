@@ -39,8 +39,6 @@ export const MQProvider = ({ children }: any) => {
     [xs, sm, md, lg, xxl, touchscreen],
   );
 
-  useEffect(() => console.log(touchscreen));
-
   return <MQContext.Provider value={queries}>{children}</MQContext.Provider>;
 };
 
