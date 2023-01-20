@@ -1,4 +1,3 @@
-import { Main } from '@/components/Main';
 import { Nav } from '@/components/Nav/Nav';
 
 import { color, style } from '@/config/style';

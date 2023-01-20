@@ -1,5 +1,5 @@
-import { getJoke } from './index';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { getJoke } from './index';
 
 export default function handler(
   req: NextApiRequest,

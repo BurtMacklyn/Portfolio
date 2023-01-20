@@ -10,9 +10,11 @@ const initial = {
   touchscreen: false,
 };
 
+export const _shape: typeof initial = JSON.parse(JSON.stringify(initial));
+
 type MediaQueries = typeof initial;
 
-const MQContext = createContext<MediaQueries>(initial);
+export const MQContext = createContext<MediaQueries>(initial);
 
 export const MQProvider = ({ children }: any) => {
   const [queries, setQueries] = useState<MediaQueries>(initial);
