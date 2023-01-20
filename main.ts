@@ -17,4 +17,4 @@ function render(ctx: RenderContext, render: InnerRenderFunction) {
   ctx.styles.push(overrides);
 }
 
-await start(manifest, { render });
+//await start(manifest, { render });
