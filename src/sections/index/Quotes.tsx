@@ -6,9 +6,9 @@ import { Inline } from '@components/Typography/Inline';
 import { Paragraph } from '@components/Typography/Paragraph';
 
 import quotes from '@static/quotes.json' assert { type: 'json' };
-import { Link } from '../Link';
+import { Link } from '../../components/Link';
 
-export const IndexQuotes: React.FC = () => {
+export const Quotes: React.FC = () => {
   return (
     <Section>
       <Box gap={24}>

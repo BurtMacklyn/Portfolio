@@ -6,11 +6,11 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { Box } from '@components/Box';
 import { Section } from '@components/Section';
 import { useRef, useState } from 'react';
-import { ButtonGroup } from '../ButtonGroup';
+import { ButtonGroup } from '../../components/ButtonGroup';
 
 const animationSpeed = `${style.transition.time * 4}ms`;
 
-export const IndexHero: React.FC = () => {
+export const Hero: React.FC = () => {
   const matches = useMediaQuery(`(max-width: ${style.breakpoints.sm})`);
 
   const ref = useRef<HTMLDivElement>(null);

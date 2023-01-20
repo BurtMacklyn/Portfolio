@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { Section } from '@components/Section';
 import { BigText } from '@components/Typography/BigText';
 
-export const IndexJoke: React.FC = () => {
+export const Joke: React.FC = () => {
   const [joke, setJoke] = useState<string>(
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, sequi.',
   );

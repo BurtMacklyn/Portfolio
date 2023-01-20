@@ -1,15 +1,15 @@
-import { Box } from '../Box';
-import { Section } from '../Section';
-import { Inline } from '../Typography/Inline';
-import { SectionTitle } from '../Typography/SectionTitle';
+import { Box } from '../../components/Box';
+import { Section } from '../../components/Section';
+import { Inline } from '../../components/Typography/Inline';
+import { SectionTitle } from '../../components/Typography/SectionTitle';
 
 import { rem } from '@/css';
 import technologies from '@static/technologies.json' assert { type: 'json' };
-import { ButtonGroup } from '../ButtonGroup';
-import { Heading } from '../Typography/Heading';
-import { Paragraph } from '../Typography/Paragraph';
+import { ButtonGroup } from '../../components/ButtonGroup';
+import { Heading } from '../../components/Typography/Heading';
+import { Paragraph } from '../../components/Typography/Paragraph';
 
-export const IndexTechnologies: React.FC = () => {
+export const Technologies: React.FC = () => {
   return (
     <Section>
       <Box gap={24}>

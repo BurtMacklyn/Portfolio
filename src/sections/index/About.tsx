@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 const startYear = 2021;
 
-export const IndexAbout: React.FC = () => {
+export const About: React.FC = () => {
   const [diff, setDiff] = useState(0);
   useEffect(() => {
     setDiff(new Date().getFullYear() - startYear);

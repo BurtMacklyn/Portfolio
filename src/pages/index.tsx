@@ -1,23 +1,23 @@
-import { IndexQuotes } from '@/components/sections/IndexQuotes';
+import { About } from '@/sections/index/About';
+import { Hero } from '@/sections/index/Hero';
+import { Joke } from '@/sections/index/Joke';
+import { Quotes } from '@/sections/index/Quotes';
+import { Technologies } from '@/sections/index/Technologies';
 import { Banner } from '@components/Banner';
 import { Main } from '@components/Main';
 import { Nav } from '@components/Nav/Nav';
-import { IndexAbout } from '@components/sections/IndexAbout';
-import { IndexHero } from '@components/sections/IndexHero';
-import { IndexJoke } from '@components/sections/IndexJoke';
-import { IndexTechnologies } from '@components/sections/IndexTechnologies';
 
-export default function Home() {
+export default function Index() {
   return (
     <>
       <Banner />
       <Nav />
       <Main>
-        <IndexHero />
-        <IndexJoke />
-        <IndexAbout />
-        <IndexTechnologies />
-        <IndexQuotes />
+        <Hero />
+        <Joke />
+        <About />
+        <Technologies />
+        <Quotes />
       </Main>
     </>
   );
