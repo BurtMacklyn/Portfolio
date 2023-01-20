@@ -13,8 +13,6 @@ export const style = {
   margin: {
     default: rem(128),
 
-    // media queries
-    xl: rem(96),
     lg: rem(64),
     md: rem(48),
     sm: rem(32),
@@ -68,10 +66,7 @@ export function color<T extends Color>(opt: T) {
 export function setCSSVariables() {
   const setvar = (k: string, v: any) => document?.documentElement?.style?.setProperty(`--${k}`, v)
 
-  for (const [k, v] of Object.entries(style.breakpoints)) setvar(`media-${k}`, v);
-  for (const [k, v] of Object.entries(style.margin)) setvar(`margin-${k}`, v);
   for (const [k, v] of Object.entries(style.color)) setvar(`color-${k}`, v)
-
 
   setvar('maxWidth', style.maxWidth)
 }
