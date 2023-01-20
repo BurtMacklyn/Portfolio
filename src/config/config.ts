@@ -31,7 +31,4 @@ export const config = {
       link: `https://github.com/${pkg.author.github}`,
     },
   },
-
-  // meta tags
-  meta: [],
 } as const;
