@@ -8,7 +8,7 @@ import { Inline } from '@/components/Typography/Inline';
 import { config } from '@/config/config';
 import { color, style, Z } from '@/config/style';
 import { useMQ } from '@/context/MQ';
-import { opacity, rem } from '@/css';
+import { opacity, rem, variable } from '@/css';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { Fragment, useState } from 'react';
 
@@ -23,8 +23,7 @@ export const Nav: React.FC = () => {
   const [clicked, setClicked] = useState(false);
 
   const [dummy, isAtTopOfDocument] = useIntersectionObserver();
-  const activeNav =
-    !isAtTopOfDocument || (clicked && (mq.touchscreen || mq.md));
+  const activeNav = !isAtTopOfDocument || clicked;
 
   return (
     <>
@@ -32,7 +31,7 @@ export const Nav: React.FC = () => {
 
       <nav
         style={{
-          position: 'sticky',
+          position: 'fixed',
           top: 0,
           left: 0,
           height: rem(96),
@@ -41,11 +40,13 @@ export const Nav: React.FC = () => {
           borderBottomColor: activeNav ? opacity(color(100), 8) : 'transparent',
           borderBottomStyle: 'solid',
           borderBottomWidth: rem(2),
+          transitionDuration: style.transition.time + 'ms',
+          transitionProperty: style.transition.property,
+          transitionTimingFunction: style.transition.function,
         }}>
         <Box
           w="fill"
           h="fill"
-          margin
           smooth
           spaceBetween
           row
@@ -53,11 +54,15 @@ export const Nav: React.FC = () => {
             alignItems: 'center',
             maxWidth: style.maxWidth,
             marginInline: 'auto',
+            justifyContent: 'flex-end',
+            paddingInline: mq.xxl
+              ? variable('margin')
+              : `min(${variable('margin')},${rem(48)})`,
             ...blurredBackgroundStyles,
           }}>
-          <Name />
+          {/* <Name /> */}
 
-          {!(mq.touchscreen || mq.md) ? (
+          {mq.xxl ? (
             <Code hidden>
               const nav: Page[] = [
               {Object.entries(config.pages).map(([k, v], i, a) => (
@@ -74,55 +79,45 @@ export const Nav: React.FC = () => {
             </Code>
           ) : (
             <PlainButton onClick={() => setClicked(!clicked)}>
-              <NavIcon clicked={clicked && (mq.touchscreen || mq.md)} />
+              <NavIcon clicked={clicked} />
             </PlainButton>
           )}
         </Box>
 
         <Box
+          smooth
+          margin
           style={{
-            display: mq.touchscreen || mq.md ? undefined : 'none',
-            position: 'sticky',
+            position: 'fixed',
             top: rem(96),
-            left: 0,
-            height: `calc(100vh - ${rem(96)})`,
-            width: '100vw',
+            right: 0,
+            bottom: 0,
+            maxWidth: `100vw`,
+            borderLeft: mq.xs ? undefined : `${rem(2)} solid ${color(8)}`,
             zIndex: Z.Nav,
-            overflowX: 'hidden',
-            pointerEvents: 'none',
+            transform:
+              clicked && !mq.xxl ? `translateX(0)` : `translateX(100%)`,
+            pointerEvents: 'all',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            ...blurredBackgroundStyles,
           }}>
-          <Box
-            style={{
-              position: 'absolute',
-              top: 0,
-              right: 0,
-              height: '100%',
-              width: `min(100vw, ${style.breakpoints.xs})`,
-              borderLeft: mq.xs ? undefined : `${rem(2)} solid ${color(8)}`,
-              zIndex: Z.Nav,
-              transform: clicked ? `translateX(0)` : `translateX(100%)`,
-              pointerEvents: 'all',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              ...blurredBackgroundStyles,
-            }}>
-            <pre>
-              <Code hidden>{'<ul>\n'}</Code>
-              {Object.entries(config.pages).map(([k, v]) => (
-                <Fragment key={v}>
-                  <Code hidden>{'  <li>{'}</Code>
-                  <Link to={v}>
-                    <Code style={{ color: color(100) }}>
-                      <Inline hover="primary">{k}</Inline>
-                    </Code>
-                  </Link>
-                  <Code hidden>{'}</li>\n'}</Code>
-                </Fragment>
-              ))}
-              <Code hidden>{'</ul>'}</Code>
-            </pre>
-          </Box>
+          <pre>
+            <Code hidden>{'<ul>\n'}</Code>
+            {Object.entries(config.pages).map(([k, v]) => (
+              <Fragment key={v}>
+                <Code hidden>{'  <li>{'}</Code>
+                <Link to={v}>
+                  <Code style={{ color: color(100) }}>
+                    <Inline hover="primary">{k}</Inline>
+                  </Code>
+                </Link>
+                <Code hidden>{'}</li>\n'}</Code>
+              </Fragment>
+            ))}
+            <Code hidden>{'</ul>'}</Code>
+          </pre>
         </Box>
       </nav>
     </>

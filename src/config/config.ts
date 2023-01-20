@@ -1,4 +1,7 @@
+import lastUpdate from '@static/lastupdate.json' assert { type: 'json' };
 import pkg from '../../package.json';
+
+const parsedBuildDate = new Date(lastUpdate.value);
 
 export const config = {
   // metadata
@@ -6,7 +9,10 @@ export const config = {
   version: pkg.version,
   description: pkg.description,
   email: pkg.author.email,
-  lastUpdated: 'January 12, 2023 9:41 PM MST',
+  lastUpdated: Intl.DateTimeFormat('en', {
+    dateStyle: 'full',
+    timeStyle: 'long',
+  }).format(parsedBuildDate),
   repo: pkg.repository.url,
 
   siteImg: '/profile.png',
@@ -29,3 +35,5 @@ export const config = {
   // meta tags
   meta: [],
 } as const;
+
+console.log(config.lastUpdated);

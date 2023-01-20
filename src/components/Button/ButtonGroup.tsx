@@ -1,5 +1,6 @@
 import { Box } from '@/components/Box';
 import { Button, ButtonProps } from '@/components/Button/Button';
+import { useMQ } from '@/context/MQ';
 import { CSSProperties, useRef, useState } from 'react';
 
 interface Props {
@@ -8,6 +9,8 @@ interface Props {
 }
 
 export const ButtonGroup: React.FC<Props> = props => {
+  const mq = useMQ();
+
   const ref = useRef<HTMLDivElement>(null);
 
   const [target, setTarget] = useState({ x: 0, y: 0 });
@@ -23,14 +26,22 @@ export const ButtonGroup: React.FC<Props> = props => {
         ...props.style,
       }}
       raw={{
-        onMouseMove: e => {
-          setTarget({ x: e.clientX, y: e.clientY });
-          setHover(true);
-        },
-        onMouseOut: () => setHover(false),
+        onMouseMove: mq.touchscreen
+          ? undefined
+          : e => {
+              setTarget({ x: e.clientX, y: e.clientY });
+              setHover(true);
+            },
+        onMouseOut: mq.touchscreen ? undefined : () => setHover(false),
       }}>
       {props.buttons.map(button => (
-        <Button {...button} key={button.href} target={target} hover={hover} />
+        <Button
+          {...button}
+          key={button.href}
+          target={target}
+          hover={hover}
+          static={mq.touchscreen}
+        />
       ))}
     </Box>
   );

@@ -6,6 +6,7 @@ const initial = {
   sm: false,
   md: false,
   lg: false,
+  xxl: false,
   touchscreen: false,
 };
 
@@ -20,7 +21,10 @@ export const MQProvider = ({ children }: any) => {
   const sm = useMediaQuery(`(max-width: ${style.breakpoints.sm})`);
   const md = useMediaQuery(`(max-width: ${style.breakpoints.md})`);
   const lg = useMediaQuery(`(max-width: ${style.breakpoints.lg})`);
-  const touchscreen = useMediaQuery(`(pointer: none) or (not(hover: hover))`);
+  const xxl = useMediaQuery(`(min-width: ${style.maxWidth})`);
+  const touchscreen = useMediaQuery(
+    `(hover: none) or (pointer: none) or (not(hover: hover))`,
+  );
 
   useEffect(
     () =>
@@ -29,10 +33,13 @@ export const MQProvider = ({ children }: any) => {
         sm,
         md,
         lg,
+        xxl,
         touchscreen,
       }),
-    [xs, sm, md, lg, touchscreen],
+    [xs, sm, md, lg, xxl, touchscreen],
   );
+
+  useEffect(() => console.log(touchscreen));
 
   return <MQContext.Provider value={queries}>{children}</MQContext.Provider>;
 };

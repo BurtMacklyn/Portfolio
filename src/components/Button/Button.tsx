@@ -21,6 +21,7 @@ export interface ButtonProps {
   fillX?: boolean;
   fillY?: boolean;
   animationSpeedModifier?: number;
+  static?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = props => {
@@ -31,7 +32,7 @@ export const Button: React.FC<ButtonProps> = props => {
   const [hover, setHover] = useState(false);
 
   useEffect(() => {
-    if (!props.target) return;
+    if (!props.target || props.static) return;
 
     const rect = ref.current?.getBoundingClientRect()!;
     setX(props.target.x - rect.left);
@@ -53,15 +54,16 @@ export const Button: React.FC<ButtonProps> = props => {
           // border: `${rem(2)} solid ${style.color[8]}`,
         }}
         raw={{
-          onMouseMove: props.target
-            ? undefined
-            : e => {
-                const rect = ref.current!.getBoundingClientRect();
-                setX(e.clientX - rect.left);
-                setY(e.clientY - rect.top);
-              },
-          onMouseOver: () => setHover(true),
-          onMouseOut: () => setHover(false),
+          onMouseMove:
+            props.target || props.static
+              ? undefined
+              : e => {
+                  const rect = ref.current!.getBoundingClientRect();
+                  setX(e.clientX - rect.left);
+                  setY(e.clientY - rect.top);
+                },
+          onMouseOver: props.static ? undefined : () => setHover(true),
+          onMouseOut: props.static ? undefined : () => setHover(false),
         }}>
         {/* Border */}
         <Box
@@ -83,29 +85,33 @@ export const Button: React.FC<ButtonProps> = props => {
         />
 
         {/* Border Circle */}
-        <Box
-          smooth
-          animationSpeedModifier={props.animationSpeedModifier || 2}
-          w="fill"
-          h="fill"
-          style={{
-            background: `radial-gradient(${
-              props.large ? 300 : 75
-            }px circle at ${x}px ${y}px, ${opacity(
-              style.color.primary,
-              60,
-            )}, transparent)`,
-            paddingBlock: 'inherit',
-            paddingInline: 'inherit',
-            position: 'absolute',
-            zIndex: Z.Elevated,
-            top: 0,
-            left: 0,
-            opacity: (props.hover !== undefined ? props.hover : hover) ? 1 : 0,
-            borderRadius: 'inherit',
-            transitionProperty: 'all',
-          }}
-        />
+        {!props.static && (
+          <Box
+            smooth
+            animationSpeedModifier={props.animationSpeedModifier || 2}
+            w="fill"
+            h="fill"
+            style={{
+              background: `radial-gradient(${
+                props.large ? 300 : 75
+              }px circle at ${x}px ${y}px, ${opacity(
+                style.color.primary,
+                60,
+              )}, transparent)`,
+              paddingBlock: 'inherit',
+              paddingInline: 'inherit',
+              position: 'absolute',
+              zIndex: Z.Elevated,
+              top: 0,
+              left: 0,
+              opacity: (props.hover !== undefined ? props.hover : hover)
+                ? 1
+                : 0,
+              borderRadius: 'inherit',
+              transitionProperty: 'all',
+            }}
+          />
+        )}
 
         <Box
           style={{
@@ -119,29 +125,31 @@ export const Button: React.FC<ButtonProps> = props => {
             borderRadius: 'inherit',
             padding: 'inherit',
           }}>
-          <Box
-            smooth
-            animationSpeedModifier={props.animationSpeedModifier || 2}
-            style={{
-              background: `radial-gradient(${
-                props.large ? 600 : 200
-              }px circle at ${x}px ${y}px, ${opacity(
-                style.color.primary,
-                props.large ? 20 : 25,
-              )}, transparent 40%)`,
+          {!props.static && (
+            <Box
+              smooth
+              animationSpeedModifier={props.animationSpeedModifier || 2}
+              style={{
+                background: `radial-gradient(${
+                  props.large ? 600 : 200
+                }px circle at ${x}px ${y}px, ${opacity(
+                  style.color.primary,
+                  props.large ? 20 : 25,
+                )}, transparent 40%)`,
 
-              opacity: hover ? 1 : 0,
-              top: 0,
-              left: 0,
-              bottom: 0,
-              right: 0,
-              position: 'absolute',
-              zIndex: Z.Elevated3,
-              borderRadius: 'inherit',
-              padding: 'inherit',
-              transitionProperty: 'all',
-            }}
-          />
+                opacity: hover ? 1 : 0,
+                top: 0,
+                left: 0,
+                bottom: 0,
+                right: 0,
+                position: 'absolute',
+                zIndex: Z.Elevated3,
+                borderRadius: 'inherit',
+                padding: 'inherit',
+                transitionProperty: 'all',
+              }}
+            />
+          )}
         </Box>
 
         <div

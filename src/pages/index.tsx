@@ -1,4 +1,3 @@
-import { Banner } from '@/components/Banner';
 import { Footer } from '@/components/Footer';
 import { Main } from '@/components/Main';
 import { Nav } from '@/components/Nav/Nav';
@@ -12,7 +11,6 @@ import { Technologies } from '@/sections/index/Technologies';
 export default function Index() {
   return (
     <>
-      <Banner />
       <Nav />
       <Main>
         <Hero />

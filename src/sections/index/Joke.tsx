@@ -16,7 +16,9 @@ export const Joke: React.FC = () => {
 
   return (
     <Section>
-      <BigText style={mq.sm ? { fontSize: rem(48) } : {}}>{joke}</BigText>
+      <BigText style={mq.sm ? { fontSize: rem(36 as any) } : {}}>
+        {joke}
+      </BigText>
     </Section>
   );
 };
