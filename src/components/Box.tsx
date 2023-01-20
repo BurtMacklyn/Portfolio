@@ -11,7 +11,8 @@ export interface BoxProps {
   h?: 'fill' | Space;
   w?: 'fill' | Space;
   round?: boolean;
-  smooth?: boolean | 'slow';
+  smooth?: boolean;
+  animationSpeedModifier?: number;
   margin?: boolean | 'auto';
   paddingBlock?: Space;
   paddingInline?: Space;
@@ -51,11 +52,13 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
             : undefined,
         borderRadius: props.round ? style.borderRadius : undefined,
         background: props.bg !== undefined ? color(props.bg) : undefined,
-        transitionProperty: props.smooth
+        transitionProperty: props.style?.transitionProperty
+          ? props.style.transitionProperty
+          : props.smooth
           ? style.transition.property
           : undefined,
         transitionDuration: props.smooth
-          ? `${style.transition.time * (props.smooth === 'slow' ? 2 : 1)}ms`
+          ? `${style.transition.time * (props.animationSpeedModifier || 1)}ms`
           : undefined,
         transitionTimingFunction: style.transition.function,
 

@@ -20,6 +20,7 @@ export interface ButtonProps {
   large?: boolean;
   fillX?: boolean;
   fillY?: boolean;
+  animationSpeedModifier?: number;
 }
 
 export const Button: React.FC<ButtonProps> = props => {
@@ -66,7 +67,6 @@ export const Button: React.FC<ButtonProps> = props => {
         <Box
           w="fill"
           h="fill"
-          smooth="slow"
           style={{
             background: style.color[12],
             paddingBlock: 'inherit',
@@ -84,12 +84,13 @@ export const Button: React.FC<ButtonProps> = props => {
 
         {/* Border Circle */}
         <Box
-          smooth="slow"
+          smooth
+          animationSpeedModifier={props.animationSpeedModifier || 2}
           w="fill"
           h="fill"
           style={{
             background: `radial-gradient(${
-              props.large ? 200 : 75
+              props.large ? 300 : 75
             }px circle at ${x}px ${y}px, ${opacity(
               style.color.primary,
               60,
@@ -102,6 +103,7 @@ export const Button: React.FC<ButtonProps> = props => {
             left: 0,
             opacity: (props.hover !== undefined ? props.hover : hover) ? 1 : 0,
             borderRadius: 'inherit',
+            transitionProperty: 'all',
           }}
         />
 
@@ -118,7 +120,8 @@ export const Button: React.FC<ButtonProps> = props => {
             padding: 'inherit',
           }}>
           <Box
-            smooth="slow"
+            smooth
+            animationSpeedModifier={props.animationSpeedModifier || 2}
             style={{
               background: `radial-gradient(${
                 props.large ? 600 : 200
@@ -136,6 +139,7 @@ export const Button: React.FC<ButtonProps> = props => {
               zIndex: Z.Elevated3,
               borderRadius: 'inherit',
               padding: 'inherit',
+              transitionProperty: 'all',
             }}
           />
         </Box>

@@ -25,6 +25,7 @@ export const IndexTechnologies: React.FC = () => {
             large: true,
             fillX: true,
             fillY: true,
+            animationSpeedModifier: 2,
             raw: {
               flexGrow: 1,
               flexShrink: 1,
