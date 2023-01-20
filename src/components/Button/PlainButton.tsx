@@ -1,5 +1,5 @@
+import { BoxProps } from '@/components/Box';
 import { CSSProperties } from 'react';
-import { BoxProps } from './Box';
 
 interface PlainButtonProps {
   children?: any;

@@ -1,15 +1,15 @@
-import { Box } from '@components/Box';
-import { Link } from '@components/Link';
-import { Heading } from '@components/Typography/Heading';
+import { Box } from '@/components/Box';
+import { Link } from '@/components/Link';
+import { Heading } from '@/components/Typography/Heading';
 
 import { PlainButton } from '@/components/PlainButton';
+import { Code } from '@/components/Typography/Code';
+import { Inline } from '@/components/Typography/Inline';
 import { config } from '@/config/config';
 import { color, style, Z } from '@/config/style';
 import { opacity, rem } from '@/css';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { Code } from '@components/Typography/Code';
-import { Inline } from '@components/Typography/Inline';
 import { Fragment, useState } from 'react';
 
 const blurredBackgroundStyles = {

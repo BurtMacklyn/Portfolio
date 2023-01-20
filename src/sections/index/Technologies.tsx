@@ -5,7 +5,7 @@ import { SectionTitle } from '../../components/Typography/SectionTitle';
 
 import { rem } from '@/css';
 import technologies from '@static/technologies.json' assert { type: 'json' };
-import { ButtonGroup } from '../../components/ButtonGroup';
+import { ButtonGroup } from '../../components/Button/ButtonGroup';
 import { Heading } from '../../components/Typography/Heading';
 import { Paragraph } from '../../components/Typography/Paragraph';
 

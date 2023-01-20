@@ -1,6 +1,6 @@
-import { Box } from '@components/Box';
+import { Box } from '@/components/Box';
+import { Button, ButtonProps } from '@/components/Button/Button';
 import { CSSProperties, useRef, useState } from 'react';
-import { Button, ButtonProps } from './Button';
 
 interface Props {
   buttons: ButtonProps[];

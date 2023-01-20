@@ -1,12 +1,12 @@
+import { Box } from '@/components/Box';
+import { Section } from '@/components/Section';
 import { config } from '@/config/config';
 import { font } from '@/config/font';
 import { color, Color, style, Z } from '@/config/style';
 import { percent, rem } from '@/css';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { Box } from '@components/Box';
-import { Section } from '@components/Section';
 import { useRef, useState } from 'react';
-import { ButtonGroup } from '../../components/ButtonGroup';
+import { ButtonGroup } from '../../components/Button/ButtonGroup';
 
 const animationSpeed = `${style.transition.time * 4}ms`;
 

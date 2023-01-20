@@ -2,8 +2,8 @@ import { config } from '@/config/config';
 import { style, Z } from '@/config/style';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
-import { Box } from '@components/Box';
-import { Code } from '@components/Typography/Code';
+import { Box } from '@/components/Box';
+import { Code } from '@/components/Typography/Code';
 
 export const Banner: React.FC = () => {
   const matches = useMediaQuery(

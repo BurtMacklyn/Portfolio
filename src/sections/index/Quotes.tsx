@@ -1,9 +1,9 @@
+import { Box } from '@/components/Box';
+import { Section } from '@/components/Section';
+import { Inline } from '@/components/Typography/Inline';
+import { Paragraph } from '@/components/Typography/Paragraph';
 import { SectionTitle } from '@/components/Typography/SectionTitle';
 import { rem } from '@/css';
-import { Box } from '@components/Box';
-import { Section } from '@components/Section';
-import { Inline } from '@components/Typography/Inline';
-import { Paragraph } from '@components/Typography/Paragraph';
 
 import quotes from '@static/quotes.json' assert { type: 'json' };
 import { Link } from '../../components/Link';

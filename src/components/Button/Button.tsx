@@ -1,8 +1,8 @@
+import { Box } from '@/components/Box';
+import { PlainButton } from '@/components/Button/PlainButton';
 import { font } from '@/config/font';
 import { style, Z } from '@/config/style';
 import { opacity, percent, rem } from '@/css';
-import { Box } from '@components/Box';
-import { PlainButton } from '@components/PlainButton';
 import NextLink from 'next/link';
 import { CSSProperties, useEffect, useRef, useState } from 'react';
 
