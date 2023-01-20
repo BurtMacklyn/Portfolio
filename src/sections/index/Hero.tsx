@@ -5,7 +5,7 @@ import { config } from '@/config/config';
 import { font } from '@/config/font';
 import { color, Color, style, Z } from '@/config/style';
 import { useMQ } from '@/context/MQ';
-import { percent, rem } from '@/css';
+import { rem } from '@/css';
 import { useRef, useState } from 'react';
 
 const animationSpeed = `${style.transition.time * 4}ms`;
@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
           fontWeight: 700,
           fontSize: !mq.sm ? rem(96) : rem(64),
           lineHeight: 1,
-          letterSpacing: percent(-5, 'em'),
+          letterSpacing: '-0.05em',
           marginTop: !mq.md ? rem(style.navHeight) : rem(48),
         }}
         raw={{

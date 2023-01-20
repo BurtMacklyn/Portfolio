@@ -6,11 +6,6 @@ export function em<T extends number>(px: T) {
   return `${px / 16}em` as `${T}px`;
 }
 
-export function percent<T extends number, U extends 'em'>(pct: T, unit?: U) {
-  if (!unit) return `${pct}%` as `${T}%`;
-  return `${pct / 100}em` as `${T}${U}`;
-}
-
 export function variable<T extends string>(v: T) {
   return `var(--${v})` as `var(--${T})`;
 }

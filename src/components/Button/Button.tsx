@@ -2,7 +2,7 @@ import { Box } from '@/components/Box';
 import { PlainButton } from '@/components/Button/PlainButton';
 import { font } from '@/config/font';
 import { style, Z } from '@/config/style';
-import { opacity, percent, rem } from '@/css';
+import { opacity, rem } from '@/css';
 import NextLink from 'next/link';
 import { CSSProperties, useEffect, useRef, useState } from 'react';
 
@@ -160,9 +160,9 @@ export const Button: React.FC<ButtonProps> = props => {
             fontFamily: font.sans.family,
             fontWeight: font.sans.bold,
             fontSize: rem(16),
-            width: percent(100),
+            width: '100%',
             maxWidth: rem(640),
-            letterSpacing: percent(-2, 'em'),
+            letterSpacing: '-0.02em',
           }}>
           {props.children}
         </div>

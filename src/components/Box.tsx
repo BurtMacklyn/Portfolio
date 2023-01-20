@@ -1,5 +1,5 @@
 import { color, style } from '@/config/style';
-import { percent, rem, Space, variable } from '@/css';
+import { rem, Space, variable } from '@/css';
 import { CSSProperties, forwardRef, HTMLAttributes } from 'react';
 
 export interface BoxProps {
@@ -40,13 +40,13 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
         margin: props.margin === 'auto' ? '0 auto' : undefined,
         height:
           props.h === 'fill'
-            ? percent(100)
+            ? '100%'
             : props.h !== undefined
             ? rem(props.h)
             : undefined,
         width:
           props.w === 'fill'
-            ? percent(100)
+            ? '100%'
             : props.w !== undefined
             ? rem(props.w)
             : undefined,

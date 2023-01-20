@@ -25,6 +25,7 @@ export const Technologies: React.FC = () => {
           }}
           buttons={technologies.map(tech => ({
             href: tech.url,
+            new: true,
             large: true,
             fillX: true,
             fillY: true,

@@ -1,5 +1,5 @@
 import { font } from '@/config/font';
-import { percent, rem } from '@/css';
+import { rem } from '@/css';
 import { HTMLAttributes } from 'react';
 
 export const PageTitle: React.FC<
@@ -12,8 +12,8 @@ export const PageTitle: React.FC<
         fontFamily: font.sans.family,
         fontWeight: font.sans.bold,
         fontSize: rem(64),
-        lineHeight: percent(100),
-        letterSpacing: percent(-5, 'em'),
+        lineHeight: '100%',
+        letterSpacing: '-0.05em',
         ...props.style,
       }}>
       {props.children}
