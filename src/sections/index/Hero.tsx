@@ -4,14 +4,14 @@ import { Section } from '@/components/Section';
 import { config } from '@/config/config';
 import { font } from '@/config/font';
 import { color, Color, style, Z } from '@/config/style';
+import { useMQ } from '@/context/MQ';
 import { percent, rem } from '@/css';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { useRef, useState } from 'react';
 
 const animationSpeed = `${style.transition.time * 4}ms`;
 
 export const Hero: React.FC = () => {
-  const matches = useMediaQuery(`(max-width: ${style.breakpoints.sm})`);
+  const mq = useMQ();
 
   const ref = useRef<HTMLDivElement>(null);
   const [x, setX] = useState(0);
@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
   const [hover3, setHover3] = useState(false); // white
   const [hover4, setHover4] = useState(false); // blue
 
-  const hover = !matches && (hover1 || hover2 || hover3 || hover4);
+  const hover = !mq.sm && (hover1 || hover2 || hover3 || hover4);
   const currentColor = hover1 || hover4 ? color('primary') : color(64);
 
   return (
@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
 
           fontFamily: font.sans.family,
           fontWeight: 700,
-          fontSize: !matches ? rem(96) : rem(72),
+          fontSize: !mq.sm ? rem(96) : rem(72),
           lineHeight: 1,
           letterSpacing: percent(-5, 'em'),
         }}

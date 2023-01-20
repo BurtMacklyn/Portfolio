@@ -17,7 +17,7 @@ export const style = {
     lg: rem(64),
     md: rem(48),
     sm: rem(32),
-    xs: rem(24),
+    xs: rem(16),
   },
   color: {
     primary: '#009dff',
@@ -36,8 +36,6 @@ export const style = {
     100: '#ffffff',
   },
   breakpoints: {
-    xxl: em(1800),
-    xl: em(1400),
     lg: em(1200),
     md: em(896),
     sm: em(640),

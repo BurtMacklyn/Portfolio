@@ -7,9 +7,9 @@ import { Code } from '@/components/Typography/Code';
 import { Inline } from '@/components/Typography/Inline';
 import { config } from '@/config/config';
 import { color, style, Z } from '@/config/style';
+import { useMQ } from '@/context/MQ';
 import { opacity, rem } from '@/css';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { Fragment, useState } from 'react';
 
 const blurredBackgroundStyles = {
@@ -18,16 +18,13 @@ const blurredBackgroundStyles = {
 };
 
 export const Nav: React.FC = () => {
-  const matches = useMediaQuery(
-    `screen and (max-width: ${style.breakpoints.md})`,
-  );
-
-  const matchesXS = useMediaQuery(`(max-width: ${style.breakpoints.xs})`);
+  const mq = useMQ();
 
   const [clicked, setClicked] = useState(false);
 
   const [dummy, isAtTopOfDocument] = useIntersectionObserver();
-  const activeNav = !isAtTopOfDocument || (clicked && matches);
+  const activeNav =
+    !isAtTopOfDocument || (clicked && (mq.touchscreen || mq.md));
 
   return (
     <>
@@ -60,7 +57,7 @@ export const Nav: React.FC = () => {
           }}>
           <Name />
 
-          {!matches ? (
+          {!(mq.touchscreen || mq.md) ? (
             <Code hidden>
               const nav: Page[] = [
               {Object.entries(config.pages).map(([k, v], i, a) => (
@@ -77,14 +74,14 @@ export const Nav: React.FC = () => {
             </Code>
           ) : (
             <PlainButton onClick={() => setClicked(!clicked)}>
-              <NavIcon clicked={clicked && matches} />
+              <NavIcon clicked={clicked && (mq.touchscreen || mq.md)} />
             </PlainButton>
           )}
         </Box>
 
         <Box
           style={{
-            display: matches ? undefined : 'none',
+            display: mq.touchscreen || mq.md ? undefined : 'none',
             position: 'sticky',
             top: rem(96),
             left: 0,
@@ -101,7 +98,7 @@ export const Nav: React.FC = () => {
               right: 0,
               height: '100%',
               width: `min(100vw, ${style.breakpoints.xs})`,
-              borderLeft: matchesXS ? undefined : `${rem(2)} solid ${color(8)}`,
+              borderLeft: mq.xs ? undefined : `${rem(2)} solid ${color(8)}`,
               zIndex: Z.Nav,
               transform: clicked ? `translateX(0)` : `translateX(100%)`,
               pointerEvents: 'all',

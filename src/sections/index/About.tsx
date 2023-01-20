@@ -9,9 +9,8 @@ const startYear = 2021;
 
 export const About: React.FC = () => {
   const [diff, setDiff] = useState(0);
-  useEffect(() => {
-    setDiff(new Date().getFullYear() - startYear);
-  }, []);
+
+  useEffect(() => setDiff(new Date().getFullYear() - startYear), []);
 
   return (
     <Section>

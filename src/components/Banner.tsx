@@ -1,20 +1,21 @@
 import { config } from '@/config/config';
 import { style, Z } from '@/config/style';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 import { Box } from '@/components/Box';
 import { Code } from '@/components/Typography/Code';
+import { useMQ } from '@/context/MQ';
 
 export const Banner: React.FC = () => {
-  const matches = useMediaQuery(
-    `screen and (max-width: ${style.breakpoints.md})`,
-  );
+  const mq = useMQ();
 
   return (
     <Box
       w="fill"
       bg={4}
-      style={{ zIndex: Z.Banner, display: matches ? 'none' : undefined }}>
+      style={{
+        zIndex: Z.Banner,
+        display: mq.touchscreen || mq.md ? 'none' : undefined,
+      }}>
       <Box
         w="fill"
         margin

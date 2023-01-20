@@ -10,7 +10,9 @@ export function useIntersectionObserver() {
     );
     observer.observe(ref.current!);
 
-    return () => observer.unobserve(ref.current!);
+    return () => {
+      if (ref?.current) observer.unobserve(ref.current!);
+    };
   }, []);
 
   return [ref, intersecting] as const;

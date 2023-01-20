@@ -8,8 +8,9 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 
 import { font } from '@/config/font';
-import { Inter, Roboto_Mono } from '@next/font/google';
+import { MQProvider } from '@/context/MQ';
 import { opacity } from '@/css';
+import { Inter, Roboto_Mono } from '@next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -82,11 +83,11 @@ export default function App({ Component, pageProps }: AppProps) {
           display: flex;
         }
 
-        ${(['xl', 'lg', 'md', 'sm', 'xs'] as const)
+        ${Object.entries(style.breakpoints)
           .map(
-            mq => `
-          @media (max-width: ${style.breakpoints[mq]}) {
-            html { --margin: ${style.margin[mq]}; }
+            ([mq, v]) => `
+          @media (max-width: ${v}) {
+            html { --margin: ${(style.margin as any)[mq]}; }
           }`,
           )
           .join('\n')}
@@ -95,7 +96,9 @@ export default function App({ Component, pageProps }: AppProps) {
           background-color: ${opacity(color(100), 24)};
         }
       `}</style>
-      <Component {...pageProps} />
+      <MQProvider>
+        <Component {...pageProps} />
+      </MQProvider>
     </>
   );
 }
