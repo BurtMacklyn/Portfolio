@@ -64,8 +64,6 @@ export const Nav: React.FC = () => {
                 )})`,
             ...blurredBackgroundStyles,
           }}>
-          {/* <Name /> */}
-
           {mq.xxl ? (
             <Code hidden>
               const nav: Page[] = [
@@ -93,12 +91,13 @@ export const Nav: React.FC = () => {
           margin
           style={{
             position: 'fixed',
-            top: rem(style.navHeight),
+            top: rem((style.navHeight - 2) as any),
             right: 0,
             bottom: 0,
             width: `min(100vw, ${style.breakpoints.xs})`,
+            borderTop: `${rem(2)} solid ${color('8')}`,
             borderLeft: mq.xs ? undefined : `${rem(2)} solid ${color('8')}`,
-            zIndex: Z.Nav,
+            zIndex: Z.NavDrawer,
             transform:
               clicked && !mq.xxl ? `translateX(0)` : `translateX(100%)`,
             pointerEvents: 'all',
@@ -125,16 +124,6 @@ export const Nav: React.FC = () => {
         </Box>
       </nav>
     </>
-  );
-};
-
-const Name = () => {
-  return (
-    <Link to="/">
-      <Heading>
-        <Inline hover="primary">Cooper Runyan</Inline>
-      </Heading>
-    </Link>
   );
 };
 

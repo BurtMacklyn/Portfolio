@@ -56,8 +56,8 @@ export enum Z {
   Elevated3,
   Elevated4,
   Overlay,
+  NavDrawer,
   Nav,
-  Banner,
 }
 
 export function color<T extends Color>(opt: T) {
