@@ -12,6 +12,11 @@ import { Code } from '@components/Typography/Code';
 import { Inline } from '@components/Typography/Inline';
 import { Fragment, useState } from 'react';
 
+const blurredBackgroundStyles = {
+  backgroundColor: opacity(color(0), 50),
+  backdropFilter: 'blur(8px)',
+};
+
 export const Nav: React.FC = () => {
   const matches = useMediaQuery(
     `screen and (max-width: ${style.breakpoints.md})`,
@@ -51,10 +56,7 @@ export const Nav: React.FC = () => {
               : 'transparent',
             borderBottomStyle: 'solid',
             borderBottomWidth: rem(2),
-            backgroundColor: isAtTopOfDocument
-              ? undefined
-              : opacity(color(0), 50),
-            backdropFilter: isAtTopOfDocument ? undefined : 'blur(8px)',
+            ...blurredBackgroundStyles,
           }}>
           <Name />
 
@@ -106,8 +108,7 @@ export const Nav: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: opacity(color(0), 50),
-              backdropFilter: 'blur(8px)',
+              ...blurredBackgroundStyles,
             }}>
             <pre>
               <Code hidden>{'<ul>\n'}</Code>
@@ -154,6 +155,7 @@ const NavIcon = ({ clicked }: any) => {
         style={{
           top: 0,
           left: 0,
+          background: color(100),
           height: rem(width as any),
           borderRadius: style.borderRadius,
           position: 'absolute',

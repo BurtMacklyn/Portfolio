@@ -107,15 +107,8 @@ const HeroText: React.FC<{
 }> = props => {
   return (
     <h1
-      onMouseEnter={e => {
-        props.set(true);
-        console.log(`enter ${props.color}`);
-      }}
-      onMouseLeave={e => {
-        e.stopPropagation();
-        props.set(false);
-        console.log(`leave ${props.color}`);
-      }}
+      onMouseEnter={e => props.set(true)}
+      onMouseLeave={e => props.set(false)}
       style={{
         fontSize: '1em',
         zIndex: Z.Content,
