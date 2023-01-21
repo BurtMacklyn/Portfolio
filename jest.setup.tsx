@@ -1,7 +1,5 @@
 import '@testing-library/jest-dom';
 
-import { determineMediaValues } from '@/context/MQ';
-import { mqController } from '@/hooks/useMQ.mock';
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import { randomUUID } from 'crypto';
 import isUrl from 'is-url';
@@ -36,7 +34,7 @@ expect.extend({
 interface Options<T> {
   test: {
     click?: boolean;
-    hover?: boolean;
+    mouse?: boolean;
     children?: boolean;
   };
   props: Omit<T, 'children'>;
@@ -49,8 +47,6 @@ function _renderComponent<T extends { [key: string]: any }>(
   const text = randomUUID();
   const testid = randomUUID();
   const click = jest.fn();
-
-  mqController.state = determineMediaValues('xs');
 
   const props = {
     ...options.props,
@@ -67,6 +63,12 @@ function _renderComponent<T extends { [key: string]: any }>(
   if (options.test.click) {
     fireEvent.click(element);
     expect(click).toBeCalled();
+  }
+
+  if (options.test.mouse) {
+    fireEvent.mouseEnter(element);
+    fireEvent.mouseMove(element);
+    fireEvent.mouseLeave(element);
   }
 
   if (options.test.children) {

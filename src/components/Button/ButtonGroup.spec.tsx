@@ -1,13 +1,17 @@
 import { ButtonGroup } from '@/components/Button/ButtonGroup';
+import { randomUUID } from 'crypto';
 
 describe('ButtonGroup', () => {
   it('renders', () => {
     const { unmount } = renderComponent(ButtonGroup, {
       test: {
-        hover: true,
+        mouse: true,
       },
       props: {
-        buttons: [],
+        buttons: [
+          { href: '/', new: true, children: randomUUID() },
+          { onClick: () => '', children: randomUUID() },
+        ],
       },
     });
 

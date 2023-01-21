@@ -14,7 +14,7 @@ const Typography = {
   PageTitle,
   Paragraph,
   SectionTitle,
-};
+} as const;
 
 describe('Typography', () => {
   for (const [name, Component] of Object.entries(Typography)) {
@@ -22,6 +22,7 @@ describe('Typography', () => {
       const { unmount } = renderComponent(Component as any, {
         test: {
           children: true,
+          mouse: name === 'Inline' ? true : false,
         },
         props: {},
       });

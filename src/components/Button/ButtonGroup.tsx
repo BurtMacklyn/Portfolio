@@ -1,6 +1,7 @@
 import { Box } from '@/components/Box';
 import { Button, ButtonProps } from '@/components/Button/Button';
 import { useMQ } from '@/hooks/useMQ';
+import { randomUUID } from 'crypto';
 import { CSSProperties, useRef, useState } from 'react';
 
 interface Props {
@@ -38,7 +39,7 @@ export const ButtonGroup: React.FC<Props> = props => {
       {props.buttons.map(button => (
         <Button
           {...button}
-          key={button.href}
+          key={randomUUID()}
           target={target}
           hover={hover}
           static={mq.touchscreen}

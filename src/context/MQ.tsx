@@ -68,22 +68,3 @@ function useMediaQuery(mq: string) {
 
   return matches;
 }
-
-export function determineMediaValues(mq: keyof typeof initial) {
-  const data: typeof initial = JSON.parse(JSON.stringify(initial));
-
-  if (!mq) return data;
-
-  const hierarchy: (keyof typeof initial)[] = ['xs', 'sm', 'md', 'lg'];
-
-  if (hierarchy.indexOf(mq) !== -1) {
-    const keys = hierarchy.slice(hierarchy.indexOf(mq), -1);
-    for (const key of keys) data[key as keyof typeof data] = true;
-  }
-
-  (['xxl', 'touchscreen'] as (keyof typeof initial)[]).includes(mq)
-    ? (data[mq as keyof typeof data] = true)
-    : null;
-
-  return data;
-}

@@ -4,7 +4,7 @@ describe('Box', () => {
   it('renders', () => {
     const { unmount } = renderComponent(Box, {
       test: {
-        hover: true,
+        mouse: true,
         children: true,
       },
       props: {},
