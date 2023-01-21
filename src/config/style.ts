@@ -1,7 +1,7 @@
 import { em, rem } from '../css';
 
 export const style = {
-  maxWidth: rem(2000 as any),
+  maxWidth: rem(2048),
   borderRadius: rem(4),
   navHeight: 96,
   transition: {

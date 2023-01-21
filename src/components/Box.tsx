@@ -1,6 +1,6 @@
 import { color, style } from '@/config/style';
 import { rem, Space, variable } from '@/css';
-import { CSSProperties, forwardRef, HTMLAttributes } from 'react';
+import { AriaRole, CSSProperties, forwardRef, HTMLAttributes } from 'react';
 
 export interface BoxProps {
   children?: any;
@@ -19,6 +19,7 @@ export interface BoxProps {
   bg?: keyof typeof style.color;
   style?: CSSProperties;
   raw?: HTMLAttributes<HTMLDivElement>;
+  role?: AriaRole;
 }
 
 export const Box = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
@@ -66,6 +67,7 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
 
         ...props.style,
       }}
+      role={props.role}
       {...props.raw}>
       {props.children}
     </div>

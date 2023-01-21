@@ -12,6 +12,7 @@ export const Main: React.FC<Props> = ({ children }) => {
       w={'fill'}
       margin
       relative
+      role="main"
       style={{
         paddingTop: rem(style.navHeight),
         zIndex: Z.Content,

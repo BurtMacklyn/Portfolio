@@ -2,7 +2,6 @@ import { color, Z } from '@/config/style';
 import { useMQ } from '@/context/MQ';
 import { rem } from '@/css';
 import { Box } from './Box';
-import { Nav } from './Nav/Nav';
 
 interface Props {
   code: string;
@@ -23,7 +22,6 @@ export const Error: React.FC<Props> = ({ code, message }) => {
         height: '100vh',
         width: '100vw',
       }}>
-      <Nav />
       <p
         style={{
           fontWeight: 700,
