@@ -55,8 +55,7 @@ function _renderComponent<T extends { [key: string]: any }>(
     'data-testid': testid,
   } as unknown as T;
 
-  const { unmount, container } = render(<Component {...props} />);
-
+  const { unmount, container, debug } = render(<Component {...props} />);
   const element = screen.getByTestId(testid);
   expect(element).toBeInTheDocument();
 
@@ -79,6 +78,7 @@ function _renderComponent<T extends { [key: string]: any }>(
     element,
     unmount,
     container,
+    debug,
   };
 }
 

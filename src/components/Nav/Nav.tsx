@@ -1,8 +1,7 @@
 import { Box } from '@/components/Box';
 import { Link } from '@/components/Button/Link';
 
-import { PlainButton } from '@/components/Button/PlainButton';
-import { NavToggleButtonIcon } from '@/components/Nav/NavToggleButtonIcon';
+import { NavToggle } from '@/components/Nav/NavToggle';
 import { Code } from '@/components/Typography/Code';
 import { Inline } from '@/components/Typography/Inline';
 import { config } from '@/config/config';
@@ -81,9 +80,7 @@ export const Nav: React.FC = (props: any) => {
               ];
             </Code>
           ) : (
-            <PlainButton onClick={() => setClicked(!clicked)}>
-              <NavToggleButtonIcon clicked={clicked} />
-            </PlainButton>
+            <NavToggle setClicked={setClicked} clicked={clicked} />
           )}
         </Box>
 
