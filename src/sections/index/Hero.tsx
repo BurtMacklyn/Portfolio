@@ -19,11 +19,10 @@ export const Hero: React.FC = () => {
 
   const [hover1, setHover1] = useState(false); // blue
   const [hover2, setHover2] = useState(false); // white
-  const [hover3, setHover3] = useState(false); // white
-  const [hover4, setHover4] = useState(false); // blue
+  const [hover3, setHover3] = useState(false); // blue
 
-  const hover = !mq.touchscreen && (hover1 || hover2 || hover3 || hover4);
-  const currentColor = hover1 || hover4 ? color('primary') : color('64');
+  const hover = !mq.touchscreen && (hover1 || hover2 || hover3);
+  const currentColor = hover1 || hover3 ? color('primary') : color('64');
 
   return (
     <Section data-testid="Hero" gap={32}>
@@ -37,7 +36,7 @@ export const Hero: React.FC = () => {
 
           fontFamily: font.sans.family,
           fontWeight: 700,
-          fontSize: !mq.sm ? rem(96) : rem(64),
+          fontSize: !mq.sm ? rem(96) : rem(72),
           lineHeight: 1,
           letterSpacing: '-0.05em',
           marginTop: !mq.md ? rem(style.navHeight) : rem(48),
@@ -75,16 +74,11 @@ export const Hero: React.FC = () => {
             Cooper Runyan
           </HeroText>
         </Box>
-        <Box row>
+        <Box style={{ display: 'block' }}>
           <HeroText value={hover} set={setHover2} color={hover ? '64' : '100'}>
-            fullstack web
+            fullstack developer
           </HeroText>
-        </Box>
-        <Box row>
-          <HeroText value={hover} set={setHover3} color={hover ? '64' : '100'}>
-            developer
-          </HeroText>
-          <HeroText value={hover} set={setHover4} color="primary">
+          <HeroText value={hover} set={setHover3} color="primary">
             .
           </HeroText>
         </Box>
@@ -92,8 +86,18 @@ export const Hero: React.FC = () => {
       <ButtonGroup
         style={{}}
         buttons={[
-          { href: config.pages.contact, children: 'Contact' },
-          { href: config.social.github.link, children: 'Github' },
+          {
+            href: config.pages.contact,
+            children: 'Contact',
+            label: 'Contact',
+            new: true,
+          },
+          {
+            href: config.social.github.link,
+            children: 'Github',
+            label: 'Github',
+            new: true,
+          },
         ]}
       />
     </Section>

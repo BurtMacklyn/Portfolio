@@ -9,8 +9,13 @@ describe('ButtonGroup', () => {
       },
       props: {
         buttons: [
-          { href: '/', new: true, children: randomUUID() },
-          { onClick: () => '', children: randomUUID() },
+          {
+            href: '/',
+            new: true,
+            children: randomUUID(),
+            label: 'testbutton1',
+          },
+          { onClick: () => '', children: randomUUID(), label: 'testbutton2' },
         ],
       },
     });

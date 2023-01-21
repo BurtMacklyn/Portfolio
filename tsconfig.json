@@ -21,6 +21,6 @@
       "@static/*": ["./public/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.setup.tsx"]
-  // "exclude": ["./__tests__/**/*"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.setup.tsx"],
+  "exclude": ["node_modules"]
 }

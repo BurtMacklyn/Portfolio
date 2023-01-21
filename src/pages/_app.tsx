@@ -28,7 +28,7 @@ const mono = Roboto_Mono({
 (font.mono as any).variable = mono.variable as any;
 
 export default function App({ Component, pageProps }: AppProps) {
-  useEffect(() => setCSSVariables(), []);
+  useEffect(() => void setCSSVariables(), []);
   return (
     <>
       <Head>

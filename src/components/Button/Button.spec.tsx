@@ -2,18 +2,18 @@ import { Button, ButtonProps } from '@/components/Button/Button';
 import { randomUUID } from 'crypto';
 
 const testList: ButtonProps[] = [
-  { animationSpeedModifier: 4 },
-  { fillX: true },
-  { fillY: true },
-  { hover: true },
-  { href: randomUUID() },
-  { href: randomUUID(), new: true },
-  { new: true },
-  { large: true },
-  { static: true },
-  { static: false },
-  { target: undefined },
-  { target: { x: 1, y: 1 } },
+  { label: 'testbutton', animationSpeedModifier: 4 },
+  { label: 'testbutton', fillX: true },
+  { label: 'testbutton', fillY: true },
+  { label: 'testbutton', hover: true },
+  { label: 'testbutton', href: randomUUID() },
+  { label: 'testbutton', href: randomUUID(), new: true },
+  { label: 'testbutton', new: true },
+  { label: 'testbutton', large: true },
+  { label: 'testbutton', static: true },
+  { label: 'testbutton', static: false },
+  { label: 'testbutton', target: undefined },
+  { label: 'testbutton', target: { x: 1, y: 1 } },
 ];
 
 describe('Button', () => {

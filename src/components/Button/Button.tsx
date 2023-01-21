@@ -16,12 +16,13 @@ export interface ButtonProps {
     y: number;
   };
   hover?: boolean;
-  raw?: CSSProperties;
+  style?: CSSProperties;
   large?: boolean;
   fillX?: boolean;
   fillY?: boolean;
   animationSpeedModifier?: number;
   static?: boolean;
+  label: string;
 }
 
 export const Button: React.FC<ButtonProps> = props => {
@@ -58,6 +59,7 @@ export const Button: React.FC<ButtonProps> = props => {
           paddingInline: rem(16),
           width: props.fillX ? '100%' : 'fit-content',
           height: props.fillY ? '100%' : undefined,
+          ...props.style,
         } as CSSProperties
       }
       onMouseMove={
@@ -80,7 +82,7 @@ export const Button: React.FC<ButtonProps> = props => {
           animationSpeedModifier: props.animationSpeedModifier,
           hover: props.hover,
           large: props.large,
-          raw: props.raw,
+          style: props.style,
           static: props.static,
         }}
       />
@@ -94,7 +96,7 @@ interface ContentProps {
   y: number;
   hover?: boolean;
   elhover: boolean;
-  raw?: CSSProperties;
+  style?: CSSProperties;
   large?: boolean;
   animationSpeedModifier?: number;
   static?: boolean;

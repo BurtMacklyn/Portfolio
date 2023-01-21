@@ -30,11 +30,13 @@ export const Technologies: React.FC = () => {
             fillX: true,
             fillY: true,
             animationSpeedModifier: 2,
-            raw: {
+            style: {
               flexGrow: 1,
               flexShrink: 1,
               flexBasis: rem(384),
+              height: undefined,
             },
+            label: tech.name,
             children: (
               <Box
                 w="fill"
