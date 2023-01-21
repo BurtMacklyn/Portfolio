@@ -185,6 +185,7 @@ const DetermineButtonElement: React.FC<ButtonProps> = props => {
   if (props.href)
     return (
       <NextLink
+        data-testid={(props as any)['data-testid']}
         style={s}
         href={props.href}
         target={props.new ? '_blank' : undefined}>
@@ -192,7 +193,11 @@ const DetermineButtonElement: React.FC<ButtonProps> = props => {
       </NextLink>
     );
   return (
-    <PlainButton style={s} onClick={props.onClick} stopPropagation>
+    <PlainButton
+      data-testid={(props as any)['data-testid']}
+      style={s}
+      onClick={props.onClick}
+      stopPropagation>
       {props.children}
     </PlainButton>
   );

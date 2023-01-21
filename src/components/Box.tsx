@@ -25,6 +25,7 @@ export interface BoxProps {
 export const Box = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
   return (
     <div
+      data-testid={(props as any)['data-testid']}
       ref={ref}
       style={{
         display: 'flex',

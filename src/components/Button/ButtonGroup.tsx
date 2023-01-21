@@ -1,6 +1,6 @@
 import { Box } from '@/components/Box';
 import { Button, ButtonProps } from '@/components/Button/Button';
-import { useMQ } from '@/context/MQ';
+import { useMQ } from '@/hooks/useMQ';
 import { CSSProperties, useRef, useState } from 'react';
 
 interface Props {
@@ -18,6 +18,7 @@ export const ButtonGroup: React.FC<Props> = props => {
 
   return (
     <Box
+      data-testid={(props as any)['data-testid']}
       ref={ref}
       row
       gap={8}

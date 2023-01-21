@@ -6,9 +6,10 @@ import { rem, variable } from '@/css';
 import { Box } from './Box';
 import { Inline } from './Typography/Inline';
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC = (props: any) => {
   return (
     <footer
+      data-testid={(props as any)['data-testid']}
       style={{
         width: '100%',
         background: color('4'),

@@ -1,4 +1,4 @@
-import { useMQ } from '@/context/MQ';
+import { useMQ } from '@/hooks/useMQ';
 import { rem, Space } from '@/css';
 
 interface Props {
@@ -12,6 +12,7 @@ export const Section: React.FC<Props> = props => {
 
   return (
     <section
+      data-testid={(props as any)['data-testid']}
       style={{
         marginBlock: !mq.sm ? rem(96) : rem(64),
         display: 'flex',

@@ -6,9 +6,10 @@ interface Props {
   children?: any;
 }
 
-export const Main: React.FC<Props> = ({ children }) => {
+export const Main: React.FC<Props> = props => {
   return (
     <Box
+      data-testid={(props as any)['data-testid']}
       w={'fill'}
       margin
       relative
@@ -20,7 +21,7 @@ export const Main: React.FC<Props> = ({ children }) => {
         marginInline: 'auto',
         minHeight: '100vh',
       }}>
-      {children}
+      {props.children}
     </Box>
   );
 };

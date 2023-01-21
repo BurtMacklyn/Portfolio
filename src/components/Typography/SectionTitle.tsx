@@ -7,6 +7,7 @@ export const SectionTitle: React.FC<
 > = props => {
   return (
     <h2
+      data-testid={(props as any)['data-testid']}
       {...props}
       style={{
         fontFamily: font.sans.family,

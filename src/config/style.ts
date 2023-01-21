@@ -69,4 +69,6 @@ export function setCSSVariables() {
   for (const [k, v] of Object.entries(style.color)) setvar(`color-${k}`, v)
 
   setvar('maxWidth', style.maxWidth)
+
+  return true
 }

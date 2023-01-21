@@ -7,14 +7,15 @@ const createJestConfig = nextJest({
 export default createJestConfig({
   moduleDirectories: ['node_modules', '<rootDir>/'],
   testEnvironment: 'jest-environment-jsdom',
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.tsx'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
+    '@/(.*)$': '<rootDir>/src/$1',
     '@static/(.*)': '<rootDir>/public/$1',
   },
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
+  // testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
+  testRegex: '/.+.spec.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 });

@@ -9,8 +9,8 @@ interface Props {
 export const Link: React.FC<Props> = props => {
   return (
     <NextLink
+      data-testid={(props as any)['data-testid']}
       href={props.to}
-      passHref
       style={{
         fontFamily: 'inherit',
         fontWeight: 'inherit',

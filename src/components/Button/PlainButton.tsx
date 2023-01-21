@@ -12,6 +12,7 @@ interface PlainButtonProps {
 export const PlainButton: React.FC<PlainButtonProps> = props => {
   return (
     <button
+      data-testid={(props as any)['data-testid']}
       onClick={e => {
         e.preventDefault();
         if (props.stopPropagation) e.stopPropagation();

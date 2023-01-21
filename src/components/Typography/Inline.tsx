@@ -15,6 +15,7 @@ export const Inline: React.FC<Props> = props => {
 
   return (
     <span
+      data-testid={(props as any)['data-testid']}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={{

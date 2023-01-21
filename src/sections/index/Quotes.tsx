@@ -10,7 +10,7 @@ import quotes from '@static/quotes.json' assert { type: 'json' };
 
 export const Quotes: React.FC = () => {
   return (
-    <Section>
+    <Section data-testid="Quotes">
       <Box gap={24}>
         <SectionTitle>
           quotes<Inline color="primary">.</Inline>

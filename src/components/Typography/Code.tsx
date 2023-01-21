@@ -5,6 +5,7 @@ import { HTMLAttributes } from 'react';
 export const Code: React.FC<HTMLAttributes<HTMLSpanElement>> = props => {
   return (
     <code
+      data-testid={(props as any)['data-testid']}
       {...props}
       hidden={false}
       style={{

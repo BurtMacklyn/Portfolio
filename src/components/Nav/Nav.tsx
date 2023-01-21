@@ -1,23 +1,22 @@
 import { Box } from '@/components/Box';
 import { Link } from '@/components/Button/Link';
-import { Heading } from '@/components/Typography/Heading';
 
 import { PlainButton } from '@/components/Button/PlainButton';
 import { Code } from '@/components/Typography/Code';
 import { Inline } from '@/components/Typography/Inline';
 import { config } from '@/config/config';
 import { color, style, Z } from '@/config/style';
-import { useMQ } from '@/context/MQ';
 import { opacity, rem, variable } from '@/css';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { Fragment, useState } from 'react';
+import { useMQ } from '@/hooks/useMQ';
+import React, { Fragment, useState } from 'react';
 
 const blurredBackgroundStyles = {
   backgroundColor: opacity(color('0'), 50),
   backdropFilter: 'blur(8px)',
 };
 
-export const Nav: React.FC = () => {
+export const Nav: React.FC = (props: any) => {
   const mq = useMQ();
 
   const [clicked, setClicked] = useState(false);
@@ -30,6 +29,7 @@ export const Nav: React.FC = () => {
       <span ref={dummy} />
 
       <nav
+        data-testid={(props as any)['data-testid']}
         style={{
           position: 'fixed',
           top: 0,

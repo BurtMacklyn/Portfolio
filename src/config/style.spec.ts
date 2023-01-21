@@ -1,4 +1,4 @@
-import { color, style } from '@/config/style';
+import { color, style, setCSSVariables } from '@/config/style';
 
 describe('Color Palette', () => {
   for (const [k, v] of Object.entries(style.color)) {
@@ -24,4 +24,10 @@ describe('style.breakpoints', () => {
       expect(+value.replace(/px|rem|em/, '')).toBeGreaterThan(0);
     });
   }
+});
+
+describe('setCSSVariables', () => {
+  it('should run without error', () => {
+    expect(setCSSVariables()).toBeTruthy();
+  });
 });

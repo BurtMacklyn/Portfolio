@@ -7,6 +7,7 @@ export const PageTitle: React.FC<
 > = props => {
   return (
     <h1
+      data-testid={(props as any)['data-testid']}
       {...props}
       style={{
         fontFamily: font.sans.family,

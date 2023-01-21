@@ -1,6 +1,6 @@
 import { color, Z } from '@/config/style';
-import { useMQ } from '@/context/MQ';
 import { rem } from '@/css';
+import { useMQ } from '@/hooks/useMQ';
 import { Box } from './Box';
 
 interface Props {
@@ -8,11 +8,12 @@ interface Props {
   message: string;
 }
 
-export const Error: React.FC<Props> = ({ code, message }) => {
+export const Error: React.FC<Props> = props => {
   const mq = useMQ();
 
   return (
     <Box
+      data-testid={(props as any)['data-testid']}
       relative
       margin
       style={{
@@ -48,7 +49,7 @@ export const Error: React.FC<Props> = ({ code, message }) => {
             color: color('100'),
             zIndex: Z.Content,
           }}>
-          {code}
+          {props.code}
         </p>
         <p
           style={{
@@ -58,7 +59,7 @@ export const Error: React.FC<Props> = ({ code, message }) => {
             letterSpacing: '-0.025em',
             zIndex: Z.Content,
           }}>
-          {message}
+          {props.message}
         </p>
       </Box>
     </Box>

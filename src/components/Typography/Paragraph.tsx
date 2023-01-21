@@ -7,6 +7,7 @@ export const Paragraph: React.FC<
 > = props => {
   return (
     <p
+      data-testid={(props as any)['data-testid']}
       {...props}
       style={{
         fontFamily: font.sans.family,

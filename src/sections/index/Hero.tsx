@@ -4,8 +4,8 @@ import { Section } from '@/components/Section';
 import { config } from '@/config/config';
 import { font } from '@/config/font';
 import { color, Color, style, Z } from '@/config/style';
-import { useMQ } from '@/context/MQ';
 import { rem } from '@/css';
+import { useMQ } from '@/hooks/useMQ';
 import { useRef, useState } from 'react';
 
 const animationSpeed = `${style.transition.time * 4}ms`;
@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
   const currentColor = hover1 || hover4 ? color('primary') : color('64');
 
   return (
-    <Section gap={32}>
+    <Section data-testid="Hero" gap={32}>
       <Box
         ref={ref}
         relative

@@ -6,6 +6,7 @@ import { HTMLAttributes } from 'react';
 export const BigText: React.FC<HTMLAttributes<HTMLHeadingElement>> = props => {
   return (
     <h2
+      data-testid={(props as any)['data-testid']}
       {...props}
       style={{
         fontFamily: font.sans.family,

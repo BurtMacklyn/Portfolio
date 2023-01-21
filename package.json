@@ -17,7 +17,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "tsc && jest"
+    "test": "tsc --noEmit && jest"
   },
   "dependencies": {
     "@next/font": "13.1.2",

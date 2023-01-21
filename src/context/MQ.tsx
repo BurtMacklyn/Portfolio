@@ -1,5 +1,5 @@
 import { style } from '@/config/style';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 const initial = {
   xs: false,
@@ -41,10 +41,12 @@ export const MQProvider = ({ children }: any) => {
     [xs, sm, md, lg, xxl, touchscreen],
   );
 
-  return <MQContext.Provider value={queries}>{children}</MQContext.Provider>;
+  return (
+    <MQContext.Provider data-testid="MQProvider" value={queries}>
+      {children}
+    </MQContext.Provider>
+  );
 };
-
-export const useMQ = () => useContext(MQContext);
 
 function useMediaQuery(mq: string) {
   const [matches, setMatches] = useState(false);
@@ -65,4 +67,23 @@ function useMediaQuery(mq: string) {
   }, [mq]);
 
   return matches;
+}
+
+export function determineMediaValues(mq: keyof typeof initial) {
+  const data: typeof initial = JSON.parse(JSON.stringify(initial));
+
+  if (!mq) return data;
+
+  const hierarchy: (keyof typeof initial)[] = ['xs', 'sm', 'md', 'lg'];
+
+  if (hierarchy.indexOf(mq) !== -1) {
+    const keys = hierarchy.slice(hierarchy.indexOf(mq), -1);
+    for (const key of keys) data[key as keyof typeof data] = true;
+  }
+
+  (['xxl', 'touchscreen'] as (keyof typeof initial)[]).includes(mq)
+    ? (data[mq as keyof typeof data] = true)
+    : null;
+
+  return data;
 }

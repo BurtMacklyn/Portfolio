@@ -3,18 +3,18 @@ import { Section } from '@/components/Section';
 import { Inline } from '@/components/Typography/Inline';
 import { SectionTitle } from '@/components/Typography/SectionTitle';
 
-import { rem } from '@/css';
-import technologies from '@static/technologies.json' assert { type: 'json' };
 import { ButtonGroup } from '@/components/Button/ButtonGroup';
 import { Heading } from '@/components/Typography/Heading';
 import { Paragraph } from '@/components/Typography/Paragraph';
-import { useMQ } from '@/context/MQ';
+import { rem } from '@/css';
+import { useMQ } from '@/hooks/useMQ';
+import technologies from '@static/technologies.json' assert { type: 'json' };
 
 export const Technologies: React.FC = () => {
   const mq = useMQ();
 
   return (
-    <Section>
+    <Section data-testid="Technologies">
       <Box gap={24}>
         <SectionTitle>
           technologies<Inline color="primary">.</Inline>

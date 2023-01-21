@@ -13,7 +13,7 @@ export const About: React.FC = () => {
   useEffect(() => setDiff(new Date().getFullYear() - startYear), []);
 
   return (
-    <Section>
+    <Section data-testid="About">
       <Box gap={24}>
         <SectionTitle>
           about<Inline color="primary">.</Inline>

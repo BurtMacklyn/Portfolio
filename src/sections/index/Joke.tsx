@@ -1,7 +1,7 @@
 import { Section } from '@/components/Section';
 import { BigText } from '@/components/Typography/BigText';
-import { useMQ } from '@/context/MQ';
 import { rem } from '@/css';
+import { useMQ } from '@/hooks/useMQ';
 import { getJoke } from '@/pages/api/joke';
 import { useEffect, useState } from 'react';
 
@@ -15,7 +15,7 @@ export const Joke: React.FC = () => {
   useEffect(() => setJoke(getJoke('daily')), []);
 
   return (
-    <Section>
+    <Section data-testid="Joke">
       <BigText style={mq.sm ? { fontSize: rem(36 as any) } : {}}>
         {joke}
       </BigText>
