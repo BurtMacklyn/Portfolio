@@ -69,8 +69,8 @@ export const Button: React.FC<ButtonProps> = props => {
               setY(e.clientY - rect.top);
             }
       }
-      onMouseOver={props.static ? undefined : () => setHover(true)}
-      onMouseOut={props.static ? undefined : () => setHover(false)}>
+      onMouseEnter={props.static ? undefined : () => setHover(true)}
+      onMouseLeave={props.static ? undefined : () => setHover(false)}>
       <Content
         {...{
           elhover: hover,
