@@ -15,7 +15,7 @@ export const config = {
   }).format(parsedBuildDate),
   repo: pkg.repository.url,
 
-  siteImg: '/profile.png',
+  siteImg: '/profile-wide.png',
   emailLink: `mailto:${pkg.author.email}`,
 
   // Pages

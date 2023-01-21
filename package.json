@@ -1,10 +1,10 @@
 {
   "name": "cooperrunyan",
-  "description": "My personal website",
+  "description": "Fullstack developer.",
   "author": {
     "name": "Cooper Runyan",
     "email": "c@cooperrunyan.com",
-    "url": "https://cooperrunyan.com",
+    "url": "https://www.cooperrunyan.com",
     "github": "cooperrunyan"
   },
   "repository": {

@@ -34,27 +34,27 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>{config.title}</title>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <link rel="shortcut icon" href="/favicon.ico" sizes="any" />
         <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
 
+        <meta name="title" content={config.title} />
         <meta itemProp="name" content={config.title} />
-        <meta itemProp="description" content={config.description} />
+        <meta name="description" content={config.description} />
         <meta name="theme" content={color('0')} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta itemProp="image" content={config.siteImg} />
 
-        <meta property="og:url" content="https://cooperrunyan.com" />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.cooperrunyan.com" />
         <meta property="og:title" content={config.title} />
         <meta property="og:description" content={config.description} />
         <meta property="og:image" content={config.siteImg} />
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={config.title} />
-        <meta name="twitter:description" content={config.description} />
-        <meta name="twitter:image" content={config.siteImg} />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.cooperrunyan.com" />
+        <meta property="twitter:title" content={config.title} />
+        <meta property="twitter:description" content={config.description} />
+        <meta property="twitter:image" content={config.siteImg} />
       </Head>
       <style jsx global>{`
         *,
