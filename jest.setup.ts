@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 
-const isUrl = require('is-url');
+import isUrl from 'is-url';
 
 expect.extend({
   toBeValidPath: function (u) {
@@ -24,5 +24,3 @@ expect.extend({
     };
   },
 });
-
-export {};
