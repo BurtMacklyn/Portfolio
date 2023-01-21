@@ -5,14 +5,8 @@ import { useMQ } from '@/hooks/useMQ';
 import { getJoke } from '@/pages/api/joke';
 import { useEffect, useState } from 'react';
 
-export const Joke: React.FC = () => {
-  const [joke, setJoke] = useState<string>(
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, sequi.',
-  );
-
+export const Joke: React.FC<{ joke: string }> = ({ joke }) => {
   const mq = useMQ();
-
-  useEffect(() => setJoke(getJoke('daily')), []);
 
   return (
     <Section data-testid="Joke">

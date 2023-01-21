@@ -3,15 +3,8 @@ import { Section } from '@/components/Section';
 import { Inline } from '@/components/Typography/Inline';
 import { Paragraph } from '@/components/Typography/Paragraph';
 import { SectionTitle } from '@/components/Typography/SectionTitle';
-import { useEffect, useState } from 'react';
 
-const startYear = 2021;
-
-export const About: React.FC = () => {
-  const [diff, setDiff] = useState(0);
-
-  useEffect(() => setDiff(new Date().getFullYear() - startYear), []);
-
+export const About: React.FC<{ experience: number }> = ({ experience }) => {
   return (
     <Section data-testid="About">
       <Box gap={24}>
@@ -19,7 +12,8 @@ export const About: React.FC = () => {
           about<Inline color="primary">.</Inline>
         </SectionTitle>
         <Paragraph>
-          I'm a <Inline bold>{diff} year fullstack software developer</Inline>.
+          I'm a{' '}
+          <Inline bold>{experience} year fullstack software developer</Inline>.
           I work in frontend/backend design and development with technologies
           like NodeJS, Deno, Docker, Go, NextJS, SCSS, and Typescript.
         </Paragraph>

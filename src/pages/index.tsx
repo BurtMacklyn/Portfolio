@@ -7,19 +7,32 @@ import { Hero } from '@/sections/index/Hero';
 import { Joke } from '@/sections/index/Joke';
 import { Quotes } from '@/sections/index/Quotes';
 import { Technologies } from '@/sections/index/Technologies';
+import { getJoke } from './api/joke';
 
-export default function Index() {
+export default function Index(
+  props: Awaited<ReturnType<typeof getStaticProps>>['props'],
+) {
   return (
     <>
       <Nav />
       <Main>
         <Hero />
-        <Joke />
-        <About />
+        <Joke joke={props.joke} />
+        <About experience={props.experience} />
         <Technologies />
         <Quotes />
       </Main>
       <Footer />
     </>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      joke: getJoke('daily'),
+      experience: new Date().getFullYear() - 2021,
+    },
+    revalidate: 6 * 60 * 60,
+  };
 }
