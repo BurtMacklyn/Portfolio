@@ -10,7 +10,7 @@ describe('Config', () => {
     expect(typeof config.siteImg).toStrictEqual('string'));
   it('has an email', () => {
     expect(typeof config.email).toStrictEqual('string');
-    expect(config.email).toMatch(/([0-z\.\-])+\@(\w+)\.(\w+)/);
+    expect(config.email).toMatch(/([\w\d\.\-])+\@(\w+)\.(\w+)/);
   });
   it('has an email link', () => {
     expect(typeof config.emailLink).toStrictEqual('string');
