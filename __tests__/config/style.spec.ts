@@ -1,4 +1,4 @@
-import { color, style } from './style';
+import { color, style } from '@/config/style';
 
 describe('Color Palette', () => {
   for (const [k, v] of Object.entries(style.color)) {

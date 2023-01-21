@@ -15,11 +15,12 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": ".",
+    "types": ["jest"],
     "paths": {
       "@/*": ["./src/*"],
       "@static/*": ["./public/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["**/*.spec.*"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.setup.js"]
+  // "exclude": ["./__tests__/**/*"]
 }

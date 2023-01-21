@@ -1,10 +1,9 @@
+import { MQContext, MQProvider, _shape } from '@/context/MQ';
 import { render } from '@testing-library/react';
-import React from 'react';
-import { MQContext, MQProvider, _shape } from './MQ';
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: query => ({
+  value: (query: string) => ({
     matches: false,
     query,
     addEventListener: jest.fn(),
@@ -30,7 +29,7 @@ describe('MQ provides context', () => {
 
   for (const key in _shape) {
     it(`should have \`${key}\` property`, () => {
-      expect(typeof data[key]).toStrictEqual('boolean');
+      expect(typeof data[key as keyof typeof _shape]).toStrictEqual('boolean');
     });
   }
 

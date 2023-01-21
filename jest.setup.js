@@ -1,7 +1,9 @@
+import '@testing-library/jest-dom';
+
 const isUrl = require('is-url');
 
 expect.extend({
-  toBeValidPath: function (u: string) {
+  toBeValidPath: function (u) {
     let result = isUrl(u);
     if (!result && u.startsWith('/')) {
       u = 'https://a.b' + u;

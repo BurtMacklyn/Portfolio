@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 
 import { render, screen } from '@testing-library/react';
 import { randomUUID } from 'crypto';
-import { Section } from './Section';
+import { Section } from '@/components/Section';
 
 describe('Section', () => {
   it('Renders', () => {

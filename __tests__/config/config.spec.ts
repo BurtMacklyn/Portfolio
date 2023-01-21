@@ -1,5 +1,4 @@
-import '../../jest-utils.ts';
-import { config } from './config';
+import { config } from '@/config/config';
 
 describe('Config', () => {
   it('has a title', () => expect(typeof config.title).toStrictEqual('string'));

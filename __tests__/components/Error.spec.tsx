@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 
 import { render, screen } from '@testing-library/react';
 import { randomUUID } from 'crypto';
-import { Error } from './Error';
+import { Error } from '@/components/Error';
 
 describe('Error', () => {
   it('Renders', () => {

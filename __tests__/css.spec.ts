@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
 
-import * as css from './css';
+import * as css from '@/css';
 
 describe('CSS', () => {
   it('converts px to rem', () => {

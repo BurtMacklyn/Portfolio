@@ -1,4 +1,4 @@
-import { font } from './font';
+import { font } from '@/config/font';
 
 for (const [id, fontConfig] of Object.entries(font))
   describe(`Font config ${id}`, () => {
