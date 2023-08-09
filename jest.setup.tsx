@@ -1,8 +1,8 @@
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 
-import { fireEvent, render, screen, within } from '@testing-library/react';
-import { randomUUID } from 'crypto';
-import isUrl from 'is-url';
+import { fireEvent, render, screen, within } from "@testing-library/react";
+import { randomUUID } from "crypto";
+import isUrl from "is-url";
 
 declare global {
   export var renderComponent: typeof _renderComponent;
@@ -11,17 +11,18 @@ declare global {
 expect.extend({
   toBeValidPath: function (u) {
     let result = isUrl(u);
-    if (!result && u.startsWith('/')) {
-      u = 'https://a.b' + u;
+    if (!result && u.startsWith("/")) {
+      u = "https://a.b" + u;
       result = isUrl(u);
     }
 
-    if (result || u.startsWith('mailto:'))
+    if (result || u.startsWith("mailto:")) {
       return {
         message: () =>
           `expected ${this.utils.printReceived(u)} to be a valid path`,
         pass: true,
       };
+    }
 
     return {
       message: () =>
@@ -37,7 +38,7 @@ interface Options<T> {
     mouse?: boolean;
     children?: boolean;
   };
-  props: Omit<T, 'children'>;
+  props: Omit<T, "children">;
 }
 
 function _renderComponent<T extends { [key: string]: any }>(
@@ -52,7 +53,7 @@ function _renderComponent<T extends { [key: string]: any }>(
     ...options.props,
     children: text,
     onClick: options.test.click ? click : undefined,
-    'data-testid': testid,
+    "data-testid": testid,
   } as unknown as T;
 
   const { unmount, container, debug } = render(<Component {...props} />);
