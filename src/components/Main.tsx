@@ -4,6 +4,7 @@ import { rem } from '@/css';
 
 interface Props {
   children?: any;
+  className?: string;
 }
 
 export const Main: React.FC<Props> = props => {
@@ -20,6 +21,9 @@ export const Main: React.FC<Props> = props => {
         maxWidth: style.maxWidth,
         marginInline: 'auto',
         minHeight: '100vh',
+      }}
+      raw={{
+        className: props.className,
       }}>
       {props.children}
     </Box>

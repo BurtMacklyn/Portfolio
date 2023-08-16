@@ -125,14 +125,8 @@ const HeroText: React.FC<{
         transition: `all ${animationSpeed} ${style.transition.function}, font-size 0s, letter-spacing 0s`,
         cursor: 'default',
         textShadow: props.value
-          ? `-1px -1px 0 ${color(props.color)}, 1px -1px 0 ${color(
-              props.color,
-            )}, 1px 1px 0 ${color(props.color)}, -1px 1px 0 ${color(
-              props.color,
-            )}`
-          : `-1px -1px 0 ${color('4')}, 1px -1px 0 ${color(
-              '4',
-            )}, 1px 1px 0 ${color('4')}, -1px 1px 0 ${color('4')}`,
+          ? `-1px -1px 0 ${color(props.color)}, 1px -1px 0 ${color(props.color)}, 1px 1px 0 ${color(props.color)}, -1px 1px 0 ${color(props.color)}`
+          : `-1px -1px 0 ${color('4')}, 1px -1px 0 ${color('4')}, 1px 1px 0 ${color('4')}, -1px 1px 0 ${color('4')}`,
       }}>
       {props.children}
     </h1>

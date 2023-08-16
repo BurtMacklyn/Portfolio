@@ -1,5 +1,10 @@
 [
   {
+    "url": "https://rust-lang.org",
+    "name": "Rust",
+    "description": "The best programming language (ever)."
+  },
+  {
     "url": "https://nextjs.org",
     "name": "Next JS",
     "description": "A fullstack framework for React with SSR and SSG that provides built-in optimizations."

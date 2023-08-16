@@ -71,10 +71,10 @@ export default function App({ Component, pageProps }: AppProps) {
         }
 
         html {
-          --sans: ${inter.style.fontFamily};
-          --mono: ${mono.style.fontFamily};
+          --sans: Inter, ${inter.style.fontFamily};
+          --mono: 'Roboto Mono', ${mono.style.fontFamily};
           --margin: ${style.margin.default};
-          font-family: ${inter.style.fontFamily};
+          font-family: Inter, ${inter.style.fontFamily};
           background-color: ${color('0')};
           color: ${color('100')};
           color-scheme: dark;

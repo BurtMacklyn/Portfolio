@@ -12,10 +12,8 @@ export const About: React.FC<{ experience: number }> = ({ experience }) => {
           about<Inline color="primary">.</Inline>
         </SectionTitle>
         <Paragraph>
-          I'm a{' '}
-          <Inline bold>{experience} year fullstack software developer</Inline>.
-          I work in frontend/backend design and development with technologies
-          like NodeJS, Deno, Docker, Go, NextJS, SCSS, and Typescript.
+          I'm a <Inline bold>{experience} year fullstack software developer</Inline>. I work in frontend/backend design and development with technologies like
+          Rust, NodeJS, Deno, Docker, Go, NextJS, SCSS, and Typescript.
         </Paragraph>
       </Box>
     </Section>
