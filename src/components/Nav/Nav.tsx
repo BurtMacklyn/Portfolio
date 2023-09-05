@@ -83,7 +83,6 @@ export const Nav: React.FC = (props: any) => {
             <NavToggle setClicked={setClicked} clicked={clicked} />
           )}
         </Box>
-
         <Box
           smooth
           margin
@@ -104,23 +103,29 @@ export const Nav: React.FC = (props: any) => {
             justifyContent: 'center',
             ...blurredBackgroundStyles,
           }}>
-          <pre>
-            <Code hidden>{'<ul>\n'}</Code>
-            {Object.entries(config.pages).map(([k, v]) => (
-              <Fragment key={v}>
-                <Code hidden>{'  <li>{'}</Code>
-                <Link to={v}>
-                  <Code style={{ color: color('100') }}>
-                    <Inline hover="primary">{k}</Inline>
-                  </Code>
-                </Link>
-                <Code hidden>{'}</li>\n'}</Code>
-              </Fragment>
-            ))}
-            <Code hidden>{'</ul>'}</Code>
-          </pre>
+          <NavHtml />
         </Box>
       </nav>
     </>
+  );
+};
+
+export const NavHtml: React.FC = () => {
+  return (
+    <pre>
+      <Code hidden>{'<ul>\n'}</Code>
+      {Object.entries(config.pages).map(([k, v]) => (
+        <Fragment key={v}>
+          <Code hidden>{'  <li>{'}</Code>
+          <Link to={v}>
+            <Code style={{ color: color('100') }}>
+              <Inline hover="primary">{k}</Inline>
+            </Code>
+          </Link>
+          <Code hidden>{'}</li>\n'}</Code>
+        </Fragment>
+      ))}
+      <Code hidden>{'</ul>'}</Code>
+    </pre>
   );
 };

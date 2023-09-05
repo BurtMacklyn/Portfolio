@@ -70,6 +70,17 @@ export default function App({ Component, pageProps }: AppProps) {
           border: 0;
         }
 
+        @keyframes flash {
+          0%,
+          49% 100% {
+            opacity: 0;
+          }
+          50%,
+          99% {
+            opacity: 1;
+          }
+        }
+
         html {
           --sans: Inter, ${inter.style.fontFamily};
           --mono: 'Roboto Mono', ${mono.style.fontFamily};

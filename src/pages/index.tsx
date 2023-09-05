@@ -19,8 +19,8 @@ export default function Index(
         <Hero />
         <Joke joke={props.joke} />
         <About experience={props.experience} />
-        <Technologies />
         <Quotes />
+        <Technologies />
       </Main>
       <Footer />
     </>

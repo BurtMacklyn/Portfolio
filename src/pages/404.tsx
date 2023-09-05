@@ -1,12 +1,12 @@
 import { Box } from '@/components/Box';
-import { Error } from '@/components/Error';
+import { ErrorTerminal } from '@/components/ErrorTerminal';
 import { Nav } from '@/components/Nav/Nav';
 
-export default function Error404() {
+export default function Error() {
   return (
     <Box>
       <Nav />
-      <Error code="404" message="Page not found" />
+      <ErrorTerminal />
     </Box>
   );
 }

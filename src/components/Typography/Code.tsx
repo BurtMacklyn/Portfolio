@@ -2,7 +2,9 @@ import { font } from '@/config/font';
 import { color } from '@/config/style';
 import { HTMLAttributes } from 'react';
 
-export const Code: React.FC<HTMLAttributes<HTMLSpanElement>> = props => {
+export const Code: React.FC<
+  HTMLAttributes<HTMLSpanElement> & { ref?: any }
+> = props => {
   return (
     <code
       data-testid={(props as any)['data-testid']}
