@@ -74,7 +74,7 @@ export class Game {
         this.apple = Apple.random(this.dimensions.state, this.snake.state);
         this.direction = new CurrentDirection(this.controller);
 
-        this.send('reset', false);
+        this.send('reset');
       }
     } else {
       if (newPosition === this.apple) {
@@ -87,7 +87,7 @@ export class Game {
       else lastTail = undefined;
     }
 
-    this.send('tick', increment);
+    this.send('tick');
     await this.renderer.render(
       this.dimensions.state,
       this.snake.state,
@@ -96,7 +96,7 @@ export class Game {
     );
   }
 
-  private send(e: AppEvent, score: boolean) {
+  private send(e: AppEvent) {
     this.listeners[e].forEach(f =>
       f({
         apple: this.apple,
@@ -106,7 +106,6 @@ export class Game {
         },
         direction: this.direction.state.current,
         snake: this.snake.state,
-        score,
       }),
     );
   }

@@ -66,5 +66,15 @@ export class Snake {
   }
 }
 
-// const DEFAULT_SNAKE: Coordinate[] = ['4:4', '5:4', '6:4', '7:4', '8:4', '9:4', '10:4', '11:4', '12:4', '13:4'];
-const DEFAULT_SNAKE: Coordinate[] = ['0:0', '0:1', '0:2'];
+const DEFAULT_SNAKE: Coordinate[] = [
+  '4:4',
+  '5:4',
+  '6:4',
+  '7:4',
+  '8:4',
+  '9:4',
+  '10:4',
+  '11:4',
+  '12:4',
+  '13:4',
+];

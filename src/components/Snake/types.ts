@@ -14,6 +14,4 @@ export type AppEventPayload = {
   dimensions: { height: number; width: number };
   direction: Direction;
 };
-export type AppEventHandler = (
-  data: AppEventPayload & { score: boolean },
-) => Promise<void>;
+export type AppEventHandler = (data: AppEventPayload) => Promise<void>;

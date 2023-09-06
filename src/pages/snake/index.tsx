@@ -2,7 +2,11 @@ import { Snake as SnakeGame } from '@/components/Snake/Snake';
 import { Game } from '@/components/Snake/models/Game';
 import { RemoteController } from '@/components/Snake/models/RemoteController';
 import { Snake } from '@/components/Snake/models/Snake';
-import { AppEventPayload, Coordinate } from '@/components/Snake/types';
+import {
+  AppEventPayload,
+  Coordinate,
+  Direction,
+} from '@/components/Snake/types';
 
 export default function PlaySnake() {
   return (
@@ -16,30 +20,14 @@ export default function PlaySnake() {
 
           const unlisten = game.listen(
             'tick',
-            async ({ apple, dimensions, direction, snake, score }) => {
-              const path = astar({ apple, dimensions, direction, snake }) || [];
-              const head = snake.at(-1)!;
+            async ({ apple, dimensions, direction, snake }) => {
+              const next = shortestPath(apple, dimensions, direction, snake);
 
-              let next = path.shift();
-              if (next === head) {
-                next = path.shift();
-              }
-
-              if (!next) {
-                console.log(`Empty path from ${head} to ${apple}`, snake);
-                return;
-              }
-
-              const newDirection = Snake.reverseLocate(next, head);
-
-              if (newDirection) {
-                if (newDirection !== direction) controller.input(newDirection);
+              if (next === 'NO_PATH') {
+                controller.input(panic(apple, dimensions, direction, snake));
+              } else if (!next) {
               } else {
-                console.log(
-                  `no direction from ${head} to ${next}`,
-                  [next, ...path],
-                  snake,
-                );
+                controller.input(next);
               }
             },
           );
@@ -55,6 +43,154 @@ export default function PlaySnake() {
       />
     </>
   );
+}
+
+function shortestPath(
+  apple: Coordinate,
+  dimensions: any,
+  direction: Direction,
+  snake: Coordinate[],
+) {
+  const path = astar({ apple, dimensions, direction, snake }) || [];
+  const head = snake.at(-1)!;
+
+  let next = path.shift();
+  if (next === head) {
+    next = path.shift();
+  }
+
+  if (
+    !next ||
+    evaluatePosition(next, dimensions, snake) /
+      (dimensions.height * dimensions.width - snake.length) <
+      0.7
+  ) {
+    return panic(apple, dimensions, direction, snake);
+  }
+
+  const nextDirection = Snake.reverseLocate(next!, head);
+
+  if (nextDirection) {
+    if (nextDirection !== direction) return nextDirection;
+  } else {
+    return 'NO_PATH';
+  }
+}
+
+function panic(
+  apple: Coordinate,
+  dimensions: any,
+  direction: Direction,
+  snake: Coordinate[],
+) {
+  const head = snake.at(-1)!;
+  const [hx, hy] = head.split(':').map(x => +x);
+  const _neighbors: Coordinate[] = [];
+  if (hx - 1 >= 0 && direction !== Direction.Right)
+    _neighbors.push(`${hx - 1}:${hy}`);
+  if (hy - 1 >= 0 && direction !== Direction.Down)
+    _neighbors.push(`${hx}:${hy - 1}`);
+  if (hx + 1 < dimensions.width && direction !== Direction.Left)
+    _neighbors.push(`${hx + 1}:${hy}`);
+  if (hy + 1 < dimensions.height && direction !== Direction.Up)
+    _neighbors.push(`${hx}:${hy + 1}`);
+
+  const neighbors = _neighbors.filter(
+    neighbor => !snake.includes(neighbor as any),
+  );
+
+  for (const neighbor of neighbors) {
+    const avail = evaluatePosition(neighbor, dimensions, snake);
+    if (avail / (dimensions.height * dimensions.width - snake.length) < 0.7)
+      continue;
+
+    const dir = Snake.reverseLocate(neighbor as any, head);
+    if (dir) {
+      return dir;
+    }
+  }
+
+  const pairs: [string, number][] = [];
+  for (const neighbor of neighbors) {
+    pairs.push([neighbor, evaluatePosition(neighbor, dimensions, snake)]);
+  }
+
+  if (!pairs?.length) {
+    return Direction.Right;
+  }
+
+  const bestVal = pairs
+    ?.map(([_, a]) => a)
+    .reduce((a, c) => (a > c ? a : c), 0);
+  const [best, _] = pairs?.find(([n, v]) => (v === bestVal ? true : false))!;
+
+  const dir = Snake.reverseLocate(best as any, head);
+  if (dir) {
+    return dir;
+  }
+
+  return Direction.Right;
+}
+
+function stayAlive(
+  apple: Coordinate,
+  dimensions: any,
+  direction: Direction,
+  snake: Coordinate[],
+) {
+  const head = snake.at(-1)!;
+  const [hx, hy] = head.split(':').map(x => +x);
+  const _neighbors: Coordinate[] = [];
+  if (hx - 1 >= 0 && direction !== Direction.Right)
+    _neighbors.push(`${hx - 1}:${hy}`);
+  if (hy - 1 >= 0 && direction !== Direction.Down)
+    _neighbors.push(`${hx}:${hy - 1}`);
+  if (hx + 1 < dimensions.width && direction !== Direction.Left)
+    _neighbors.push(`${hx + 1}:${hy}`);
+  if (hy + 1 < dimensions.height && direction !== Direction.Up)
+    _neighbors.push(`${hx}:${hy + 1}`);
+
+  const neighbors = _neighbors.filter(
+    neighbor => !snake.includes(neighbor as any),
+  );
+
+  if (!neighbors.length) return Direction.Right;
+
+  const dir = Snake.reverseLocate(neighbors[0] as any, head);
+  if (dir) {
+    return dir;
+  }
+
+  return Direction.Right;
+}
+
+function evaluatePosition(
+  position: Coordinate,
+  dimensions: any,
+  snake: Coordinate[],
+) {
+  const snakeLength = snake.length;
+  const reachable = snake.slice(0);
+  function findNeighbors(position: Coordinate) {
+    const [x, y] = position.split(':').map(x => +x);
+    const _neighbors: Coordinate[] = [];
+
+    if (x - 1 >= 0) _neighbors.push(`${x - 1}:${y}`);
+    if (y - 1 >= 0) _neighbors.push(`${x}:${y - 1}`);
+    if (x + 1 < dimensions.width) _neighbors.push(`${x + 1}:${y}`);
+    if (y + 1 < dimensions.height) _neighbors.push(`${x}:${y + 1}`);
+
+    const neighbors: Coordinate[] = _neighbors.filter(
+      neighbor => !reachable.includes(neighbor),
+    );
+
+    for (const n of neighbors) {
+      reachable.push(n);
+      findNeighbors(n);
+    }
+  }
+  findNeighbors(position);
+  return reachable.length - snakeLength;
 }
 
 const NullParentEnum = {
