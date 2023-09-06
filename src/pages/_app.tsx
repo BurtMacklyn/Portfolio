@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 import { font } from '@/config/font';
 import { MQProvider } from '@/context/MQ';
 import { opacity } from '@/css';
-import { Inter, Roboto_Mono } from '@next/font/google';
+import { Inter, Roboto_Mono } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],

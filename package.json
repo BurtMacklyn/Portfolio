@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^2.3.0",
-    "@next/font": "^13.4.19",
     "@next/mdx": "^13.4.16",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
