@@ -1,4 +1,5 @@
 import { Snake as SnakeGame } from '@/components/Snake/Snake';
+import { CfgBuilder } from '@/components/Snake/models/Config';
 import { Game } from '@/components/Snake/models/Game';
 import { RemoteController } from '@/components/Snake/models/RemoteController';
 import { Snake } from '@/components/Snake/models/Snake';
@@ -25,35 +26,52 @@ export default function PlaySnake() {
           const controller = new RemoteController();
           let path: Coordinate[] = [];
 
-          const game = new Game(canvas, 1, controller);
+          const game = new Game(
+            canvas,
+            CfgBuilder({ tickRate: 1, animate: false }),
+            controller,
+          );
 
           const unlisten = game.listen(
             'tick',
             async ({ apple, dimensions, direction, snake }) => {
               let next = path.shift();
+              const total = dimensions.height * dimensions.width - snake.length;
 
               if (!next) {
-                path = astar({ apple, dimensions, direction, snake }) || [];
+                path = astar(apple, snake, dimensions) || [];
                 next = path.shift();
                 if (!next) {
-                  controller.input(panic(apple, dimensions, direction, snake));
+                  controller.input(panic(dimensions, direction, snake, total));
                   return;
                 }
                 if (next === snake.at(-1)) {
                   next = path.shift();
                   if (!next) {
                     controller.input(
-                      panic(apple, dimensions, direction, snake),
+                      panic(dimensions, direction, snake, total),
                     );
                     return;
                   }
                 }
               }
 
+              if (
+                !next ||
+                evaluatePosition(next, dimensions, snake, total, false) /
+                  total <
+                  0.75
+              ) {
+                console.log('Switching');
+                path = [];
+                controller.input(panic(dimensions, direction, snake, total));
+                return;
+              }
+
               let dir = Snake.reverseLocate(next, snake.at(-1)!);
 
               if (!dir) {
-                dir = panic(apple, dimensions, direction, snake);
+                dir = panic(dimensions, direction, snake, total);
               }
 
               if (dir === direction) return;
@@ -63,7 +81,12 @@ export default function PlaySnake() {
 
           game.start();
 
+          const rerender = () => game.rerender();
+
+          window.addEventListener('resize', rerender);
+
           return () => {
+            window.removeEventListener('resize', rerender);
             unlisten();
             controller.stop();
             game.stop();
@@ -75,10 +98,10 @@ export default function PlaySnake() {
 }
 
 function panic(
-  apple: Coordinate,
   dimensions: any,
   direction: Direction,
   snake: Coordinate[],
+  total: number,
 ) {
   const head = snake.at(-1)!;
   const [hx, hy] = head.split(':').map(x => +x);
@@ -96,25 +119,20 @@ function panic(
     neighbor => !snake.includes(neighbor as any),
   );
 
-  const total = dimensions.height * dimensions.width - snake.length;
-
-  //   for (const neighbor of neighbors) {
-  //     const avail = evaluatePosition(neighbor, dimensions, snake, total);
-  //     if (avail / (dimensions.height * dimensions.width - snake.length) < 0.7)
-  //       continue;
-  //
-  //     const dir = Snake.reverseLocate(neighbor as any, head);
-  //     if (dir) {
-  //       return dir;
-  //     }
-  //   }
-
   const pairs: [string, number][] = [];
+
   for (const neighbor of neighbors) {
+    const avail = evaluatePosition(neighbor, dimensions, snake, total, true);
     pairs.push([
       neighbor,
-      evaluatePosition(neighbor, dimensions, snake, total),
+      evaluatePosition(neighbor, dimensions, snake, total, true),
     ]);
+    if (avail / total < 0.6) continue;
+
+    const dir = Snake.reverseLocate(neighbor as any, head);
+    if (dir) {
+      return dir;
+    }
   }
 
   if (!pairs?.length) {
@@ -139,6 +157,7 @@ function evaluatePosition(
   dimensions: any,
   snake: Coordinate[],
   total: number,
+  panicking: boolean,
 ) {
   const snakeLength = snake.length;
   const reachable = snake.slice(0);
@@ -157,7 +176,8 @@ function evaluatePosition(
 
     for (const n of neighbors) {
       reachable.push(n);
-      if (reachable.length / total >= 0.7) return 0.7;
+      if (reachable.length / total >= 0.75 && !panicking)
+        return reachable.length / total;
       findNeighbors(n);
     }
   }
@@ -180,11 +200,11 @@ type Node = {
   g?: number;
 };
 
-function astar({
-  apple,
-  snake,
-  dimensions,
-}: AppEventPayload): Coordinate[] | null {
+function astar(
+  apple: Coordinate,
+  snake: Coordinate[],
+  dimensions: AppEventPayload['dimensions'],
+): Coordinate[] | null {
   const board = new Array<Node[]>(dimensions.width);
 
   for (let x = 0; x < dimensions.width; x++) {

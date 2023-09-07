@@ -1,7 +1,7 @@
-import { color } from '@/config/style';
 import { AppEvent, AppEventHandler, Coordinate } from '../types';
 import { Apple } from './Apple';
 import { Clock } from './Clock';
+import { GameConfig } from './Config';
 import { Controller } from './Controller';
 import { CurrentDirection } from './CurrentDirection';
 import { Dimensions } from './Dimensions';
@@ -21,22 +21,19 @@ export class Game {
 
   constructor(
     element: HTMLCanvasElement,
-    speed: number,
+    private cfg: GameConfig,
     private controller: Controller,
   ) {
     this.dimensions = new Dimensions();
     this.aborter = new AbortController();
-    this.renderer = new Renderer(element, speed, {
-      snake: color('100'),
-      apple: color('primary'),
-    });
+    this.renderer = new Renderer(element);
     this.listeners = { reset: [], score: [], tick: [] };
 
     this.snake = new Snake(this.dimensions);
     this.apple = Apple.random(this.dimensions.state, this.snake.state);
     this.direction = new CurrentDirection(this.controller);
 
-    this.clock = new Clock(() => this.tick(), speed);
+    this.clock = new Clock(() => this.tick(), cfg.tickRate);
 
     window?.addEventListener(
       'keydown',
@@ -62,8 +59,6 @@ export class Game {
     const newPosition = this.snake.move(this.direction.state.current);
 
     let increment = false;
-    let lastTail = undefined;
-    let lastApple = undefined;
 
     if (newPosition === null) {
       if (!safety) {
@@ -79,21 +74,40 @@ export class Game {
     } else {
       if (newPosition === this.apple) {
         increment = true;
-        lastApple = (this.apple + '') as Coordinate;
-        this.apple = Apple.random(this.dimensions.state, this.snake.state);
       }
-
-      if (!increment) lastTail = this.snake.shift();
-      else lastTail = undefined;
     }
 
+    if (!increment) this.snake.shift();
+
     this.send('tick');
-    await this.renderer.render(
+
+    const r = this.renderer.render(
+      this.conf,
       this.dimensions.state,
       this.snake.state,
-      lastApple ?? this.apple,
-      lastTail,
+      this.apple,
+      increment,
     );
+
+    if (increment) {
+      this.apple = Apple.random(this.dimensions.state, this.snake.state);
+    }
+
+    await r;
+  }
+
+  public async rerender() {
+    return this.renderer.render(
+      { ...this.cfg, animate: false },
+      this.dimensions.state,
+      this.snake.state,
+      this.apple,
+      false,
+    );
+  }
+
+  private get conf() {
+    return this.cfg;
   }
 
   private send(e: AppEvent) {
@@ -106,6 +120,7 @@ export class Game {
         },
         direction: this.direction.state.current,
         snake: this.snake.state,
+        config: this.cfg,
       }),
     );
   }
@@ -122,5 +137,17 @@ export class Game {
     this.clock.stop();
     this.aborter.abort();
     this.listeners = { reset: [], tick: [], score: [] };
+  }
+
+  public config(cfg: Partial<GameConfig>) {
+    this.cfg = { ...this.cfg, ...cfg };
+  }
+
+  public getConfigKey<K extends keyof GameConfig>(key: K): GameConfig[K] {
+    return this.cfg[key];
+  }
+
+  public getConfig(): GameConfig {
+    return this.cfg;
   }
 }
