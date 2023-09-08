@@ -106,6 +106,11 @@ export class Game {
     );
   }
 
+  public increment() {
+    const tail = this.snake.state[0];
+    this.snake.state.unshift(tail);
+  }
+
   private get conf() {
     return this.cfg;
   }

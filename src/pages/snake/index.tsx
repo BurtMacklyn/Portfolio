@@ -58,9 +58,7 @@ export default function PlaySnake() {
 
               if (
                 !next ||
-                evaluatePosition(next, dimensions, snake, total, false) /
-                  total <
-                  0.75
+                evaluatePosition(next, dimensions, snake, total, false) < 0.5
               ) {
                 console.log('Switching');
                 path = [];
@@ -82,11 +80,16 @@ export default function PlaySnake() {
           game.start();
 
           const rerender = () => game.rerender();
+          const inc = (e: KeyboardEvent) => {
+            if (e.key === 'i') game.increment();
+          };
 
           window.addEventListener('resize', rerender);
+          window.addEventListener('keydown', inc);
 
           return () => {
             window.removeEventListener('resize', rerender);
+            window.removeEventListener('keydown', inc);
             unlisten();
             controller.stop();
             game.stop();
@@ -122,12 +125,9 @@ function panic(
   const pairs: [string, number][] = [];
 
   for (const neighbor of neighbors) {
-    const avail = evaluatePosition(neighbor, dimensions, snake, total, true);
-    pairs.push([
-      neighbor,
-      evaluatePosition(neighbor, dimensions, snake, total, true),
-    ]);
-    if (avail / total < 0.6) continue;
+    const coverage = evaluatePosition(neighbor, dimensions, snake, total, true);
+    pairs.push([neighbor, coverage]);
+    if (coverage < 0.5) continue;
 
     const dir = Snake.reverseLocate(neighbor as any, head);
     if (dir) {
@@ -174,15 +174,17 @@ function evaluatePosition(
       neighbor => !reachable.includes(neighbor),
     );
 
+    const cov = (reachable.length - snakeLength) / (total - snakeLength);
+
     for (const n of neighbors) {
       reachable.push(n);
-      if (reachable.length / total >= 0.75 && !panicking)
-        return reachable.length / total;
+      if (cov >= 0.6 && !panicking) return cov;
+      if (cov >= 0.8 && panicking) return cov;
       findNeighbors(n);
     }
   }
   findNeighbors(position);
-  return reachable.length - snakeLength;
+  return (reachable.length - snakeLength) / (total - snakeLength);
 }
 
 const NullParentEnum = {
