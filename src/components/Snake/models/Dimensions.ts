@@ -1,5 +1,5 @@
 export class Dimensions {
-  static RELATIVE_UNIT_SIZE = 25;
+  static RELATIVE_UNIT_SIZE = 40;
 
   private width!: number;
   private widthUnit!: number;
@@ -25,7 +25,9 @@ export class Dimensions {
   }
 
   private refresh() {
-    this.height = Math.round(window.innerHeight / Dimensions.RELATIVE_UNIT_SIZE);
+    this.height = Math.round(
+      window.innerHeight / Dimensions.RELATIVE_UNIT_SIZE,
+    );
     this.width = Math.round(window.innerWidth / Dimensions.RELATIVE_UNIT_SIZE);
     this.heightUnit = Dimensions.RELATIVE_UNIT_SIZE;
     this.widthUnit = Dimensions.RELATIVE_UNIT_SIZE;

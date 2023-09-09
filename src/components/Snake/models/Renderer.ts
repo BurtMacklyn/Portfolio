@@ -51,7 +51,7 @@ export class Renderer {
 
       if (cfg.grid) {
         this.ctx.strokeStyle = cfg.gridColor;
-        this.ctx.lineWidth = 0.3;
+        this.ctx.lineWidth = 1;
 
         for (let x = d.widthUnit; x < d.widthTotal; x += d.widthUnit) {
           this.ctx.moveTo(x, 0);
@@ -153,7 +153,7 @@ export class Renderer {
 
     const { duration, frameAmt } = Renderer.calculateTiming(cfg);
 
-    if (i > frameAmt) return;
+    if (i > frameAmt + 1) return;
 
     await Promise.all([f(i / frameAmt), Clock.wait(duration / frameAmt)]);
     return this.loop(f, cfg, i + 1);

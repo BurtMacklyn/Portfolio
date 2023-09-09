@@ -25,10 +25,11 @@ export default function PlaySnake() {
         game={canvas => {
           const controller = new RemoteController();
           let path: Coordinate[] = [];
+          let offset = 0;
 
           const game = new Game(
             canvas,
-            CfgBuilder({ tickRate: 1, animate: false }),
+            CfgBuilder({ tickRate: 10, animate: false }),
             controller,
           );
 
@@ -41,35 +42,41 @@ export default function PlaySnake() {
               if (!next) {
                 path = astar(apple, snake, dimensions) || [];
                 next = path.shift();
+                offset++;
                 if (!next) {
-                  controller.input(panic(dimensions, direction, snake, total));
+                  offset = 0;
+                  controller.input(
+                    panic(dimensions, direction, snake, total, offset),
+                  );
                   return;
                 }
                 if (next === snake.at(-1)) {
                   next = path.shift();
+                  offset++;
                   if (!next) {
+                    offset = 0;
                     controller.input(
-                      panic(dimensions, direction, snake, total),
+                      panic(dimensions, direction, snake, total, offset),
                     );
                     return;
                   }
                 }
               }
 
-              if (
-                !next ||
-                evaluatePosition(next, dimensions, snake, total, false) < 0.5
-              ) {
+              if (!next) {
                 console.log('Switching');
                 path = [];
-                controller.input(panic(dimensions, direction, snake, total));
+                offset = 0;
+                controller.input(
+                  panic(dimensions, direction, snake, total, offset),
+                );
                 return;
               }
 
               let dir = Snake.reverseLocate(next, snake.at(-1)!);
 
               if (!dir) {
-                dir = panic(dimensions, direction, snake, total);
+                dir = panic(dimensions, direction, snake, total, offset);
               }
 
               if (dir === direction) return;
@@ -105,34 +112,42 @@ function panic(
   direction: Direction,
   snake: Coordinate[],
   total: number,
+  offset: number,
 ) {
   const head = snake.at(-1)!;
   const [hx, hy] = head.split(':').map(x => +x);
-  const _neighbors: Coordinate[] = [];
+  const _edges: Coordinate[] = [];
   if (hx - 1 >= 0 && direction !== Direction.Right)
-    _neighbors.push(`${hx - 1}:${hy}`);
+    _edges.push(`${hx - 1}:${hy}`);
   if (hy - 1 >= 0 && direction !== Direction.Down)
-    _neighbors.push(`${hx}:${hy - 1}`);
+    _edges.push(`${hx}:${hy - 1}`);
   if (hx + 1 < dimensions.width && direction !== Direction.Left)
-    _neighbors.push(`${hx + 1}:${hy}`);
+    _edges.push(`${hx + 1}:${hy}`);
   if (hy + 1 < dimensions.height && direction !== Direction.Up)
-    _neighbors.push(`${hx}:${hy + 1}`);
+    _edges.push(`${hx}:${hy + 1}`);
 
-  const neighbors = _neighbors.filter(
-    neighbor => !snake.includes(neighbor as any),
-  );
+  const edges = _edges.filter(edge => !snake.includes(edge as any));
 
   const pairs: [string, number][] = [];
+  const cutoff = (total - snake.length) * 0.9;
+  const board = buildBoard(dimensions, snake);
+  const [snkx, snky] = snake.at(0)!.split(':');
+  board[+snkx][+snky].blocked = false;
 
-  for (const neighbor of neighbors) {
-    const coverage = evaluatePosition(neighbor, dimensions, snake, total, true);
-    pairs.push([neighbor, coverage]);
-    if (coverage < 0.5) continue;
+  for (const edge of edges) {
+    const [ex, ey] = edge.split(':');
+    board[+ex][+ey].blocked = true;
+    const avail = reachable(board, edge, snake, cutoff, offset);
+    board[+ex][+ey].blocked = false;
 
-    const dir = Snake.reverseLocate(neighbor as any, head);
-    if (dir) {
-      return dir;
-    }
+    const cov = avail / (total - snake.length);
+    pairs.push([edge, cov]);
+    //     if (cov < 0.6) continue;
+    //
+    //     const dir = Snake.reverseLocate(edge as any, head);
+    //     if (dir) {
+    //       return dir;
+    //     }
   }
 
   if (!pairs?.length) {
@@ -152,39 +167,31 @@ function panic(
   return Direction.Right;
 }
 
-function evaluatePosition(
-  position: Coordinate,
-  dimensions: any,
+function reachable(
+  board: Node[][],
+  n: Coordinate,
   snake: Coordinate[],
-  total: number,
-  panicking: boolean,
+  cutoff?: number,
+  ignore: number = -1,
 ) {
-  const snakeLength = snake.length;
-  const reachable = snake.slice(0);
-  function findNeighbors(position: Coordinate) {
-    const [x, y] = position.split(':').map(x => +x);
-    const _neighbors: Coordinate[] = [];
+  const [_x, _y] = n.split(':');
+  const reach = [board[+_x][+_y]];
+  for (let i = 0; i < reach.length; i++) {
+    const current = reach[i];
+    for (const [x, y] of current.edges) {
+      const edge = board[x][y];
+      let isBlocked = snake.includes(`${x}:${y}`);
 
-    if (x - 1 >= 0) _neighbors.push(`${x - 1}:${y}`);
-    if (y - 1 >= 0) _neighbors.push(`${x}:${y - 1}`);
-    if (x + 1 < dimensions.width) _neighbors.push(`${x + 1}:${y}`);
-    if (y + 1 < dimensions.height) _neighbors.push(`${x}:${y + 1}`);
+      if (ignore !== -1 && !Number.isNaN(edge.nth) && edge.nth! - ignore < 0)
+        isBlocked = false;
 
-    const neighbors: Coordinate[] = _neighbors.filter(
-      neighbor => !reachable.includes(neighbor),
-    );
-
-    const cov = (reachable.length - snakeLength) / (total - snakeLength);
-
-    for (const n of neighbors) {
-      reachable.push(n);
-      if (cov >= 0.6 && !panicking) return cov;
-      if (cov >= 0.8 && panicking) return cov;
-      findNeighbors(n);
+      if (!isBlocked && !reach.includes(edge)) {
+        reach.push(edge);
+        if (cutoff && reach.length >= cutoff) return reach.length;
+      }
     }
   }
-  findNeighbors(position);
-  return (reachable.length - snakeLength) / (total - snakeLength);
+  return reach.length;
 }
 
 const NullParentEnum = {
@@ -197,131 +204,147 @@ type Node = {
   y: number;
   blocked: boolean;
   checked: boolean;
-  parent: Coordinate | null | undefined;
+  nth?: number;
+  edges: [number, number][];
+  parent?: Node;
   f?: number;
   g?: number;
 };
+
+function buildBoard(
+  dimensions: AppEventPayload['dimensions'],
+  snake: Coordinate[],
+) {
+  const board = new Array<Node[]>(dimensions.width);
+
+  for (let x = 0; x < dimensions.width; x++) {
+    board[x] = new Array<Node>(dimensions.height);
+  }
+
+  for (let x = 0; x < dimensions.width; x++) {
+    for (let y = 0; y < dimensions.height; y++) {
+      board[x][y] = {
+        blocked: false,
+        checked: false,
+        parent: NullParentEnum.NotChecked,
+        edges: [
+          x + 1 < dimensions.width ? [x + 1, y] : (null as never),
+          x - 1 >= 0 ? [x - 1, y] : (null as never),
+          y + 1 < dimensions.height ? [x, y + 1] : (null as never),
+          y - 1 >= 0 ? [x, y - 1] : (null as never),
+        ].filter(n => !!n) as [number, number][],
+        x,
+        y,
+      };
+    }
+  }
+
+  let nth = 2;
+  for (const segment of snake) {
+    const [_x, _y] = segment.split(':');
+    const x = +_x;
+    const y = +_y;
+    board[x][y].blocked = true;
+    board[x][y].nth = nth;
+    nth++;
+  }
+
+  return board;
+}
 
 function astar(
   apple: Coordinate,
   snake: Coordinate[],
   dimensions: AppEventPayload['dimensions'],
 ): Coordinate[] | null {
-  const board = new Array<Node[]>(dimensions.width);
-
-  for (let x = 0; x < dimensions.width; x++) {
-    const col = new Array<Node>(dimensions.height);
-    for (let y = 0; y < dimensions.height; y++) {
-      col[y] = {
-        blocked: false,
-        checked: false,
-        parent: NullParentEnum.NotChecked,
-        x,
-        y,
-      };
-    }
-    board[x] = col;
-  }
-
+  const board = buildBoard(dimensions, snake);
   const [startX, startY] = snake
     .at(-1)!
     .split(':')
     .map(n => +n);
   const [targetX, targetY] = apple.split(':').map(n => +n);
 
-  const start: Node = {
-    x: startX,
-    y: startY,
-    blocked: true,
-    checked: true,
-    f: 0,
-    g: heuristic(startX, startY, targetX, targetY),
-    parent: NullParentEnum.IsBaseNode,
-  };
+  const start = board[startX][startY];
+  start.checked = true;
+  start.blocked = true;
+  start.g = distance(startX, startY, targetX, targetY);
 
-  board[startX][startY] = start;
-
-  for (const segment of snake) {
-    const [_x, _y] = segment.split(':');
-    const x = +_x;
-    const y = +_y;
-    board[x][y].blocked = true;
-  }
-
-  /* g, f, x, y */
-  const queue: [number, number, number, number][] = [
-    [start.g!, start.f!, start.x, start.y],
-  ];
+  const total = dimensions.width * dimensions.height;
+  const queue: [number, number][] = [[start.x, start.y]];
+  let last: Node | null = null;
 
   while (queue.length) {
-    const current = queue.shift()!;
-    const [_, currentF, currentX, currentY] = current;
+    const [cx, cy] = queue.shift()!;
+    const current = board[cx][cy];
+    last = current;
 
-    if (currentX === targetX && currentY === targetY) {
-      return traceRoute(board, targetX, targetY);
+    if (current.x === targetX && current.y === targetY) {
+      return traceRoute(board[targetX][targetY]);
     }
 
-    board[currentX][currentY].checked = true;
+    current.checked = true;
 
-    const neighbors: (Node | undefined)[] = [
-      board[currentX + 1]?.[currentY],
-      board[currentX]?.[currentY + 1],
-      board[currentX - 1]?.[currentY],
-      board[currentX]?.[currentY - 1],
-    ];
+    const route = traceRoute(board[cx][cy]);
 
-    for (const neighbor of neighbors) {
-      if (!neighbor || neighbor.blocked) continue;
+    if (!route) {
+      console.log('no route');
+      continue;
+    }
 
-      const f = currentF + 1;
-      const h = heuristic(neighbor.x, neighbor.y, targetX, targetY);
+    const cutoff = (total - snake.length) * 0.7;
+    const snakeAtThisPoint = [...snake.slice(route.length), ...route];
+    const avail = reachable(
+      board,
+      snakeAtThisPoint.at(-1)!,
+      snakeAtThisPoint,
+      cutoff,
+      current.f,
+    );
 
-      const neighborNode: Node = {
-        blocked: false,
-        x: neighbor.x,
-        y: neighbor.y,
-        checked: true,
-        parent: `${currentX}:${currentY}`,
-        f,
-        g: f + h,
-      };
+    // const cov = avail / (total - snake.length);
 
-      if (board[neighborNode.x][neighborNode.y].checked) {
-        if (neighborNode.g! < board[neighborNode.x][neighborNode.y].g!) {
-          neighborNode.checked = true;
-          board[neighborNode.x][neighborNode.y] = neighborNode;
+    if (avail < cutoff - 4) {
+      board[cx][cy].checked = true;
+      continue;
+    }
+
+    for (const [ex, ey] of current.edges) {
+      const f = (current.f || 0) + 1;
+      if (
+        !board[ex][ey] ||
+        (board[ex][ey].blocked && board[ex][ey].nth! - f! > 0)
+      )
+        continue;
+
+      const h = distance(ex, ey, targetX, targetY);
+      const g = f + h;
+
+      if (board[ex][ey].checked) {
+        if (g < board[ex][ey].g!) {
+          board[ex][ey].f = f;
+          board[ex][ey].g = g;
+          board[ex][ey].parent = current;
         }
       } else {
-        const index = searchGVal(queue, [
-          neighborNode.g!,
-          neighborNode.f!,
-          neighborNode.x,
-          neighborNode.y,
-        ]);
+        board[ex][ey].checked = true;
+        board[ex][ey].f = f;
+        board[ex][ey].g = g;
+        board[ex][ey].parent = current;
+        const index = searchGVal(board, queue, [ex, ey]);
         if (Number.isInteger(index)) {
-          queue.splice(index, 0, [
-            neighborNode.g!,
-            neighborNode.f!,
-            neighborNode.x,
-            neighborNode.y,
-          ]);
-        }
-        board[neighborNode.x][neighborNode.y] = neighborNode;
+          queue.splice(index, 0, [ex, ey]);
+        } else queue.push([ex, ey]);
       }
     }
   }
 
-  return null;
+  return traceRoute(last!);
 }
 
-function traceRoute(
-  board: Node[][],
-  targetX: number,
-  targetY: number,
-): Coordinate[] | null {
+function traceRoute(target: Node): Coordinate[] | null {
   const path = new Array<Coordinate>();
 
-  let current = board[targetX][targetY];
+  let current = target;
 
   while (current?.parent) {
     path.unshift(`${current.x}:${current.y}`);
@@ -330,31 +353,41 @@ function traceRoute(
       return path;
     }
 
-    let [_pX, _pY] = current.parent.split(':');
-    let parentX = +_pX;
-    let parentY = +_pY;
-    current = board[parentX][parentY];
-
-    if (current.parent === NullParentEnum.IsBaseNode) {
-      path.unshift(`${current.x}:${current.y}`);
-      return path;
-    }
+    current = current.parent;
   }
 
-  return null;
+  return path;
 }
 
-function heuristic(x_0: number, y_0: number, x_1: number, y_1: number): number {
+function distance(x_0: number, y_0: number, x_1: number, y_1: number): number {
   // prettier-ignore
   return Math.sqrt(  ((x_0 - x_1) ** 2) + ((y_0 - y_1) ** 2)  )
 }
 
 function searchGVal(
-  arr: [number, number, number, number][],
-  e: [number, number, number, number],
+  board: Node[][],
+  arr: [number, number][],
+  e: [number, number],
 ) {
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i][0] >= e[0]) return i;
+    const [ax, ay] = arr[i];
+    const a = board[ax][ay];
+    const en = board[e[0]][e[1]];
+    if ((a.g || 0) >= (en.g || 0)) return i;
+  }
+  return arr.length;
+}
+
+function revSearchGVal(
+  board: Node[][],
+  arr: [number, number][],
+  e: [number, number],
+) {
+  for (let i = 0; i < arr.length; i++) {
+    const [ax, ay] = arr[i];
+    const a = board[ax][ay];
+    const en = board[e[0]][e[1]];
+    if ((a.g || 0) < (en.g || 0)) return i;
   }
   return arr.length;
 }
