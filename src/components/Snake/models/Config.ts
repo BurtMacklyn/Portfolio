@@ -9,6 +9,7 @@ export interface GameConfig {
   snakeColor: string;
   appleColor: string;
   tickRate: number;
+  parent?: HTMLElement;
 }
 
 export function CfgBuilder(cfg?: Partial<GameConfig>): GameConfig {
@@ -21,6 +22,7 @@ export function CfgBuilder(cfg?: Partial<GameConfig>): GameConfig {
     snakeColor: color('100'),
     appleColor: color('primary'),
     tickRate: 100,
+    parent: undefined,
   };
 
   return { ...def, ...cfg };

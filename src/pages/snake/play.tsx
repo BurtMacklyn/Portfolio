@@ -1,4 +1,4 @@
-import { Snake } from '@/components/Snake/Snake';
+import { SnakeWrapper } from '@/components/Snake/SnakeWrapper';
 import { CfgBuilder } from '@/components/Snake/models/Config';
 import { Game } from '@/components/Snake/models/Game';
 import { KeyboardController } from '@/components/Snake/models/KeyboardController';
@@ -6,7 +6,7 @@ import { KeyboardController } from '@/components/Snake/models/KeyboardController
 export default function PlaySnake() {
   return (
     <>
-      <Snake
+      <SnakeWrapper
         game={canvas => {
           const controller = new KeyboardController();
           const game = new Game(
@@ -26,6 +26,7 @@ export default function PlaySnake() {
             game.stop();
           };
         }}
+        resizeTo={'window'}
       />
     </>
   );

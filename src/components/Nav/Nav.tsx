@@ -114,18 +114,36 @@ export const NavHtml: React.FC = () => {
   return (
     <pre>
       <Code hidden>{'<ul>\n'}</Code>
-      {Object.entries(config.pages).map(([k, v]) => (
-        <Fragment key={v}>
-          <Code hidden>{'  <li>{'}</Code>
-          <Link to={v}>
-            <Code style={{ color: color('100') }}>
-              <Inline hover="primary">{k}</Inline>
-            </Code>
-          </Link>
-          <Code hidden>{'}</li>\n'}</Code>
-        </Fragment>
-      ))}
+      <Item to="/" content="main" indent={2} />
+      <Item to={config.emailLink} content="contact" indent={2} />
+      <Item to={config.social.github.link} content="github" indent={2} />
+      <Item to="/snake" content="snake" indent={2} />
+      <Item to="/snake/play" content="snake/play" indent={2} />
       <Code hidden>{'</ul>'}</Code>
     </pre>
+  );
+};
+
+export const Item: React.FC<{
+  to: string;
+  content: string;
+  indent: number;
+}> = ({ to, content, indent }) => {
+  return (
+    <>
+      <Code hidden>{`${new Array(indent).fill(' ').join('')}<li>`}</Code>
+      <Code hidden style={{ color: color('secondary') }}>
+        {'{'}
+      </Code>
+      <Link to={to}>
+        <Code style={{ color: color('100') }}>
+          <Inline hover="primary">{content}</Inline>
+        </Code>
+      </Link>
+      <Code hidden style={{ color: color('secondary') }}>
+        {'}'}
+      </Code>
+      <Code hidden>{'</li>\n'}</Code>
+    </>
   );
 };

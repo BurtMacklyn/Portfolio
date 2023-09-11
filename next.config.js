@@ -17,6 +17,13 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  redirects: async () => [
+    {
+      source: '/git',
+      destination: 'https://www.github.com/cooperrunyan',
+      permanent: false,
+    },
+  ],
 };
 
 export default withMDX(nextConfig);

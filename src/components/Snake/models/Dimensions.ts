@@ -19,16 +19,20 @@ export class Dimensions {
     };
   }
 
-  constructor() {
+  constructor(private parent?: HTMLElement) {
     this.refresh();
     this.listen(() => this.refresh());
   }
 
   private refresh() {
     this.height = Math.round(
-      window.innerHeight / Dimensions.RELATIVE_UNIT_SIZE,
+      (this.parent ? this.parent.clientHeight : window.innerHeight) /
+        Dimensions.RELATIVE_UNIT_SIZE,
     );
-    this.width = Math.round(window.innerWidth / Dimensions.RELATIVE_UNIT_SIZE);
+    this.width = Math.round(
+      (this.parent ? this.parent.clientWidth : window.innerWidth) /
+        Dimensions.RELATIVE_UNIT_SIZE,
+    );
     this.heightUnit = Dimensions.RELATIVE_UNIT_SIZE;
     this.widthUnit = Dimensions.RELATIVE_UNIT_SIZE;
     this.heightTotal = this.height * this.heightUnit;

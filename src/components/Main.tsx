@@ -1,15 +1,17 @@
 import { Box } from '@/components/Box';
 import { style, Z } from '@/config/style';
 import { rem } from '@/css';
+import { forwardRef } from 'react';
 
 interface Props {
   children?: any;
   className?: string;
 }
 
-export const Main: React.FC<Props> = props => {
+export const Main = forwardRef<any, Props>((props, ref) => {
   return (
     <Box
+      ref={ref}
       data-testid={(props as any)['data-testid']}
       w={'fill'}
       margin
@@ -28,4 +30,4 @@ export const Main: React.FC<Props> = props => {
       {props.children}
     </Box>
   );
-};
+});

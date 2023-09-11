@@ -24,7 +24,7 @@ export class Game {
     private cfg: GameConfig,
     private controller: Controller,
   ) {
-    this.dimensions = new Dimensions();
+    this.dimensions = new Dimensions(cfg.parent);
     this.aborter = new AbortController();
     this.renderer = new Renderer(element);
     this.listeners = { reset: [], score: [], tick: [] };

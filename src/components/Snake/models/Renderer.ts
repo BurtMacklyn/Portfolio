@@ -42,8 +42,11 @@ export class Renderer {
     if (cfg.scaleToWindow) {
       this.ctx.canvas.style.transformOrigin = '0 0';
       this.ctx.canvas.style.transform = `scaleY(${
-        window.innerHeight / d.heightTotal
-      }) scaleX(${window.innerWidth / d.widthTotal})`;
+        (cfg.parent ? cfg.parent.clientHeight : window.innerHeight) /
+        d.heightTotal
+      }) scaleX(${
+        (cfg.parent ? cfg.parent.clientWidth : window.innerWidth) / d.widthTotal
+      })`;
     }
 
     await this.loop(progress => {
