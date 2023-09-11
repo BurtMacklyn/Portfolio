@@ -1,3 +1,5 @@
+import { GameConfig } from './Config';
+
 export class Dimensions {
   static RELATIVE_UNIT_SIZE = 40;
 
@@ -7,6 +9,8 @@ export class Dimensions {
   private height!: number;
   private heightUnit!: number;
   private heightTotal!: number;
+
+  private parent?: HTMLElement;
 
   public get state() {
     return {
@@ -19,22 +23,21 @@ export class Dimensions {
     };
   }
 
-  constructor(private parent?: HTMLElement) {
-    this.refresh();
-    this.listen(() => this.refresh());
+  constructor(config: GameConfig) {
+    this.parent = config.parent;
+    this.refresh(config);
+    this.listen(() => this.refresh(config));
   }
 
-  private refresh() {
+  private refresh(cfg: GameConfig) {
     this.height = Math.round(
-      (this.parent ? this.parent.clientHeight : window.innerHeight) /
-        Dimensions.RELATIVE_UNIT_SIZE,
+      (this.parent ? this.parent.clientHeight : window.innerHeight) / cfg.size,
     );
     this.width = Math.round(
-      (this.parent ? this.parent.clientWidth : window.innerWidth) /
-        Dimensions.RELATIVE_UNIT_SIZE,
+      (this.parent ? this.parent.clientWidth : window.innerWidth) / cfg.size,
     );
-    this.heightUnit = Dimensions.RELATIVE_UNIT_SIZE;
-    this.widthUnit = Dimensions.RELATIVE_UNIT_SIZE;
+    this.heightUnit = cfg.size;
+    this.widthUnit = cfg.size;
     this.heightTotal = this.height * this.heightUnit;
     this.widthTotal = this.width * this.widthUnit;
   }

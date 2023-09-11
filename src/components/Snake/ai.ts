@@ -1,4 +1,4 @@
-import { CfgBuilder } from '@/components/Snake/models/Config';
+import { CfgBuilder, GameConfig } from '@/components/Snake/models/Config';
 import { Game } from '@/components/Snake/models/Game';
 import { RemoteController } from '@/components/Snake/models/RemoteController';
 import { Snake } from '@/components/Snake/models/Snake';
@@ -19,58 +19,59 @@ import {
 
 export function loadAIGame(
   canvas: HTMLCanvasElement,
-  parent?: HTMLElement,
-  background = false,
+  config?: Partial<GameConfig>,
 ) {
   const controller = new RemoteController();
   let path: Coordinate[] = [];
 
   const game = new Game(
     canvas,
-    CfgBuilder({ tickRate: 1, animate: false, parent }),
+    CfgBuilder({ tickRate: 1, animate: false, ...(config || {}) }),
     controller,
   );
 
   const unlisten = game.listen(
     'tick',
     async ({ apple, dimensions, direction, snake }) => {
-      let next = path.shift();
-      const total = dimensions.height * dimensions.width - snake.length;
+      try {
+        let next = path.shift();
+        const total = dimensions.height * dimensions.width - snake.length;
 
-      if (!next) {
-        path = astar(apple, snake, dimensions) || [];
-        next = path.shift();
         if (!next) {
-          controller.input(panic(dimensions, direction, snake, total));
-          return;
-        }
-        if (next === snake.at(-1)) {
+          path = astar(apple, snake, dimensions) || [];
           next = path.shift();
           if (!next) {
             controller.input(panic(dimensions, direction, snake, total));
             return;
           }
+          if (next === snake.at(-1)) {
+            next = path.shift();
+            if (!next) {
+              controller.input(panic(dimensions, direction, snake, total));
+              return;
+            }
+          }
         }
-      }
 
-      if (
-        !next ||
-        evaluatePosition(next, dimensions, snake, total, false) < 0.5
-      ) {
-        console.log('Switching');
-        path = [];
-        controller.input(panic(dimensions, direction, snake, total));
-        return;
-      }
+        if (
+          !next ||
+          evaluatePosition(next, dimensions, snake, total, false) < 0.5
+        ) {
+          console.log('Switching');
+          path = [];
+          controller.input(panic(dimensions, direction, snake, total));
+          return;
+        }
 
-      let dir = Snake.reverseLocate(next, snake.at(-1)!);
+        let dir = Snake.reverseLocate(next, snake.at(-1)!);
 
-      if (!dir) {
-        dir = panic(dimensions, direction, snake, total);
-      }
+        if (!dir) {
+          dir = panic(dimensions, direction, snake, total);
+        }
 
-      if (dir === direction) return;
-      controller.input(dir);
+        if (dir === direction) return;
+        controller.input(dir);
+      } catch {}
     },
   );
 
@@ -83,11 +84,11 @@ export function loadAIGame(
 
   window.addEventListener('resize', rerender);
 
-  if (!background) window.addEventListener('keydown', inc);
+  window.addEventListener('keydown', inc);
 
   return () => {
     window.removeEventListener('resize', rerender);
-    if (!background) window.removeEventListener('keydown', inc);
+    window.removeEventListener('keydown', inc);
     unlisten();
     controller.stop();
     game.stop();
