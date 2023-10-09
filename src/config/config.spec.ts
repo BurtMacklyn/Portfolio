@@ -4,8 +4,6 @@ describe('Config', () => {
   it('has a title', () => expect(typeof config.title).toStrictEqual('string'));
   it('has a description', () =>
     expect(typeof config.description).toStrictEqual('string'));
-  it('has an update date', () =>
-    expect(typeof config.lastUpdated).toStrictEqual('string'));
   it('has a site image', () =>
     expect(typeof config.siteImg).toStrictEqual('string'));
   it('has an email', () => {

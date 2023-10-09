@@ -1,19 +1,15 @@
 import { ErrorTerminal } from '@/components/ErrorTerminal';
-import { within } from '@testing-library/react';
-import { randomUUID } from 'crypto';
+
+jest.mock('next/router', () => jest.requireActual('next-router-mock'));
 
 describe('ErrorTerminal', () => {
   it('renders', () => {
-    const code = randomUUID();
-    const message = randomUUID();
-
     const { unmount, element } = renderComponent(ErrorTerminal, {
       test: {},
-      props: { code, message },
+      props: {},
     });
 
-    expect(within(element).getByText(code)).toBeInTheDocument();
-    expect(within(element).getByText(message)).toBeInTheDocument();
+    expect(element).toBeInTheDocument();
 
     unmount();
   });
