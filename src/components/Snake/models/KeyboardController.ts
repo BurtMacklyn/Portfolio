@@ -11,6 +11,10 @@ export class KeyboardController extends Controller {
     a: Direction.Left,
     s: Direction.Down,
     d: Direction.Right,
+    k: Direction.Up,
+    h: Direction.Left,
+    j: Direction.Down,
+    l: Direction.Right,
   };
 
   private abort: AbortController;
