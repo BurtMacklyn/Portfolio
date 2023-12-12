@@ -4,6 +4,11 @@ import { GameConfig } from './Config';
 import { Dimensions } from './Dimensions';
 import { Snake } from './Snake';
 
+function easeInOut(progress: number) {
+  if (progress / 2 < 1) return 0.5 * progress * progress;
+  return -0.5 * (--progress * (progress - 2) - 1);
+}
+
 export class Renderer {
   private ctx: CanvasRenderingContext2D;
 
@@ -107,15 +112,15 @@ export class Renderer {
           //  Is head
           const previous = a[i - 1]!;
           const direction = Snake.reverseLocate(coord, previous);
-          if (direction === Direction.Right) w *= progress;
-          if (direction === Direction.Down) h *= progress;
+          if (direction === Direction.Right) w *= easeInOut(progress);
+          if (direction === Direction.Down) h *= easeInOut(progress);
           if (direction === Direction.Left) {
-            let wd = w * progress;
+            let wd = w * easeInOut(progress);
             w = wd;
             x += d.widthUnit - wd;
           }
           if (direction === Direction.Up) {
-            let hd = h * progress;
+            let hd = h * easeInOut(progress);
             h = hd;
             y += d.heightUnit - hd;
           }
@@ -125,15 +130,15 @@ export class Renderer {
           // Is tail
           if (scored) return;
           const direction = Snake.reverseLocate(next!, coord);
-          if (direction === Direction.Left) w *= 1 - progress;
-          if (direction === Direction.Up) h *= 1 - progress;
+          if (direction === Direction.Left) w *= easeInOut(1 - progress);
+          if (direction === Direction.Up) h *= easeInOut(1 - progress);
           if (direction === Direction.Right) {
-            let wd = w * (1 - progress);
+            let wd = w * easeInOut(1 - progress);
             w = wd;
             x += d.widthUnit - wd;
           }
           if (direction === Direction.Down) {
-            let hd = h * (1 - progress);
+            let hd = h * easeInOut(1 - progress);
             h = hd;
             y += d.heightUnit - hd;
           }

@@ -11,7 +11,13 @@ export default function PlaySnake() {
           const controller = new KeyboardController();
           const game = new Game(
             canvas,
-            CfgBuilder({ tickRate: 75 }),
+            CfgBuilder({
+              tickRate: 50,
+              size: 25,
+              grid: true,
+              gridColor: '#222222',
+              // animationDurationOfFrame: 0.25,
+            }),
             controller,
           );
           game.start();
