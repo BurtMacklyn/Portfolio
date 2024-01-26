@@ -5,85 +5,83 @@ import { randomUUID } from 'crypto';
 import isUrl from 'is-url';
 
 declare global {
-    export var renderComponent: typeof _renderComponent;
+  export var renderComponent: typeof _renderComponent;
 }
 
 expect.extend({
-    toBeValidPath: function (url) {
-        let u = url;
-        let result = isUrl(u);
-        if (!result && u.startsWith('/')) {
-            u = `https://a.b${u}`;
-            result = isUrl(u);
-        }
-
-        if (result || u.startsWith('mailto:')) {
-            return {
-                message: () =>
-                    `expected ${this.utils.printReceived(
-                        u,
-                    )} to be a valid path`,
-                pass: true,
-            };
-        }
-
-        return {
-            message: () =>
-                `expected ${this.utils.printReceived(u)} to be a valid path`,
-            pass: false,
-        };
-    },
-});
-
-interface Options<T> {
-    test: {
-        click?: boolean;
-        mouse?: boolean;
-        children?: boolean;
-    };
-    props: Omit<T, 'children'>;
-}
-
-function _renderComponent<T extends { [key: string]: unknown }>(
-    Component: React.FC<T>,
-    options: Options<T>,
-) {
-    const text = randomUUID();
-    const testid = randomUUID();
-    const click = jest.fn();
-
-    const props = {
-        ...options.props,
-        children: text,
-        onClick: options.test.click ? click : undefined,
-        'data-testid': testid,
-    } as unknown as T;
-
-    const { unmount, container, debug } = render(<Component {...props} />);
-    const element = screen.getByTestId(testid);
-    expect(element).toBeInTheDocument();
-
-    if (options.test.click) {
-        fireEvent.click(element);
-        expect(click).toBeCalled();
+  toBeValidPath: function (url) {
+    let u = url;
+    let result = isUrl(u);
+    if (!result && u.startsWith('/')) {
+      u = `https://a.b${u}`;
+      result = isUrl(u);
     }
 
-    if (options.test.mouse) {
-        fireEvent.mouseEnter(element);
-        fireEvent.mouseMove(element);
-        fireEvent.mouseLeave(element);
-    }
-
-    if (options.test.children) {
-        expect(within(element).getByText(text)).toBeInTheDocument();
+    if (result || u.startsWith('mailto:')) {
+      return {
+        message: () =>
+          `expected ${this.utils.printReceived(u)} to be a valid path`,
+        pass: true,
+      };
     }
 
     return {
-        element,
-        unmount,
-        container,
-        debug,
+      message: () =>
+        `expected ${this.utils.printReceived(u)} to be a valid path`,
+      pass: false,
     };
+  },
+});
+
+interface Options<T> {
+  test: {
+    click?: boolean;
+    mouse?: boolean;
+    children?: boolean;
+  };
+  props: Omit<T, 'children'>;
+}
+
+function _renderComponent<P>(
+  Component: React.ComponentType<P>,
+  options: Options<P>,
+) {
+  const text = randomUUID();
+  const testid = randomUUID();
+  const click = jest.fn();
+
+  const props = {
+    ...options.props,
+    children: text,
+    onClick: options.test.click ? click : undefined,
+    'data-testid': testid,
+  } as unknown as P & JSX.IntrinsicAttributes;
+
+  const { unmount, container, debug } = render(<Component {...props} />);
+  const element = screen.getByTestId(testid);
+  expect(element).toBeInTheDocument();
+
+  if (options.test.click) {
+    fireEvent.click(element);
+    expect(click).toBeCalled();
+  }
+
+  if (options.test.mouse) {
+    fireEvent.mouseEnter(element);
+    fireEvent.mouseMove(element);
+    fireEvent.mouseLeave(element);
+  }
+
+  if (options.test.children) {
+    expect(within(element).getByText(text)).toBeInTheDocument();
+  }
+
+  return {
+    element,
+    unmount,
+    container,
+    debug,
+  };
 }
 
 global.renderComponent = _renderComponent;
